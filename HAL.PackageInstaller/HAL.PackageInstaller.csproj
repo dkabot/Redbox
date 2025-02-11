@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4F3678B0-17EE-4940-9796-D844510D98D9}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AssemblyName>HAL.PackageInstaller</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <ApplicationVersion>1.13.0.27</ApplicationVersion>
+    <FileAlignment>512</FileAlignment>
+    <RootNamespace>Redbox.HAL.PackageInstaller</RootNamespace>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ServiceProcess" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="PackageInstaller.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Redbox.HAL\Redbox.HAL.Component.Model\Redbox.HAL.Component.Model.csproj">
+      <Project>{86986977-3d6f-4f59-bc0c-d181e7c4d334}</Project>
+      <Name>Redbox.HAL.Component.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Redbox.HAL\Redbox.HAL.Configuration\Redbox.HAL.Configuration.csproj">
+      <Project>{e54fa238-238a-42ce-a889-21031a2b2421}</Project>
+      <Name>Redbox.HAL.Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Redbox.HAL\Redbox.HAL.Controller.Framework\Redbox.HAL.Controller.Framework.csproj">
+      <Project>{b035f721-581b-4296-8051-5d4c68279ca3}</Project>
+      <Name>Redbox.HAL.Controller.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Redbox.HAL\Redbox.HAL.DataMatrix.Framework\Redbox.HAL.DataMatrix.Framework.csproj">
+      <Project>{eca31a53-5557-4a9b-9a34-7a49732e3394}</Project>
+      <Name>Redbox.HAL.DataMatrix.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Redbox.HAL\Redbox.HAL.DataStorage\Redbox.HAL.DataStorage.csproj">
+      <Project>{bad03277-d633-4999-9c35-ef62ebe5b614}</Project>
+      <Name>Redbox.HAL.DataStorage</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Redbox.HAL\Redbox.HAL.Script.Framework\Redbox.HAL.Script.Framework.csproj">
+      <Project>{7259240f-f38c-429a-9d94-4c8022bea34c}</Project>
+      <Name>Redbox.HAL.Script.Framework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
