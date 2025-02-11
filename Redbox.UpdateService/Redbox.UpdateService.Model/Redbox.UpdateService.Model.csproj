@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--Project was exported from assembly: U:\win10\Program Files\Redbox\REDS\Kiosk Engine\bin\Redbox.UpdateService.Model.dll-->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{730FECA9-DC04-40D5-AA2D-34BECB451027}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>Redbox.UpdateService.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <ApplicationVersion>3.0.0.5</ApplicationVersion>
+    <FileAlignment>512</FileAlignment>
+    <RootNamespace>Redbox.UpdateService.Model</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClientWorkScript.cs" />
+    <Compile Include="WorkResultPollRequestDTO.cs" />
+    <Compile Include="ConfigurationData.cs" />
+    <Compile Include="DownloadFileType.cs" />
+    <Compile Include="DownloadFileChangeSetData.cs" />
+    <Compile Include="DownloadFileData.cs" />
+    <Compile Include="FileSetState.cs" />
+    <Compile Include="FileSetPollRequest.cs" />
+    <Compile Include="FileSetPollRequestList.cs" />
+    <Compile Include="Identifier.cs" />
+    <Compile Include="InterServerTaskType.cs" />
+    <Compile Include="InterServerMessage.cs" />
+    <Compile Include="InterServerTask.cs" />
+    <Compile Include="Server.cs" />
+    <Compile Include="CreateRepositoryChangeSetArgs.cs" />
+    <Compile Include="ConfigFileArgs.cs" />
+    <Compile Include="StoreInfoArgs.cs" />
+    <Compile Include="DownloadFileArgs.cs" />
+    <Compile Include="ClientRepositoryArgs.cs" />
+    <Compile Include="CreateFileSetChangeSetArgs.cs" />
+    <Compile Include="RepositoryDiffWrapper.cs" />
+    <Compile Include="RepositoryDiffMerge.cs" />
+    <Compile Include="KioskClientData.cs" />
+    <Compile Include="PollReplyType.cs" />
+    <Compile Include="StoreConfigurationConstants.cs" />
+    <Compile Include="PollReply.cs" />
+    <Compile Include="PollReplyDTO.cs" />
+    <Compile Include="PollRequestType.cs" />
+    <Compile Include="PollRequest.cs" />
+    <Compile Include="PollRequestDTO.cs" />
+    <Compile Include="StatusMessage.cs" />
+    <Compile Include="StoreCacheData.cs" />
+    <Compile Include="ClientRepositoryDataDTO.cs" />
+    <Compile Include="ClientRepositoryData.cs" />
+    <Compile Include="ClientConfigFile.cs" />
+    <Compile Include="ClientStoreInfo.cs" />
+    <Compile Include="CCFDTO.cs" />
+    <Compile Include="StoreData.cs" />
+    <Compile Include="ConfigFileChangeSetData.cs" />
+    <Compile Include="ConfigFileDataData.cs" />
+    <Compile Include="ConfigFileData.cs" />
+    <Compile Include="ConfigFileGenerationData.cs" />
+    <Compile Include="StoreFileInfo.cs" />
+    <Compile Include="StoreFileAdd.cs" />
+    <Compile Include="StoreFileModify.cs" />
+    <Compile Include="StoreFileAction.cs" />
+    <Compile Include="StoreFileChangeSetData.cs" />
+    <Compile Include="StoreFilePollRequestList.cs" />
+    <Compile Include="StoreFilePollRequest.cs" />
+    <Compile Include="StoreFileCache.cs" />
+    <Compile Include="StoreFileDataStateCache.cs" />
+    <Compile Include="StoreFileDataCache.cs" />
+    <Compile Include="StoreFileStateCache.cs" />
+    <Compile Include="StoreInfoChangeSetData.cs" />
+    <Compile Include="StoreKioskClientMap.cs" />
+    <Compile Include="StoreScheduleInfo.cs" />
+    <Compile Include="ThinData.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Redbox.Core\Redbox.Core.csproj">
+      <Project>{af6cd734-bf15-4031-ae7a-4167e368475d}</Project>
+      <Name>Redbox.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

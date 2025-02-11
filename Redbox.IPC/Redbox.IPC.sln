@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35122.118
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Redbox.IPC.Framework", "Redbox.IPC.Framework\Redbox.IPC.Framework.csproj", "{396B0908-06EC-4494-B4CD-9A6AD827A98F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Redbox.Core", "..\Redbox.Core\Redbox.Core.csproj", "{AF6CD734-BF15-4031-AE7A-4167E368475D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Redbox.Compression", "..\Redbox.Compression\Redbox.Compression.csproj", "{E5B206DD-B03C-4C85-AF8E-F4849384CCA5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Redbox.Macros", "..\Redbox.Macros\Redbox.Macros.csproj", "{8F8DFB5F-7E7D-4DFC-817E-80CD2AF6CB68}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Redbox.Command.Tokenizer", "..\Redbox.Command.Tokenizer\Redbox.Command.Tokenizer.csproj", "{AF92788F-424A-4F08-B24B-665F2AB549D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Redbox.Tokenizer.Framework", "..\Redbox.Tokenizer.Framework\Redbox.Tokenizer.Framework.csproj", "{6BBC2C4D-A794-4FB8-BFFF-833BC8C8A88E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{396B0908-06EC-4494-B4CD-9A6AD827A98F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{396B0908-06EC-4494-B4CD-9A6AD827A98F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{396B0908-06EC-4494-B4CD-9A6AD827A98F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{396B0908-06EC-4494-B4CD-9A6AD827A98F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF6CD734-BF15-4031-AE7A-4167E368475D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF6CD734-BF15-4031-AE7A-4167E368475D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF6CD734-BF15-4031-AE7A-4167E368475D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF6CD734-BF15-4031-AE7A-4167E368475D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5B206DD-B03C-4C85-AF8E-F4849384CCA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5B206DD-B03C-4C85-AF8E-F4849384CCA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5B206DD-B03C-4C85-AF8E-F4849384CCA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5B206DD-B03C-4C85-AF8E-F4849384CCA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F8DFB5F-7E7D-4DFC-817E-80CD2AF6CB68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F8DFB5F-7E7D-4DFC-817E-80CD2AF6CB68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F8DFB5F-7E7D-4DFC-817E-80CD2AF6CB68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F8DFB5F-7E7D-4DFC-817E-80CD2AF6CB68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF92788F-424A-4F08-B24B-665F2AB549D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF92788F-424A-4F08-B24B-665F2AB549D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF92788F-424A-4F08-B24B-665F2AB549D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF92788F-424A-4F08-B24B-665F2AB549D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BBC2C4D-A794-4FB8-BFFF-833BC8C8A88E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BBC2C4D-A794-4FB8-BFFF-833BC8C8A88E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BBC2C4D-A794-4FB8-BFFF-833BC8C8A88E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BBC2C4D-A794-4FB8-BFFF-833BC8C8A88E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0EC4F2A0-5C18-40FE-8BD2-9ADD1B489815}
+	EndGlobalSection
+EndGlobal

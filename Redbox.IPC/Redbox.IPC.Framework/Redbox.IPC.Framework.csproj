@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--Project was exported from assembly: U:\win10\Program Files\Redbox\REDS\Kiosk Engine\bin\Redbox.IPC.Framework.dll-->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{396B0908-06EC-4494-B4CD-9A6AD827A98F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>Redbox.IPC.Framework</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <ApplicationVersion>1.3.0.1</ApplicationVersion>
+    <FileAlignment>512</FileAlignment>
+    <RootNamespace>Redbox.IPC.Framework</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BatchCommandRunner.cs" />
+    <Compile Include="ClientCommandT.cs" />
+    <Compile Include="ClientCommandResult.cs" />
+    <Compile Include="ClientSession.cs" />
+    <Compile Include="TcpClientSessionPool.cs" />
+    <Compile Include="ClientSessionPool.cs" />
+    <Compile Include="BinaryEncoding.cs" />
+    <Compile Include="CommandKeyValueAttribute.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="HelpCommand.cs" />
+    <Compile Include="NotLoggableAttribute.cs" />
+    <Compile Include="ProtocolHelper.cs" />
+    <Compile Include="CommandService.cs" />
+    <Compile Include="CommandAttribute.cs" />
+    <Compile Include="CommandRepository.cs" />
+    <Compile Include="ISession.cs" />
+    <Compile Include="MacroCommand.cs" />
+    <Compile Include="MessageList.cs" />
+    <Compile Include="ParameterDictionary.cs" />
+    <Compile Include="ScriptCommand.cs" />
+    <Compile Include="Statistics.cs" />
+    <Compile Include="StatisticsCommand.cs" />
+    <Compile Include="CommandContext.cs" />
+    <Compile Include="CommandFormAttribute.cs" />
+    <Compile Include="CommandInstance.cs" />
+    <Compile Include="CommandResult.cs" />
+    <Compile Include="Error.cs" />
+    <Compile Include="ErrorList.cs" />
+    <Compile Include="FormMethodHandler.cs" />
+    <Compile Include="FormMethod.cs" />
+    <Compile Include="FormMethodParameter.cs" />
+    <Compile Include="ChannelType.cs" />
+    <Compile Include="IPCProtocol.cs" />
+    <Compile Include="IPCServiceHost.cs" />
+    <Compile Include="PerformanceCounterSetup.cs" />
+    <Compile Include="PerformanceCounterHelper.cs" />
+    <Compile Include="SessionType.cs" />
+    <Compile Include="ServerSession.cs" />
+    <Compile Include="Sockets\TcpClientSession.cs" />
+    <Compile Include="Sockets\TcpServerSession.cs" />
+    <Compile Include="Sockets\TcpServiceHost.cs" />
+    <Compile Include="Remoting\IRemotingHost.cs" />
+    <Compile Include="Remoting\RemotingClientChannelSinkProvider.cs" />
+    <Compile Include="Remoting\RemotingClientProxy.cs" />
+    <Compile Include="Remoting\RemotingClientSession.cs" />
+    <Compile Include="Remoting\RemotingClientSink.cs" />
+    <Compile Include="Remoting\RemotingHost.cs" />
+    <Compile Include="Remoting\RemotingServerChannelSinkProvider.cs" />
+    <Compile Include="Remoting\RemotingServerSession.cs" />
+    <Compile Include="Remoting\RemotingServerSink.cs" />
+    <Compile Include="Remoting\RemotingServiceHost.cs" />
+    <Compile Include="NamedPipes\NamedPipeClientSession.cs" />
+    <Compile Include="NamedPipes\NamedPipeServerSession.cs" />
+    <Compile Include="NamedPipes\NamedPipeServiceHost.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Redbox.Command.Tokenizer\Redbox.Command.Tokenizer.csproj">
+      <Project>{af92788f-424a-4f08-b24b-665f2ab549d4}</Project>
+      <Name>Redbox.Command.Tokenizer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Redbox.Compression\Redbox.Compression.csproj">
+      <Project>{e5b206dd-b03c-4c85-af8e-f4849384cca5}</Project>
+      <Name>Redbox.Compression</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Redbox.Core\Redbox.Core.csproj">
+      <Project>{af6cd734-bf15-4031-ae7a-4167e368475d}</Project>
+      <Name>Redbox.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Redbox.Macros\Redbox.Macros.csproj">
+      <Project>{8f8dfb5f-7e7d-4dfc-817e-80cd2af6cb68}</Project>
+      <Name>Redbox.Macros</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Redbox.Tokenizer.Framework\Redbox.Tokenizer.Framework.csproj">
+      <Project>{6bbc2c4d-a794-4fb8-bfff-833bc8c8a88e}</Project>
+      <Name>Redbox.Tokenizer.Framework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

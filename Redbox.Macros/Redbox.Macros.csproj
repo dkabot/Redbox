@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--Project was exported from assembly: U:\win10\Program Files\Redbox\REDS\Kiosk Engine\bin\Redbox.Macros.dll-->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8F8DFB5F-7E7D-4DFC-817E-80CD2AF6CB68}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>Redbox.Macros</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <ApplicationVersion>1.2.0.1</ApplicationVersion>
+    <FileAlignment>512</FileAlignment>
+    <RootNamespace>Redbox.Macros</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EvaluatorException.cs" />
+    <Compile Include="ExpressionEvalBase.cs" />
+    <Compile Include="ExpressionEvaluator.cs" />
+    <Compile Include="ExpressionParseException.cs" />
+    <Compile Include="ExpressionTokenizer.cs" />
+    <Compile Include="FunctionArgument.cs" />
+    <Compile Include="FunctionAttribute.cs" />
+    <Compile Include="FunctionFactoryExtensions.cs" />
+    <Compile Include="FunctionFactory.cs" />
+    <Compile Include="FunctionSetAttribute.cs" />
+    <Compile Include="FunctionSetBase.cs" />
+    <Compile Include="Location.cs" />
+    <Compile Include="PropertyDictionary.cs" />
+    <Compile Include="ResourceUtils.cs" />
+    <Compile Include="StringUtils.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Strings.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Redbox.Core\Redbox.Core.csproj">
+      <Project>{af6cd734-bf15-4031-ae7a-4167e368475d}</Project>
+      <Name>Redbox.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
