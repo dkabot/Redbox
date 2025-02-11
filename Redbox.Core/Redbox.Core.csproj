@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AF6CD734-BF15-4031-AE7A-4167E368475D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>Redbox.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <ApplicationVersion>1.2.0.1</ApplicationVersion>
+    <FileAlignment>512</FileAlignment>
+    <RootNamespace>Redbox.Core</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ASCII85.cs" />
+    <Compile Include="AssemblyInfoHelper.cs" />
+    <Compile Include="InstallMode.cs" />
+    <Compile Include="AssemblyInstallerHelper.cs" />
+    <Compile Include="NumberingSchemes.cs" />
+    <Compile Include="NumberBases.cs" />
+    <Compile Include="BaseConverter.cs" />
+    <Compile Include="BinRange.cs" />
+    <Compile Include="BufferPool.cs" />
+    <Compile Include="BuildConfiguration.cs" />
+    <Compile Include="ByteArrayExtensions.cs" />
+    <Compile Include="LocalExtensions.cs" />
+    <Compile Include="CallResult.cs" />
+    <Compile Include="CallResultT.cs" />
+    <Compile Include="CardCodeAttribute.cs" />
+    <Compile Include="CardType.cs" />
+    <Compile Include="CardTypeHelper.cs" />
+    <Compile Include="CertificateHelper.cs" />
+    <Compile Include="CircularList.cs" />
+    <Compile Include="CtrlTypes.cs" />
+    <Compile Include="ControlCallback.cs" />
+    <Compile Include="ConsoleTool.cs" />
+    <Compile Include="ConversionHelper.cs" />
+    <Compile Include="CustomEditorAttribute.cs" />
+    <Compile Include="CustomRethrowEvaluator.cs" />
+    <Compile Include="CustomSleepEvaluator.cs" />
+    <Compile Include="DateTimeConverter.cs" />
+    <Compile Include="DefaultConsole.cs" />
+    <Compile Include="Enum.cs" />
+    <Compile Include="EnvironmentHelper.cs" />
+    <Compile Include="Error.cs" />
+    <Compile Include="ErrorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExcludeTypeAttribute.cs" />
+    <Compile Include="ExecutionTimer.cs" />
+    <Compile Include="FileHelper.cs" />
+    <Compile Include="FontHelper.cs" />
+    <Compile Include="ICloneable.cs" />
+    <Compile Include="IConsole.cs" />
+    <Compile Include="IdHelper.cs" />
+    <Compile Include="EnumerableExtensions.cs" />
+    <Compile Include="LogEntryType.cs" />
+    <Compile Include="ILogger.cs" />
+    <Compile Include="IMessageSink.cs" />
+    <Compile Include="Int32Extensions.cs" />
+    <Compile Include="IPAddressHelper.cs" />
+    <Compile Include="IRethrowEvaluator.cs" />
+    <Compile Include="ISleepEvaluator.cs" />
+    <Compile Include="ITimeoutSink.cs" />
+    <Compile Include="JavaScriptConverterRegistry.cs" />
+    <Compile Include="JavaScriptSerializerExtensions.cs" />
+    <Compile Include="LibraryModule.cs" />
+    <Compile Include="LinqExtensions.cs" />
+    <Compile Include="LoggedEventHandler.cs" />
+    <Compile Include="LogHelper.cs" />
+    <Compile Include="LuhnHelper.cs" />
+    <Compile Include="MemberAccessor.cs" />
+    <Compile Include="MessageHelper.cs" />
+    <Compile Include="MethodInvocation.cs" />
+    <Compile Include="PurgedFromDictionaryDelegate.cs" />
+    <Compile Include="MostRecentlyUsedDictionary.cs" />
+    <Compile Include="MultiDictionary.cs" />
+    <Compile Include="LockScope.cs" />
+    <Compile Include="NamedLock.cs" />
+    <Compile Include="NTUserImpersonator.cs" />
+    <Compile Include="NullConsole.cs" />
+    <Compile Include="ObjectExtensions.cs" />
+    <Compile Include="Pair.cs" />
+    <Compile Include="PropertyHelper.cs" />
+    <Compile Include="RandomExponentialSleepEvaluator.cs" />
+    <Compile Include="Range.cs" />
+    <Compile Include="RecurseAttribute.cs" />
+    <Compile Include="RedboxGiftCard.cs" />
+    <Compile Include="RedirectedConsole.cs" />
+    <Compile Include="RegExFileEditor.cs" />
+    <Compile Include="ResourceTool.cs" />
+    <Compile Include="ResourceUpdateSession.cs" />
+    <Compile Include="Func.cs" />
+    <Compile Include="RetryableAction.cs" />
+    <Compile Include="SecurityHelper.cs" />
+    <Compile Include="SelfRegistrationTool.cs" />
+    <Compile Include="ServiceLocator.cs" />
+    <Compile Include="ShellShortcut.cs" />
+    <Compile Include="ShutdownFlags.cs" />
+    <Compile Include="ShutdownReason.cs" />
+    <Compile Include="ShutdownTool.cs" />
+    <Compile Include="SoundFlags.cs" />
+    <Compile Include="SimpleSound.cs" />
+    <Compile Include="Singleton.cs" />
+    <Compile Include="SingletonException.cs" />
+    <Compile Include="GlobalStringExtensions.cs" />
+    <Compile Include="SleepFor.cs" />
+    <Compile Include="StreamExtensions.cs" />
+    <Compile Include="StringBuilderExtensions.cs" />
+    <Compile Include="StringCollectionExtensions.cs" />
+    <Compile Include="StringExtensions.cs" />
+    <Compile Include="ThreadExecutionTimer.cs" />
+    <Compile Include="ThrowIf.cs" />
+    <Compile Include="TimeoutEntry.cs" />
+    <Compile Include="TimeoutHelper.cs" />
+    <Compile Include="TimeSpanConverter.cs" />
+    <Compile Include="TimeSpanExtensions.cs" />
+    <Compile Include="UsageAttribute.cs" />
+    <Compile Include="ValidValueListProviderAttribute.cs" />
+    <Compile Include="WorkItem.cs" />
+    <Compile Include="WorkerPool.cs" />
+    <Compile Include="XmlNamespace.cs" />
+    <Compile Include="XmlEdit.cs" />
+    <Compile Include="XmlEditorError.cs" />
+    <Compile Include="XmlFileEditor.cs" />
+    <Compile Include="XmlNodeExtensions.cs" />
+    <Compile Include="XmlNodeListExtensions.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ErrorForm.resx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
