@@ -5,7 +5,7 @@ using Redbox.Core;
 
 namespace Redbox.IPC.Framework
 {
-    internal class FormMethodParameter
+    public class FormMethodParameter
     {
         public int Index { get; set; }
 

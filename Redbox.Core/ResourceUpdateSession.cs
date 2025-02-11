@@ -99,7 +99,7 @@ namespace Redbox.Core
             return (ushort)lcid >> 10;
         }
 
-        internal class ResourceKey
+        public class ResourceKey
         {
             public string Group;
             public string Name;

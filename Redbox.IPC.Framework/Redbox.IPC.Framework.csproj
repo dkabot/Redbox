@@ -97,23 +97,23 @@
     <Compile Include="AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Redbox.Command.Tokenizer\Redbox.Command.Tokenizer.csproj">
+    <ProjectReference Include="..\Redbox.Command.Tokenizer\Redbox.Command.Tokenizer.csproj">
       <Project>{af92788f-424a-4f08-b24b-665f2ab549d4}</Project>
       <Name>Redbox.Command.Tokenizer</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Redbox.Compression\Redbox.Compression.csproj">
+    <ProjectReference Include="..\Redbox.Compression\Redbox.Compression.csproj">
       <Project>{e5b206dd-b03c-4c85-af8e-f4849384cca5}</Project>
       <Name>Redbox.Compression</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Redbox.Core\Redbox.Core.csproj">
+    <ProjectReference Include="..\Redbox.Core\Redbox.Core.csproj">
       <Project>{af6cd734-bf15-4031-ae7a-4167e368475d}</Project>
       <Name>Redbox.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Redbox.Macros\Redbox.Macros.csproj">
+    <ProjectReference Include="..\Redbox.Macros\Redbox.Macros.csproj">
       <Project>{8f8dfb5f-7e7d-4dfc-817e-80cd2af6cb68}</Project>
       <Name>Redbox.Macros</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Redbox.Tokenizer.Framework\Redbox.Tokenizer.Framework.csproj">
+    <ProjectReference Include="..\Redbox.Tokenizer.Framework\Redbox.Tokenizer.Framework.csproj">
       <Project>{6bbc2c4d-a794-4fb8-bfff-833bc8c8a88e}</Project>
       <Name>Redbox.Tokenizer.Framework</Name>
     </ProjectReference>

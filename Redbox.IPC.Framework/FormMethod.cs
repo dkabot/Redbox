@@ -8,7 +8,7 @@ using Redbox.Core;
 
 namespace Redbox.IPC.Framework
 {
-    internal class FormMethod
+    public class FormMethod
     {
         private readonly object m_lock = new object();
 

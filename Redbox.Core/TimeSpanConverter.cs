@@ -4,7 +4,7 @@ using System.Web.Script.Serialization;
 
 namespace Redbox.Core
 {
-    internal class TimeSpanConverter : JavaScriptConverter
+    public class TimeSpanConverter : JavaScriptConverter
     {
         private const string TimeSpanKey = "theTimeSpan";
 

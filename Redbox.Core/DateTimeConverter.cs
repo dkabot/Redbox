@@ -5,7 +5,7 @@ using System.Web.Script.Serialization;
 
 namespace Redbox.Core
 {
-    internal class DateTimeConverter : JavaScriptConverter
+    public class DateTimeConverter : JavaScriptConverter
     {
         private const string DateKey = "theDate";
         private const string KindKey = "dateTimeKind";

@@ -7,7 +7,7 @@ using Redbox.Core;
 
 namespace Redbox.IPC.Framework
 {
-    internal class CommandInstance
+    public class CommandInstance
     {
         public readonly IDictionary<string, FormMethod> FormMethodCache = new Dictionary<string, FormMethod>();
 
