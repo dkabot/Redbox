@@ -1,0 +1,682 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(SolutionDir)packages\ILMerge.3.0.41\build\ILMerge.props" Condition="Exists('$(SolutionDir)packages\ILMerge.3.0.41\build\ILMerge.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{451E47B0-AAD9-4B15-85EC-3B8CA8CF991E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AssemblyName>installer-front-end</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <ApplicationVersion>3.0.1.9</ApplicationVersion>
+    <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Common.Logging, Version=3.3.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>$(SolutionDir)packages\Common.Logging.3.3.1\lib\net40\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging.Core, Version=3.3.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>$(SolutionDir)packages\Common.Logging.Core.3.3.1\lib\net40\Common.Logging.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=1.0.7.0, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>$(SolutionDir)packages\SharpZipLib.NETStandard.1.0.7\lib\net45\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <HintPath>$(SolutionDir)packages\log4net.1.2.10\lib\2.0\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Quartz, Version=2.2.3.400, Culture=neutral, PublicKeyToken=f6b8c98a402cc8a4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Quartz.2.2.3\lib\net40\Quartz.dll</HintPath>
+    </Reference>
+    <Reference Include="SevenZip, Version=19.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>$(SolutionDir)packages\SevenZip.19.0.0\lib\net20\SevenZip.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Redbox\UpdateManager\StoreInstallerFrontEnd\CustomMessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Redbox\UpdateManager\StoreInstallerFrontEnd\EventPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Redbox\UpdateManager\StoreInstallerFrontEnd\Host.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Redbox\UpdateManager\StoreInstallerFrontEnd\Options.cs" />
+    <Compile Include="Redbox\UpdateManager\StoreInstallerFrontEnd\Program.cs" />
+    <Compile Include="Redbox\UpdateManager\StoreInstallerFrontEnd\StoreInstallerApplication.cs" />
+    <Compile Include="Redbox\UpdateManager\StoreInstallerFrontEnd\Properties\Resources.cs" />
+    <Compile Include="Redbox\UpdateManager\StoreInstallerFrontEnd\Properties\Settings.cs" />
+    <Compile Include="Redbox\UpdateManager\BITS\BandwidthUsageSettings.cs" />
+    <Compile Include="Redbox\UpdateManager\BITS\BackgroundCopyManager.cs" />
+    <Compile Include="Redbox\UpdateManager\BITS\IBackgroundCopyManager.cs" />
+    <Compile Include="Redbox\UpdateManager\BITS\IBackgroundCopyCallback.cs" />
+    <Compile Include="Redbox\UpdateManager\BITS\IBackgroundCopyJob.cs" />
+    <Compile Include="Redbox\UpdateManager\BITS\IBackgroundCopyJob2.cs" />
+    <Compile Include="Redbox\UpdateManager\BITS\IBackgroundCopyJob3.cs" />
+    <Compile Include="Redbox\UpdateManager\BITS\IBackgroundCopyJob4.cs" />
+    <Compile Include="Redbox\UpdateManager\BITS\IBackgroundCopyError.cs" />
+    <Compile Include="Redbox\UpdateManager\BITS\IEnumBackgroundCopyJobs.cs" />
+    <Compile Include="Redbox\UpdateManager\BITS\IEnumBackgroundCopyFiles.cs" />
+    <Compile Include="Redbox\UpdateManager\BITS\IBackgroundCopyFile.cs" />
+    <Compile Include="Redbox\UpdateManager\BITS\IBackgroundCopyFile2.cs" />
+    <Compile Include="Redbox\UpdateManager\BITS\BG_AUTH_SCHEME.cs" />
+    <Compile Include="Redbox\UpdateManager\BITS\BG_AUTH_TARGET.cs" />
+    <Compile Include="Redbox\UpdateManager\BITS\BG_JOB_STATE.cs" />
+    <Compile Include="Redbox\UpdateManager\BITS\BG_JOB_TYPE.cs" />
+    <Compile Include="Redbox\UpdateManager\BITS\BG_JOB_NOTIFICATION_TYPE.cs" />
+    <Compile Include="Redbox\UpdateManager\BITS\BG_JOB_PROXY_USAGE.cs" />
+    <Compile Include="Redbox\UpdateManager\BITS\BG_JOB_PRIORITY.cs" />
+    <Compile Include="Redbox\UpdateManager\BITS\BG_AUTH_CREDENTIALS.cs" />
+    <Compile Include="Redbox\UpdateManager\BITS\BG_AUTH_CREDENTIALS_UNION.cs" />
+    <Compile Include="Redbox\UpdateManager\BITS\BG_BASIC_CREDENTIALS.cs" />
+    <Compile Include="Redbox\UpdateManager\BITS\BG_ERROR_CONTEXT.cs" />
+    <Compile Include="Redbox\UpdateManager\BITS\FILE_ACL_FLAGS.cs" />
+    <Compile Include="Redbox\UpdateManager\BITS\PEER_CACHING_FLAGS.cs" />
+    <Compile Include="Redbox\UpdateManager\BITS\BG_FILE_INFO.cs" />
+    <Compile Include="Redbox\UpdateManager\BITS\BG_JOB_PROGRESS.cs" />
+    <Compile Include="Redbox\UpdateManager\BITS\BG_JOB_REPLY_PROGRESS.cs" />
+    <Compile Include="Redbox\UpdateManager\BITS\BG_JOB_TIMES.cs" />
+    <Compile Include="Redbox\UpdateManager\BITS\FILETIME.cs" />
+    <Compile Include="Redbox\UpdateManager\BITS\BG_FILE_PROGRESS.cs" />
+    <Compile Include="Redbox\UpdateManager\BITS\BG_FILE_RANGE.cs" />
+    <Compile Include="Redbox\UpdateManager\BITS\InteropHelper.cs" />
+    <Compile Include="Redbox\UpdateManager\BITS\TransferCallbackParameters.cs" />
+    <Compile Include="Redbox\UpdateManager\BITS\TransferItem.cs" />
+    <Compile Include="Redbox\UpdateManager\BITS\TransferJob.cs" />
+    <Compile Include="Redbox\UpdateManager\BITS\TransferService.cs" />
+    <Compile Include="Redbox\UpdateManager\BITS\RpcAuthnLevel.cs" />
+    <Compile Include="Redbox\UpdateManager\BITS\RpcImpLevel.cs" />
+    <Compile Include="Redbox\UpdateManager\BITS\EoAuthnCap.cs" />
+    <Compile Include="Redbox\UpdateManager\BITS\BitsVersion.cs" />
+    <Compile Include="Redbox\UpdateManager\BITS\NativeMethods.cs" />
+    <Compile Include="Redbox\UpdateManager\BITS\Utils.cs" />
+    <Compile Include="Redbox\UpdateManager\ComponentModel\ChangeItem.cs" />
+    <Compile Include="Redbox\UpdateManager\ComponentModel\DeltaItem.cs" />
+    <Compile Include="Redbox\UpdateManager\ComponentModel\Error.cs" />
+    <Compile Include="Redbox\UpdateManager\ComponentModel\ErrorList.cs" />
+    <Compile Include="Redbox\UpdateManager\ComponentModel\IConfigFileService.cs" />
+    <Compile Include="Redbox\UpdateManager\ComponentModel\IDownloadFile.cs" />
+    <Compile Include="Redbox\UpdateManager\ComponentModel\DownloadFileDataType.cs" />
+    <Compile Include="Redbox\UpdateManager\ComponentModel\DownloadFileDataState.cs" />
+    <Compile Include="Redbox\UpdateManager\ComponentModel\IDownloadFileData.cs" />
+    <Compile Include="Redbox\UpdateManager\ComponentModel\IDownloadFileService.cs" />
+    <Compile Include="Redbox\UpdateManager\ComponentModel\IFileSetService.cs" />
+    <Compile Include="Redbox\UpdateManager\ComponentModel\IPoll.cs" />
+    <Compile Include="Redbox\UpdateManager\ComponentModel\IPollRequestReply.cs" />
+    <Compile Include="Redbox\UpdateManager\ComponentModel\IPollService.cs" />
+    <Compile Include="Redbox\UpdateManager\ComponentModel\IStatusMessageService.cs" />
+    <Compile Include="Redbox\UpdateManager\ComponentModel\IStoreInfoService.cs" />
+    <Compile Include="Redbox\UpdateManager\ComponentModel\PayloadType.cs" />
+    <Compile Include="Redbox\UpdateManager\ComponentModel\ScheduleType.cs" />
+    <Compile Include="Redbox\UpdateManager\ComponentModel\ITask.cs" />
+    <Compile Include="Redbox\UpdateManager\ComponentModel\IDataStoreService.cs" />
+    <Compile Include="Redbox\UpdateManager\ComponentModel\IEventNotifyService.cs" />
+    <Compile Include="Redbox\UpdateManager\ComponentModel\HealthServiceConstants.cs" />
+    <Compile Include="Redbox\UpdateManager\ComponentModel\IHealthService.cs" />
+    <Compile Include="Redbox\UpdateManager\ComponentModel\IInputService.cs" />
+    <Compile Include="Redbox\UpdateManager\ComponentModel\ShutdownType.cs" />
+    <Compile Include="Redbox\UpdateManager\ComponentModel\IKernelService.cs" />
+    <Compile Include="Redbox\UpdateManager\ComponentModel\IKioskEngineService.cs" />
+    <Compile Include="Redbox\UpdateManager\ComponentModel\IMacroService.cs" />
+    <Compile Include="Redbox\UpdateManager\ComponentModel\IQueueService.cs" />
+    <Compile Include="Redbox\UpdateManager\ComponentModel\RepositoryServiceConstants.cs" />
+    <Compile Include="Redbox\UpdateManager\ComponentModel\IRepositoryService.cs" />
+    <Compile Include="Redbox\UpdateManager\ComponentModel\IRevLog.cs" />
+    <Compile Include="Redbox\UpdateManager\ComponentModel\ITaskScheduler.cs" />
+    <Compile Include="Redbox\UpdateManager\ComponentModel\ITransferCallbackParameters.cs" />
+    <Compile Include="Redbox\UpdateManager\ComponentModel\ITransferItem.cs" />
+    <Compile Include="Redbox\UpdateManager\ComponentModel\TransferStatus.cs" />
+    <Compile Include="Redbox\UpdateManager\ComponentModel\TransferJobPriority.cs" />
+    <Compile Include="Redbox\UpdateManager\ComponentModel\TransferJobType.cs" />
+    <Compile Include="Redbox\UpdateManager\ComponentModel\ITransferJob.cs" />
+    <Compile Include="Redbox\UpdateManager\ComponentModel\ITransferService.cs" />
+    <Compile Include="Redbox\UpdateManager\ComponentModel\SubscriptionState.cs" />
+    <Compile Include="Redbox\UpdateManager\ComponentModel\IUpdateService.cs" />
+    <Compile Include="Redbox\UpdateManager\ComponentModel\IWindowsTaskScheduler.cs" />
+    <Compile Include="Redbox\UpdateManager\Environment\CertificateHelper.cs" />
+    <Compile Include="Redbox\UpdateManager\Environment\CertificateService.cs" />
+    <Compile Include="Redbox\UpdateManager\Environment\ConfigFileService.cs" />
+    <Compile Include="Redbox\UpdateManager\Environment\DataStoreService.cs" />
+    <Compile Include="Redbox\UpdateManager\Environment\Extensions.cs" />
+    <Compile Include="Redbox\UpdateManager\Environment\HealthService.cs" />
+    <Compile Include="Redbox\UpdateManager\Environment\MacroService.cs" />
+    <Compile Include="Redbox\UpdateManager\Environment\PersistentList`1.cs" />
+    <Compile Include="Redbox\UpdateManager\Environment\PollService.cs" />
+    <Compile Include="Redbox\UpdateManager\Environment\QueueService.cs" />
+    <Compile Include="Redbox\UpdateManager\Environment\RepositoryPollService.cs" />
+    <Compile Include="Redbox\UpdateManager\Environment\RepositoryService.cs" />
+    <Compile Include="Redbox\UpdateManager\Environment\RevLog.cs" />
+    <Compile Include="Redbox\UpdateManager\Environment\StatusMessageService.cs" />
+    <Compile Include="Redbox\UpdateManager\Environment\StoreFileAction.cs" />
+    <Compile Include="Redbox\UpdateManager\Environment\StoreFileChangeSetData.cs" />
+    <Compile Include="Redbox\UpdateManager\Environment\StoreFilePollRequest.cs" />
+    <Compile Include="Redbox\UpdateManager\Environment\StoreFilePollRequestList.cs" />
+    <Compile Include="Redbox\UpdateManager\Environment\StoreFileService.cs" />
+    <Compile Include="Redbox\UpdateManager\Environment\FileState.cs" />
+    <Compile Include="Redbox\UpdateManager\Environment\StoreFileState.cs" />
+    <Compile Include="Redbox\UpdateManager\Environment\StoreInfoService.cs" />
+    <Compile Include="Redbox\UpdateManager\Environment\TimeZoneFunctions.cs" />
+    <Compile Include="Redbox\UpdateManager\Environment\TokenPrivilegesAccess.cs" />
+    <Compile Include="Redbox\UpdateManager\Environment\TransferStatisticService.cs" />
+    <Compile Include="Redbox\UpdateManager\Environment\WorkService.cs" />
+    <Compile Include="Redbox\UpdateManager\Kernel\AssemblyFunctions.cs" />
+    <Compile Include="Redbox\UpdateManager\Kernel\ComObjectFunctions.cs" />
+    <Compile Include="Redbox\UpdateManager\Kernel\CryptographicFunctions.cs" />
+    <Compile Include="Redbox\UpdateManager\Kernel\DownloadFileFunctions.cs" />
+    <Compile Include="Redbox\UpdateManager\Kernel\EventNotificationFunctions.cs" />
+    <Compile Include="Redbox\UpdateManager\Kernel\FileSystemFunctions.cs" />
+    <Compile Include="Redbox\UpdateManager\Kernel\FileVersionFunctions.cs" />
+    <Compile Include="Redbox\UpdateManager\Kernel\InputFunctions.cs" />
+    <Compile Include="Redbox\UpdateManager\Kernel\IpcFunctions.cs" />
+    <Compile Include="Redbox\UpdateManager\Kernel\KernelFunctionAttribute.cs" />
+    <Compile Include="Redbox\UpdateManager\Kernel\KernelService.cs" />
+    <Compile Include="Redbox\UpdateManager\Kernel\KioskEngineFunctions.cs" />
+    <Compile Include="Redbox\UpdateManager\Kernel\MacroFunctions.cs" />
+    <Compile Include="Redbox\UpdateManager\Kernel\ProcessFunctions.cs" />
+    <Compile Include="Redbox\UpdateManager\Kernel\RegistryFunctions.cs" />
+    <Compile Include="Redbox\UpdateManager\Kernel\RepositoryFunctions.cs" />
+    <Compile Include="Redbox\UpdateManager\Kernel\RixFunctions.cs" />
+    <Compile Include="Redbox\UpdateManager\Kernel\ScritpFunctions.cs" />
+    <Compile Include="Redbox\UpdateManager\Kernel\ShellLauncherFunctions.cs" />
+    <Compile Include="Redbox\UpdateManager\Kernel\SystemFunctions.cs" />
+    <Compile Include="Redbox\UpdateManager\Kernel\SystemRestoreFunctions.cs" />
+    <Compile Include="Redbox\UpdateManager\Kernel\TaskSchedulerFunctions.cs" />
+    <Compile Include="Redbox\UpdateManager\Kernel\TransferFunctions.cs" />
+    <Compile Include="Redbox\UpdateManager\Kernel\UpdateServiceFunctions.cs" />
+    <Compile Include="Redbox\UpdateManager\Kernel\Win32ServiceFunctions.cs" />
+    <Compile Include="Redbox\UpdateManager\Kernel\Win32TaskSchedulerFunctions.cs" />
+    <Compile Include="Redbox\UpdateManager\Kernel\WorkQueueFunctions.cs" />
+    <Compile Include="Redbox\UpdateManager\Remoting\Extensions.cs" />
+    <Compile Include="Redbox\UpdateManager\Remoting\IPCPoll.cs" />
+    <Compile Include="Redbox\UpdateManager\Remoting\KioskEngineProxy.cs" />
+    <Compile Include="Redbox\UpdateManager\Remoting\KioskEngineService.cs" />
+    <Compile Include="Redbox\UpdateManager\Remoting\ShellHelper.cs" />
+    <Compile Include="Redbox\UpdateManager\Remoting\UpdateService.cs" />
+    <Compile Include="Redbox\UpdateManager\Remoting\WindowsTaskScheduler.cs" />
+    <Compile Include="Redbox\UpdateManager\TaskScheduler\Task.cs" />
+    <Compile Include="Redbox\UpdateManager\TaskScheduler\Scheduler.cs" />
+    <Compile Include="Redbox\GetOpts\CommandLine.cs" />
+    <Compile Include="Redbox\GetOpts\OptionAttribute.cs" />
+    <Compile Include="Redbox\GetOpts\OptionValue.cs" />
+    <Compile Include="Redbox\GetOpts\OptionValueList.cs" />
+    <Compile Include="Redbox\Compression\ByteArrayExtensions.cs" />
+    <Compile Include="Redbox\Compression\BZip2CompressionAlgorithm.cs" />
+    <Compile Include="Redbox\Compression\CompressionType.cs" />
+    <Compile Include="Redbox\Compression\CompressionAlgorithm.cs" />
+    <Compile Include="Redbox\Compression\GZipCompressionAlgorithm.cs" />
+    <Compile Include="Redbox\Compression\LzmaCompressionAlgorithm.cs" />
+    <Compile Include="Redbox\Compression\NullCompressionAlgorithm.cs" />
+    <Compile Include="Redbox\Compression\TarHelper.cs" />
+    <Compile Include="Redbox\Compression\ZipCompressionAlgorithm.cs" />
+    <Compile Include="Redbox\Compression\ZipHelper.cs" />
+    <Compile Include="Redbox\Core\ASCII85.cs" />
+    <Compile Include="Redbox\Core\AssemblyInfoHelper.cs" />
+    <Compile Include="Redbox\Core\InstallMode.cs" />
+    <Compile Include="Redbox\Core\AssemblyInstallerHelper.cs" />
+    <Compile Include="Redbox\Core\NumberingSchemes.cs" />
+    <Compile Include="Redbox\Core\NumberBases.cs" />
+    <Compile Include="Redbox\Core\BaseConverter.cs" />
+    <Compile Include="Redbox\Core\BinRange.cs" />
+    <Compile Include="Redbox\Core\BufferPool.cs" />
+    <Compile Include="Redbox\Core\BuildConfiguration.cs" />
+    <Compile Include="Redbox\Core\ByteArrayExtensions.cs" />
+    <Compile Include="Redbox\Core\LocalExtensions.cs" />
+    <Compile Include="Redbox\Core\CallResult.cs" />
+    <Compile Include="Redbox\Core\CallResult`1.cs" />
+    <Compile Include="Redbox\Core\CardCodeAttribute.cs" />
+    <Compile Include="Redbox\Core\CardType.cs" />
+    <Compile Include="Redbox\Core\CardTypeHelper.cs" />
+    <Compile Include="Redbox\Core\CertificateHelper.cs" />
+    <Compile Include="Redbox\Core\CircularList`1.cs" />
+    <Compile Include="Redbox\Core\CtrlTypes.cs" />
+    <Compile Include="Redbox\Core\ControlCallback.cs" />
+    <Compile Include="Redbox\Core\ConsoleTool.cs" />
+    <Compile Include="Redbox\Core\ConversionHelper.cs" />
+    <Compile Include="Redbox\Core\CustomEditorAttribute.cs" />
+    <Compile Include="Redbox\Core\CustomRethrowEvaluator.cs" />
+    <Compile Include="Redbox\Core\CustomSleepEvaluator.cs" />
+    <Compile Include="Redbox\Core\DateTimeConverter.cs" />
+    <Compile Include="Redbox\Core\DefaultConsole.cs" />
+    <Compile Include="Redbox\Core\Enum`1.cs" />
+    <Compile Include="Redbox\Core\EnvironmentHelper.cs" />
+    <Compile Include="Redbox\Core\Error.cs" />
+    <Compile Include="Redbox\Core\ErrorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Redbox\Core\ExcludeTypeAttribute.cs" />
+    <Compile Include="Redbox\Core\ExecutionTimer.cs" />
+    <Compile Include="Redbox\Core\FileHelper.cs" />
+    <Compile Include="Redbox\Core\FontHelper.cs" />
+    <Compile Include="Redbox\Core\ICloneable`1.cs" />
+    <Compile Include="Redbox\Core\IConsole.cs" />
+    <Compile Include="Redbox\Core\IdHelper.cs" />
+    <Compile Include="Redbox\Core\EnumerableExtensions.cs" />
+    <Compile Include="Redbox\Core\LogEntryType.cs" />
+    <Compile Include="Redbox\Core\ILogger.cs" />
+    <Compile Include="Redbox\Core\IMessageSink.cs" />
+    <Compile Include="Redbox\Core\Int32Extensions.cs" />
+    <Compile Include="Redbox\Core\IPAddressHelper.cs" />
+    <Compile Include="Redbox\Core\IRethrowEvaluator.cs" />
+    <Compile Include="Redbox\Core\ISleepEvaluator.cs" />
+    <Compile Include="Redbox\Core\ITimeoutSink.cs" />
+    <Compile Include="Redbox\Core\JavaScriptConverterRegistry.cs" />
+    <Compile Include="Redbox\Core\JavaScriptSerializerExtensions.cs" />
+    <Compile Include="Redbox\Core\LibraryModule.cs" />
+    <Compile Include="Redbox\Core\LinqExtensions.cs" />
+    <Compile Include="Redbox\Core\LoggedEventHandler.cs" />
+    <Compile Include="Redbox\Core\LogHelper.cs" />
+    <Compile Include="Redbox\Core\LuhnHelper.cs" />
+    <Compile Include="Redbox\Core\MemberAccessor.cs" />
+    <Compile Include="Redbox\Core\MessageHelper.cs" />
+    <Compile Include="Redbox\Core\MethodInvocation.cs" />
+    <Compile Include="Redbox\Core\PurgedFromDictionaryDelegate`2.cs" />
+    <Compile Include="Redbox\Core\MostRecentlyUsedDictionary`2.cs" />
+    <Compile Include="Redbox\Core\MultiDictionary`2.cs" />
+    <Compile Include="Redbox\Core\LockScope.cs" />
+    <Compile Include="Redbox\Core\NamedLock.cs" />
+    <Compile Include="Redbox\Core\NTUserImpersonator.cs" />
+    <Compile Include="Redbox\Core\NullConsole.cs" />
+    <Compile Include="Redbox\Core\ObjectExtensions.cs" />
+    <Compile Include="Redbox\Core\Pair`2.cs" />
+    <Compile Include="Redbox\Core\PropertyHelper.cs" />
+    <Compile Include="Redbox\Core\RandomExponentialSleepEvaluator.cs" />
+    <Compile Include="Redbox\Core\Range.cs" />
+    <Compile Include="Redbox\Core\RecurseAttribute.cs" />
+    <Compile Include="Redbox\Core\RedboxGiftCard.cs" />
+    <Compile Include="Redbox\Core\RedirectedConsole.cs" />
+    <Compile Include="Redbox\Core\RegExFileEditor.cs" />
+    <Compile Include="Redbox\Core\ResourceTool.cs" />
+    <Compile Include="Redbox\Core\ResourceUpdateSession.cs" />
+    <Compile Include="Redbox\Core\Func`6.cs" />
+    <Compile Include="Redbox\Core\RetryableAction.cs" />
+    <Compile Include="Redbox\Core\SecurityHelper.cs" />
+    <Compile Include="Redbox\Core\SelfRegistrationTool.cs" />
+    <Compile Include="Redbox\Core\ServiceLocator.cs" />
+    <Compile Include="Redbox\Core\ShellShortcut.cs" />
+    <Compile Include="Redbox\Core\ShutdownFlags.cs" />
+    <Compile Include="Redbox\Core\ShutdownReason.cs" />
+    <Compile Include="Redbox\Core\ShutdownTool.cs" />
+    <Compile Include="Redbox\Core\SoundFlags.cs" />
+    <Compile Include="Redbox\Core\SimpleSound.cs" />
+    <Compile Include="Redbox\Core\Singleton`1.cs" />
+    <Compile Include="Redbox\Core\SingletonException.cs" />
+    <Compile Include="Redbox\Core\GlobalStringExtensions.cs" />
+    <Compile Include="Redbox\Core\SleepFor.cs" />
+    <Compile Include="Redbox\Core\StreamExtensions.cs" />
+    <Compile Include="Redbox\Core\StringBuilderExtensions.cs" />
+    <Compile Include="Redbox\Core\StringCollectionExtensions.cs" />
+    <Compile Include="Redbox\Core\StringExtensions.cs" />
+    <Compile Include="Redbox\Core\ThreadExecutionTimer.cs" />
+    <Compile Include="Redbox\Core\ThrowIf.cs" />
+    <Compile Include="Redbox\Core\TimeoutEntry.cs" />
+    <Compile Include="Redbox\Core\TimeoutHelper.cs" />
+    <Compile Include="Redbox\Core\TimeSpanConverter.cs" />
+    <Compile Include="Redbox\Core\TimeSpanExtensions.cs" />
+    <Compile Include="Redbox\Core\UsageAttribute.cs" />
+    <Compile Include="Redbox\Core\ValidValueListProviderAttribute.cs" />
+    <Compile Include="Redbox\Core\WorkItem.cs" />
+    <Compile Include="Redbox\Core\WorkerPool.cs" />
+    <Compile Include="Redbox\Core\XmlNamespace.cs" />
+    <Compile Include="Redbox\Core\XmlEdit.cs" />
+    <Compile Include="Redbox\Core\XmlEditorError.cs" />
+    <Compile Include="Redbox\Core\XmlFileEditor.cs" />
+    <Compile Include="Redbox\Core\XmlNodeExtensions.cs" />
+    <Compile Include="Redbox\Core\XmlNodeListExtensions.cs" />
+    <Compile Include="Redbox\UpdateService\DeltaCompression\Instruction\Decoder.cs" />
+    <Compile Include="Redbox\UpdateService\DeltaCompression\Instruction\Encoder.cs" />
+    <Compile Include="Redbox\UpdateService\DeltaCompression\Instruction\InstructionType.cs" />
+    <Compile Include="Redbox\UpdateService\DeltaCompression\Instruction\Instruction.cs" />
+    <Compile Include="Redbox\UpdateService\Client\ChangeSetItem.cs" />
+    <Compile Include="Redbox\UpdateService\Client\Identifier.cs" />
+    <Compile Include="Redbox\UpdateService\Client\Label.cs" />
+    <Compile Include="Redbox\UpdateService\Client\Release.cs" />
+    <Compile Include="Redbox\UpdateService\Client\RepositoryEntry.cs" />
+    <Compile Include="Redbox\UpdateService\Client\LocalChangeSet.cs" />
+    <Compile Include="Redbox\UpdateService\Client\Repository.cs" />
+    <Compile Include="Redbox\UpdateService\Client\DeploymentStatus.cs" />
+    <Compile Include="Redbox\UpdateService\Client\Patch.cs" />
+    <Compile Include="Redbox\UpdateService\Client\RevLog.cs" />
+    <Compile Include="Redbox\UpdateService\Client\Script.cs" />
+    <Compile Include="Redbox\UpdateService\Client\StatusMessage.cs" />
+    <Compile Include="Redbox\UpdateService\Client\StoreGroup.cs" />
+    <Compile Include="Redbox\UpdateService\Client\ChangeSet.cs" />
+    <Compile Include="Redbox\UpdateService\Client\Store.cs" />
+    <Compile Include="Redbox\UpdateService\Client\SubscriptionState.cs" />
+    <Compile Include="Redbox\UpdateService\Client\SubscriptionStatus.cs" />
+    <Compile Include="Redbox\UpdateService\Client\TransferStatisticType.cs" />
+    <Compile Include="Redbox\UpdateService\Client\TransferStatistic.cs" />
+    <Compile Include="Redbox\UpdateService\Client\Update.cs" />
+    <Compile Include="Redbox\UpdateService\Client\StoreNumberAndUpdate.cs" />
+    <Compile Include="Redbox\UpdateService\Client\UpdateService.cs" />
+    <Compile Include="Redbox\UpdateService\Client\TransferStatisticReport.cs" />
+    <Compile Include="Redbox\UpdateService\Client\UpdateServiceCredentials.cs" />
+    <Compile Include="Redbox\UpdateService\Client\Credentials.cs" />
+    <Compile Include="Redbox\UpdateService\Client\Upload.cs" />
+    <Compile Include="Redbox\UpdateService\Client\UploadReport.cs" />
+    <Compile Include="Redbox\UpdateService\Client\Work.cs" />
+    <Compile Include="Redbox\UpdateService\Client\WorkItemRecurrence.cs" />
+    <Compile Include="Redbox\UpdateService\Client\WorkItem.cs" />
+    <Compile Include="Redbox\UpdateService\Client\WorkResult.cs" />
+    <Compile Include="Redbox\UpdateService\Model\ClientWorkScript.cs" />
+    <Compile Include="Redbox\UpdateService\Model\WorkResultPollRequestDTO.cs" />
+    <Compile Include="Redbox\UpdateService\Model\ConfigurationData.cs" />
+    <Compile Include="Redbox\UpdateService\Model\DownloadFileType.cs" />
+    <Compile Include="Redbox\UpdateService\Model\DownloadFileChangeSetData.cs" />
+    <Compile Include="Redbox\UpdateService\Model\DownloadFileData.cs" />
+    <Compile Include="Redbox\UpdateService\Model\FileSetState.cs" />
+    <Compile Include="Redbox\UpdateService\Model\FileSetPollRequest.cs" />
+    <Compile Include="Redbox\UpdateService\Model\FileSetPollRequestList.cs" />
+    <Compile Include="Redbox\UpdateService\Model\Identifier.cs" />
+    <Compile Include="Redbox\UpdateService\Model\InterServerTaskType.cs" />
+    <Compile Include="Redbox\UpdateService\Model\InterServerMessage.cs" />
+    <Compile Include="Redbox\UpdateService\Model\InterServerTask.cs" />
+    <Compile Include="Redbox\UpdateService\Model\Server.cs" />
+    <Compile Include="Redbox\UpdateService\Model\CreateRepositoryChangeSetArgs.cs" />
+    <Compile Include="Redbox\UpdateService\Model\ConfigFileArgs.cs" />
+    <Compile Include="Redbox\UpdateService\Model\StoreInfoArgs.cs" />
+    <Compile Include="Redbox\UpdateService\Model\DownloadFileArgs.cs" />
+    <Compile Include="Redbox\UpdateService\Model\ClientRepositoryArgs.cs" />
+    <Compile Include="Redbox\UpdateService\Model\CreateFileSetChangeSetArgs.cs" />
+    <Compile Include="Redbox\UpdateService\Model\RepositoryDiffWrapper.cs" />
+    <Compile Include="Redbox\UpdateService\Model\RepositoryDiffMerge.cs" />
+    <Compile Include="Redbox\UpdateService\Model\KioskClientData.cs" />
+    <Compile Include="Redbox\UpdateService\Model\PollReplyType.cs" />
+    <Compile Include="Redbox\UpdateService\Model\StoreConfigurationConstants.cs" />
+    <Compile Include="Redbox\UpdateService\Model\PollReply.cs" />
+    <Compile Include="Redbox\UpdateService\Model\PollReplyDTO.cs" />
+    <Compile Include="Redbox\UpdateService\Model\PollRequestType.cs" />
+    <Compile Include="Redbox\UpdateService\Model\PollRequest.cs" />
+    <Compile Include="Redbox\UpdateService\Model\PollRequestDTO.cs" />
+    <Compile Include="Redbox\UpdateService\Model\StatusMessage.cs" />
+    <Compile Include="Redbox\UpdateService\Model\StoreCacheData.cs" />
+    <Compile Include="Redbox\UpdateService\Model\ClientRepositoryDataDTO.cs" />
+    <Compile Include="Redbox\UpdateService\Model\ClientRepositoryData.cs" />
+    <Compile Include="Redbox\UpdateService\Model\ClientConfigFile.cs" />
+    <Compile Include="Redbox\UpdateService\Model\ClientStoreInfo.cs" />
+    <Compile Include="Redbox\UpdateService\Model\CCFDTO.cs" />
+    <Compile Include="Redbox\UpdateService\Model\StoreData.cs" />
+    <Compile Include="Redbox\UpdateService\Model\ConfigFileChangeSetData.cs" />
+    <Compile Include="Redbox\UpdateService\Model\ConfigFileDataData.cs" />
+    <Compile Include="Redbox\UpdateService\Model\ConfigFileData.cs" />
+    <Compile Include="Redbox\UpdateService\Model\ConfigFileGenerationData.cs" />
+    <Compile Include="Redbox\UpdateService\Model\StoreFileInfo.cs" />
+    <Compile Include="Redbox\UpdateService\Model\StoreFileAdd.cs" />
+    <Compile Include="Redbox\UpdateService\Model\StoreFileModify.cs" />
+    <Compile Include="Redbox\UpdateService\Model\StoreFileAction.cs" />
+    <Compile Include="Redbox\UpdateService\Model\StoreFileChangeSetData.cs" />
+    <Compile Include="Redbox\UpdateService\Model\StoreFilePollRequestList.cs" />
+    <Compile Include="Redbox\UpdateService\Model\StoreFilePollRequest.cs" />
+    <Compile Include="Redbox\UpdateService\Model\StoreFileCache.cs" />
+    <Compile Include="Redbox\UpdateService\Model\StoreFileDataStateCache.cs" />
+    <Compile Include="Redbox\UpdateService\Model\StoreFileDataCache.cs" />
+    <Compile Include="Redbox\UpdateService\Model\StoreFileStateCache.cs" />
+    <Compile Include="Redbox\UpdateService\Model\StoreInfoChangeSetData.cs" />
+    <Compile Include="Redbox\UpdateService\Model\StoreKioskClientMap.cs" />
+    <Compile Include="Redbox\UpdateService\Model\StoreScheduleInfo.cs" />
+    <Compile Include="Redbox\UpdateService\Model\ThinData.cs" />
+    <Compile Include="Redbox\DeltaCompression\Error.cs" />
+    <Compile Include="Redbox\DeltaCompression\ErrorList.cs" />
+    <Compile Include="Redbox\DeltaCompression\Binary\XDeltaHelper.cs" />
+    <Compile Include="Redbox\IPC\Framework\BatchCommandRunner.cs" />
+    <Compile Include="Redbox\IPC\Framework\ClientCommand`1.cs" />
+    <Compile Include="Redbox\IPC\Framework\ClientCommandResult.cs" />
+    <Compile Include="Redbox\IPC\Framework\ClientSession.cs" />
+    <Compile Include="Redbox\IPC\Framework\TcpClientSessionPool.cs" />
+    <Compile Include="Redbox\IPC\Framework\ClientSessionPool.cs" />
+    <Compile Include="Redbox\IPC\Framework\BinaryEncoding.cs" />
+    <Compile Include="Redbox\IPC\Framework\CommandKeyValueAttribute.cs" />
+    <Compile Include="Redbox\IPC\Framework\Constants.cs" />
+    <Compile Include="Redbox\IPC\Framework\HelpCommand.cs" />
+    <Compile Include="Redbox\IPC\Framework\NotLoggableAttribute.cs" />
+    <Compile Include="Redbox\IPC\Framework\ProtocolHelper.cs" />
+    <Compile Include="Redbox\IPC\Framework\CommandService.cs" />
+    <Compile Include="Redbox\IPC\Framework\CommandAttribute.cs" />
+    <Compile Include="Redbox\IPC\Framework\CommandRepository.cs" />
+    <Compile Include="Redbox\IPC\Framework\ISession.cs" />
+    <Compile Include="Redbox\IPC\Framework\MacroCommand.cs" />
+    <Compile Include="Redbox\IPC\Framework\MessageList.cs" />
+    <Compile Include="Redbox\IPC\Framework\ParameterDictionary.cs" />
+    <Compile Include="Redbox\IPC\Framework\ScriptCommand.cs" />
+    <Compile Include="Redbox\IPC\Framework\Statistics.cs" />
+    <Compile Include="Redbox\IPC\Framework\StatisticsCommand.cs" />
+    <Compile Include="Redbox\IPC\Framework\CommandContext.cs" />
+    <Compile Include="Redbox\IPC\Framework\CommandFormAttribute.cs" />
+    <Compile Include="Redbox\IPC\Framework\CommandInstance.cs" />
+    <Compile Include="Redbox\IPC\Framework\CommandResult.cs" />
+    <Compile Include="Redbox\IPC\Framework\Error.cs" />
+    <Compile Include="Redbox\IPC\Framework\ErrorList.cs" />
+    <Compile Include="Redbox\IPC\Framework\FormMethodHandler.cs" />
+    <Compile Include="Redbox\IPC\Framework\FormMethod.cs" />
+    <Compile Include="Redbox\IPC\Framework\FormMethodParameter.cs" />
+    <Compile Include="Redbox\IPC\Framework\ChannelType.cs" />
+    <Compile Include="Redbox\IPC\Framework\IPCProtocol.cs" />
+    <Compile Include="Redbox\IPC\Framework\IPCServiceHost.cs" />
+    <Compile Include="Redbox\IPC\Framework\PerformanceCounterSetup.cs" />
+    <Compile Include="Redbox\IPC\Framework\PerformanceCounterHelper.cs" />
+    <Compile Include="Redbox\IPC\Framework\SessionType.cs" />
+    <Compile Include="Redbox\IPC\Framework\ServerSession.cs" />
+    <Compile Include="Redbox\IPC\Framework\Sockets\TcpClientSession.cs" />
+    <Compile Include="Redbox\IPC\Framework\Sockets\TcpServerSession.cs" />
+    <Compile Include="Redbox\IPC\Framework\Sockets\TcpServiceHost.cs" />
+    <Compile Include="Redbox\IPC\Framework\Remoting\IRemotingHost.cs" />
+    <Compile Include="Redbox\IPC\Framework\Remoting\RemotingClientChannelSinkProvider.cs" />
+    <Compile Include="Redbox\IPC\Framework\Remoting\RemotingClientProxy.cs" />
+    <Compile Include="Redbox\IPC\Framework\Remoting\RemotingClientSession.cs" />
+    <Compile Include="Redbox\IPC\Framework\Remoting\RemotingClientSink.cs" />
+    <Compile Include="Redbox\IPC\Framework\Remoting\RemotingHost.cs" />
+    <Compile Include="Redbox\IPC\Framework\Remoting\RemotingServerChannelSinkProvider.cs" />
+    <Compile Include="Redbox\IPC\Framework\Remoting\RemotingServerSession.cs" />
+    <Compile Include="Redbox\IPC\Framework\Remoting\RemotingServerSink.cs" />
+    <Compile Include="Redbox\IPC\Framework\Remoting\RemotingServiceHost.cs" />
+    <Compile Include="Redbox\IPC\Framework\NamedPipes\NamedPipeClientSession.cs" />
+    <Compile Include="Redbox\IPC\Framework\NamedPipes\NamedPipeServerSession.cs" />
+    <Compile Include="Redbox\IPC\Framework\NamedPipes\NamedPipeServiceHost.cs" />
+    <Compile Include="Redbox\Log\Framework\LogHelperExtensions.cs" />
+    <Compile Include="Redbox\Log\Framework\MultiLog4NetLogger.cs" />
+    <Compile Include="Redbox\Log\Framework\SimpleLog4NetLogger.cs" />
+    <Compile Include="Redbox\Lua\CallStackEntry.cs" />
+    <Compile Include="Redbox\Lua\DebugHookEventArgs.cs" />
+    <Compile Include="Redbox\Lua\DelegateFactory.cs" />
+    <Compile Include="Redbox\Lua\HookExceptionEventArgs.cs" />
+    <Compile Include="Redbox\Lua\ILuaDebugBreakpointFactory.cs" />
+    <Compile Include="Redbox\Lua\ILuaDebugFileFactory.cs" />
+    <Compile Include="Redbox\Lua\LuaCompiler.cs" />
+    <Compile Include="Redbox\Lua\LuaDebugBreakpoint.cs" />
+    <Compile Include="Redbox\Lua\LuaDebugBreakpointContainer.cs" />
+    <Compile Include="Redbox\Lua\LuaDebugFile.cs" />
+    <Compile Include="Redbox\Lua\LuaDebugFileContainer.cs" />
+    <Compile Include="Redbox\Lua\LuaDebuggerState.cs" />
+    <Compile Include="Redbox\Lua\DebuggerActions.cs" />
+    <Compile Include="Redbox\Lua\LuaDebugger.cs" />
+    <Compile Include="Redbox\Lua\LuaDebugInfo.cs" />
+    <Compile Include="Redbox\Lua\LuaDelegate.cs" />
+    <Compile Include="Redbox\Lua\LuaError.cs" />
+    <Compile Include="Redbox\Lua\LuaException.cs" />
+    <Compile Include="Redbox\Lua\LuaFunction.cs" />
+    <Compile Include="Redbox\Lua\LuaHelper.cs" />
+    <Compile Include="Redbox\Lua\LuaObject.cs" />
+    <Compile Include="Redbox\Lua\LuaParse.cs" />
+    <Compile Include="Redbox\Lua\LuaParseObject.cs" />
+    <Compile Include="Redbox\Lua\LuaScriptException.cs" />
+    <Compile Include="Redbox\Lua\LuaStack.cs" />
+    <Compile Include="Redbox\Lua\LuaTable.cs" />
+    <Compile Include="Redbox\Lua\LuaUserData.cs" />
+    <Compile Include="Redbox\Lua\LuaVar.cs" />
+    <Compile Include="Redbox\Lua\LuaTypes.cs" />
+    <Compile Include="Redbox\Lua\LuaHookEventCodes.cs" />
+    <Compile Include="Redbox\Lua\LuaHookEventMasks.cs" />
+    <Compile Include="Redbox\Lua\LuaDebug.cs" />
+    <Compile Include="Redbox\Lua\LuaCFunctionDelegate.cs" />
+    <Compile Include="Redbox\Lua\LuaHookFunctionDelegate.cs" />
+    <Compile Include="Redbox\Lua\LuaVirtualMachine.cs" />
+    <Compile Include="Redbox\Lua\ObjectCache.cs" />
+    <Compile Include="Redbox\Lua\RegisteredMethodHandler.cs" />
+    <Compile Include="Redbox\Lua\RegisteredMethod.cs" />
+    <Compile Include="Redbox\Lua\StoppingEventArgs.cs" />
+    <Compile Include="Redbox\Macros\EvaluatorException.cs" />
+    <Compile Include="Redbox\Macros\ExpressionEvalBase.cs" />
+    <Compile Include="Redbox\Macros\ExpressionEvaluator.cs" />
+    <Compile Include="Redbox\Macros\ExpressionParseException.cs" />
+    <Compile Include="Redbox\Macros\ExpressionTokenizer.cs" />
+    <Compile Include="Redbox\Macros\FunctionArgument.cs" />
+    <Compile Include="Redbox\Macros\FunctionAttribute.cs" />
+    <Compile Include="Redbox\Macros\FunctionFactoryExtensions.cs" />
+    <Compile Include="Redbox\Macros\FunctionFactory.cs" />
+    <Compile Include="Redbox\Macros\FunctionSetAttribute.cs" />
+    <Compile Include="Redbox\Macros\FunctionSetBase.cs" />
+    <Compile Include="Redbox\Macros\Location.cs" />
+    <Compile Include="Redbox\Macros\PropertyDictionary.cs" />
+    <Compile Include="Redbox\Macros\ResourceUtils.cs" />
+    <Compile Include="Redbox\Macros\StringUtils.cs" />
+    <Compile Include="Redbox\Macros\Functions\AssemblyFunctions.cs" />
+    <Compile Include="Redbox\Macros\Functions\AssemblyNameFunctions.cs" />
+    <Compile Include="Redbox\Macros\Functions\BooleanConversionFunctions.cs" />
+    <Compile Include="Redbox\Macros\Functions\DateTimeFunctions.cs" />
+    <Compile Include="Redbox\Macros\Functions\DateTimeConversionFunctions.cs" />
+    <Compile Include="Redbox\Macros\Functions\DirectoryFunctions.cs" />
+    <Compile Include="Redbox\Macros\Functions\DnsFunctions.cs" />
+    <Compile Include="Redbox\Macros\Functions\DoubleConversionFunctions.cs" />
+    <Compile Include="Redbox\Macros\Functions\EnvironmentFunctions.cs" />
+    <Compile Include="Redbox\Macros\Functions\FileFunctions.cs" />
+    <Compile Include="Redbox\Macros\Functions\FileVersionInfoFunctions.cs" />
+    <Compile Include="Redbox\Macros\Functions\Int32ConversionFunctions.cs" />
+    <Compile Include="Redbox\Macros\Functions\Int64ConversionFunctions.cs" />
+    <Compile Include="Redbox\Macros\Functions\MathFunctions.cs" />
+    <Compile Include="Redbox\Macros\Functions\OperatingSystemFunctions.cs" />
+    <Compile Include="Redbox\Macros\Functions\PathFunctions.cs" />
+    <Compile Include="Redbox\Macros\Functions\StringFunctions.cs" />
+    <Compile Include="Redbox\Macros\Functions\TimeSpanFunctions.cs" />
+    <Compile Include="Redbox\Macros\Functions\TimeSpanConversionFunctions.cs" />
+    <Compile Include="Redbox\Macros\Functions\VersionFunctions.cs" />
+    <Compile Include="Redbox\Macros\Functions\VersionConversionFunctions.cs" />
+    <Compile Include="Redbox\Command\Tokenizer\CommandParserState.cs" />
+    <Compile Include="Redbox\Command\Tokenizer\CommandTokenizer.cs" />
+    <Compile Include="Redbox\Tokenizer\Framework\Error.cs" />
+    <Compile Include="Redbox\Tokenizer\Framework\ErrorList.cs" />
+    <Compile Include="Redbox\Tokenizer\Framework\ITokenReader.cs" />
+    <Compile Include="Redbox\Tokenizer\Framework\SimpleTokenizer`1.cs" />
+    <Compile Include="Redbox\Tokenizer\Framework\KeyValuePair.cs" />
+    <Compile Include="Redbox\Tokenizer\Framework\SimpleTokenType.cs" />
+    <Compile Include="Redbox\Tokenizer\Framework\SimpleToken.cs" />
+    <Compile Include="Redbox\Tokenizer\Framework\StreamTokenReader.cs" />
+    <Compile Include="Redbox\Tokenizer\Framework\StringTokenReader.cs" />
+    <Compile Include="Redbox\Tokenizer\Framework\TokenBase`1.cs" />
+    <Compile Include="Redbox\Tokenizer\Framework\StateHandlerAttribute.cs" />
+    <Compile Include="Redbox\Tokenizer\Framework\StateResult.cs" />
+    <Compile Include="Redbox\Tokenizer\Framework\TokenizerBase`1.cs" />
+    <Compile Include="Redbox\Tokenizer\Framework\SimpleTokenList.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="TaskSchedulerInterop\CoTaskMem.cs" />
+    <Compile Include="TaskSchedulerInterop\CTask.cs" />
+    <Compile Include="TaskSchedulerInterop\CTaskScheduler.cs" />
+    <Compile Include="TaskSchedulerInterop\Daily.cs" />
+    <Compile Include="TaskSchedulerInterop\HResult.cs" />
+    <Compile Include="TaskSchedulerInterop\IEnumWorkItems.cs" />
+    <Compile Include="TaskSchedulerInterop\IProvideTaskPage.cs" />
+    <Compile Include="TaskSchedulerInterop\ITask.cs" />
+    <Compile Include="TaskSchedulerInterop\ITaskScheduler.cs" />
+    <Compile Include="TaskSchedulerInterop\ITaskTrigger.cs" />
+    <Compile Include="TaskSchedulerInterop\MonthlyDate.cs" />
+    <Compile Include="TaskSchedulerInterop\MonthlyDOW.cs" />
+    <Compile Include="TaskSchedulerInterop\PropertySheetDisplay.cs" />
+    <Compile Include="TaskSchedulerInterop\PropSheetFlags.cs" />
+    <Compile Include="TaskSchedulerInterop\PropSheetHeader.cs" />
+    <Compile Include="TaskSchedulerInterop\SystemTime.cs" />
+    <Compile Include="TaskSchedulerInterop\TaskTrigger.cs" />
+    <Compile Include="TaskSchedulerInterop\TaskTriggerType.cs" />
+    <Compile Include="TaskSchedulerInterop\TriggerTypeData.cs" />
+    <Compile Include="TaskSchedulerInterop\Weekly.cs" />
+    <Compile Include="TaskScheduler\DailyTrigger.cs" />
+    <Compile Include="TaskScheduler\DaysOfTheWeek.cs" />
+    <Compile Include="TaskScheduler\MonthlyDOWTrigger.cs" />
+    <Compile Include="TaskScheduler\MonthlyTrigger.cs" />
+    <Compile Include="TaskScheduler\MonthsOfTheYear.cs" />
+    <Compile Include="TaskScheduler\OnIdleTrigger.cs" />
+    <Compile Include="TaskScheduler\OnLogonTrigger.cs" />
+    <Compile Include="TaskScheduler\OnSystemStartTrigger.cs" />
+    <Compile Include="TaskScheduler\RunOnceTrigger.cs" />
+    <Compile Include="TaskScheduler\ScheduledTasks.cs" />
+    <Compile Include="TaskScheduler\Scheduler.cs" />
+    <Compile Include="TaskScheduler\StartableTrigger.cs" />
+    <Compile Include="TaskScheduler\Task.cs" />
+    <Compile Include="TaskScheduler\TaskFlags.cs" />
+    <Compile Include="TaskScheduler\TaskList.cs" />
+    <Compile Include="TaskScheduler\TaskStatus.cs" />
+    <Compile Include="TaskScheduler\Trigger.cs" />
+    <Compile Include="TaskScheduler\TriggerList.cs" />
+    <Compile Include="TaskScheduler\TriggerType.cs" />
+    <Compile Include="TaskScheduler\WeeklyTrigger.cs" />
+    <Compile Include="TaskScheduler\WhichWeek.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="LICENSE" />
+    <EmbeddedResource Include="NOTICE" />
+    <EmbeddedResource Include="Redbox\Core\ErrorForm.resx" />
+    <EmbeddedResource Include="Redbox\Macros\Strings.resx" />
+    <EmbeddedResource Include="Redbox\UpdateManager\StoreInstallerFrontEnd\CustomMessageBox.resx" />
+    <EmbeddedResource Include="Redbox\UpdateManager\StoreInstallerFrontEnd\EventPanel.resx" />
+    <EmbeddedResource Include="Redbox\UpdateManager\StoreInstallerFrontEnd\Host.resx" />
+    <EmbeddedResource Include="Redbox\UpdateManager\StoreInstallerFrontEnd\Properties\Resources.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="job_scheduling_data_2_0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)packages\ILMerge.3.0.41\build\ILMerge.props')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)packages\ILMerge.3.0.41\build\ILMerge.props'))" />
+  </Target>
+  <PropertyGroup>
+    <PostBuildEvent>set BUILD_DIR=$(SolutionDir)$(OutDir)
+if not exist %25BUILD_DIR%25 mkdir %25BUILD_DIR%25
+$(ILMergeConsolePath) $(TargetPath) /out:%25BUILD_DIR%25$(ProjectName).exe $(TargetDir)ICSharpCode.SharpZipLib.dll $(TargetDir)log4net.dll $(TargetDir)SevenZip.dll
+copy $(TargetDir)Quartz.dll %25BUILD_DIR%25
+copy $(TargetDir)Common.Logging.Core.dll %25BUILD_DIR%25
+copy $(TargetDir)Common.Logging.dll %25BUILD_DIR%25</PostBuildEvent>
+  </PropertyGroup>
+</Project>

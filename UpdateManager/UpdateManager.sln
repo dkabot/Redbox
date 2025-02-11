@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35122.118
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "installer-front-end", "installer-front-end\installer-front-end.csproj", "{451E47B0-AAD9-4B15-85EC-3B8CA8CF991E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "update-console", "update-console\update-console.csproj", "{4ED511F0-8B9A-463E-8E05-C499BBE4029F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "updatemgrd", "updatemgrd\updatemgrd.csproj", "{E610E913-6D4E-4101-AF1A-E4AF72C95A3E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "updatemgr-ui", "updatemgr-ui\updatemgr-ui.csproj", "{C187805E-EE7D-47B1-8394-E3A61512361C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{451E47B0-AAD9-4B15-85EC-3B8CA8CF991E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{451E47B0-AAD9-4B15-85EC-3B8CA8CF991E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{451E47B0-AAD9-4B15-85EC-3B8CA8CF991E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{451E47B0-AAD9-4B15-85EC-3B8CA8CF991E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4ED511F0-8B9A-463E-8E05-C499BBE4029F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4ED511F0-8B9A-463E-8E05-C499BBE4029F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4ED511F0-8B9A-463E-8E05-C499BBE4029F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4ED511F0-8B9A-463E-8E05-C499BBE4029F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E610E913-6D4E-4101-AF1A-E4AF72C95A3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E610E913-6D4E-4101-AF1A-E4AF72C95A3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E610E913-6D4E-4101-AF1A-E4AF72C95A3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E610E913-6D4E-4101-AF1A-E4AF72C95A3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C187805E-EE7D-47B1-8394-E3A61512361C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C187805E-EE7D-47B1-8394-E3A61512361C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C187805E-EE7D-47B1-8394-E3A61512361C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C187805E-EE7D-47B1-8394-E3A61512361C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BABE8935-2D85-46ED-81B5-D2E459EC4E50}
+	EndGlobalSection
+EndGlobal
