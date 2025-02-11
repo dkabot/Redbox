@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{ECA31A53-5557-4A9B-9A34-7A49732E3394}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>Redbox.HAL.DataMatrix.Framework</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <ApplicationVersion>1.13.0.27</ApplicationVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CustomMarshalers" />
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Redbox\HAL\DataMatrix\Framework\AbstractBarcodeReader.cs" />
+    <Compile Include="Redbox\HAL\DataMatrix\Framework\BarcodeConfiguration.cs" />
+    <Compile Include="Redbox\HAL\DataMatrix\Framework\BarcodeReaderFactory.cs" />
+    <Compile Include="Redbox\HAL\DataMatrix\Framework\CameraPluginDescriptor.cs" />
+    <Compile Include="Redbox\HAL\DataMatrix\Framework\ClearImageReaderV2.cs" />
+    <Compile Include="Redbox\HAL\DataMatrix\Framework\CortexDecoder.cs" />
+    <Compile Include="Redbox\HAL\DataMatrix\Framework\CortexService.cs" />
+    <Compile Include="Redbox\HAL\DataMatrix\Framework\CortexSettingsValidator.cs" />
+    <Compile Include="Redbox\HAL\DataMatrix\Framework\LegacyScanner.cs" />
+    <Compile Include="Redbox\HAL\DataMatrix\Framework\NilCameraPlugin.cs" />
+    <Compile Include="Redbox\HAL\DataMatrix\Framework\NilReader.cs" />
+    <Compile Include="Redbox\HAL\DataMatrix\Framework\NilScanner.cs" />
+    <Compile Include="Redbox\HAL\DataMatrix\Framework\NilScanResult.cs" />
+    <Compile Include="Redbox\HAL\DataMatrix\Framework\PluginLoader.cs" />
+    <Compile Include="Redbox\HAL\DataMatrix\Framework\SnapResult.cs" />
+    <Compile Include="Redbox\HAL\DataMatrix\Framework\ScannerAdapter.cs" />
+    <Compile Include="Redbox\HAL\DataMatrix\Framework\ScannerDeviceFactory.cs" />
+    <Compile Include="Redbox\HAL\DataMatrix\Framework\ScanResult.cs" />
+    <Compile Include="Redbox\HAL\DataMatrix\Framework\Cortex\AbstractCortexCommand.cs" />
+    <Compile Include="Redbox\HAL\DataMatrix\Framework\Cortex\BigEndianConverter.cs" />
+    <Compile Include="Redbox\HAL\DataMatrix\Framework\Cortex\CortexDecodeResult.cs" />
+    <Compile Include="Redbox\HAL\DataMatrix\Framework\Cortex\RequestType.cs" />
+    <Compile Include="Redbox\HAL\DataMatrix\Framework\Cortex\PacketType.cs" />
+    <Compile Include="Redbox\HAL\DataMatrix\Framework\Cortex\CortexPacket.cs" />
+    <Compile Include="Redbox\HAL\DataMatrix\Framework\Cortex\CortexRegister.cs" />
+    <Compile Include="Redbox\HAL\DataMatrix\Framework\Cortex\CRC16.cs" />
+    <Compile Include="Redbox\HAL\DataMatrix\Framework\Cortex\DataPacket.cs" />
+    <Compile Include="Redbox\HAL\DataMatrix\Framework\Cortex\DecodeCommand.cs" />
+    <Compile Include="Redbox\HAL\DataMatrix\Framework\Cortex\DeleteFileCommand.cs" />
+    <Compile Include="Redbox\HAL\DataMatrix\Framework\Cortex\GetFileCommand.cs" />
+    <Compile Include="Redbox\HAL\DataMatrix\Framework\Cortex\GetImageCommand.cs" />
+    <Compile Include="Redbox\HAL\DataMatrix\Framework\Cortex\GetRegisterValueCommand.cs" />
+    <Compile Include="Redbox\HAL\DataMatrix\Framework\Cortex\ImageDescriptorPacket.cs" />
+    <Compile Include="Redbox\HAL\DataMatrix\Framework\Cortex\ImagePacket.cs" />
+    <Compile Include="Redbox\HAL\DataMatrix\Framework\Cortex\IncompletePacket.cs" />
+    <Compile Include="Redbox\HAL\DataMatrix\Framework\Cortex\InfaredLightCommand.cs" />
+    <Compile Include="Redbox\HAL\DataMatrix\Framework\Cortex\InformationPacket.cs" />
+    <Compile Include="Redbox\HAL\DataMatrix\Framework\Cortex\NilPacket.cs" />
+    <Compile Include="Redbox\HAL\DataMatrix\Framework\Cortex\NonDataPacket.cs" />
+    <Compile Include="Redbox\HAL\DataMatrix\Framework\Cortex\CortexPacketType.cs" />
+    <Compile Include="Redbox\HAL\DataMatrix\Framework\Cortex\PacketFactory.cs" />
+    <Compile Include="Redbox\HAL\DataMatrix\Framework\Cortex\RebootCommand.cs" />
+    <Compile Include="Redbox\HAL\DataMatrix\Framework\Cortex\SetHighDensityFieldCommand.cs" />
+    <Compile Include="Redbox\HAL\DataMatrix\Framework\Cortex\SetRegisterCommand.cs" />
+    <Compile Include="Redbox\HAL\DataMatrix\Framework\Cortex\TakePictureCommand.cs" />
+    <Compile Include="Redbox\HAL\DataMatrix\Framework\Cortex\TextCommand.cs" />
+    <Compile Include="Redbox\HAL\DataMatrix\Framework\Cortex\VersionCommand.cs" />
+    <Compile Include="ClearImage\CiBarcodeClass.cs" />
+    <Compile Include="ClearImage\CiBarcode.cs" />
+    <Compile Include="ClearImage\ICiBarcode.cs" />
+    <Compile Include="ClearImage\ICiRect.cs" />
+    <Compile Include="ClearImage\EBoolean.cs" />
+    <Compile Include="ClearImage\EBarcodeType.cs" />
+    <Compile Include="ClearImage\EBarcodeRotation.cs" />
+    <Compile Include="ClearImage\FBarcodeErrors.cs" />
+    <Compile Include="ClearImage\EBarcodeEncoding.cs" />
+    <Compile Include="ClearImage\CiRectClass.cs" />
+    <Compile Include="ClearImage\CiRect.cs" />
+    <Compile Include="ClearImage\CiBarcodeProClass.cs" />
+    <Compile Include="ClearImage\CiBarcodePro.cs" />
+    <Compile Include="ClearImage\ICiBarcodePro.cs" />
+    <Compile Include="ClearImage\FBarcodeType.cs" />
+    <Compile Include="ClearImage\FBarcodeDirections.cs" />
+    <Compile Include="ClearImage\ICiBarcodes.cs" />
+    <Compile Include="ClearImage\EBarcodeAlgorithm.cs" />
+    <Compile Include="ClearImage\FBarcodeDiag.cs" />
+    <Compile Include="ClearImage\ICiImage.cs" />
+    <Compile Include="ClearImage\EFileFormat.cs" />
+    <Compile Include="ClearImage\EScaleType.cs" />
+    <Compile Include="ClearImage\EScaleBmpType.cs" />
+    <Compile Include="ClearImage\ELogType.cs" />
+    <Compile Include="ClearImage\FLogFlags.cs" />
+    <Compile Include="ClearImage\ICiPdf.cs" />
+    <Compile Include="ClearImage\EPdfReadMode.cs" />
+    <Compile Include="ClearImage\EPdfRasterColorMode.cs" />
+    <Compile Include="ClearImage\EPageSize.cs" />
+    <Compile Include="ClearImage\EPageOrientation.cs" />
+    <Compile Include="ClearImage\EImageAlignment.cs" />
+    <Compile Include="ClearImage\EComprColor.cs" />
+    <Compile Include="ClearImage\EComprBitonal.cs" />
+    <Compile Include="ClearImage\_ICiImageEvents.cs" />
+    <Compile Include="ClearImage\CiImageClass.cs" />
+    <Compile Include="ClearImage\_ICiImageEvents_Event.cs" />
+    <Compile Include="ClearImage\_ICiImageEvents_LogEventHandler.cs" />
+    <Compile Include="ClearImage\CiImage.cs" />
+    <Compile Include="ClearImage\CiServerClass.cs" />
+    <Compile Include="ClearImage\CiServer.cs" />
+    <Compile Include="ClearImage\ICiServer.cs" />
+    <Compile Include="ClearImage\ICiRepair.cs" />
+    <Compile Include="ClearImage\EPageRotation.cs" />
+    <Compile Include="ClearImage\ELineCurvature.cs" />
+    <Compile Include="ClearImage\ESmoothType.cs" />
+    <Compile Include="ClearImage\ELineDirection.cs" />
+    <Compile Include="ClearImage\EBorderExtractFlags.cs" />
+    <Compile Include="ClearImage\EBorderExtractAlgorithm.cs" />
+    <Compile Include="ClearImage\ESizeUnit.cs" />
+    <Compile Include="ClearImage\ECleanNoiseFlags.cs" />
+    <Compile Include="ClearImage\ICiTools.cs" />
+    <Compile Include="ClearImage\ICiObject.cs" />
+    <Compile Include="ClearImage\ICiLine.cs" />
+    <Compile Include="ClearImage\ICiPoint.cs" />
+    <Compile Include="ClearImage\EMorphDirections.cs" />
+    <Compile Include="ClearImage\ICiBarcodeBasic.cs" />
+    <Compile Include="ClearImage\ICiPdf417.cs" />
+    <Compile Include="ClearImage\ICiDataMatrix.cs" />
+    <Compile Include="ClearImage\EInfoType.cs" />
+    <Compile Include="ClearImage\ICiAdvColor.cs" />
+    <Compile Include="ClearImage\EBiTonalConversion.cs" />
+    <Compile Include="ClearImage\EGrayscaleConversion.cs" />
+    <Compile Include="ClearImage\ICiQR.cs" />
+    <Compile Include="ClearImage\CiRepairClass.cs" />
+    <Compile Include="ClearImage\CiRepair.cs" />
+    <Compile Include="ClearImage\CiToolsClass.cs" />
+    <Compile Include="ClearImage\CiTools.cs" />
+    <Compile Include="ClearImage\CiViewClass.cs" />
+    <Compile Include="ClearImage\CiView.cs" />
+    <Compile Include="ClearImage\ICiView.cs" />
+    <Compile Include="ClearImage\CiPointClass.cs" />
+    <Compile Include="ClearImage\CiPoint.cs" />
+    <Compile Include="ClearImage\CiBarcodeBasicClass.cs" />
+    <Compile Include="ClearImage\CiBarcodeBasic.cs" />
+    <Compile Include="ClearImage\CiPdf417Class.cs" />
+    <Compile Include="ClearImage\CiPdf417.cs" />
+    <Compile Include="ClearImage\CiQRClass.cs" />
+    <Compile Include="ClearImage\CiQR.cs" />
+    <Compile Include="ClearImage\CiDataMatrixClass.cs" />
+    <Compile Include="ClearImage\CiDataMatrix.cs" />
+    <Compile Include="ClearImage\CiLineClass.cs" />
+    <Compile Include="ClearImage\CiLine.cs" />
+    <Compile Include="ClearImage\CiObjectClass.cs" />
+    <Compile Include="ClearImage\CiObject.cs" />
+    <Compile Include="ClearImage\CiBarcodesClass.cs" />
+    <Compile Include="ClearImage\CiBarcodes.cs" />
+    <Compile Include="ClearImage\CiAdvColorClass.cs" />
+    <Compile Include="ClearImage\CiAdvColor.cs" />
+    <Compile Include="ClearImage\CiPdfClass.cs" />
+    <Compile Include="ClearImage\CiPdf.cs" />
+    <Compile Include="ClearImage\_ICiImageEvents_SinkHelper.cs" />
+    <Compile Include="ClearImage\_ICiImageEvents_EventProvider.cs" />
+    <Compile Include="RBDM\clsRBDM.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Redbox.HAL.Component.Model\Redbox.HAL.Component.Model.csproj">
+      <Project>{86986977-3d6f-4f59-bc0c-d181e7c4d334}</Project>
+      <Name>Redbox.HAL.Component.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Redbox.HAL.Configuration\Redbox.HAL.Configuration.csproj">
+      <Project>{e54fa238-238a-42ce-a889-21031a2b2421}</Project>
+      <Name>Redbox.HAL.Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Redbox.HAL.Controller.Framework\Redbox.HAL.Controller.Framework.csproj">
+      <Project>{b035f721-581b-4296-8051-5d4c68279ca3}</Project>
+      <Name>Redbox.HAL.Controller.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Redbox.HAL.Core\Redbox.HAL.Core.csproj">
+      <Project>{3b256763-2065-4304-b9b8-299a882a16b4}</Project>
+      <Name>Redbox.HAL.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
