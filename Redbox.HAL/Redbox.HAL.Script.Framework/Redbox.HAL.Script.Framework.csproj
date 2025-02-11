@@ -1,0 +1,417 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7259240F-F38C-429A-9D94-4C8022BEA34C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>Redbox.HAL.Script.Framework</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <ApplicationVersion>1.13.0.27</ApplicationVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net35\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PowerCollections, Version=1.0.2141.24679, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\XAct.Wintellect.PowerCollections.0.0.1\lib\net20\PowerCollections.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Redbox\HAL\Script\Framework\ApplicationLog.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\FormattedLogFactory.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\CallFrame.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\CFA.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\Options.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\CFAInternals.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\CFAInternalsMock.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\CheckPickerOperation.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\CompiledProgram.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\Compiler.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\ContextSymbol.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\CounterConstants.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\MessageConstants.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\DefaultHandler.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\Deque`1.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\OnHardwareCorrectionStart.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\OnHardwareCorrectionEnd.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\OnJobComplete.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\ExecutionContext.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\ExecutionContextList.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\ExecutionErrors.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\ExecutionErrorsTable.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\ExecutionStatus.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\FileDiskOperation.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\FraudValidator.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\IdHelper.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\FileDiscIterationResult.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\IFileDiskHandler.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\AddInstruction.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\AirExchangerInstruction.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\AppLogInstruction.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\AudioInstruction.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\CameraInsutrction.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\ClearInstruction.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\ConstInstruction.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\ControlSystemInstruction.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\CounterInstruction.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\DecInstruction.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\DeckInstruction.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\DoInstruction.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\DoorSensorInstruction.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\DumpBinInstruction.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\DuplicateInstruction.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\ElseIfInstruction.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\ElseInstruction.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\EndIfInstruction.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\ESPInstruction.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\ExitInstruction.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\FindEmptyInstruction.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\GetConfigInstruction.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\GetInstruction.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\GripperInstruction.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\HomeXInstruction.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\HomeYInstruction.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\IfInstruction.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\IncInstruction.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\InspectInstruction.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\Instruction.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\InstructionList.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\InventoryInstruction.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\JumpInstruction.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\LocInstruction.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\LogInstruction.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\LookupInstruction.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\LoopInstruction.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\MessageInstruction.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\MotionControlInstruction.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\MoveAbsoluteInstruction.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\MoveInstruction.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\MoveVendInstruction.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\NativeJobInstruction.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\NopInstruction.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\PopBottomInstruction.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\PopInstruction.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\PrintInstruction.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\ProgramInstruction.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\PushBottomInstruction.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\PushFormatInstruction.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\PushInstruction.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\PutInstruction.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\QlmDoorInstruction.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\QlmInstruction.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\QuickReturnInstruction.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\ResultInstruction.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\RinglightInstruction.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\RollerInstruction.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\RuntimeInstruction.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\SecretOptionInstruction.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\SensorInstruction.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\SerialBoardInstruction.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\SetConfigInstruction.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\SetInstruction.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\SubtractInstruction.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\SyncInstruction.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\SyscallInstruction.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\TrackInstruction.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\TransferInstruction.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\VendDoorInstruction.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\VersionInstruction.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\VMZInstruction.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\WaitInstruction.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\YieldInstruction.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\AdjacentDumpSlotTestJob.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\AirExchangerStatusJob.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\TestIceQubeExchangerJob.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\BackupInventoryJob.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\RestoreInventoryFromBackupJob.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\BackupHelper.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\BackupEntry.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\ChangeAudioChannelStateJob.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\ChangeDoorSensorConfigurationJob.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\ClearMerchStatusJob.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\GetControllerTimeoutsJob.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\GetExcludedLocationsJob.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\FileMarkerDiskJob.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\GetAndCenterOperation.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\GetAndCenterJob.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\GetAndReadJob.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\GetBarcodesInBinJob.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\GetDiskLocationJob.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\GetMachineInfoJob.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\GetNonBarcodeInventory.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\GetNonThinsInZoneJob.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\GetVMZInfoJob.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\GetVMZDetailJob.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\HardwareHealerJob.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\ClearHardwareStatisticsJob.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\ClearAllHardwareStatisticsJob.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\DumpHardwareStatisticsJob.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\GetHardwareStatisticsJob.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\GetAllHardwareStatisticsJob.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\StatsFormatter.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\HardwareStatusJob.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\HardwareSurveyJob.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\InitJob.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\InventoryStatisticsJob.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\DumpInventoryStoreJob.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\MarkKioskInventoryJob.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\KioskConfigurationJob.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\KioskFunctionTestDataJob.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\KioskFunctionTestDataLoadJob.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\LoadBy.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\LoadBinJob.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\LoopyJob.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\MarkBarcodesUnknownJobs.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\MarkLocationsUnknownJobs.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\MerchClearAndOffset.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\MotionControlDataJob.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\NativeJobAdapter.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\OneDiskQuickTestJob.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\PickAtOffsetJob.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\PrepDeckForRedeployJob.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\PrepZoneForUnloadJob.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\PushInDVDJob.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\PutDiskInDumpBinJob.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\QuickReturnResetCountersJob.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\QuickReturnCountersJob.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\QuickReturnCounters.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\ReadFraudDiskJob.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\RebuildInventoryDatabaseJob.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\ResetArcusJob.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\ResetControlSystemJob.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\ResetCountersJob.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\ResetInventoryJob.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\ResetLocationsJob.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\ResetRouterJob.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\ResetTouchscreenControllerJob.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\ReturnJob.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\ReturnUnknownJob.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\SoftSyncJob.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\TakeDiskAtDoorJob.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\TestBoardsJob.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\VendDiskInPickerJob.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\TestQlmJob.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\VendMethod.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\TransactionResult.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\VendJob.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\VendUnknownJob.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\VerticalSyncJob.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\VMZRemovedThinsJob.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\VMZRetrofitTest.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\OperandsHelper.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\CreditCardReaderPoller.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\IceQubeBoardPoller.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\HardwareHealerPoller.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\PollerManager.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\ScriptPoller.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\WatchdogPoller.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\NativeJobAttribute.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\ProgramCache.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\Registers.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\ReadDiskOptions.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\Scanner.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\ScanResult.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\ScriptConstants.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\ExecutionEngine.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\ExecutionResult.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\ScriptMessage.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\MoveDecoratorService.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\RedboxBarcodeValidator.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\StandardSyncDecorator.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\SyncType.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\SyncDecorator.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\SyncResult.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\SyncHelper.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\SyncLocationDecorator.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\CleanManager.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\CleanResult.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\DumpBinThinHelper.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\FetchThinGetObserver.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\MerchandizeResult.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\MerchandizingHelper.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\MerchSegmentFactory.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\MerchSegment.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\MerchTransferManager.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\QlmThinHelper.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\SegmentManager.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\ThinHelper.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\UnloadHelper.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\VMZ.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\VMZHelperFunctions.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\IteratorComareResult.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\VMZIterator.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\VMZThinHelper.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\TokenizerState.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\Tokenizer.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\Sync\FraudSyncDecorator.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\Services\FraudValidatorService.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\Pollers\InventoryBackupPoller.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\Natives\AdjacentBinTestKentJob.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\Natives\ChangeCameraConfigurationJob.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\Natives\ClearImagesFolderJob.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\Natives\DecodeImageJob.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\Natives\FileDiskInPickerJob.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\Natives\KioskTestAdapter.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\Natives\KioskTestJob.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\Natives\LookupBarcodeJob.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\Natives\MSMoveToSlot.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\Natives\MSPullInDVDJob.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\Natives\OneDiskQuickTestKentJob.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\Natives\OneDiskRandomSyncJob.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\Natives\PutDiskToLocationJob.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\Natives\QlmKioskTestJob.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\Natives\RandomLocationSelector.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\Natives\RandomSync.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\Natives\RandomSyncDecorator.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\Natives\ResetFraudSensorJob.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\Natives\TestAndResetCCRJob.cs" />
+    <Compile Include="Redbox\HAL\Script\Framework\Natives\TesterReadDiskJob.cs" />
+    <Compile Include="Redbox\DirectShow\FrameControls.cs" />
+    <Compile Include="Redbox\DirectShow\AbstractDirectShowFrameControl.cs" />
+    <Compile Include="Redbox\DirectShow\ProcessImageCallback.cs" />
+    <Compile Include="Redbox\DirectShow\SampleGrabber.cs" />
+    <Compile Include="Redbox\DirectShow\CameraControlProperty.cs" />
+    <Compile Include="Redbox\DirectShow\CameraControlFlags.cs" />
+    <Compile Include="Redbox\DirectShow\DirectShowFrameControl.cs" />
+    <Compile Include="Redbox\DirectShow\DirectShowFrameControl_v2.cs" />
+    <Compile Include="Redbox\DirectShow\ExposureFixer.cs" />
+    <Compile Include="Redbox\DirectShow\FilterCategory.cs" />
+    <Compile Include="Redbox\DirectShow\FilterInfo.cs" />
+    <Compile Include="Redbox\DirectShow\FilterInfoCollection.cs" />
+    <Compile Include="Redbox\DirectShow\FrameControlLegacy.cs" />
+    <Compile Include="Redbox\DirectShow\FrameControlModern.cs" />
+    <Compile Include="Redbox\DirectShow\UnsupportedImageFormatException.cs" />
+    <Compile Include="Redbox\DirectShow\Image.cs" />
+    <Compile Include="Redbox\DirectShow\IVideoSource.cs" />
+    <Compile Include="Redbox\DirectShow\ControlConstants.cs" />
+    <Compile Include="Redbox\DirectShow\PhysicalConnectorType.cs" />
+    <Compile Include="Redbox\DirectShow\PlayerDevice.cs" />
+    <Compile Include="Redbox\DirectShow\SystemTools.cs" />
+    <Compile Include="Redbox\DirectShow\VCDevice3.cs" />
+    <Compile Include="Redbox\DirectShow\VideoCapabilities.cs" />
+    <Compile Include="Redbox\DirectShow\NewFrameEventHandler.cs" />
+    <Compile Include="Redbox\DirectShow\VideoSourceErrorEventHandler.cs" />
+    <Compile Include="Redbox\DirectShow\PlayingFinishedEventHandler.cs" />
+    <Compile Include="Redbox\DirectShow\ReasonToFinishPlaying.cs" />
+    <Compile Include="Redbox\DirectShow\NewFrameEventArgs.cs" />
+    <Compile Include="Redbox\DirectShow\VideoSourceErrorEventArgs.cs" />
+    <Compile Include="Redbox\DirectShow\VideoInput.cs" />
+    <Compile Include="Redbox\DirectShow\VideoSourcePlayer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Redbox\DirectShow\Interop\IAMCameraControl.cs" />
+    <Compile Include="Redbox\DirectShow\Interop\IAMCrossbar.cs" />
+    <Compile Include="Redbox\DirectShow\Interop\IAMStreamConfig.cs" />
+    <Compile Include="Redbox\DirectShow\Interop\IAMVideoControl.cs" />
+    <Compile Include="Redbox\DirectShow\Interop\IBaseFilter.cs" />
+    <Compile Include="Redbox\DirectShow\Interop\ICaptureGraphBuilder2.cs" />
+    <Compile Include="Redbox\DirectShow\Interop\ICreateDevEnum.cs" />
+    <Compile Include="Redbox\DirectShow\Interop\IEnumFilters.cs" />
+    <Compile Include="Redbox\DirectShow\Interop\IEnumPins.cs" />
+    <Compile Include="Redbox\DirectShow\Interop\IFileSourceFilter.cs" />
+    <Compile Include="Redbox\DirectShow\Interop\IFilterGraph.cs" />
+    <Compile Include="Redbox\DirectShow\Interop\IFilterGraph2.cs" />
+    <Compile Include="Redbox\DirectShow\Interop\IGraphBuilder.cs" />
+    <Compile Include="Redbox\DirectShow\Interop\IMediaControl.cs" />
+    <Compile Include="Redbox\DirectShow\Interop\IMediaEventEx.cs" />
+    <Compile Include="Redbox\DirectShow\Interop\IMediaFilter.cs" />
+    <Compile Include="Redbox\DirectShow\Interop\IPersist.cs" />
+    <Compile Include="Redbox\DirectShow\Interop\IPin.cs" />
+    <Compile Include="Redbox\DirectShow\Interop\IPropertyBag.cs" />
+    <Compile Include="Redbox\DirectShow\Interop\IReferenceClock.cs" />
+    <Compile Include="Redbox\DirectShow\Interop\ISampleGrabber.cs" />
+    <Compile Include="Redbox\DirectShow\Interop\ISampleGrabberCB.cs" />
+    <Compile Include="Redbox\DirectShow\Interop\ISpecifyPropertyPages.cs" />
+    <Compile Include="Redbox\DirectShow\Interop\IVideoWindow.cs" />
+    <Compile Include="Redbox\DirectShow\Interop\PinDirection.cs" />
+    <Compile Include="Redbox\DirectShow\Interop\AMMediaType.cs" />
+    <Compile Include="Redbox\DirectShow\Interop\PinInfo.cs" />
+    <Compile Include="Redbox\DirectShow\Interop\FilterInfo.cs" />
+    <Compile Include="Redbox\DirectShow\Interop\VideoInfoHeader.cs" />
+    <Compile Include="Redbox\DirectShow\Interop\VideoInfoHeader2.cs" />
+    <Compile Include="Redbox\DirectShow\Interop\BitmapInfoHeader.cs" />
+    <Compile Include="Redbox\DirectShow\Interop\RECT.cs" />
+    <Compile Include="Redbox\DirectShow\Interop\CAUUID.cs" />
+    <Compile Include="Redbox\DirectShow\Interop\DsEvCode.cs" />
+    <Compile Include="Redbox\DirectShow\Interop\AnalogVideoStandard.cs" />
+    <Compile Include="Redbox\DirectShow\Interop\VideoControlFlags.cs" />
+    <Compile Include="Redbox\DirectShow\Interop\VideoStreamConfigCaps.cs" />
+    <Compile Include="Redbox\DirectShow\Interop\FilterState.cs" />
+    <Compile Include="Redbox\DirectShow\Interop\Tools.cs" />
+    <Compile Include="Redbox\DirectShow\Interop\Clsid.cs" />
+    <Compile Include="Redbox\DirectShow\Interop\FormatType.cs" />
+    <Compile Include="Redbox\DirectShow\Interop\MediaType.cs" />
+    <Compile Include="Redbox\DirectShow\Interop\MediaSubType.cs" />
+    <Compile Include="Redbox\DirectShow\Interop\PinCategory.cs" />
+    <Compile Include="Redbox\DirectShow\Interop\FindDirection.cs" />
+    <Compile Include="Redbox\DirectShow\Interop\Win32.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Redbox\DirectShow\VideoSourcePlayer.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Redbox.HAL.Component.Model\Redbox.HAL.Component.Model.csproj">
+      <Project>{86986977-3d6f-4f59-bc0c-d181e7c4d334}</Project>
+      <Name>Redbox.HAL.Component.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Redbox.HAL.Configuration\Redbox.HAL.Configuration.csproj">
+      <Project>{e54fa238-238a-42ce-a889-21031a2b2421}</Project>
+      <Name>Redbox.HAL.Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Redbox.HAL.Controller.Framework\Redbox.HAL.Controller.Framework.csproj">
+      <Project>{b035f721-581b-4296-8051-5d4c68279ca3}</Project>
+      <Name>Redbox.HAL.Controller.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Redbox.HAL.Core\Redbox.HAL.Core.csproj">
+      <Project>{3b256763-2065-4304-b9b8-299a882a16b4}</Project>
+      <Name>Redbox.HAL.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Redbox.HAL.DataMatrix.Framework\Redbox.HAL.DataMatrix.Framework.csproj">
+      <Project>{eca31a53-5557-4a9b-9a34-7a49732e3394}</Project>
+      <Name>Redbox.HAL.DataMatrix.Framework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BAD03277-D633-4999-9C35-EF62EBE5B614}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>Redbox.HAL.DataStorage</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <ApplicationVersion>1.13.0.27</ApplicationVersion>
+    <FileAlignment>512</FileAlignment>
+    <RootNamespace>Redbox.HAL.DataStorage</RootNamespace>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="VistaDB.NET20, Version=3.4.3.73, Culture=neutral, PublicKeyToken=dfc935afe2125461, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\VistaDB.NET20.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataTableService.cs" />
+    <Compile Include="InstallHandler.cs" />
+    <Compile Include="PersistentMapService.cs" />
+    <Compile Include="AbstractVistaDBDataTableT.cs" />
+    <Compile Include="CountersDescriptor.cs" />
+    <Compile Include="DataDescriptor.cs" />
+    <Compile Include="DumpbinTable.cs" />
+    <Compile Include="HardwareCorrectionStatsTable.cs" />
+    <Compile Include="LegacyHardwareCorrectionStatsTable.cs" />
+    <Compile Include="InventoryTable.cs" />
+    <Compile Include="KioskFunctionCheckTable.cs" />
+    <Compile Include="LegacyDumpbinTable.cs" />
+    <Compile Include="PersistentCounterTable.cs" />
+    <Compile Include="SecretOptionsTable.cs" />
+    <Compile Include="TableTypeFactory.cs" />
+    <Compile Include="DumpbinItem.cs" />
+    <Compile Include="HardwareCorrectionStat.cs" />
+    <Compile Include="KioskFunctionCheckData.cs" />
+    <Compile Include="Location.cs" />
+    <Compile Include="PersistentCounter.cs" />
+    <Compile Include="PersistentOption.cs" />
+    <Compile Include="TableTypes\HardwareErrorEntry.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Redbox.HAL.Component.Model\Redbox.HAL.Component.Model.csproj">
+      <Project>{86986977-3d6f-4f59-bc0c-d181e7c4d334}</Project>
+      <Name>Redbox.HAL.Component.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
