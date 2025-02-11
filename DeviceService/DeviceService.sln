@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35122.118
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeviceService.ComponentModel", "DeviceService.ComponentModel\DeviceService.ComponentModel.csproj", "{AC3FF508-8BC2-49DF-8A35-F98CDEB7A90D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeviceService.Client.Core", "DeviceService.Client.Core\DeviceService.Client.Core.csproj", "{E3C67E14-E6BB-4259-8CEE-5AC7F2910DE3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeviceService.Domain", "DeviceService.Domain\DeviceService.Domain.csproj", "{1732E978-2480-47CA-A612-1A25597A3BA2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeviceService.WebApi", "DeviceService.WebApi\DeviceService.WebApi.csproj", "{09A3A052-FC23-4429-99E6-3B8B8DD71042}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RBA_SDK_ComponentModel", "..\RBA_SDK\RBA_SDK_ComponentModel\RBA_SDK_ComponentModel.csproj", "{CFC287CB-5949-4C68-8B04-64766CAA3AE2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RBA_SDK_STANDARD", "..\RBA_SDK\RBA_SDK_STANDARD\RBA_SDK_STANDARD.csproj", "{F5F4FB2A-4051-42B0-8D26-B169A99772BC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AC3FF508-8BC2-49DF-8A35-F98CDEB7A90D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC3FF508-8BC2-49DF-8A35-F98CDEB7A90D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC3FF508-8BC2-49DF-8A35-F98CDEB7A90D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC3FF508-8BC2-49DF-8A35-F98CDEB7A90D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3C67E14-E6BB-4259-8CEE-5AC7F2910DE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3C67E14-E6BB-4259-8CEE-5AC7F2910DE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3C67E14-E6BB-4259-8CEE-5AC7F2910DE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3C67E14-E6BB-4259-8CEE-5AC7F2910DE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1732E978-2480-47CA-A612-1A25597A3BA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1732E978-2480-47CA-A612-1A25597A3BA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1732E978-2480-47CA-A612-1A25597A3BA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1732E978-2480-47CA-A612-1A25597A3BA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09A3A052-FC23-4429-99E6-3B8B8DD71042}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09A3A052-FC23-4429-99E6-3B8B8DD71042}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09A3A052-FC23-4429-99E6-3B8B8DD71042}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09A3A052-FC23-4429-99E6-3B8B8DD71042}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFC287CB-5949-4C68-8B04-64766CAA3AE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFC287CB-5949-4C68-8B04-64766CAA3AE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFC287CB-5949-4C68-8B04-64766CAA3AE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFC287CB-5949-4C68-8B04-64766CAA3AE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5F4FB2A-4051-42B0-8D26-B169A99772BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5F4FB2A-4051-42B0-8D26-B169A99772BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5F4FB2A-4051-42B0-8D26-B169A99772BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5F4FB2A-4051-42B0-8D26-B169A99772BC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {590817E0-2DC4-43C3-B537-A733545F7BCA}
+	EndGlobalSection
+EndGlobal

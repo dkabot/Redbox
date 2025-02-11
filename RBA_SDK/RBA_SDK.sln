@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35122.118
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RBA_SDK_ComponentModel", "RBA_SDK_ComponentModel\RBA_SDK_ComponentModel.csproj", "{E155A758-4369-49D6-B884-AE42C34E1857}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RBA_SDK_STANDARD", "RBA_SDK_STANDARD\RBA_SDK_STANDARD.csproj", "{9EBAA00A-9A61-4DEF-9D47-799FE8D4FEE6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E155A758-4369-49D6-B884-AE42C34E1857}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E155A758-4369-49D6-B884-AE42C34E1857}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E155A758-4369-49D6-B884-AE42C34E1857}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E155A758-4369-49D6-B884-AE42C34E1857}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9EBAA00A-9A61-4DEF-9D47-799FE8D4FEE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EBAA00A-9A61-4DEF-9D47-799FE8D4FEE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EBAA00A-9A61-4DEF-9D47-799FE8D4FEE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EBAA00A-9A61-4DEF-9D47-799FE8D4FEE6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {860AEF09-EB5D-46D7-B61B-44F329698222}
+	EndGlobalSection
+EndGlobal

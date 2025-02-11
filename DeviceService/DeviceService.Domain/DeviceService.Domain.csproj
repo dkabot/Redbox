@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>netstandard2.1</TargetFramework>
+		<OutputType>Library</OutputType>
+		<ApplicationVersion>1.10.13.0</ApplicationVersion>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+		<Company>DeviceService.Domain</Company>
+		<FileVersion>1.10.13</FileVersion>
+		<InformationalVersion>1.0.0</InformationalVersion>
+		<Product>DeviceService.Domain</Product>
+		<AssemblyTitle>DeviceService.Domain</AssemblyTitle>
+		<AssemblyVersion>1.10.13.0</AssemblyVersion>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<Configuration>Release</Configuration>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<Configuration>Release</Configuration>
+	</PropertyGroup>
+	<ItemGroup>
+		<Compile Remove="lib\**" />
+		<EmbeddedResource Remove="lib\**" />
+		<None Remove="lib\**" />
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Win32.Registry" Version="5.0.0" />
+		<PackageReference Include="System.IO.Ports" Version="9.0.1" />
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\..\RBA_SDK\RBA_SDK_ComponentModel\RBA_SDK_ComponentModel.csproj" />
+		<ProjectReference Include="..\DeviceService.Client.Core\DeviceService.Client.Core.csproj" />
+		<ProjectReference Include="..\DeviceService.ComponentModel\DeviceService.ComponentModel.csproj" />
+	</ItemGroup>
+</Project>
