@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--Project was exported from assembly: U:\win10\Program Files\Redbox\halservice\bin\halsvc-win32.exe-->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{51C6EC76-F911-4920-B498-2226D082FCBF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AssemblyName>halsvc-win32</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <ApplicationVersion>1.13.0.27</ApplicationVersion>
+    <FileAlignment>512</FileAlignment>
+    <RootNamespace>Redbox.HAL.Service.Win32</RootNamespace>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=2.0.17.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>packages\log4net.2.0.17\lib\net35\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="HALService.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\Settings.cs" />
+    <Compile Include="Commands\CommandHelper.cs" />
+    <Compile Include="Commands\ConfigurationCommand.cs" />
+    <Compile Include="Commands\IPCProxy.cs" />
+    <Compile Include="Commands\JobCommand.cs" />
+    <Compile Include="Commands\ProgramCommand.cs" />
+    <Compile Include="Commands\ServiceCommand.cs" />
+    <Compile Include="Commands\StackCommand.cs" />
+    <Compile Include="Commands\SymbolCommand.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="HALService.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Redbox.HAL\Redbox.HAL.Component.Model\Redbox.HAL.Component.Model.csproj">
+      <Project>{86986977-3d6f-4f59-bc0c-d181e7c4d334}</Project>
+      <Name>Redbox.HAL.Component.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Redbox.HAL\Redbox.HAL.Configuration\Redbox.HAL.Configuration.csproj">
+      <Project>{e54fa238-238a-42ce-a889-21031a2b2421}</Project>
+      <Name>Redbox.HAL.Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Redbox.HAL\Redbox.HAL.Controller.Framework\Redbox.HAL.Controller.Framework.csproj">
+      <Project>{b035f721-581b-4296-8051-5d4c68279ca3}</Project>
+      <Name>Redbox.HAL.Controller.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Redbox.HAL\Redbox.HAL.Core\Redbox.HAL.Core.csproj">
+      <Project>{3b256763-2065-4304-b9b8-299a882a16b4}</Project>
+      <Name>Redbox.HAL.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Redbox.HAL\Redbox.HAL.DataMatrix.Framework\Redbox.HAL.DataMatrix.Framework.csproj">
+      <Project>{eca31a53-5557-4a9b-9a34-7a49732e3394}</Project>
+      <Name>Redbox.HAL.DataMatrix.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Redbox.HAL\Redbox.HAL.DataStorage\Redbox.HAL.DataStorage.csproj">
+      <Project>{bad03277-d633-4999-9c35-ef62ebe5b614}</Project>
+      <Name>Redbox.HAL.DataStorage</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Redbox.HAL\Redbox.HAL.IPC.Framework\Redbox.HAL.IPC.Framework.csproj">
+      <Project>{28c6831d-cc34-4324-9f51-8a637d28b809}</Project>
+      <Name>Redbox.HAL.IPC.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Redbox.HAL\Redbox.HAL.Script.Framework\Redbox.HAL.Script.Framework.csproj">
+      <Project>{7259240f-f38c-429a-9d94-4c8022bea34c}</Project>
+      <Name>Redbox.HAL.Script.Framework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
