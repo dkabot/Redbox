@@ -4,6 +4,7 @@
 	<!-- ILRepack -->
 	<Target Name="ILRepacker" AfterTargets="Build">
 		<ItemGroup>
+			<InputAssemblies Include="$(OutputPath)\$(AssemblyName).exe" />
 			<InputAssemblies Include="$(OutputPath)\ICSharpCode.SharpZipLib.dll" />
 			<InputAssemblies Include="$(OutputPath)\log4net.dll" />
 			<InputAssemblies Include="$(OutputPath)\Redbox.Command.Tokenizer.dll" />
@@ -21,7 +22,7 @@
 			Parallel="true"
 			Internalize="true"
 			InputAssemblies="@(InputAssemblies)"
-			TargetKind="exe"
+			TargetKind="SameAsPrimaryAssembly"
 			OutputFile="$(OutputPath)\$(AssemblyName).exe" />
 	</Target>
 	<!-- /ILRepack -->
