@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{38413B64-99A9-4321-B2EA-EFC82C9813C2}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <AssemblyName>MSHALTester_single</AssemblyName>
+    <AssemblyName>MSHALTester</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <ApplicationVersion>1.13.0.27</ApplicationVersion>
     <FileAlignment>512</FileAlignment>
@@ -372,6 +372,8 @@
     <Error Condition="!Exists('packages\ILMerge.3.0.41\build\ILMerge.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\ILMerge.3.0.41\build\ILMerge.props'))" />
   </Target>
   <PropertyGroup>
-    <PostBuildEvent>$(ILMergeConsolePath) $(SolutionDir)$(OutDir)\$(TargetFileName)  /out:$(SolutionName).exe $(SolutionDir)$(OutDir)\ICSharpCode.SharpZipLib.dll $(SolutionDir)$(OutDir)\log4net.dll $(SolutionDir)$(OutDir)\Newtonsoft.Json.dll $(SolutionDir)$(OutDir)\SevenZip.dll</PostBuildEvent>
+    <PostBuildEvent>set BUILD_DIR=$(SolutionDir)build\$(ConfigurationName)\
+if not exist %25BUILD_DIR%25 mkdir %25BUILD_DIR%25
+$(ILMergeConsolePath) $(SolutionDir)$(OutDir)\$(TargetFileName)  /out:%25BUILD_DIR%25$(ProjectName).exe $(SolutionDir)$(OutDir)\ICSharpCode.SharpZipLib.dll $(SolutionDir)$(OutDir)\log4net.dll $(SolutionDir)$(OutDir)\Newtonsoft.Json.dll $(SolutionDir)$(OutDir)\SevenZip.dll</PostBuildEvent>
   </PropertyGroup>
 </Project>
