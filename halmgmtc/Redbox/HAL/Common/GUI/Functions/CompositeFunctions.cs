@@ -1,5 +1,6 @@
 using System;
 using Redbox.HAL.Client;
+using Redbox.HAL.Client.Executors;
 
 namespace Redbox.HAL.Common.GUI.Functions
 {

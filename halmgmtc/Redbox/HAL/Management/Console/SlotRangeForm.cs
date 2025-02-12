@@ -4,7 +4,6 @@ using System.Drawing;
 using System.Windows.Forms;
 using Redbox.HAL.Client;
 using Redbox.HAL.Common.GUI.Functions;
-using Redbox.HAL.Core;
 
 namespace Redbox.HAL.Management.Console
 {
@@ -37,7 +36,7 @@ namespace Redbox.HAL.Management.Console
         [Browsable(false)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public SyncRange Range => new SyncRange(int.Parse(m_startDeckTextBox.Text), int.Parse(m_endDeckTextBox.Text),
-            new Range(int.Parse(m_startSlotTextBox.Text), int.Parse(m_endSlotTextBox.Text)));
+            new SlotRange(int.Parse(m_startSlotTextBox.Text), int.Parse(m_endSlotTextBox.Text)));
 
         private void OnOK(object sender, EventArgs e)
         {

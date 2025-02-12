@@ -2,6 +2,7 @@ using System;
 using System.Text;
 using System.Threading;
 using Redbox.HAL.Client;
+using Redbox.HAL.Client.Executors;
 using Redbox.HAL.Component.Model;
 
 namespace Redbox.HAL.Common.GUI.Functions
@@ -59,17 +60,17 @@ namespace Redbox.HAL.Common.GUI.Functions
 
         public string UserIdentifier { get; private set; }
 
-        protected override void SetupJob(HardwareJob job)
+        protected override void SetupJob()
         {
-            job.Push(UserIdentifier);
-            job.Push(Timestamp.ToString());
-            job.Push(TouchscreenDriverTestResult);
-            job.Push(CameraDriverTestResult);
-            job.Push(SnapDecodeTestResult);
-            job.Push(TrackTestResult);
-            job.Push(VendDoorTestResult);
-            job.Push(InitTestResult);
-            job.Push(VerticalSlotTestResult);
+            Job.Push(UserIdentifier);
+            Job.Push(Timestamp.ToString());
+            Job.Push(TouchscreenDriverTestResult);
+            Job.Push(CameraDriverTestResult);
+            Job.Push(SnapDecodeTestResult);
+            Job.Push(TrackTestResult);
+            Job.Push(VendDoorTestResult);
+            Job.Push(InitTestResult);
+            Job.Push(VerticalSlotTestResult);
         }
 
         internal void SendData(string username)

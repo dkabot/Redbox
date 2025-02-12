@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="packages\ILMerge.3.0.41\build\ILMerge.props" Condition="Exists('packages\ILMerge.3.0.41\build\ILMerge.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -69,7 +68,6 @@
     <Compile Include="Redbox\HAL\Core\LockScope.cs" />
     <Compile Include="Redbox\HAL\Core\NamedLock.cs" />
     <Compile Include="Redbox\HAL\Core\PerfFunctions.cs" />
-    <Compile Include="Redbox\HAL\Core\Range.cs" />
     <Compile Include="Redbox\HAL\Management\Console\AutomatedDataGridView`1.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -278,64 +276,6 @@
     <Compile Include="Redbox\HAL\Common\GUI\Functions\User32.cs" />
     <Compile Include="Redbox\HAL\Common\GUI\Functions\XmlNodeExtensions.cs" />
     <Compile Include="Redbox\HAL\Common\GUI\Functions\Properties\Resources.cs" />
-    <Compile Include="Redbox\HAL\Client\ClientHelper.cs" />
-    <Compile Include="Redbox\HAL\Client\NullSink.cs" />
-    <Compile Include="Redbox\HAL\Client\HardwareJobStatus.cs" />
-    <Compile Include="Redbox\HAL\Client\HardwareJobPriority.cs" />
-    <Compile Include="Redbox\HAL\Client\HardwareJobConnectionState.cs" />
-    <Compile Include="Redbox\HAL\Client\SpeakerState.cs" />
-    <Compile Include="Redbox\HAL\Client\HardwareEvent.cs" />
-    <Compile Include="Redbox\HAL\Client\HardwareStatusChangeEvent.cs" />
-    <Compile Include="Redbox\HAL\Client\Constants.cs" />
-    <Compile Include="Redbox\HAL\Client\IDumpbinItem.cs" />
-    <Compile Include="Redbox\HAL\Client\DumpbinItem.cs" />
-    <Compile Include="Redbox\HAL\Client\AdjacentBinTest.cs" />
-    <Compile Include="Redbox\HAL\Client\BoardTestJob.cs" />
-    <Compile Include="Redbox\HAL\Client\FraudSensorPost.cs" />
-    <Compile Include="Redbox\HAL\Client\GetAndCenterResult.cs" />
-    <Compile Include="Redbox\HAL\Client\ExcludedLocsJob.cs" />
-    <Compile Include="Redbox\HAL\Client\InitJob.cs" />
-    <Compile Include="Redbox\HAL\Client\InventoryStatsJob.cs" />
-    <Compile Include="Redbox\HAL\Client\KioskFunctionCheckExecutor.cs" />
-    <Compile Include="Redbox\HAL\Client\KioskTestJob.cs" />
-    <Compile Include="Redbox\HAL\Client\LogTimeoutsExecutor.cs" />
-    <Compile Include="Redbox\HAL\Client\MachineConfiguration.cs" />
-    <Compile Include="Redbox\HAL\Client\OneDiskQuickTest.cs" />
-    <Compile Include="Redbox\HAL\Client\MSPullInDvdJob.cs" />
-    <Compile Include="Redbox\HAL\Client\PushInDvdJob.cs" />
-    <Compile Include="Redbox\HAL\Client\PutDiskInPickerInBinJob.cs" />
-    <Compile Include="Redbox\HAL\Client\PutInEmptySlotResult.cs" />
-    <Compile Include="Redbox\HAL\Client\PutInLocationResult.cs" />
-    <Compile Include="Redbox\HAL\Client\QlmTestSyncJob.cs" />
-    <Compile Include="Redbox\HAL\Client\QuickDeckTest.cs" />
-    <Compile Include="Redbox\HAL\Client\RandomSyncExecutor.cs" />
-    <Compile Include="Redbox\HAL\Client\ReadFraudDiskExecutor.cs" />
-    <Compile Include="Redbox\HAL\Client\ResetControlSystemJob.cs" />
-    <Compile Include="Redbox\HAL\Client\ResetFraudSensorJob.cs" />
-    <Compile Include="Redbox\HAL\Client\ResetMotionControlExecutor.cs" />
-    <Compile Include="Redbox\HAL\Client\ReturnExecutor.cs" />
-    <Compile Include="Redbox\HAL\Client\TakeDiskAtDoorJob.cs" />
-    <Compile Include="Redbox\HAL\Client\TestRetrofitDeck.cs" />
-    <Compile Include="Redbox\HAL\Client\UpdateQREEPROMJob.cs" />
-    <Compile Include="Redbox\HAL\Client\VendDiskInPickerJob.cs" />
-    <Compile Include="Redbox\HAL\Client\VerticalSync.cs" />
-    <Compile Include="Redbox\HAL\Client\HardwareCommand.cs" />
-    <Compile Include="Redbox\HAL\Client\HardwareCommandResult.cs" />
-    <Compile Include="Redbox\HAL\Client\HardwareJob.cs" />
-    <Compile Include="Redbox\HAL\Client\HardwareJobExtensions.cs" />
-    <Compile Include="Redbox\HAL\Client\HardwareJobSchedule.cs" />
-    <Compile Include="Redbox\HAL\Client\HardwareService.cs" />
-    <Compile Include="Redbox\HAL\Client\IClientOutputSink.cs" />
-    <Compile Include="Redbox\HAL\Client\IInventoryLocation.cs" />
-    <Compile Include="Redbox\HAL\Client\InventoryLocation.cs" />
-    <Compile Include="Redbox\HAL\Client\JobExecutor.cs" />
-    <Compile Include="Redbox\HAL\Client\KioskInventory.cs" />
-    <Compile Include="Redbox\HAL\Client\Location.cs" />
-    <Compile Include="Redbox\HAL\Client\ProgramResult.cs" />
-    <Compile Include="Redbox\HAL\Client\ResultItem.cs" />
-    <Compile Include="Redbox\HAL\Client\SyncRange.cs" />
-    <Compile Include="Redbox\HAL\Client\Executors\HardwareSurveyExecutor.cs" />
-    <Compile Include="LzmaAlone\Properties\Settings.cs" />
     <Compile Include="AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -382,13 +322,18 @@
     <EmbeddedResource Include="Redbox\HAL\Management\Console\UnlockForm.resx" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
+    <None Include="App.config" />
+    <None Include="ILRepack.targets" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Redbox.Compression\Redbox.Compression.csproj">
       <Project>{e5b206dd-b03c-4c85-af8e-f4849384cca5}</Project>
       <Name>Redbox.Compression</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Redbox.HAL\Redbox.HAL.Client\Redbox.HAL.Client.csproj">
+      <Project>{55dbb4f4-0e91-401a-afdb-37f5bdf4862a}</Project>
+      <Name>Redbox.HAL.Client</Name>
     </ProjectReference>
     <ProjectReference Include="..\Redbox.HAL\Redbox.HAL.Component.Model\Redbox.HAL.Component.Model.csproj">
       <Project>{86986977-3d6f-4f59-bc0c-d181e7c4d334}</Project>
@@ -409,16 +354,15 @@
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <Import Project="packages\ILRepack.Lib.MSBuild.Task.2.0.37\build\ILRepack.Lib.MSBuild.Task.targets" Condition="Exists('packages\ILRepack.Lib.MSBuild.Task.2.0.37\build\ILRepack.Lib.MSBuild.Task.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('packages\ILMerge.3.0.41\build\ILMerge.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\ILMerge.3.0.41\build\ILMerge.props'))" />
+    <Error Condition="!Exists('packages\ILRepack.Lib.MSBuild.Task.2.0.37\build\ILRepack.Lib.MSBuild.Task.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\ILRepack.Lib.MSBuild.Task.2.0.37\build\ILRepack.Lib.MSBuild.Task.targets'))" />
   </Target>
-  <PropertyGroup>
-    <PostBuildEvent>set BUILD_DIR=$(SolutionDir)build\$(ConfigurationName)\
-if not exist %25BUILD_DIR%25 mkdir %25BUILD_DIR%25
-$(ILMergeConsolePath) $(TargetPath) /out:%25BUILD_DIR%25$(ProjectName).exe $(TargetDir)ICSharpCode.SharpZipLib.dll $(TargetDir)SevenZip.dll $(TargetDir)PowerCollections.dll $(TargetDir)Redbox.HAL.Component.Model.dll $(TargetDir)Redbox.HAL.Configuration.dll $(TargetDir)Redbox.HAL.Core.dll $(TargetDir)Redbox.HAL.IPC.Framework.dll
-copy $(TargetDir)log4net.dll %25BUILD_DIR%25</PostBuildEvent>
-  </PropertyGroup>
 </Project>

@@ -1509,11 +1509,11 @@ namespace Redbox.HAL.Common.GUI.Functions
 
             protected override string JobName => "fraud-sensor-stress-test";
 
-            protected override void SetupJob(HardwareJob job)
+            protected override void SetupJob()
             {
-                job.Push(IterationPause);
-                job.Push(ScanPause);
-                job.Push(Iterations);
+                Job.Push(IterationPause);
+                Job.Push(ScanPause);
+                Job.Push(Iterations);
             }
         }
 
@@ -1529,9 +1529,9 @@ namespace Redbox.HAL.Common.GUI.Functions
 
             protected override string JobName => "fraud-sensor-detect-test";
 
-            protected override void SetupJob(HardwareJob job)
+            protected override void SetupJob()
             {
-                job.Push(StartupPause);
+                Job.Push(StartupPause);
             }
         }
     }

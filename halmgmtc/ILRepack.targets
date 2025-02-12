@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<!-- ILRepack -->
+	<Target Name="ILRepacker" AfterTargets="Build">
+		<ItemGroup>
+			<InputAssemblies Include="$(OutputPath)\ICSharpCode.SharpZipLib.dll" />
+			<InputAssemblies Include="$(OutputPath)\Newtonsoft.Json.dll" />
+			<InputAssemblies Include="$(OutputPath)\PowerCollections.dll" />
+			<InputAssemblies Include="$(OutputPath)\Redbox.Compression.dll" />
+			<InputAssemblies Include="$(OutputPath)\Redbox.HAL.Client.dll" />
+			<InputAssemblies Include="$(OutputPath)\Redbox.HAL.Component.Model.dll" />
+			<InputAssemblies Include="$(OutputPath)\Redbox.HAL.Configuration.dll" />
+			<InputAssemblies Include="$(OutputPath)\Redbox.HAL.Core.dll" />
+			<InputAssemblies Include="$(OutputPath)\Redbox.HAL.IPC.Framework.dll" />
+			<InputAssemblies Include="$(OutputPath)\SevenZip.dll" />
+		</ItemGroup>
+    
+		<ILRepack
+			Parallel="true"
+			Internalize="true"
+			InputAssemblies="@(InputAssemblies)"
+			TargetKind="exe"
+			OutputFile="$(OutputPath)\$(AssemblyName).exe"
+		/>
+	</Target>
+	<!-- /ILRepack -->
+</Project>
