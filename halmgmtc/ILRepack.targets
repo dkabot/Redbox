@@ -1,8 +1,10 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
+
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 	<!-- ILRepack -->
 	<Target Name="ILRepacker" AfterTargets="Build">
 		<ItemGroup>
+			<InputAssemblies Include="$(OutputPath)\$(AssemblyName).exe" />
 			<InputAssemblies Include="$(OutputPath)\ICSharpCode.SharpZipLib.dll" />
 			<InputAssemblies Include="$(OutputPath)\Newtonsoft.Json.dll" />
 			<InputAssemblies Include="$(OutputPath)\PowerCollections.dll" />
@@ -13,15 +15,15 @@
 			<InputAssemblies Include="$(OutputPath)\Redbox.HAL.Core.dll" />
 			<InputAssemblies Include="$(OutputPath)\Redbox.HAL.IPC.Framework.dll" />
 			<InputAssemblies Include="$(OutputPath)\SevenZip.dll" />
+			<InputAssemblies Include="$(OutputPath)\log4net.dll" />
 		</ItemGroup>
-    
+
 		<ILRepack
 			Parallel="true"
 			Internalize="true"
 			InputAssemblies="@(InputAssemblies)"
 			TargetKind="exe"
-			OutputFile="$(OutputPath)\$(AssemblyName).exe"
-		/>
+			OutputFile="$(OutputPath)\$(AssemblyName).exe" />
 	</Target>
 	<!-- /ILRepack -->
 </Project>
