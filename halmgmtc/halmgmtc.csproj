@@ -415,7 +415,7 @@
     <Error Condition="!Exists('packages\ILMerge.3.0.41\build\ILMerge.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\ILMerge.3.0.41\build\ILMerge.props'))" />
   </Target>
   <PropertyGroup>
-    <PostBuildEvent>set BUILD_DIR=$(SolutionDir)build\$(OutDir)
+    <PostBuildEvent>set BUILD_DIR=$(SolutionDir)build\$(ConfigurationName)\
 if not exist %25BUILD_DIR%25 mkdir %25BUILD_DIR%25
 $(ILMergeConsolePath) $(TargetPath) /out:%25BUILD_DIR%25$(ProjectName).exe $(TargetDir)ICSharpCode.SharpZipLib.dll $(TargetDir)SevenZip.dll $(TargetDir)PowerCollections.dll $(TargetDir)Redbox.HAL.Component.Model.dll $(TargetDir)Redbox.HAL.Configuration.dll $(TargetDir)Redbox.HAL.Core.dll $(TargetDir)Redbox.HAL.IPC.Framework.dll
 copy $(TargetDir)log4net.dll %25BUILD_DIR%25</PostBuildEvent>
