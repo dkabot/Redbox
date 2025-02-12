@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="Current" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="packages\ILMerge.3.0.41\build\ILMerge.props" Condition="Exists('packages\ILMerge.3.0.41\build\ILMerge.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -7,7 +7,7 @@
     <ProjectGuid>{81990C2C-3074-490D-8332-BE4215E2364A}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AssemblyName>halmgmtc</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <ApplicationVersion>1.10.0.14</ApplicationVersion>
     <FileAlignment>512</FileAlignment>
     <FileUpgradeFlags>
@@ -17,6 +17,7 @@
     <OldToolsVersion>3.5</OldToolsVersion>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -27,6 +28,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -36,6 +38,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
@@ -67,13 +70,6 @@
     <Compile Include="Redbox\HAL\Core\NamedLock.cs" />
     <Compile Include="Redbox\HAL\Core\PerfFunctions.cs" />
     <Compile Include="Redbox\HAL\Core\Range.cs" />
-    <Compile Include="Redbox\HAL\IPC\Framework\BZip2CompressionAlgorithm.cs" />
-    <Compile Include="Redbox\HAL\IPC\Framework\CompressionAlgorithm.cs" />
-    <Compile Include="Redbox\HAL\IPC\Framework\GZipCompressionAlgorithm.cs" />
-    <Compile Include="Redbox\HAL\IPC\Framework\LzmaCompressionAlgorithm.cs" />
-    <Compile Include="Redbox\HAL\IPC\Framework\NullCompressionAlgorithm.cs" />
-    <Compile Include="Redbox\HAL\IPC\Framework\StreamBase.cs" />
-    <Compile Include="Redbox\HAL\IPC\Framework\ZipCompressionAlgorithm.cs" />
     <Compile Include="Redbox\HAL\Management\Console\AutomatedDataGridView`1.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -386,9 +382,14 @@
     <EmbeddedResource Include="Redbox\HAL\Management\Console\UnlockForm.resx" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Redbox.Compression\Redbox.Compression.csproj">
+      <Project>{e5b206dd-b03c-4c85-af8e-f4849384cca5}</Project>
+      <Name>Redbox.Compression</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Redbox.HAL\Redbox.HAL.Component.Model\Redbox.HAL.Component.Model.csproj">
       <Project>{86986977-3d6f-4f59-bc0c-d181e7c4d334}</Project>
       <Name>Redbox.HAL.Component.Model</Name>
