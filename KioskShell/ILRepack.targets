@@ -1,4 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
+
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 	<!-- ILRepack -->
 	<Target Name="ILRepacker" AfterTargets="Build">
@@ -15,14 +16,13 @@
 			<InputAssemblies Include="$(OutputPath)\Redbox.Tokenizer.Framework.dll" />
 			<InputAssemblies Include="$(OutputPath)\SevenZip.dll" />
 		</ItemGroup>
-    
+
 		<ILRepack
 			Parallel="true"
 			Internalize="true"
 			InputAssemblies="@(InputAssemblies)"
 			TargetKind="exe"
-			OutputFile="$(OutputPath)\$(AssemblyName).exe"
-		/>
+			OutputFile="$(OutputPath)\$(AssemblyName).exe" />
 	</Target>
 	<!-- /ILRepack -->
 </Project>
