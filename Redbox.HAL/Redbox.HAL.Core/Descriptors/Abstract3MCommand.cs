@@ -37,7 +37,7 @@ internal abstract class Abstract3MCommand
     protected bool Write(SafeFileHandle handle, byte[] command)
     {
         var flag = true;
-        if (!Win32.WriteFile(handle, command, command.Length, out var _, IntPtr.Zero))
+        if (!Win32.WriteFile(handle, command, command.Length, out _, IntPtr.Zero))
         {
             LogHelper.Instance.Log("[{0}] WriteFile failed: Error = {1}", GetType().Name, Marshal.GetLastWin32Error());
             flag = false;
@@ -49,7 +49,7 @@ internal abstract class Abstract3MCommand
     protected byte[] Read(SafeFileHandle handle, int responseLength)
     {
         var lpBuffer = new byte[responseLength];
-        if (!Win32.ReadFile(handle, lpBuffer, lpBuffer.Length, out var _, IntPtr.Zero))
+        if (!Win32.ReadFile(handle, lpBuffer, lpBuffer.Length, out _, IntPtr.Zero))
         {
             lpBuffer = ErrorResponse;
             LogHelper.Instance.Log("[{0}] ReadFile failed: Error = {1}", GetType().Name, Marshal.GetLastWin32Error());

@@ -196,7 +196,7 @@ public sealed class UsbDeviceService : IUsbDeviceService
         EnumerateDevices(deviceInfo.SetupClass.Guid, SearchFlags(deviceInfo),
             (IntPtr devInfo, ref SP_DEVINFO_DATA did) =>
             {
-                var hwid = QueryHardwareId(devInfo, ref did, out var _);
+                var hwid = QueryHardwareId(devInfo, ref did, out _);
                 if (hwid == null)
                     return ProcessDeviceInfoResult.Continue;
                 var left = FromQueryString(hwid);
@@ -236,7 +236,7 @@ public sealed class UsbDeviceService : IUsbDeviceService
     {
         return EnumerateDevices(desc.SetupClass.Guid, SearchFlags(desc), (IntPtr hDevInfo, ref SP_DEVINFO_DATA did) =>
         {
-            var str = QueryHardwareId(hDevInfo, ref did, out var _);
+            var str = QueryHardwareId(hDevInfo, ref did, out _);
             if (str == null)
                 return ProcessDeviceInfoResult.Continue;
             var deviceInfoResult = ProcessDeviceInfoResult.Continue;
@@ -252,7 +252,7 @@ public sealed class UsbDeviceService : IUsbDeviceService
     {
         return EnumerateDevices(descriptor.SetupClass.Guid, 2U, (IntPtr hDevInfo, ref SP_DEVINFO_DATA did) =>
         {
-            var str = QueryHardwareId(hDevInfo, ref did, out var _);
+            var str = QueryHardwareId(hDevInfo, ref did, out _);
             if (str == null)
                 return ProcessDeviceInfoResult.Continue;
             LogHelper.Instance.Log("[MatchDriver] Processing HWID {0}", str);

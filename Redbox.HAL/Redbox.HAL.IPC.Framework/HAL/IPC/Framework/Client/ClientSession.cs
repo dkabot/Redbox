@@ -53,7 +53,7 @@ namespace Redbox.HAL.IPC.Framework.Client
         {
             IsConnected = OnConnect();
             if (!IsConnected)
-                throw new TimeoutException(string.Format("Failed to connect on {0}", Protocol.ToString()));
+                throw new TimeoutException(string.Format("Failed to connect on {0}", Protocol));
             ConsumeMessages();
         }
 

@@ -14,7 +14,8 @@ namespace Redbox.HAL.IPC.Framework
         [Usage("ipctest test-ipc-xfer size: payloadSize")]
         [Description("")]
         public void TestIPCTransfer(CommandContext context,
-            [CommandKeyValue(IsRequired = true, KeyName = "size")] int payloadSize)
+            [CommandKeyValue(IsRequired = true, KeyName = "size")]
+            int payloadSize)
         {
             var random = new Random((int)DateTime.Now.Ticks);
             var stringBuilder = new StringBuilder();

@@ -20,7 +20,7 @@ internal sealed class MicrotouchDescriptor : AbstractTouchscreenDescriptor
 
     protected override bool OnHardReset()
     {
-        return this.OnResetDriver(2000);
+        return OnResetDriver(2000);
     }
 
     protected override string OnReadFirmware()

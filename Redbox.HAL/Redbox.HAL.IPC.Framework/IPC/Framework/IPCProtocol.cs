@@ -6,41 +6,16 @@ namespace Redbox.IPC.Framework
 {
     public class IPCProtocol : IIpcProtocol
     {
-        private readonly string RawUri;
-        private string PipeName;
-
-        private IPCProtocol(string rawUri)
-        {
-            RawUri = rawUri;
-        }
-
-        public string GetPipeName()
-        {
-            if (PipeName == null)
-                PipeName = string.Format("{0}{1}", Host, Port);
-            return PipeName;
-        }
-
-        public bool IsSecure { get; private set; }
-
-        public ChannelType Channel { get; private set; }
-
-        public string Host { get; private set; }
-
-        public string Port { get; private set; }
-
-        public string Scheme { get; private set; }
-
         public static IPCProtocol Parse(string protocolURI)
         {
-            var ipcProtocol = new IPCProtocol(protocolURI)
+            IPCProtocol ipcprotocol = new IPCProtocol(protocolURI)
             {
                 Host = string.Empty,
                 Port = string.Empty,
                 IsSecure = false,
                 Channel = ChannelType.Unknown
             };
-            var protocolTokenizer = new ProtocolTokenizer(protocolURI);
+            IPCProtocol.ProtocolTokenizer protocolTokenizer = new IPCProtocol.ProtocolTokenizer(protocolURI);
             try
             {
                 protocolTokenizer.Tokenize();
@@ -49,276 +24,311 @@ namespace Redbox.IPC.Framework
             {
                 throw new UriFormatException(ex.Message);
             }
-
             if (protocolTokenizer.Errors.ContainsError())
             {
-                foreach (var error in protocolTokenizer.Errors)
+                foreach (Error error in protocolTokenizer.Errors)
+                {
                     LogHelper.Instance.Log(error.Description, LogEntryType.Error);
+                }
                 throw new UriFormatException("URI is malformed: see log for details.");
             }
-
-            ipcProtocol.Host = protocolTokenizer.Host;
-            ipcProtocol.Port = protocolTokenizer.Port;
-            ipcProtocol.IsSecure = protocolTokenizer.IsSecure;
-            ipcProtocol.Channel = protocolTokenizer.Channel;
-            ipcProtocol.Scheme = protocolTokenizer.Scheme;
-            if (string.IsNullOrEmpty(ipcProtocol.Host) || string.IsNullOrEmpty(ipcProtocol.Port))
+            ipcprotocol.Host = protocolTokenizer.Host;
+            ipcprotocol.Port = protocolTokenizer.Port;
+            ipcprotocol.IsSecure = protocolTokenizer.IsSecure;
+            ipcprotocol.Channel = protocolTokenizer.Channel;
+            ipcprotocol.Scheme = protocolTokenizer.Scheme;
+            if (string.IsNullOrEmpty(ipcprotocol.Host) || string.IsNullOrEmpty(ipcprotocol.Port))
+            {
                 throw new UriFormatException("Host or port isn't set.");
-            if (ipcProtocol.Channel == ChannelType.Unknown)
+            }
+            if (ipcprotocol.Channel == ChannelType.Unknown)
+            {
                 throw new UriFormatException("The channel type is unknown; please correct your URI.");
-            if (ipcProtocol.Channel == ChannelType.Socket && !int.TryParse(ipcProtocol.Port, out var _))
+            }
+            int num;
+            if (ipcprotocol.Channel == ChannelType.Socket && !int.TryParse(ipcprotocol.Port, out num))
+            {
                 throw new UriFormatException("Protocol is set up for sockets, but port isn't a valid address.");
-            return ipcProtocol;
+            }
+            return ipcprotocol;
         }
+
+        public string GetPipeName()
+        {
+            if (this.PipeName == null)
+            {
+                this.PipeName = string.Format("{0}{1}", this.Host, this.Port);
+            }
+            return this.PipeName;
+        }
+
+        public bool IsSecure { get; set; }
+
+        public ChannelType Channel { get; set; }
+
+        public string Host { get; set; }
+
+        public string Port { get; set; }
+
+        public string Scheme { get; set; }
 
         public override string ToString()
         {
-            return RawUri;
+            return this.RawUri;
         }
 
-        private enum ProtocolParserState
+        IPCProtocol(string rawUri)
+        {
+            this.RawUri = rawUri;
+        }
+
+        string PipeName;
+
+        readonly string RawUri;
+
+        enum ProtocolParserState
         {
             Start = 1,
-            Scheme = 2,
-            Host = 3,
-            Port = 4,
-            Channel = 5,
-            Whitespace = 6,
-            Error = 7
+            Scheme,
+            Host,
+            Port,
+            Channel,
+            Whitespace,
+            Error
         }
 
-        private class ProtocolTokenizer : Tokenizer<ProtocolParserState>
+        class ProtocolTokenizer : Tokenizer<IPCProtocol.ProtocolParserState>
         {
-            private int m_semiColonsSeen;
-            private int m_slashesSeen;
-
-            public ProtocolTokenizer(string statement) : base(0, statement)
+            public ProtocolTokenizer(string statement)
+                : base(0, statement)
             {
             }
-
-            internal ChannelType Channel { get; private set; }
-
-            internal bool IsSecure { get; private set; }
-
-            internal string Host { get; private set; }
-
-            internal string Port { get; private set; }
-
-            internal string Scheme { get; private set; }
 
             protected override void OnReset()
             {
-                CurrentState = ProtocolParserState.Start;
+                base.CurrentState = IPCProtocol.ProtocolParserState.Start;
             }
 
-            [StateHandler(State = ProtocolParserState.Error)]
+            internal ChannelType Channel { get; set; }
+
+            internal bool IsSecure { get; set; }
+
+            internal string Host { get; set; }
+
+            internal string Port { get; set; }
+
+            internal string Scheme { get; set; }
+
+            [StateHandler(State = IPCProtocol.ProtocolParserState.Error)]
             internal StateResult ProcessErrorState()
             {
-                ResetAccumulator();
-                Errors.Add(Error.NewError("T006", FormatError("An invalid token was detected."),
-                    "Correct your protocol syntax and resubmit."));
+                base.ResetAccumulator();
+                base.Errors.Add(Error.NewError("T006", base.FormatError("An invalid token was detected."), "Correct your protocol syntax and resubmit."));
                 return StateResult.Terminal;
             }
 
-            [StateHandler(State = ProtocolParserState.Start)]
+            [StateHandler(State = IPCProtocol.ProtocolParserState.Start)]
             internal StateResult ProcessStartState()
             {
-                if (char.IsWhiteSpace(GetCurrentToken()))
-                    return StateResult.Continue;
-                if (char.IsLetter(GetCurrentToken()))
+                if (char.IsWhiteSpace(base.GetCurrentToken()))
                 {
-                    CurrentState = ProtocolParserState.Scheme;
+                    return StateResult.Continue;
+                }
+                if (char.IsLetter(base.GetCurrentToken()))
+                {
+                    base.CurrentState = IPCProtocol.ProtocolParserState.Scheme;
                     return StateResult.Restart;
                 }
-
-                CurrentState = ProtocolParserState.Error;
+                base.CurrentState = IPCProtocol.ProtocolParserState.Error;
                 return StateResult.Restart;
             }
 
-            [StateHandler(State = ProtocolParserState.Host)]
+            [StateHandler(State = IPCProtocol.ProtocolParserState.Host)]
             internal StateResult ProcessHostState()
             {
-                var currentToken = GetCurrentToken();
+                char currentToken = base.GetCurrentToken();
                 if (char.IsWhiteSpace(currentToken))
+                {
                     return StateResult.Continue;
+                }
                 if (char.IsLetterOrDigit(currentToken) || currentToken == '.')
                 {
-                    AppendToAccumulator();
+                    base.AppendToAccumulator();
                     return StateResult.Continue;
                 }
-
                 if (':' == currentToken)
                 {
-                    Host = Accumulator.ToString();
-                    AddTokenAndReset(TokenType.StringLiteral, false);
-                    CurrentState = ProtocolParserState.Whitespace;
+                    this.Host = base.Accumulator.ToString();
+                    base.AddTokenAndReset(TokenType.StringLiteral, false);
+                    base.CurrentState = IPCProtocol.ProtocolParserState.Whitespace;
                     return StateResult.Restart;
                 }
-
-                CurrentState = ProtocolParserState.Error;
+                base.CurrentState = IPCProtocol.ProtocolParserState.Error;
                 return StateResult.Restart;
             }
 
-            [StateHandler(State = ProtocolParserState.Scheme)]
+            [StateHandler(State = IPCProtocol.ProtocolParserState.Scheme)]
             internal StateResult ProcessProtocolState()
             {
-                var currentToken = GetCurrentToken();
+                char currentToken = base.GetCurrentToken();
                 if (char.IsLetter(currentToken))
                 {
-                    if (Accumulator.Length == 0 && ('s' == currentToken || 'S' == currentToken))
-                        IsSecure = true;
-                    AppendToAccumulator();
+                    if (base.Accumulator.Length == 0 && ('s' == currentToken || 'S' == currentToken))
+                    {
+                        this.IsSecure = true;
+                    }
+                    base.AppendToAccumulator();
                     return StateResult.Continue;
                 }
-
-                if ('-' == currentToken)
+                if ('-' != currentToken)
                 {
-                    MoveToNextToken();
-                    Scheme = Accumulator.ToString();
-                    if (ValidateProtocol())
+                    if (':' == currentToken || char.IsWhiteSpace(currentToken))
                     {
-                        AddTokenAndReset(TokenType.StringLiteral, false);
-                        CurrentState = ProtocolParserState.Channel;
-                        return StateResult.Restart;
+                        this.Scheme = base.Accumulator.ToString();
+                        if (this.ValidateProtocol())
+                        {
+                            base.AddTokenAndReset(TokenType.StringLiteral, false);
+                            base.CurrentState = IPCProtocol.ProtocolParserState.Whitespace;
+                            return StateResult.Restart;
+                        }
                     }
-
-                    CurrentState = ProtocolParserState.Error;
+                    base.CurrentState = IPCProtocol.ProtocolParserState.Error;
                     return StateResult.Restart;
                 }
-
-                if (':' == currentToken || char.IsWhiteSpace(currentToken))
+                base.MoveToNextToken();
+                this.Scheme = base.Accumulator.ToString();
+                if (this.ValidateProtocol())
                 {
-                    Scheme = Accumulator.ToString();
-                    if (ValidateProtocol())
-                    {
-                        AddTokenAndReset(TokenType.StringLiteral, false);
-                        CurrentState = ProtocolParserState.Whitespace;
-                        return StateResult.Restart;
-                    }
+                    base.AddTokenAndReset(TokenType.StringLiteral, false);
+                    base.CurrentState = IPCProtocol.ProtocolParserState.Channel;
+                    return StateResult.Restart;
                 }
-
-                CurrentState = ProtocolParserState.Error;
+                base.CurrentState = IPCProtocol.ProtocolParserState.Error;
                 return StateResult.Restart;
             }
 
-            [StateHandler(State = ProtocolParserState.Port)]
+            [StateHandler(State = IPCProtocol.ProtocolParserState.Port)]
             internal StateResult ProcessPortState()
             {
-                var currentToken = GetCurrentToken();
+                char currentToken = base.GetCurrentToken();
                 if (char.IsWhiteSpace(currentToken))
                 {
-                    if (Accumulator.Length <= 0)
-                        return StateResult.Continue;
-                    Port = Accumulator.ToString();
-                    AddTokenAndReset(TokenType.StringLiteral, false);
-                    return StateResult.Terminal;
+                    if (base.Accumulator.Length > 0)
+                    {
+                        this.Port = base.Accumulator.ToString();
+                        base.AddTokenAndReset(TokenType.StringLiteral, false);
+                        return StateResult.Terminal;
+                    }
+                    return StateResult.Continue;
                 }
-
-                if (char.IsLetterOrDigit(currentToken))
+                else
                 {
-                    AppendToAccumulator();
-                    if (PeekNextToken().HasValue)
-                        return StateResult.Continue;
-                    Port = Accumulator.ToString();
-                    AddTokenAndReset(TokenType.StringLiteral, false);
-                    MoveToNextToken();
-                    return StateResult.Terminal;
+                    if (!char.IsLetterOrDigit(currentToken))
+                    {
+                        base.CurrentState = IPCProtocol.ProtocolParserState.Error;
+                        return StateResult.Restart;
+                    }
+                    base.AppendToAccumulator();
+                    if (base.PeekNextToken() == null)
+                    {
+                        this.Port = base.Accumulator.ToString();
+                        base.AddTokenAndReset(TokenType.StringLiteral, false);
+                        base.MoveToNextToken();
+                        return StateResult.Terminal;
+                    }
+                    return StateResult.Continue;
                 }
-
-                CurrentState = ProtocolParserState.Error;
-                return StateResult.Restart;
             }
 
-            [StateHandler(State = ProtocolParserState.Channel)]
+            [StateHandler(State = IPCProtocol.ProtocolParserState.Channel)]
             internal StateResult ProcessChannelType()
             {
-                var currentToken = GetCurrentToken();
+                char currentToken = base.GetCurrentToken();
                 if (char.IsWhiteSpace(currentToken) || ':' == currentToken)
                 {
-                    DecodeChannel();
-                    AddTokenAndReset(TokenType.StringLiteral, false);
-                    CurrentState = ProtocolParserState.Whitespace;
+                    this.DecodeChannel();
+                    base.AddTokenAndReset(TokenType.StringLiteral, false);
+                    base.CurrentState = IPCProtocol.ProtocolParserState.Whitespace;
                     return StateResult.Restart;
                 }
-
                 if (char.IsLetter(currentToken))
                 {
-                    AppendToAccumulator();
+                    base.AppendToAccumulator();
                     return StateResult.Continue;
                 }
-
-                CurrentState = ProtocolParserState.Error;
+                base.CurrentState = IPCProtocol.ProtocolParserState.Error;
                 return StateResult.Restart;
             }
 
-            [StateHandler(State = ProtocolParserState.Whitespace)]
+            [StateHandler(State = IPCProtocol.ProtocolParserState.Whitespace)]
             internal StateResult ProcessWhitespaceState()
             {
-                var currentToken = GetCurrentToken();
+                char currentToken = base.GetCurrentToken();
                 if (char.IsWhiteSpace(currentToken))
+                {
                     return StateResult.Continue;
+                }
                 if (currentToken == ':')
                 {
-                    ++m_semiColonsSeen;
+                    this.m_semiColonsSeen++;
                     return StateResult.Continue;
                 }
-
                 if (currentToken == '/')
                 {
-                    ++m_slashesSeen;
+                    this.m_slashesSeen++;
                     return StateResult.Continue;
                 }
-
                 if (char.IsLetterOrDigit(currentToken))
                 {
-                    if (m_slashesSeen == 0 && m_semiColonsSeen == 0)
+                    if (this.m_slashesSeen == 0 && this.m_semiColonsSeen == 0)
                     {
-                        CurrentState = ProtocolParserState.Scheme;
+                        base.CurrentState = IPCProtocol.ProtocolParserState.Scheme;
                         return StateResult.Restart;
                     }
-
-                    if (m_semiColonsSeen == 1 && m_slashesSeen == 2)
+                    if (this.m_semiColonsSeen == 1 && this.m_slashesSeen == 2)
                     {
-                        CurrentState = ProtocolParserState.Host;
+                        base.CurrentState = IPCProtocol.ProtocolParserState.Host;
                         return StateResult.Restart;
                     }
-
-                    if (m_semiColonsSeen == 2 && m_slashesSeen == 2)
+                    if (this.m_semiColonsSeen == 2 && this.m_slashesSeen == 2)
                     {
-                        CurrentState = ProtocolParserState.Port;
+                        base.CurrentState = IPCProtocol.ProtocolParserState.Port;
                         return StateResult.Restart;
                     }
                 }
-
-                CurrentState = ProtocolParserState.Error;
+                base.CurrentState = IPCProtocol.ProtocolParserState.Error;
                 return StateResult.Restart;
             }
 
-            private bool ValidateProtocol()
+            bool ValidateProtocol()
             {
-                return Accumulator.ToString().Equals("rcp", StringComparison.CurrentCultureIgnoreCase) ||
-                       Accumulator.ToString().Equals("srcp", StringComparison.CurrentCultureIgnoreCase);
+                return base.Accumulator.ToString().Equals("rcp", StringComparison.CurrentCultureIgnoreCase) || base.Accumulator.ToString().Equals("srcp", StringComparison.CurrentCultureIgnoreCase);
             }
 
-            private bool ChannelIsValid(char protocol)
+            bool ChannelIsValid(char protocol)
             {
-                if ('p' != protocol && 'P' != protocol)
-                    return false;
-                Channel = ChannelType.NamedPipe;
-                return true;
-            }
-
-            private bool DecodeChannel()
-            {
-                if (Accumulator.ToString().Equals("p", StringComparison.CurrentCultureIgnoreCase))
+                if ('p' == protocol || 'P' == protocol)
                 {
-                    Channel = ChannelType.NamedPipe;
+                    this.Channel = ChannelType.NamedPipe;
                     return true;
                 }
-
-                Channel = ChannelType.Unknown;
                 return false;
             }
+
+            bool DecodeChannel()
+            {
+                if (base.Accumulator.ToString().Equals("p", StringComparison.CurrentCultureIgnoreCase))
+                {
+                    this.Channel = ChannelType.NamedPipe;
+                    return true;
+                }
+                this.Channel = ChannelType.Unknown;
+                return false;
+            }
+
+            int m_slashesSeen;
+
+            int m_semiColonsSeen;
         }
     }
 }
