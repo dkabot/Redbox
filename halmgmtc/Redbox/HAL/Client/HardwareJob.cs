@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Threading;
 using Redbox.HAL.Component.Model;
 using Redbox.HAL.Component.Model.Extensions;
-using Redbox.HAL.Core;
 using Redbox.HAL.IPC.Framework;
 
 namespace Redbox.HAL.Client

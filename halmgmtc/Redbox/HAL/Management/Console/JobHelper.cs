@@ -6,7 +6,6 @@ using System.Windows.Forms;
 using Redbox.HAL.Client;
 using Redbox.HAL.Component.Model;
 using Redbox.HAL.Component.Model.Threading;
-using Redbox.HAL.Core;
 using Redbox.HAL.Management.Console.Properties;
 
 namespace Redbox.HAL.Management.Console

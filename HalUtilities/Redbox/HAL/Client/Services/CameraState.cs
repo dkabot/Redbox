@@ -1,9 +1,9 @@
 namespace Redbox.HAL.Client.Services
 {
-  public enum CameraState
-  {
-    Unknown,
-    Started,
-    Stopped,
-  }
+    public enum CameraState
+    {
+        Unknown,
+        Started,
+        Stopped
+    }
 }

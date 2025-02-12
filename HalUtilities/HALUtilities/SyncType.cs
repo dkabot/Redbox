@@ -1,8 +1,8 @@
 namespace HALUtilities
 {
-  internal enum SyncType
-  {
-    Empty,
-    Unknown,
-  }
+    internal enum SyncType
+    {
+        Empty,
+        Unknown
+    }
 }

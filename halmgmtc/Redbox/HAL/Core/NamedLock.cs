@@ -12,23 +12,24 @@ namespace Redbox.HAL.Core
 {
     public sealed class NamedLock : IDisposable
     {
-        private Mutex m_instanceMutex;
         private readonly string m_name;
         private readonly LockScope m_scope;
+        private Mutex m_instanceMutex;
 
         public NamedLock(string name, LockScope scope)
         {
-            this.m_name = name;
-            this.m_scope = scope;
+            m_name = name;
+            m_scope = scope;
             try
             {
                 bool createdNew;
-                this.m_instanceMutex = new Mutex(false, string.Format((IFormatProvider)CultureInfo.InvariantCulture, "{0}\\{1}", (object)this.m_scope, (object)this.m_name), out createdNew);
-                this.IsOwned = createdNew;
+                m_instanceMutex = new Mutex(false,
+                    string.Format(CultureInfo.InvariantCulture, "{0}\\{1}", m_scope, m_name), out createdNew);
+                IsOwned = createdNew;
             }
             catch
             {
-                this.IsOwned = false;
+                IsOwned = false;
             }
         }
 
@@ -36,10 +37,10 @@ namespace Redbox.HAL.Core
 
         public void Dispose()
         {
-            if (this.m_instanceMutex == null)
+            if (m_instanceMutex == null)
                 return;
-            this.m_instanceMutex.Close();
-            this.m_instanceMutex = (Mutex)null;
+            m_instanceMutex.Close();
+            m_instanceMutex = null;
         }
     }
 }

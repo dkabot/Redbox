@@ -1,12 +1,15 @@
 using System;
 using Redbox.HAL.Component.Model;
 using Redbox.HAL.Component.Model.Extensions;
-using Redbox.HAL.Core;
 
 namespace Redbox.HAL.Client
 {
     public sealed class MachineConfiguration : JobExecutor
     {
+        public MachineConfiguration(HardwareService service) : base(service)
+        {
+        }
+
         public bool IsDenseMachine { get; private set; }
 
         public bool LegacyCamera { get; private set; }
@@ -30,10 +33,6 @@ namespace Redbox.HAL.Client
         public DeviceStatus QuickReturnStatus { get; private set; }
 
         protected override string JobName => "kiosk-configuration-job";
-
-        public MachineConfiguration(HardwareService service) : base(service)
-        {
-        }
 
         protected override void OnJobCompleted()
         {

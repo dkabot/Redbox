@@ -1,13 +1,19 @@
 namespace HALUtilities
 {
-  internal class LookupFailStat
-  {
-    internal int Count { get; private set; }
+    internal class LookupFailStat
+    {
+        internal LookupFailStat(string barcode)
+        {
+            Matrix = barcode;
+        }
 
-    internal string Matrix { get; private set; }
+        internal int Count { get; private set; }
 
-    internal void Increment() => ++this.Count;
+        internal string Matrix { get; private set; }
 
-    internal LookupFailStat(string barcode) => this.Matrix = barcode;
-  }
+        internal void Increment()
+        {
+            ++Count;
+        }
+    }
 }

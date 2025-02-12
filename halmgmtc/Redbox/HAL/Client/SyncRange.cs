@@ -1,3 +1,5 @@
+using Redbox.HAL.Core;
+
 namespace Redbox.HAL.Client
 {
     public sealed class SyncRange
@@ -6,7 +8,7 @@ namespace Redbox.HAL.Client
         {
         }
 
-        public SyncRange(int startDeck, int endDeck, Core.Range slots)
+        public SyncRange(int startDeck, int endDeck, Range slots)
         {
             StartDeck = startDeck;
             EndDeck = endDeck;
@@ -15,7 +17,7 @@ namespace Redbox.HAL.Client
 
         public int EndDeck { get; set; }
 
-        public Core.Range Slots { get; set; }
+        public Range Slots { get; set; }
 
         public int StartDeck { get; set; }
     }

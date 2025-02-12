@@ -1,8 +1,8 @@
 namespace HALUtilities
 {
-  internal enum OutputModes
-  {
-    File,
-    Console,
-  }
+    internal enum OutputModes
+    {
+        File,
+        Console
+    }
 }

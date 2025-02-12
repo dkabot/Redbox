@@ -1,38 +1,41 @@
-using Redbox.HAL.Client;
 using System;
 using System.Collections.Generic;
+using Redbox.HAL.Client;
 
 namespace HALUtilities
 {
-  internal sealed class RandomInventorySelector : IDisposable
-  {
-    private readonly List<IInventoryLocation> m_locs = new List<IInventoryLocation>();
-
-    public void Dispose() => this.m_locs.Clear();
-
-    internal IInventoryLocation Select()
+    internal sealed class RandomInventorySelector : IDisposable
     {
-      if (0 >= this.m_locs.Count)
-        return (IInventoryLocation) null;
-      int index = new Random(DateTime.Now.Millisecond).Next(0, this.m_locs.Count - 1);
-      IInventoryLocation loc = this.m_locs[index];
-      this.m_locs.RemoveAt(index);
-      return loc;
-    }
+        private readonly List<IInventoryLocation> m_locs = new List<IInventoryLocation>();
 
-    internal RandomInventorySelector(HardwareService service)
-    {
-      using (KioskInventory kioskInventory = new KioskInventory(service))
-      {
-        if (kioskInventory.DeckInventory.Count == 0)
-          throw new Exception("Cannot load inventory.");
-        kioskInventory.DeckInventory.ForEach((Action<IInventoryLocation>) (element =>
+        internal RandomInventorySelector(HardwareService service)
         {
-          if (!(element.Matrix != "EMPTY"))
-            return;
-          this.m_locs.Add(element);
-        }));
-      }
+            using (var kioskInventory = new KioskInventory(service))
+            {
+                if (kioskInventory.DeckInventory.Count == 0)
+                    throw new Exception("Cannot load inventory.");
+                kioskInventory.DeckInventory.ForEach(element =>
+                {
+                    if (!(element.Matrix != "EMPTY"))
+                        return;
+                    m_locs.Add(element);
+                });
+            }
+        }
+
+        public void Dispose()
+        {
+            m_locs.Clear();
+        }
+
+        internal IInventoryLocation Select()
+        {
+            if (0 >= m_locs.Count)
+                return null;
+            var index = new Random(DateTime.Now.Millisecond).Next(0, m_locs.Count - 1);
+            var loc = m_locs[index];
+            m_locs.RemoveAt(index);
+            return loc;
+        }
     }
-  }
 }

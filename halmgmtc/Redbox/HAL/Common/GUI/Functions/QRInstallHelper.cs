@@ -154,7 +154,7 @@ namespace Redbox.HAL.Common.GUI.Functions
                     .ExecuteImmediate(
                         string.Format("SETCFG \"QuickReturnComPort\" \"{0}\" TYPE=CONTROLLER",
                             newComPort.HasValue ? string.Format("COM{0}", newComPort.Value) : (object)"NONE"),
-                        out var _).Success)
+                        out _).Success)
                 return false;
             if (install)
             {
@@ -436,7 +436,7 @@ namespace Redbox.HAL.Common.GUI.Functions
 
         private void StopDevice()
         {
-            m_suspendJobTB.Text = m_hardwareService.ExecuteImmediate("QUICKRETURN HALTPOLL", out var _).Success
+            m_suspendJobTB.Text = m_hardwareService.ExecuteImmediate("QUICKRETURN HALTPOLL", out _).Success
                 ? "STOPPED"
                 : "RUNNING";
             m_comPortTextBox.Text = string.Empty;

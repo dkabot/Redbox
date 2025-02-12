@@ -1,11 +1,11 @@
 namespace Redbox.HAL.Client.Executors
 {
-  public interface IDeckConfig
-  {
-    int Number { get; }
+    public interface IDeckConfig
+    {
+        int Number { get; }
 
-    int SlotCount { get; }
+        int SlotCount { get; }
 
-    bool IsQlm { get; }
-  }
+        bool IsQlm { get; }
+    }
 }

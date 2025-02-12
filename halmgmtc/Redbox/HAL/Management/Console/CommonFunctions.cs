@@ -6,8 +6,8 @@ using Microsoft.Win32;
 using Redbox.HAL.Client;
 using Redbox.HAL.Common.GUI.Functions;
 using Redbox.HAL.Component.Model;
-using Redbox.HAL.Core;
 using Redbox.HAL.Management.Console.Properties;
+using Range = Redbox.HAL.Core.Range;
 
 namespace Redbox.HAL.Management.Console
 {
@@ -128,7 +128,7 @@ namespace Redbox.HAL.Management.Console
                 if (location == null)
                     return false;
                 var service = ProfileManager.Instance.Service;
-                var range = new SyncRange(location.Deck, location.Deck, new Core.Range(location.Slot, location.Slot));
+                var range = new SyncRange(location.Deck, location.Deck, new Range(location.Slot, location.Slot));
                 var schedule = new HardwareJobSchedule();
                 schedule.Priority = HardwareJobPriority.Highest;
                 HardwareJob job;

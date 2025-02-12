@@ -1,4 +1,4 @@
 namespace HALUtilities
 {
-  public delegate bool ControlCallback(CtrlTypes ctrlType);
+    public delegate bool ControlCallback(CtrlTypes ctrlType);
 }

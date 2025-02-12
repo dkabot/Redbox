@@ -135,7 +135,7 @@ namespace Redbox.Core
 
         private void EncodeBlock(StringBuilder sb)
         {
-            this.EncodeBlock(this.m_encodedBlock.Length, sb);
+            EncodeBlock(m_encodedBlock.Length, sb);
         }
 
         private void EncodeBlock(int count, StringBuilder sb)
@@ -155,7 +155,7 @@ namespace Redbox.Core
 
         private void DecodeBlock()
         {
-            this.DecodeBlock(this.m_decodedBlock.Length);
+            DecodeBlock(m_decodedBlock.Length);
         }
 
         private void DecodeBlock(int bytes)

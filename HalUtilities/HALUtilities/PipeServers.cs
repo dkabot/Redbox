@@ -1,9 +1,9 @@
 namespace HALUtilities
 {
-  internal enum PipeServers
-  {
-    None,
-    Message,
-    Basic,
-  }
+    internal enum PipeServers
+    {
+        None,
+        Message,
+        Basic
+    }
 }

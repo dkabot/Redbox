@@ -1,11 +1,11 @@
 namespace HALUtilities
 {
-  internal enum StuckType
-  {
-    None,
-    Empty,
-    Stuck,
-    ExtendFail,
-    LookupFail,
-  }
+    internal enum StuckType
+    {
+        None,
+        Empty,
+        Stuck,
+        ExtendFail,
+        LookupFail
+    }
 }

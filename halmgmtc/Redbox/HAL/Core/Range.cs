@@ -1,6 +1,6 @@
-﻿using Redbox.HAL.Component.Model;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using Redbox.HAL.Component.Model;
 
 namespace Redbox.HAL.Core
 {
@@ -8,40 +8,46 @@ namespace Redbox.HAL.Core
     {
         public Range(int start, int end)
         {
-            this.End = end;
-            this.Start = start;
+            End = end;
+            Start = start;
         }
 
         public Range(string value)
         {
-            string[] strArray = value.Split("..".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
+            var strArray = value.Split("..".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
             if (strArray.Length < 2)
                 throw new ArgumentException("A range must be formatted as x..y");
-            this.End = 0;
-            this.Start = 0;
+            End = 0;
+            Start = 0;
             int result1;
             if (int.TryParse(strArray[1], out result1))
-                this.End = result1;
+                End = result1;
             int result2;
             if (!int.TryParse(strArray[0], out result2))
                 return;
-            this.Start = result2;
+            Start = result2;
         }
 
-        public bool Includes(int value) => value >= this.Start && value <= this.End;
+        public int Size => End - Start + 1;
 
-        public bool Includes(IRange<int> range) => range.Start >= this.Start && range.End <= this.End;
+        public bool Includes(int value)
+        {
+            return value >= Start && value <= End;
+        }
+
+        public bool Includes(IRange<int> range)
+        {
+            return range.Start >= Start && range.End <= End;
+        }
+
+        public int End { get; }
+
+        public int Start { get; }
 
         public IEnumerable<int> GetNextInRnage()
         {
-            for (int i = this.Start; i <= this.End; ++i)
+            for (var i = Start; i <= End; ++i)
                 yield return i;
         }
-
-        public int Size => this.End - this.Start + 1;
-
-        public int End { get; private set; }
-
-        public int Start { get; private set; }
     }
 }

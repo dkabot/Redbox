@@ -5,7 +5,6 @@ using System.Windows.Forms;
 using Redbox.HAL.Client;
 using Redbox.HAL.Component.Model;
 using Redbox.HAL.Component.Model.Extensions;
-using Redbox.HAL.Core;
 
 namespace Redbox.HAL.Common.GUI.Functions
 {

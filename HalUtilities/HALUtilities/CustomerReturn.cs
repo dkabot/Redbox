@@ -3,25 +3,29 @@ using Redbox.HAL.Component.Model;
 
 namespace HALUtilities
 {
-  internal sealed class CustomerReturn : JobExecutor
-  {
-    internal static void RunExecutor(object o) => CustomerReturn.RunExecutor(o as HardwareService);
-
-    internal static void RunExecutor(HardwareService service)
+    internal sealed class CustomerReturn : JobExecutor
     {
-      ConsoleLogger consoleLogger = new ConsoleLogger(true);
-      using (CustomerReturn customerReturn = new CustomerReturn(service))
-      {
-        customerReturn.AddSink((HardwareEvent) ((job, eventTime, eventMessage) => LogHelper.Instance.Log("<EventReceived> Job = {0} Msg = {1}", (object) job.ID, (object) eventMessage)));
-        customerReturn.Run();
-      }
-    }
+        internal CustomerReturn(HardwareService s)
+            : base(s)
+        {
+        }
 
-    protected override string JobName => "return";
+        protected override string JobName => "return";
 
-    internal CustomerReturn(HardwareService s)
-      : base(s)
-    {
+        internal static void RunExecutor(object o)
+        {
+            RunExecutor(o as HardwareService);
+        }
+
+        internal static void RunExecutor(HardwareService service)
+        {
+            var consoleLogger = new ConsoleLogger(true);
+            using (var customerReturn = new CustomerReturn(service))
+            {
+                customerReturn.AddSink((job, eventTime, eventMessage) =>
+                    LogHelper.Instance.Log("<EventReceived> Job = {0} Msg = {1}", job.ID, eventMessage));
+                customerReturn.Run();
+            }
+        }
     }
-  }
 }

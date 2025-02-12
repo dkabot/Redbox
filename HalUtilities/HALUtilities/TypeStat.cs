@@ -1,13 +1,19 @@
 namespace HALUtilities
 {
-  internal class TypeStat
-  {
-    internal int Count { get; private set; }
+    internal class TypeStat
+    {
+        internal TypeStat(StuckType t)
+        {
+            Type = t;
+        }
 
-    internal StuckType Type { get; private set; }
+        internal int Count { get; private set; }
 
-    internal void Increment() => ++this.Count;
+        internal StuckType Type { get; private set; }
 
-    internal TypeStat(StuckType t) => this.Type = t;
-  }
+        internal void Increment()
+        {
+            ++Count;
+        }
+    }
 }

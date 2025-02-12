@@ -2,19 +2,19 @@ using Redbox.HAL.Component.Model;
 
 namespace Redbox.HAL.Client.Services
 {
-  internal sealed class ClientControllerPosition : IControllerPosition
-  {
-    public int? XCoordinate { get; private set; }
-
-    public int? YCoordinate { get; private set; }
-
-    public bool ReadOk { get; private set; }
-
-    internal ClientControllerPosition(bool ok, int? x, int? y)
+    internal sealed class ClientControllerPosition : IControllerPosition
     {
-      this.ReadOk = ok;
-      this.XCoordinate = x;
-      this.YCoordinate = y;
+        internal ClientControllerPosition(bool ok, int? x, int? y)
+        {
+            ReadOk = ok;
+            XCoordinate = x;
+            YCoordinate = y;
+        }
+
+        public int? XCoordinate { get; }
+
+        public int? YCoordinate { get; }
+
+        public bool ReadOk { get; }
     }
-  }
 }

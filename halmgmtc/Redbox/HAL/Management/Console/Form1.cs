@@ -200,7 +200,7 @@ namespace Redbox.HAL.Management.Console
                 stringBuilder.AppendLine(" ROLLER STOP");
                 stringBuilder.AppendLine(" RINGLIGHT OFF");
                 stringBuilder.AppendLine(" CLEAR");
-                service.ExecuteImmediateProgram(Encoding.ASCII.GetBytes(stringBuilder.ToString()), out var _);
+                service.ExecuteImmediateProgram(Encoding.ASCII.GetBytes(stringBuilder.ToString()), out _);
             }
 
             Application.Exit();
@@ -549,7 +549,8 @@ namespace Redbox.HAL.Management.Console
             var schedule = new HardwareJobSchedule();
             schedule.Priority = HardwareJobPriority.Normal;
             HardwareJob hardwareJob;
-            CommonFunctions.ProcessCommandResult(service.ScheduleJob(selectedScript, null, false, schedule, out hardwareJob));
+            CommonFunctions.ProcessCommandResult(service.ScheduleJob(selectedScript, null, false, schedule,
+                out hardwareJob));
         }
 
         private void LockControls()
@@ -589,7 +590,7 @@ namespace Redbox.HAL.Management.Console
             ProfileManager.Instance.Connected += (_param1, _param2) =>
             {
                 CommonFunctions.ProcessCommandResult(
-                    ProfileManager.Instance.Service.ExecuteImmediate("NOP", out var _));
+                    ProfileManager.Instance.Service.ExecuteImmediate("NOP", out _));
                 EnvironmentHelper.IsLocked = EnvironmentHelper.IsLocked;
             };
         }

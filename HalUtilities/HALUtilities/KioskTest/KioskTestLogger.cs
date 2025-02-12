@@ -1,62 +1,71 @@
-using Redbox.HAL.Component.Model;
 using System;
 using System.IO;
+using Redbox.HAL.Component.Model;
 
 namespace HALUtilities.KioskTest
 {
-  internal sealed class KioskTestLogger : ILogger, IDisposable
-  {
-    private readonly StreamWriter LogFile;
-
-    public void Log(string message, Exception e)
+    internal sealed class KioskTestLogger : ILogger, IDisposable
     {
-      this.printAndLog(message);
-      this.printAndLog(e.Message);
-    }
+        private readonly StreamWriter LogFile;
 
-    public void Log(string message, LogEntryType type) => this.printAndLog(message);
-
-    public void Log(string message, Exception e, LogEntryType type)
-    {
-      this.printAndLog(message);
-      this.printAndLog(e.Message);
-    }
-
-    public bool IsLevelEnabled(LogEntryType entryLevel) => true;
-
-    public void Dispose() => this.LogFile.Dispose();
-
-    internal KioskTestLogger()
-    {
-      string path2 = string.Format("kioskTest-{0}", (object) ServiceLocator.Instance.GetService<IRuntimeService>().GenerateUniqueFile(".log"));
-      string str = "c:\\Program Files\\Redbox\\KioskLogs\\KioskTest";
-      bool flag = true;
-      if (!Directory.Exists(str))
-      {
-        try
+        internal KioskTestLogger()
         {
-          Directory.CreateDirectory(str);
+            var path2 = string.Format("kioskTest-{0}",
+                ServiceLocator.Instance.GetService<IRuntimeService>().GenerateUniqueFile(".log"));
+            var str = "c:\\Program Files\\Redbox\\KioskLogs\\KioskTest";
+            var flag = true;
+            if (!Directory.Exists(str))
+                try
+                {
+                    Directory.CreateDirectory(str);
+                }
+                catch (Exception ex)
+                {
+                    flag = false;
+                    Console.WriteLine("Failed to create kiosk logs path", ex.Message);
+                }
+
+            if (flag)
+                LogFile = new StreamWriter(Path.Combine(str, path2))
+                {
+                    AutoFlush = true
+                };
+            else
+                LogFile = StreamWriter.Null;
         }
-        catch (Exception ex)
-        {
-          flag = false;
-          Console.WriteLine("Failed to create kiosk logs path", (object) ex.Message);
-        }
-      }
-      if (flag)
-        this.LogFile = new StreamWriter(Path.Combine(str, path2))
-        {
-          AutoFlush = true
-        };
-      else
-        this.LogFile = StreamWriter.Null;
-    }
 
-    private void printAndLog(string msg)
-    {
-      string str = string.Format("{0} {1}", (object) DateTime.Now, (object) msg);
-      Console.WriteLine(str);
-      this.LogFile.WriteLine(str);
+        public void Dispose()
+        {
+            LogFile.Dispose();
+        }
+
+        public void Log(string message, Exception e)
+        {
+            printAndLog(message);
+            printAndLog(e.Message);
+        }
+
+        public void Log(string message, LogEntryType type)
+        {
+            printAndLog(message);
+        }
+
+        public void Log(string message, Exception e, LogEntryType type)
+        {
+            printAndLog(message);
+            printAndLog(e.Message);
+        }
+
+        public bool IsLevelEnabled(LogEntryType entryLevel)
+        {
+            return true;
+        }
+
+        private void printAndLog(string msg)
+        {
+            var str = string.Format("{0} {1}", DateTime.Now, msg);
+            Console.WriteLine(str);
+            LogFile.WriteLine(str);
+        }
     }
-  }
 }

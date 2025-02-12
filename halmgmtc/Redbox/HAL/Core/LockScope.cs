@@ -3,6 +3,6 @@
     public enum LockScope
     {
         Local,
-        Global,
+        Global
     }
 }

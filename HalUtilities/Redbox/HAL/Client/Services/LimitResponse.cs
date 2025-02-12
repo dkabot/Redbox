@@ -1,20 +1,23 @@
-using Redbox.HAL.Component.Model;
 using System;
+using Redbox.HAL.Component.Model;
 
 namespace Redbox.HAL.Client.Services
 {
-  internal sealed class LimitResponse : IMotionControlLimitResponse
-  {
-    public bool IsLimitBlocked(MotionControlLimits limit) => throw new NotImplementedException();
-
-    public bool ReadOk { get; private set; }
-
-    public IMotionControlLimit[] Limits { get; private set; }
-
-    internal LimitResponse(bool readOk, IMotionControlLimit[] limits)
+    internal sealed class LimitResponse : IMotionControlLimitResponse
     {
-      this.ReadOk = readOk;
-      this.Limits = limits;
+        internal LimitResponse(bool readOk, IMotionControlLimit[] limits)
+        {
+            ReadOk = readOk;
+            Limits = limits;
+        }
+
+        public bool IsLimitBlocked(MotionControlLimits limit)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool ReadOk { get; }
+
+        public IMotionControlLimit[] Limits { get; }
     }
-  }
 }

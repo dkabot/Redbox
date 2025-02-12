@@ -80,7 +80,7 @@ namespace Redbox.Core
             get
             {
                 var pszIconPath = new StringBuilder(260);
-                m_link.GetIconLocation(pszIconPath, pszIconPath.Capacity, out var _);
+                m_link.GetIconLocation(pszIconPath, pszIconPath.Capacity, out _);
                 return pszIconPath.ToString();
             }
             set => m_link.SetIconLocation(value, IconIndex);

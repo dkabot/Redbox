@@ -1,84 +1,93 @@
-using Redbox.HAL.Component.Model;
-using Redbox.HAL.Component.Model.Extensions;
 using System;
 using System.Collections.Generic;
+using Redbox.HAL.Component.Model;
+using Redbox.HAL.Component.Model.Extensions;
 
 namespace Redbox.HAL.Client.Services
 {
-  internal abstract class AbstractClientReadInputsResult<T> : IReadInputsResult<T>
-  {
-    protected readonly string[] Inputs;
-    private static readonly string[] ErrorInputs = new string[0];
-
-    public ErrorCodes Error { get; private set; }
-
-    public bool Success => this.Error == ErrorCodes.Success;
-
-    public int InputCount => this.Inputs.Length;
-
-    public void Log() => this.Log(LogEntryType.Info);
-
-    public void Log(LogEntryType type)
+    internal abstract class AbstractClientReadInputsResult<T> : IReadInputsResult<T>
     {
-      LogHelper.Instance.Log("--{0} inputs dump Error = {1} icount = {2}--", (object) this.LogHeader, (object) this.Error, (object) this.Inputs.Length);
-      int input = 0;
-      Array.ForEach<string>(this.Inputs, (Action<string>) (each =>
-      {
-        LogHelper.Instance.Log(" input {0} = {1}", (object) input, (object) this.Inputs[input]);
-        ++input;
-      }));
-    }
+        private static readonly string[] ErrorInputs = new string[0];
+        protected readonly string[] Inputs;
 
-    public bool IsInputActive(T input) => this.IsInState(input, InputState.Active);
-
-    public bool IsInState(T input, InputState state)
-    {
-      if (!this.Success)
-        throw new InvalidOperationException("Sensor read state is invalid");
-      return this.OnGetInputState(input) == state;
-    }
-
-    public void Foreach(Action<T> action) => this.OnForeachInput(action);
-
-    protected abstract InputState OnGetInputState(T input);
-
-    protected abstract void OnForeachInput(Action<T> a);
-
-    protected abstract string LogHeader { get; }
-
-    protected AbstractClientReadInputsResult(HardwareService service, string instruction)
-    {
-      HardwareJob job;
-      if (!service.ExecuteImmediate(instruction, out job).Success)
-      {
-        this.Error = ErrorCodes.ServiceChannelError;
-      }
-      else
-      {
-        Stack<string> stack;
-        if (!job.GetStack(out stack).Success)
+        protected AbstractClientReadInputsResult(HardwareService service, string instruction)
         {
-          this.Error = ErrorCodes.ServiceChannelError;
+            HardwareJob job;
+            if (!service.ExecuteImmediate(instruction, out job).Success)
+            {
+                Error = ErrorCodes.ServiceChannelError;
+            }
+            else
+            {
+                Stack<string> stack;
+                if (!job.GetStack(out stack).Success)
+                {
+                    Error = ErrorCodes.ServiceChannelError;
+                }
+                else
+                {
+                    var ignoringCase = Enum<ErrorCodes>.ParseIgnoringCase(stack.Pop(), ErrorCodes.CommunicationError);
+                    LogHelper.Instance.Log("[ClientReadInputsResult] Error = {0}", ignoringCase);
+                    if (ignoringCase != ErrorCodes.Success)
+                    {
+                        Error = ignoringCase;
+                    }
+                    else
+                    {
+                        var int32 = Convert.ToInt32(stack.Pop());
+                        LogHelper.Instance.Log("[ClientReadInputsResult] Stack count = {0}", int32);
+                        Error = ErrorCodes.Success;
+                        Inputs = new string[int32];
+                        for (var index = int32 - 1; index >= 0; --index)
+                            Inputs[index] = stack.Pop();
+                    }
+                }
+            }
         }
-        else
+
+        protected abstract string LogHeader { get; }
+
+        public ErrorCodes Error { get; }
+
+        public bool Success => Error == ErrorCodes.Success;
+
+        public int InputCount => Inputs.Length;
+
+        public void Log()
         {
-          ErrorCodes ignoringCase = Enum<ErrorCodes>.ParseIgnoringCase(stack.Pop(), ErrorCodes.CommunicationError);
-          LogHelper.Instance.Log("[ClientReadInputsResult] Error = {0}", (object) ignoringCase);
-          if (ignoringCase != ErrorCodes.Success)
-          {
-            this.Error = ignoringCase;
-          }
-          else
-          {
-            int int32 = Convert.ToInt32(stack.Pop());
-            LogHelper.Instance.Log("[ClientReadInputsResult] Stack count = {0}", (object) int32);
-            this.Error = ErrorCodes.Success;
-            this.Inputs = new string[int32];
-            for (int index = int32 - 1; index >= 0; --index)
-              this.Inputs[index] = stack.Pop();
-          }
+            Log(LogEntryType.Info);
         }
-      }
+
+        public void Log(LogEntryType type)
+        {
+            LogHelper.Instance.Log("--{0} inputs dump Error = {1} icount = {2}--", LogHeader, Error, Inputs.Length);
+            var input = 0;
+            Array.ForEach(Inputs, each =>
+            {
+                LogHelper.Instance.Log(" input {0} = {1}", input, Inputs[input]);
+                ++input;
+            });
+        }
+
+        public bool IsInputActive(T input)
+        {
+            return IsInState(input, InputState.Active);
+        }
+
+        public bool IsInState(T input, InputState state)
+        {
+            if (!Success)
+                throw new InvalidOperationException("Sensor read state is invalid");
+            return OnGetInputState(input) == state;
+        }
+
+        public void Foreach(Action<T> action)
+        {
+            OnForeachInput(action);
+        }
+
+        protected abstract InputState OnGetInputState(T input);
+
+        protected abstract void OnForeachInput(Action<T> a);
     }
-  }
 }

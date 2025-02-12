@@ -1,24 +1,24 @@
 namespace Redbox.HAL.Client.Executors
 {
-  public sealed class GetAndCenterResult : JobExecutor
-  {
-    private readonly int Deck;
-    private readonly int Slot;
-    private readonly bool Center;
-
-    public GetAndCenterResult(HardwareService service, int deck, int slot, bool center)
-      : base(service)
+    public sealed class GetAndCenterResult : JobExecutor
     {
-      this.Deck = deck;
-      this.Slot = slot;
-      this.Center = center;
-    }
+        private readonly bool Center;
+        private readonly int Deck;
+        private readonly int Slot;
 
-    protected override void SetupJob()
-    {
-      this.Job.Push((object) this.Center.ToString(), (object) this.Deck, (object) this.Slot);
-    }
+        public GetAndCenterResult(HardwareService service, int deck, int slot, bool center)
+            : base(service)
+        {
+            Deck = deck;
+            Slot = slot;
+            Center = center;
+        }
 
-    protected override string JobName => "get-and-center";
-  }
+        protected override string JobName => "get-and-center";
+
+        protected override void SetupJob()
+        {
+            Job.Push(Center.ToString(), Deck, Slot);
+        }
+    }
 }

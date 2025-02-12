@@ -1,12 +1,15 @@
 using System;
 using Redbox.HAL.Component.Model;
 using Redbox.HAL.Component.Model.Extensions;
-using Redbox.HAL.Core;
 
 namespace Redbox.HAL.Client.Executors
 {
     public sealed class HardwareSurveyExecutor : JobExecutor
     {
+        public HardwareSurveyExecutor(HardwareService service) : base(service)
+        {
+        }
+
         public string Kiosk { get; private set; }
 
         public DateTime Timestamp { get; private set; }
@@ -42,10 +45,6 @@ namespace Redbox.HAL.Client.Executors
         public string Monitor { get; private set; }
 
         protected override string JobName => "hardware-survey-job";
-
-        public HardwareSurveyExecutor(HardwareService service) : base(service)
-        {
-        }
 
         protected override void OnJobCompleted()
         {

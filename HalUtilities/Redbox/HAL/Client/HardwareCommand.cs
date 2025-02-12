@@ -3,9 +3,9 @@ using Redbox.IPC.Framework;
 
 namespace Redbox.HAL.Client
 {
-  public class HardwareCommand :
-    ClientCommand<HardwareCommandResult>
-  {
+    public class HardwareCommand :
+        ClientCommand<HardwareCommandResult>
+    {
         public HardwareCommand(IPCProtocol protocol, string command) : base(protocol, command)
         {
         }

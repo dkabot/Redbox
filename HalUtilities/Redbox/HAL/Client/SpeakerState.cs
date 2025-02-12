@@ -1,8 +1,8 @@
 namespace Redbox.HAL.Client
 {
-  public enum SpeakerState
-  {
-    On,
-    Off,
-  }
+    public enum SpeakerState
+    {
+        On,
+        Off
+    }
 }

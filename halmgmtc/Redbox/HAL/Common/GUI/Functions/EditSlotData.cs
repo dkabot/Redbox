@@ -187,7 +187,7 @@ namespace Redbox.HAL.Common.GUI.Functions
                 var stringBuilder = new StringBuilder();
                 stringBuilder.Append(RinglightActive ? "RINGLIGHT ON" : "RINGLIGHT OFF" + Environment.NewLine);
                 stringBuilder.Append(SensorbarActive ? "SENSOR PICKER-ON" : "SENSOR PICKER-OFF" + Environment.NewLine);
-                Service.ExecuteImmediateProgram(Encoding.ASCII.GetBytes(stringBuilder.ToString()), out var _);
+                Service.ExecuteImmediateProgram(Encoding.ASCII.GetBytes(stringBuilder.ToString()), out _);
                 IncrementChange();
                 return moveHelperResult.MoveOk;
             }
@@ -442,7 +442,7 @@ namespace Redbox.HAL.Common.GUI.Functions
             var stringBuilder = new StringBuilder();
             stringBuilder.Append("RINGLIGHT OFF" + Environment.NewLine);
             stringBuilder.Append("SENSOR PICKER-OFF" + Environment.NewLine);
-            Service.ExecuteImmediateProgram(Encoding.ASCII.GetBytes(stringBuilder.ToString()), out var _);
+            Service.ExecuteImmediateProgram(Encoding.ASCII.GetBytes(stringBuilder.ToString()), out _);
         }
 
         private int BaseSlot(int targetDeck)

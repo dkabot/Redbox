@@ -16,7 +16,7 @@ namespace Redbox.IPC.Framework.Remoting
                        .Where(channel => channel.ChannelName == "ipc_tcp" && channel is IChannelSender).GetEnumerator())
             {
                 if (enumerator.MoveNext())
-                    SinkChain = ((IChannelSender)enumerator.Current).CreateMessageSink(Url, timeout, out var _);
+                    SinkChain = ((IChannelSender)enumerator.Current).CreateMessageSink(Url, timeout, out _);
             }
 
             if (SinkChain == null)

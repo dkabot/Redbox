@@ -1,40 +1,41 @@
-using Redbox.HAL.Client;
 using System;
 using System.Collections.Generic;
+using Redbox.HAL.Client;
 
 namespace HALUtilities
 {
-  internal sealed class PrepositionTest : IDisposable
-  {
-    private readonly HardwareJob m_preposJob;
-
-    public void Dispose()
+    internal sealed class PrepositionTest : IDisposable
     {
-    }
+        private readonly HardwareJob m_preposJob;
 
-    internal HardwareJob PreposJob => this.m_preposJob;
-
-    internal PrepositionTest(int items, HardwareService s, IConsole console)
-    {
-      List<string> stringList = new List<string>();
-      using (RandomInventorySelector inventorySelector = new RandomInventorySelector(s))
-      {
-        for (int index = 0; index < items; ++index)
+        internal PrepositionTest(int items, HardwareService s, IConsole console)
         {
-          IInventoryLocation inventoryLocation = inventorySelector.Select();
-          if (inventoryLocation != null)
-            stringList.Add(inventoryLocation.Matrix);
-          else
-            break;
+            var stringList = new List<string>();
+            using (var inventorySelector = new RandomInventorySelector(s))
+            {
+                for (var index = 0; index < items; ++index)
+                {
+                    var inventoryLocation = inventorySelector.Select();
+                    if (inventoryLocation != null)
+                        stringList.Add(inventoryLocation.Matrix);
+                    else
+                        break;
+                }
+
+                var hardwareService = s;
+                var schedule = new HardwareJobSchedule();
+                schedule.Priority = HardwareJobPriority.High;
+                var array = stringList.ToArray();
+                if (!hardwareService.PreposVend(schedule, array, out m_preposJob).Success)
+                    throw new Exception("Can't schedule job.");
+                m_preposJob.Pend();
+            }
         }
-        HardwareService hardwareService = s;
-        HardwareJobSchedule schedule = new HardwareJobSchedule();
-        schedule.Priority = HardwareJobPriority.High;
-        string[] array = stringList.ToArray();
-        if (!hardwareService.PreposVend(schedule, array, out this.m_preposJob).Success)
-          throw new Exception("Can't schedule job.");
-        this.m_preposJob.Pend();
-      }
+
+        internal HardwareJob PreposJob => m_preposJob;
+
+        public void Dispose()
+        {
+        }
     }
-  }
 }

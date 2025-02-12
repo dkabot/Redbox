@@ -4,37 +4,49 @@ using Redbox.HAL.Core;
 
 namespace HALUtilities.KioskTest
 {
-  internal sealed class QlmKioskTest : AbstractKioskTest
-  {
-    private int QlmFrequency = 2;
-
-    protected override void OnProcessArgument(string argument)
+    internal sealed class QlmKioskTest : AbstractKioskTest
     {
-      if (!argument.StartsWith("--qlmFrequency"))
-        return;
-      this.QlmFrequency = CommandLineOption.GetOptionVal<int>(argument, this.QlmFrequency);
+        private int QlmFrequency = 2;
+
+        internal QlmKioskTest(KioskConfiguration config, HardwareService s)
+            : base(s, config)
+        {
+        }
+
+        protected override void OnProcessArgument(string argument)
+        {
+            if (!argument.StartsWith("--qlmFrequency"))
+                return;
+            QlmFrequency = CommandLineOption.GetOptionVal(argument, QlmFrequency);
+        }
+
+        protected override int OnPreTest()
+        {
+            return 0;
+        }
+
+        protected override bool CanVisit(TestLocation loc)
+        {
+            return loc.Deck != 8;
+        }
+
+        protected override JobExecutor GetTransferExecutor(
+            TestLocation start,
+            TestLocation end,
+            bool vend,
+            int iteration)
+        {
+            return new QlmKioskTestExecutor(Service, start, end, vend, iteration % QlmFrequency == 0);
+        }
+
+        protected override int OnCleanup(TestLocation diskSource)
+        {
+            return 0;
+        }
+
+        protected override bool SingleTestNeeded()
+        {
+            return false;
+        }
     }
-
-    protected override int OnPreTest() => 0;
-
-    protected override bool CanVisit(TestLocation loc) => loc.Deck != 8;
-
-    protected override JobExecutor GetTransferExecutor(
-      TestLocation start,
-      TestLocation end,
-      bool vend,
-      int iteration)
-    {
-      return (JobExecutor) new QlmKioskTestExecutor(this.Service, start, end, vend, iteration % this.QlmFrequency == 0);
-    }
-
-    protected override int OnCleanup(TestLocation diskSource) => 0;
-
-    protected override bool SingleTestNeeded() => false;
-
-    internal QlmKioskTest(KioskConfiguration config, HardwareService s)
-      : base(s, config)
-    {
-    }
-  }
 }

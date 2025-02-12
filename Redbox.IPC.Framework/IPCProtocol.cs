@@ -97,7 +97,7 @@ namespace Redbox.IPC.Framework
             if (ipcProtocol.Channel == ChannelType.Unknown)
                 throw new UriFormatException("The channel type is unknown; please correct your URI.");
             if ((ipcProtocol.Channel == ChannelType.Socket || ipcProtocol.Channel == ChannelType.Remoting) &&
-                !string.IsNullOrEmpty(ipcProtocol.Port) && !int.TryParse(ipcProtocol.Port, out var _))
+                !string.IsNullOrEmpty(ipcProtocol.Port) && !int.TryParse(ipcProtocol.Port, out _))
                 throw new UriFormatException(string.Format("Protocol is set up for {0}, but port isn't a valid number.",
                     ipcProtocol.Channel));
             return ipcProtocol;

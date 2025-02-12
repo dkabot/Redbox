@@ -2,37 +2,37 @@ using Redbox.HAL.Client;
 
 namespace HALUtilities.KioskTest
 {
-  internal sealed class QlmKioskTestExecutor : JobExecutor
-  {
-    private readonly TestLocation Source;
-    private readonly TestLocation Destination;
-    private readonly bool m_vend;
-    private readonly bool m_runQlm;
-
-    internal QlmKioskTestExecutor(
-      HardwareService service,
-      TestLocation source,
-      TestLocation dest,
-      bool vend,
-      bool runQlm)
-      : base(service)
+    internal sealed class QlmKioskTestExecutor : JobExecutor
     {
-      this.Source = source;
-      this.Destination = dest;
-      this.m_vend = vend;
-      this.m_runQlm = runQlm;
-    }
+        private readonly TestLocation Destination;
+        private readonly bool m_runQlm;
+        private readonly bool m_vend;
+        private readonly TestLocation Source;
 
-    protected override void SetupJob()
-    {
-      this.Job.Push((object) this.Destination.Slot);
-      this.Job.Push((object) this.Destination.Deck);
-      this.Job.Push((object) this.Source.Slot);
-      this.Job.Push((object) this.Source.Deck);
-      this.Job.Push((object) this.m_vend.ToString());
-      this.Job.Push((object) this.m_runQlm.ToString());
-    }
+        internal QlmKioskTestExecutor(
+            HardwareService service,
+            TestLocation source,
+            TestLocation dest,
+            bool vend,
+            bool runQlm)
+            : base(service)
+        {
+            Source = source;
+            Destination = dest;
+            m_vend = vend;
+            m_runQlm = runQlm;
+        }
 
-    protected override string JobName => "qlm-kiosk-test";
-  }
+        protected override string JobName => "qlm-kiosk-test";
+
+        protected override void SetupJob()
+        {
+            Job.Push(Destination.Slot);
+            Job.Push(Destination.Deck);
+            Job.Push(Source.Slot);
+            Job.Push(Source.Deck);
+            Job.Push(m_vend.ToString());
+            Job.Push(m_runQlm.ToString());
+        }
+    }
 }

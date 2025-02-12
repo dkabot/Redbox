@@ -1,26 +1,26 @@
 namespace Redbox.HAL.Client.Executors
 {
-  public sealed class OneDiskQuickTest : JobExecutor
-  {
-    private readonly int SourceDeck;
-    private readonly int SourceSlot;
-    private readonly int DeckCount;
-
-    public OneDiskQuickTest(HardwareService service, int sourceDeck, int sourceSlot, int count)
-      : base(service)
+    public sealed class OneDiskQuickTest : JobExecutor
     {
-      this.SourceDeck = sourceDeck;
-      this.SourceSlot = sourceSlot;
-      this.DeckCount = count;
-    }
+        private readonly int DeckCount;
+        private readonly int SourceDeck;
+        private readonly int SourceSlot;
 
-    protected override string JobName => "one-disk-quick-deck-test";
+        public OneDiskQuickTest(HardwareService service, int sourceDeck, int sourceSlot, int count)
+            : base(service)
+        {
+            SourceDeck = sourceDeck;
+            SourceSlot = sourceSlot;
+            DeckCount = count;
+        }
 
-    protected override void SetupJob()
-    {
-      this.Job.Push((object) this.DeckCount);
-      this.Job.Push((object) this.SourceSlot);
-      this.Job.Push((object) this.SourceDeck);
+        protected override string JobName => "one-disk-quick-deck-test";
+
+        protected override void SetupJob()
+        {
+            Job.Push(DeckCount);
+            Job.Push(SourceSlot);
+            Job.Push(SourceDeck);
+        }
     }
-  }
 }

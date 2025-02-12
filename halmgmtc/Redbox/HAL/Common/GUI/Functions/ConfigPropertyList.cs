@@ -240,7 +240,7 @@ namespace Redbox.HAL.Common.GUI.Functions
             var obj = cell.Value;
             if (tag.ItemType == typeof(bool))
                 obj = cell.Value.ToString() == "Yes" ? "True" : (object)"False";
-            if (tag.ItemType == typeof(int) && !int.TryParse(obj.ToString(), out var _))
+            if (tag.ItemType == typeof(int) && !int.TryParse(obj.ToString(), out _))
             {
                 var num = (int)MessageBox.Show("Data entered is not an integer");
                 cell.Value = tag.Value;

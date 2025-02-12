@@ -3,7 +3,6 @@ using System.Drawing;
 using System.Windows.Forms;
 using Redbox.HAL.Component.Model;
 using Redbox.HAL.Component.Model.Threading;
-using Redbox.HAL.Core;
 
 namespace Redbox.HAL.Management.Console
 {

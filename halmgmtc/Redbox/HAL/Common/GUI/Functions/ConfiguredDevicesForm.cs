@@ -209,7 +209,7 @@ namespace Redbox.HAL.Common.GUI.Functions
         {
             var flag = !HasFraudSensor;
             var hardwareCommandResult = Service.ExecuteImmediate(
-                string.Format("SETCFG \"EnableIceQubePolling\" \"{0}\" TYPE=CONTROLLER", flag.ToString()), out var _);
+                string.Format("SETCFG \"EnableIceQubePolling\" \"{0}\" TYPE=CONTROLLER", flag.ToString()), out _);
             if (!hardwareCommandResult.Success)
             {
                 AirExchangerOutput.Write("Failed to update configuration.");
@@ -374,7 +374,7 @@ namespace Redbox.HAL.Common.GUI.Functions
                     flag ? 32 : 0));
                 stringBuilder.AppendLine(" CLEAR");
                 var hardwareCommandResult =
-                    Service.ExecuteImmediateProgram(Encoding.ASCII.GetBytes(stringBuilder.ToString()), out var _);
+                    Service.ExecuteImmediateProgram(Encoding.ASCII.GetBytes(stringBuilder.ToString()), out _);
                 if (!hardwareCommandResult.Success)
                 {
                     FraudSensorOutput.Write("Failed to update configuration.");
@@ -429,7 +429,7 @@ namespace Redbox.HAL.Common.GUI.Functions
                 else
                 {
                     CompositeFunctions.GetItem(sender, Manager, integer1, integer2, FraudSensorOutput, Service);
-                    Service.ExecuteImmediateProgram(CenterItemProgram, out var _);
+                    Service.ExecuteImmediateProgram(CenterItemProgram, out _);
                 }
             }
         }

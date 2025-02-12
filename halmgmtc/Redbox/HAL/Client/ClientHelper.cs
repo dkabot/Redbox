@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Net;
 using System.Net.Sockets;
 using System.Threading;
-using Redbox.HAL.Component.Model.Extensions;
-using Redbox.HAL.Core;
 using Redbox.IPC.Framework;
 using ConversionHelper = Redbox.HAL.Component.Model.Extensions.ConversionHelper;
 
@@ -131,7 +129,7 @@ namespace Redbox.HAL.Client
 
         public bool ExecuteImmediate(string inst)
         {
-            return Service != null && Service.ExecuteImmediate(inst, out var _).Success;
+            return Service != null && Service.ExecuteImmediate(inst, out _).Success;
         }
 
         public T ExecuteImmediateAndGetResult<T>(HardwareService service, string inst)

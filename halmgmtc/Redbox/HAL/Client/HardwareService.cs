@@ -5,6 +5,7 @@ using Redbox.HAL.Component.Model;
 using Redbox.HAL.Core;
 using Redbox.HAL.IPC.Framework;
 using Redbox.IPC.Framework;
+using CompressionType = Redbox.Compression.CompressionType;
 
 namespace Redbox.HAL.Client
 {
@@ -525,7 +526,7 @@ namespace Redbox.HAL.Client
 
         public HardwareCommandResult SetConfiguration(string name, string xmlConfig)
         {
-            var inputArray = CompressionAlgorithm.GetAlgorithm(Redbox.Compression.CompressionType.LZMA)
+            var inputArray = CompressionAlgorithm.GetAlgorithm(CompressionType.LZMA)
                 .Compress(Encoding.ASCII.GetBytes(xmlConfig));
             return ExecuteCommand(string.Format("CONFIG set name: '{0}' data: '{1}'", name,
                 ByteHelper.ToBase64(inputArray)));
@@ -557,7 +558,7 @@ namespace Redbox.HAL.Client
         public HardwareCommandResult SetInventoryState(string xml)
         {
             return ExecuteCommand(string.Format("CONFIG set-inventory-state data: '{0}'",
-                ByteHelper.ToBase64(CompressionAlgorithm.GetAlgorithm(Redbox.Compression.CompressionType.LZMA)
+                ByteHelper.ToBase64(CompressionAlgorithm.GetAlgorithm(CompressionType.LZMA)
                     .Compress(Encoding.ASCII.GetBytes(xml)))));
         }
 
@@ -568,7 +569,7 @@ namespace Redbox.HAL.Client
 
         public HardwareCommandResult SetProgramScript(string programName, string script)
         {
-            var inputArray = CompressionAlgorithm.GetAlgorithm(Redbox.Compression.CompressionType.LZMA)
+            var inputArray = CompressionAlgorithm.GetAlgorithm(CompressionType.LZMA)
                 .Compress(Encoding.ASCII.GetBytes(script));
             return ExecuteCommand(string.Format("PROGRAM set name: '{0}' data: '{1}'", programName,
                 ByteHelper.ToBase64(inputArray)));

@@ -9,27 +9,36 @@ namespace Redbox.HAL.Core
 
         public ExecutionTimer()
         {
-            this.Stopwatch = new Stopwatch();
-            this.Stopwatch.Start();
+            Stopwatch = new Stopwatch();
+            Stopwatch.Start();
         }
 
-        public void Stop() => this.Stopwatch.Stop();
+        public TimeSpan Elapsed => Stopwatch.Elapsed;
 
-        public void Start() => this.Stopwatch.Start();
+        public long ElapsedTicks => Stopwatch.ElapsedTicks;
 
-        public void StartNew() => Stopwatch.StartNew();
+        public long ElapsedMilliseconds => Stopwatch.ElapsedMilliseconds;
 
         public void Dispose()
         {
-            if (!this.Stopwatch.IsRunning)
+            if (!Stopwatch.IsRunning)
                 return;
-            this.Stopwatch.Stop();
+            Stopwatch.Stop();
         }
 
-        public TimeSpan Elapsed => this.Stopwatch.Elapsed;
+        public void Stop()
+        {
+            Stopwatch.Stop();
+        }
 
-        public long ElapsedTicks => this.Stopwatch.ElapsedTicks;
+        public void Start()
+        {
+            Stopwatch.Start();
+        }
 
-        public long ElapsedMilliseconds => this.Stopwatch.ElapsedMilliseconds;
+        public void StartNew()
+        {
+            Stopwatch.StartNew();
+        }
     }
 }

@@ -10,7 +10,7 @@ namespace Redbox.HAL.Management.Console
     {
         private static readonly ILog m_log = LogManager.GetLogger(typeof(Program));
         private static Guid m_applicationGuid = new Guid("{E3720F11-5B72-4d86-A1A8-445518455D4C}");
-        private Core.NamedLock m_instanceLock;
+        private NamedLock m_instanceLock;
 
         public static string Version => typeof(Program).Assembly.GetName().Version.ToString();
 
@@ -109,7 +109,7 @@ namespace Redbox.HAL.Management.Console
         {
             using (var instance = new Program())
             {
-                instance.m_instanceLock = new Core.NamedLock(m_applicationGuid.ToString(), LockScope.Local);
+                instance.m_instanceLock = new NamedLock(m_applicationGuid.ToString(), LockScope.Local);
                 if (!instance.m_instanceLock.IsOwned)
                 {
                     var num = (int)MessageBox.Show("Only one instance of the Console is allowed to run.");

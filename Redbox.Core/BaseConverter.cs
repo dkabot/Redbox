@@ -5,42 +5,6 @@ namespace Redbox.Core
 {
     public class BaseConverter
     {
-        private static readonly BaseConverter _binToOct =
-            new BaseConverter(2, NumberingSchemes.ZeroToZ, 8, NumberingSchemes.ZeroToZ);
-
-        private static readonly BaseConverter _binToDec =
-            new BaseConverter(2, NumberingSchemes.ZeroToZ, 10, NumberingSchemes.ZeroToZ);
-
-        private static readonly BaseConverter _binToHex =
-            new BaseConverter(2, NumberingSchemes.ZeroToZ, 16, NumberingSchemes.ZeroToZ);
-
-        private static readonly BaseConverter _octToBin =
-            new BaseConverter(8, NumberingSchemes.ZeroToZ, 2, NumberingSchemes.ZeroToZ);
-
-        private static readonly BaseConverter _octToDec =
-            new BaseConverter(8, NumberingSchemes.ZeroToZ, 10, NumberingSchemes.ZeroToZ);
-
-        private static readonly BaseConverter _octToHex =
-            new BaseConverter(8, NumberingSchemes.ZeroToZ, 16, NumberingSchemes.ZeroToZ);
-
-        private static readonly BaseConverter _decToBin =
-            new BaseConverter(10, NumberingSchemes.ZeroToZ, 2, NumberingSchemes.ZeroToZ);
-
-        private static readonly BaseConverter _decToOct =
-            new BaseConverter(10, NumberingSchemes.ZeroToZ, 8, NumberingSchemes.ZeroToZ);
-
-        private static readonly BaseConverter _decToHex =
-            new BaseConverter(10, NumberingSchemes.ZeroToZ, 16, NumberingSchemes.ZeroToZ);
-
-        private static readonly BaseConverter _hexToBin =
-            new BaseConverter(16, NumberingSchemes.ZeroToZ, 2, NumberingSchemes.ZeroToZ);
-
-        private static readonly BaseConverter _hexToOct =
-            new BaseConverter(16, NumberingSchemes.ZeroToZ, 8, NumberingSchemes.ZeroToZ);
-
-        private static readonly BaseConverter _hexToDec =
-            new BaseConverter(16, NumberingSchemes.ZeroToZ, 10, NumberingSchemes.ZeroToZ);
-
         private readonly string _fromNumberingScheme;
         private readonly int _maxFromSchemeCharacter;
         private readonly string _toNumberingScheme;
@@ -68,29 +32,41 @@ namespace Redbox.Core
             _maxFromSchemeCharacter = fromScheme == NumberingSchemes.ZeroToZ ? fromRadix : fromRadix + 1;
         }
 
-        public static BaseConverter BinToOct => _binToOct;
+        public static BaseConverter BinToOct { get; } =
+            new BaseConverter(2, NumberingSchemes.ZeroToZ, 8, NumberingSchemes.ZeroToZ);
 
-        public static BaseConverter BinToDec => _binToDec;
+        public static BaseConverter BinToDec { get; } =
+            new BaseConverter(2, NumberingSchemes.ZeroToZ, 10, NumberingSchemes.ZeroToZ);
 
-        public static BaseConverter BinToHex => _binToHex;
+        public static BaseConverter BinToHex { get; } =
+            new BaseConverter(2, NumberingSchemes.ZeroToZ, 16, NumberingSchemes.ZeroToZ);
 
-        public static BaseConverter OctToBin => _octToBin;
+        public static BaseConverter OctToBin { get; } =
+            new BaseConverter(8, NumberingSchemes.ZeroToZ, 2, NumberingSchemes.ZeroToZ);
 
-        public static BaseConverter OctToDec => _octToDec;
+        public static BaseConverter OctToDec { get; } =
+            new BaseConverter(8, NumberingSchemes.ZeroToZ, 10, NumberingSchemes.ZeroToZ);
 
-        public static BaseConverter OctToHex => _octToHex;
+        public static BaseConverter OctToHex { get; } =
+            new BaseConverter(8, NumberingSchemes.ZeroToZ, 16, NumberingSchemes.ZeroToZ);
 
-        public static BaseConverter DecToBin => _decToBin;
+        public static BaseConverter DecToBin { get; } =
+            new BaseConverter(10, NumberingSchemes.ZeroToZ, 2, NumberingSchemes.ZeroToZ);
 
-        public static BaseConverter DecToOct => _decToOct;
+        public static BaseConverter DecToOct { get; } =
+            new BaseConverter(10, NumberingSchemes.ZeroToZ, 8, NumberingSchemes.ZeroToZ);
 
-        public static BaseConverter DecToHex => _decToHex;
+        public static BaseConverter DecToHex { get; } =
+            new BaseConverter(10, NumberingSchemes.ZeroToZ, 16, NumberingSchemes.ZeroToZ);
 
-        public static BaseConverter HexToBin => _hexToBin;
+        public static BaseConverter HexToBin { get; } =
+            new BaseConverter(16, NumberingSchemes.ZeroToZ, 2, NumberingSchemes.ZeroToZ);
 
-        public static BaseConverter HexToOct => _hexToOct;
+        public static BaseConverter HexToOct { get; } =
+            new BaseConverter(16, NumberingSchemes.ZeroToZ, 8, NumberingSchemes.ZeroToZ);
 
-        public static BaseConverter HexToDec => _hexToDec;
+        public static BaseConverter HexToDec { get; } =
+            new BaseConverter(16, NumberingSchemes.ZeroToZ, 10, NumberingSchemes.ZeroToZ);
 
         public int From { get; }
 

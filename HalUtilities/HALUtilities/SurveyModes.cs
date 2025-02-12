@@ -1,8 +1,8 @@
 namespace HALUtilities
 {
-  internal enum SurveyModes
-  {
-    Console,
-    File,
-  }
+    internal enum SurveyModes
+    {
+        Console,
+        File
+    }
 }

@@ -14,7 +14,6 @@ namespace Redbox.HAL.Common.GUI.Functions.Properties
     internal class Resources
     {
         private static ResourceManager resourceMan;
-        private static CultureInfo resourceCulture;
 
         [EditorBrowsable(EditorBrowsableState.Advanced)]
         internal static ResourceManager ResourceManager
@@ -29,18 +28,14 @@ namespace Redbox.HAL.Common.GUI.Functions.Properties
         }
 
         [EditorBrowsable(EditorBrowsableState.Advanced)]
-        internal static CultureInfo Culture
-        {
-            get => resourceCulture;
-            set => resourceCulture = value;
-        }
+        internal static CultureInfo Culture { get; set; }
 
         internal static Bitmap sortAscending2 =>
-            (Bitmap)ResourceManager.GetObject(nameof(sortAscending2), resourceCulture);
+            (Bitmap)ResourceManager.GetObject(nameof(sortAscending2), Culture);
 
         internal static Bitmap sortDescending2 =>
-            (Bitmap)ResourceManager.GetObject(nameof(sortDescending2), resourceCulture);
+            (Bitmap)ResourceManager.GetObject(nameof(sortDescending2), Culture);
 
-        internal static Bitmap undo => (Bitmap)ResourceManager.GetObject(nameof(undo), resourceCulture);
+        internal static Bitmap undo => (Bitmap)ResourceManager.GetObject(nameof(undo), Culture);
     }
 }

@@ -1,14 +1,14 @@
 namespace HALUtilities
 {
-  public class DeviceConfiguration
-  {
-    public readonly int DevicePixelWidth;
-    public readonly int DeviceHeight;
-
-    internal DeviceConfiguration(int width, int height)
+    public class DeviceConfiguration
     {
-      this.DevicePixelWidth = width;
-      this.DeviceHeight = height;
+        public readonly int DeviceHeight;
+        public readonly int DevicePixelWidth;
+
+        internal DeviceConfiguration(int width, int height)
+        {
+            DevicePixelWidth = width;
+            DeviceHeight = height;
+        }
     }
-  }
 }
