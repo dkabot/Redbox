@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<!-- ILRepack -->
+	<Target Name="ILRepacker" AfterTargets="Build">
+		<ItemGroup>
+			<InputAssemblies Include="$(OutputPath)\ICSharpCode.SharpZipLib.dll" />
+			<InputAssemblies Include="$(OutputPath)\log4net.dll" />
+			<InputAssemblies Include="$(OutputPath)\Redbox.Command.Tokenizer.dll" />
+			<InputAssemblies Include="$(OutputPath)\Redbox.Compression.dll" />
+			<InputAssemblies Include="$(OutputPath)\Redbox.Core.dll" />
+			<InputAssemblies Include="$(OutputPath)\Redbox.GetOpts.dll" />
+			<InputAssemblies Include="$(OutputPath)\Redbox.IPC.Framework.dll" />
+			<InputAssemblies Include="$(OutputPath)\Redbox.Log.Framework.dll" />
+			<InputAssemblies Include="$(OutputPath)\Redbox.Macros.dll" />
+			<InputAssemblies Include="$(OutputPath)\Redbox.Tokenizer.Framework.dll" />
+			<InputAssemblies Include="$(OutputPath)\SevenZip.dll" />
+		</ItemGroup>
+    
+		<ILRepack
+			Parallel="true"
+			Internalize="true"
+			InputAssemblies="@(InputAssemblies)"
+			TargetKind="exe"
+			OutputFile="$(OutputPath)\$(AssemblyName).exe"
+		/>
+	</Target>
+	<!-- /ILRepack -->
+</Project>
