@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{55DBB4F4-0E91-401A-AFDB-37F5BDF4862A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>Redbox.HAL.Client</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <ApplicationVersion>1.13.0.27</ApplicationVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net35\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SevenZip, Version=4.12.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SevenZip.4.12.1\lib\net20\SevenZip.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="LzmaAlone\Properties\Settings.cs" />
+    <Compile Include="Redbox\HAL\Client\ClientHelper.cs" />
+    <Compile Include="Redbox\HAL\Client\NullSink.cs" />
+    <Compile Include="Redbox\HAL\Client\HardwareJobStatus.cs" />
+    <Compile Include="Redbox\HAL\Client\HardwareJobPriority.cs" />
+    <Compile Include="Redbox\HAL\Client\HardwareJobConnectionState.cs" />
+    <Compile Include="Redbox\HAL\Client\SpeakerState.cs" />
+    <Compile Include="Redbox\HAL\Client\HardwareEvent.cs" />
+    <Compile Include="Redbox\HAL\Client\HardwareStatusChangeEvent.cs" />
+    <Compile Include="Redbox\HAL\Client\Constants.cs" />
+    <Compile Include="Redbox\HAL\Client\IDumpbinItem.cs" />
+    <Compile Include="Redbox\HAL\Client\DumpbinItem.cs" />
+    <Compile Include="Redbox\HAL\Client\HardwareCommand.cs" />
+    <Compile Include="Redbox\HAL\Client\HardwareCommandResult.cs" />
+    <Compile Include="Redbox\HAL\Client\HardwareJob.cs" />
+    <Compile Include="Redbox\HAL\Client\HardwareJobExtensions.cs" />
+    <Compile Include="Redbox\HAL\Client\HardwareJobSchedule.cs" />
+    <Compile Include="Redbox\HAL\Client\HardwareService.cs" />
+    <Compile Include="Redbox\HAL\Client\IClientOutputSink.cs" />
+    <Compile Include="Redbox\HAL\Client\IInventoryLocation.cs" />
+    <Compile Include="Redbox\HAL\Client\InventoryLocation.cs" />
+    <Compile Include="Redbox\HAL\Client\JobExecutor.cs" />
+    <Compile Include="Redbox\HAL\Client\KioskInventory.cs" />
+    <Compile Include="Redbox\HAL\Client\Location.cs" />
+    <Compile Include="Redbox\HAL\Client\ProgramResult.cs" />
+    <Compile Include="Redbox\HAL\Client\ResultItem.cs" />
+    <Compile Include="Redbox\HAL\Client\SlotRange.cs" />
+    <Compile Include="Redbox\HAL\Client\SyncRange.cs" />
+    <Compile Include="Redbox\HAL\Client\Services\AbstractClientReadInputsResult`1.cs" />
+    <Compile Include="Redbox\HAL\Client\Services\AirExchangerState.cs" />
+    <Compile Include="Redbox\HAL\Client\Services\CameraState.cs" />
+    <Compile Include="Redbox\HAL\Client\Services\CameraAdapter.cs" />
+    <Compile Include="Redbox\HAL\Client\Services\ClientBoardRevision.cs" />
+    <Compile Include="Redbox\HAL\Client\Services\LimitResponse.cs" />
+    <Compile Include="Redbox\HAL\Client\Services\ClientControlLimit.cs" />
+    <Compile Include="Redbox\HAL\Client\Services\ClientControllerPosition.cs" />
+    <Compile Include="Redbox\HAL\Client\Services\ClientControlSystem.cs" />
+    <Compile Include="Redbox\HAL\Client\Services\ClientReadAuxInputsResult.cs" />
+    <Compile Include="Redbox\HAL\Client\Services\ClientReadPickerInputsResult.cs" />
+    <Compile Include="Redbox\HAL\Client\Services\ExecuteServiceCommand.cs" />
+    <Compile Include="Redbox\HAL\Client\Services\ExecuteStatementImmediateCommand.cs" />
+    <Compile Include="Redbox\HAL\Client\Services\HardwareCommandResultExtensions.cs" />
+    <Compile Include="Redbox\HAL\Client\Services\HelpImmediateCommand.cs" />
+    <Compile Include="Redbox\HAL\Client\Services\ImmediateCommand.cs" />
+    <Compile Include="Redbox\HAL\Client\Services\ImmediateCommandResult.cs" />
+    <Compile Include="Redbox\HAL\Client\Services\InstructionHelper.cs" />
+    <Compile Include="Redbox\HAL\Client\Services\MotionControlDataExecutor.cs" />
+    <Compile Include="Redbox\HAL\Client\Services\MoveHelper.cs" />
+    <Compile Include="Redbox\HAL\Client\Services\ClientPickerSensorReadResult.cs" />
+    <Compile Include="Redbox\HAL\Client\Executors\AdjacentBinTest.cs" />
+    <Compile Include="Redbox\HAL\Client\Executors\BoardTestJob.cs" />
+    <Compile Include="Redbox\HAL\Client\Executors\ChangeCameraConfigurationExecutor.cs" />
+    <Compile Include="Redbox\HAL\Client\Executors\ClearImagesFolderExecutor.cs" />
+    <Compile Include="Redbox\HAL\Client\Executors\FraudSensorPost.cs" />
+    <Compile Include="Redbox\HAL\Client\Executors\GetAllHardwareCorrectionStatistics.cs" />
+    <Compile Include="Redbox\HAL\Client\Executors\GetAndCenterResult.cs" />
+    <Compile Include="Redbox\HAL\Client\Executors\GetAndReadExecutor.cs" />
+    <Compile Include="Redbox\HAL\Client\Executors\GetControllerTimeoutsExecutor.cs" />
+    <Compile Include="Redbox\HAL\Client\Executors\ExcludedLocsJob.cs" />
+    <Compile Include="Redbox\HAL\Client\Executors\GetHardwareCorrectionStatistics.cs" />
+    <Compile Include="Redbox\HAL\Client\Executors\IDeckConfig.cs" />
+    <Compile Include="Redbox\HAL\Client\Executors\MachineInformation.cs" />
+    <Compile Include="Redbox\HAL\Client\Executors\GetMachineInfoExecutor.cs" />
+    <Compile Include="Redbox\HAL\Client\Executors\HardwareStatusExecutor.cs" />
+    <Compile Include="Redbox\HAL\Client\Executors\HardwareSurveyExecutor.cs" />
+    <Compile Include="Redbox\HAL\Client\Executors\HWCorrectionStat.cs" />
+    <Compile Include="Redbox\HAL\Client\Executors\InitJob.cs" />
+    <Compile Include="Redbox\HAL\Client\Executors\InventoryStatsJob.cs" />
+    <Compile Include="Redbox\HAL\Client\Executors\KioskFunctionCheckExecutor.cs" />
+    <Compile Include="Redbox\HAL\Client\Executors\MachineConfiguration.cs" />
+    <Compile Include="Redbox\HAL\Client\Executors\OneDiskQuickTest.cs" />
+    <Compile Include="Redbox\HAL\Client\Executors\OneDiskRandomSyncExecutor.cs" />
+    <Compile Include="Redbox\HAL\Client\Executors\PowerCycleRouterExecutor.cs" />
+    <Compile Include="Redbox\HAL\Client\Executors\MSPullInDvdJob.cs" />
+    <Compile Include="Redbox\HAL\Client\Executors\PushInDvdJob.cs" />
+    <Compile Include="Redbox\HAL\Client\Executors\PutDiskInPickerInBinJob.cs" />
+    <Compile Include="Redbox\HAL\Client\Executors\PutInEmptySlotResult.cs" />
+    <Compile Include="Redbox\HAL\Client\Executors\PutInLocationResult.cs" />
+    <Compile Include="Redbox\HAL\Client\Executors\QlmTestSyncJob.cs" />
+    <Compile Include="Redbox\HAL\Client\Executors\RandomSyncExecutor.cs" />
+    <Compile Include="Redbox\HAL\Client\Executors\ReadFraudDiskExecutor.cs" />
+    <Compile Include="Redbox\HAL\Client\Executors\RebuildInventoryExecutor.cs" />
+    <Compile Include="Redbox\HAL\Client\Executors\ResetControlSystemJob.cs" />
+    <Compile Include="Redbox\HAL\Client\Executors\ResetFraudSensorJob.cs" />
+    <Compile Include="Redbox\HAL\Client\Executors\ResetMotionControlExecutor.cs" />
+    <Compile Include="Redbox\HAL\Client\Executors\ReturnExecutor.cs" />
+    <Compile Include="Redbox\HAL\Client\Executors\ReturnUnknownExecutor.cs" />
+    <Compile Include="Redbox\HAL\Client\Executors\TakeDiskAtDoorJob.cs" />
+    <Compile Include="Redbox\HAL\Client\Executors\TestAndResetCCRExecutor.cs" />
+    <Compile Include="Redbox\HAL\Client\Executors\TestRetrofitDeck.cs" />
+    <Compile Include="Redbox\HAL\Client\Executors\UpdateQREEPROMJob.cs" />
+    <Compile Include="Redbox\HAL\Client\Executors\VendDiskInPickerJob.cs" />
+    <Compile Include="Redbox\HAL\Client\Executors\VerticalSync.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Redbox.Compression\Redbox.Compression.csproj">
+      <Project>{e5b206dd-b03c-4c85-af8e-f4849384cca5}</Project>
+      <Name>Redbox.Compression</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Redbox.HAL.Component.Model\Redbox.HAL.Component.Model.csproj">
+      <Project>{86986977-3d6f-4f59-bc0c-d181e7c4d334}</Project>
+      <Name>Redbox.HAL.Component.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Redbox.HAL.Core\Redbox.HAL.Core.csproj">
+      <Project>{3b256763-2065-4304-b9b8-299a882a16b4}</Project>
+      <Name>Redbox.HAL.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Redbox.HAL.IPC.Framework\Redbox.HAL.IPC.Framework.csproj">
+      <Project>{28c6831d-cc34-4324-9f51-8a637d28b809}</Project>
+      <Name>Redbox.HAL.IPC.Framework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
