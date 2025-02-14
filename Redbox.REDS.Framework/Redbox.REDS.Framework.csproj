@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{152499BB-21CF-427F-93AC-D1EFD0C77BA8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>Redbox.REDS.Framework</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <ApplicationVersion>1.4.0.1</ApplicationVersion>
+    <FileAlignment>512</FileAlignment>
+    <RootNamespace>Redbox.REDS.Framework</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="PowerCollections, Version=1.0.2141.24679, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\XAct.Wintellect.PowerCollections.0.0.1\lib\net20\PowerCollections.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AspectBinaryEncodingType.cs" />
+    <Compile Include="Aspect.cs" />
+    <Compile Include="AspectType.cs" />
+    <Compile Include="BinaryContentLoader.cs" />
+    <Compile Include="BundleCollection.cs" />
+    <Compile Include="BundleSpecifier.cs" />
+    <Compile Include="Error.cs" />
+    <Compile Include="ErrorList.cs" />
+    <Compile Include="FileSystemResourceBundleStorage.cs" />
+    <Compile Include="AspectFlags.cs" />
+    <Compile Include="IAspect.cs" />
+    <Compile Include="IAspectContentLoader.cs" />
+    <Compile Include="IAspectType.cs" />
+    <Compile Include="IBundleSpecifier.cs" />
+    <Compile Include="BundleType.cs" />
+    <Compile Include="IManifestInfo.cs" />
+    <Compile Include="IResourceBundleFilter.cs" />
+    <Compile Include="IPropertyType.cs" />
+    <Compile Include="IResource.cs" />
+    <Compile Include="IResourceBundle.cs" />
+    <Compile Include="IResourceBundleSet.cs" />
+    <Compile Include="IResourceBundleStorage.cs" />
+    <Compile Include="IResourceBundleStorageEntry.cs" />
+    <Compile Include="IResourceType.cs" />
+    <Compile Include="ManifestAspectType.cs" />
+    <Compile Include="ManifestInfo.cs" />
+    <Compile Include="PropertyType.cs" />
+    <Compile Include="Resource.cs" />
+    <Compile Include="ResourceBundleStorageType.cs" />
+    <Compile Include="ResourceBundle.cs" />
+    <Compile Include="ResourceBundleFilter.cs" />
+    <Compile Include="ResourceBundleSet.cs" />
+    <Compile Include="ResourceLookup.cs" />
+    <Compile Include="ResourceType.cs" />
+    <Compile Include="TextContentLoader.cs" />
+    <Compile Include="TextAspectType.cs" />
+    <Compile Include="XmlAspectType.cs" />
+    <Compile Include="ZippedResourceBundleStorage.cs" />
+    <Compile Include="ResourceBundleStorageEntry.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Redbox.Core\Redbox.Core.csproj">
+      <Project>{af6cd734-bf15-4031-ae7a-4167e368475d}</Project>
+      <Name>Redbox.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
