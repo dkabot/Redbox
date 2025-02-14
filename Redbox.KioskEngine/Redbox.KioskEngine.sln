@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Redbox.REDS.Framework", "..
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeviceService.ComponentModel", "..\DeviceService\DeviceService.ComponentModel\DeviceService.ComponentModel.csproj", "{E84116A8-E550-4D10-8434-852D97C27049}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Redbox.KioskEngine.Drawing", "Redbox.KioskEngine.Drawing\Redbox.KioskEngine.Drawing.csproj", "{89283264-3C6E-4E9F-8945-837719B816ED}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dependencies", "Dependencies", "{80526BD7-530B-4232-9685-DADAB6C85045}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,9 +43,19 @@ Global
 		{E84116A8-E550-4D10-8434-852D97C27049}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E84116A8-E550-4D10-8434-852D97C27049}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E84116A8-E550-4D10-8434-852D97C27049}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89283264-3C6E-4E9F-8945-837719B816ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89283264-3C6E-4E9F-8945-837719B816ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89283264-3C6E-4E9F-8945-837719B816ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89283264-3C6E-4E9F-8945-837719B816ED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AF6CD734-BF15-4031-AE7A-4167E368475D} = {80526BD7-530B-4232-9685-DADAB6C85045}
+		{AFEE27AE-6377-4D11-872C-0A8CC800E059} = {80526BD7-530B-4232-9685-DADAB6C85045}
+		{152499BB-21CF-427F-93AC-D1EFD0C77BA8} = {80526BD7-530B-4232-9685-DADAB6C85045}
+		{E84116A8-E550-4D10-8434-852D97C27049} = {80526BD7-530B-4232-9685-DADAB6C85045}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D4762C52-A438-4A2A-BFE6-6F288FA23DB4}
