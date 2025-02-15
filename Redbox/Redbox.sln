@@ -22,6 +22,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Redbox.REDS.Framework", "Re
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Redbox.Tokenizer.Framework", "Redbox.Tokenizer.Framework\Redbox.Tokenizer.Framework.csproj", "{6BBC2C4D-A794-4FB8-BFFF-833BC8C8A88E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Redbox.Lua", "Redbox.Lua\Redbox.Lua.csproj", "{C6B8E189-1250-4F0D-8745-C4D3CE1A18DB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -68,6 +70,10 @@ Global
 		{6BBC2C4D-A794-4FB8-BFFF-833BC8C8A88E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6BBC2C4D-A794-4FB8-BFFF-833BC8C8A88E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6BBC2C4D-A794-4FB8-BFFF-833BC8C8A88E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6B8E189-1250-4F0D-8745-C4D3CE1A18DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6B8E189-1250-4F0D-8745-C4D3CE1A18DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6B8E189-1250-4F0D-8745-C4D3CE1A18DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6B8E189-1250-4F0D-8745-C4D3CE1A18DB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

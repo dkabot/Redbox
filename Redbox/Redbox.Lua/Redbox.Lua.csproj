@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C6B8E189-1250-4F0D-8745-C4D3CE1A18DB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>Redbox.Lua</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <ApplicationVersion>1.4.0.1</ApplicationVersion>
+    <FileAlignment>512</FileAlignment>
+    <RootNamespace>Redbox.Lua</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CallStackEntry.cs" />
+    <Compile Include="DebugHookEventArgs.cs" />
+    <Compile Include="DelegateFactory.cs" />
+    <Compile Include="HookExceptionEventArgs.cs" />
+    <Compile Include="ILuaDebugBreakpointFactory.cs" />
+    <Compile Include="ILuaDebugFileFactory.cs" />
+    <Compile Include="LuaCompiler.cs" />
+    <Compile Include="LuaDebugBreakpoint.cs" />
+    <Compile Include="LuaDebugBreakpointContainer.cs" />
+    <Compile Include="LuaDebugFile.cs" />
+    <Compile Include="LuaDebugFileContainer.cs" />
+    <Compile Include="LuaDebuggerState.cs" />
+    <Compile Include="DebuggerActions.cs" />
+    <Compile Include="LuaDebugger.cs" />
+    <Compile Include="LuaDebugInfo.cs" />
+    <Compile Include="LuaDelegate.cs" />
+    <Compile Include="LuaError.cs" />
+    <Compile Include="LuaException.cs" />
+    <Compile Include="LuaFunction.cs" />
+    <Compile Include="LuaHelper.cs" />
+    <Compile Include="LuaObject.cs" />
+    <Compile Include="LuaParse.cs" />
+    <Compile Include="LuaParseObject.cs" />
+    <Compile Include="LuaScriptException.cs" />
+    <Compile Include="LuaStack.cs" />
+    <Compile Include="LuaTable.cs" />
+    <Compile Include="LuaUserData.cs" />
+    <Compile Include="LuaVar.cs" />
+    <Compile Include="LuaTypes.cs" />
+    <Compile Include="LuaHookEventCodes.cs" />
+    <Compile Include="LuaHookEventMasks.cs" />
+    <Compile Include="LuaDebug.cs" />
+    <Compile Include="LuaCFunctionDelegate.cs" />
+    <Compile Include="LuaHookFunctionDelegate.cs" />
+    <Compile Include="LuaVirtualMachine.cs" />
+    <Compile Include="ObjectCache.cs" />
+    <Compile Include="RegisteredMethodHandler.cs" />
+    <Compile Include="RegisteredMethod.cs" />
+    <Compile Include="StoppingEventArgs.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Redbox.Core\Redbox.Core.csproj">
+      <Project>{af6cd734-bf15-4031-ae7a-4167e368475d}</Project>
+      <Name>Redbox.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
