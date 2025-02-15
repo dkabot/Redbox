@@ -1,15 +1,15 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35122.118
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Redbox.KioskEngine.ComponentModel", "Redbox.KioskEngine.ComponentModel\Redbox.KioskEngine.ComponentModel.csproj", "{FA37026A-1388-4C70-B272-C901DE205EAD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Redbox.Core", "..\Redbox.Core\Redbox.Core.csproj", "{AF6CD734-BF15-4031-AE7A-4167E368475D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Redbox.Core", "..\Redbox\Redbox.Core\Redbox.Core.csproj", "{AF6CD734-BF15-4031-AE7A-4167E368475D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Redbox.JSONPrettyPrinter", "..\Redbox.JSONPrettyPrinter\Redbox.JSONPrettyPrinter.csproj", "{AFEE27AE-6377-4D11-872C-0A8CC800E059}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Redbox.JSONPrettyPrinter", "..\Redbox\Redbox.JSONPrettyPrinter\Redbox.JSONPrettyPrinter.csproj", "{AFEE27AE-6377-4D11-872C-0A8CC800E059}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Redbox.REDS.Framework", "..\Redbox.REDS.Framework\Redbox.REDS.Framework.csproj", "{152499BB-21CF-427F-93AC-D1EFD0C77BA8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Redbox.REDS.Framework", "..\Redbox\Redbox.REDS.Framework\Redbox.REDS.Framework.csproj", "{152499BB-21CF-427F-93AC-D1EFD0C77BA8}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeviceService.ComponentModel", "..\DeviceService\DeviceService.ComponentModel\DeviceService.ComponentModel.csproj", "{E84116A8-E550-4D10-8434-852D97C27049}"
 EndProject

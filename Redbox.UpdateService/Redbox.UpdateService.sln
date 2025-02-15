@@ -1,4 +1,4 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35122.118
@@ -7,11 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Redbox.UpdateService.Client
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Redbox.UpdateService.Model", "Redbox.UpdateService.Model\Redbox.UpdateService.Model.csproj", "{730FECA9-DC04-40D5-AA2D-34BECB451027}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Redbox.Core", "..\Redbox.Core\Redbox.Core.csproj", "{AF6CD734-BF15-4031-AE7A-4167E368475D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Redbox.Core", "..\Redbox\Redbox.Core\Redbox.Core.csproj", "{AF6CD734-BF15-4031-AE7A-4167E368475D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Redbox.Compression", "..\Redbox.Compression\Redbox.Compression.csproj", "{E5B206DD-B03C-4C85-AF8E-F4849384CCA5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Redbox.Compression", "..\Redbox\Redbox.Compression\Redbox.Compression.csproj", "{E5B206DD-B03C-4C85-AF8E-F4849384CCA5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Redbox.IPC.Framework", "..\Redbox.IPC.Framework\Redbox.IPC.Framework.csproj", "{396B0908-06EC-4494-B4CD-9A6AD827A98F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Redbox.IPC.Framework", "..\Redbox\Redbox.IPC.Framework\Redbox.IPC.Framework.csproj", "{396B0908-06EC-4494-B4CD-9A6AD827A98F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

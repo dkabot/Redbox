@@ -1,19 +1,22 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="Current" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <Import Project="packages\ILMerge.3.0.41\build\ILMerge.props" Condition="Exists('packages\ILMerge.3.0.41\build\ILMerge.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{55DBB4F4-0E91-401A-AFDB-37F5BDF4862A}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AssemblyName>Redbox.HAL.Client</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <ProjectGuid>{121C37DD-1E18-4790-89A8-4E350ADE4997}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AssemblyName>HalUtilities</AssemblyName>
     <ApplicationVersion>1.13.0.27</ApplicationVersion>
-    <FileAlignment>512</FileAlignment>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
-    <OldToolsVersion>3.5</OldToolsVersion>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -24,6 +27,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,16 +37,17 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
-      <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+      <HintPath>packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net35\Newtonsoft.Json.dll</HintPath>
+      <HintPath>packages\Newtonsoft.Json.13.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="SevenZip, Version=4.12.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SevenZip.4.12.1\lib\net20\SevenZip.dll</HintPath>
+      <HintPath>packages\SevenZip.4.12.1\lib\net20\SevenZip.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -53,7 +58,60 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LzmaAlone\Properties\Settings.cs" />
+    <Compile Include="HALUtilities\Operation_3m.cs" />
+    <Compile Include="HALUtilities\_3MTouchscreen.cs" />
+    <Compile Include="HALUtilities\CortexDecode.cs" />
+    <Compile Include="HALUtilities\CortexDecoderFile.cs" />
+    <Compile Include="HALUtilities\PipeServers.cs" />
+    <Compile Include="HALUtilities\AbstractPipeSever.cs" />
+    <Compile Include="HALUtilities\BasicPipeServer.cs" />
+    <Compile Include="HALUtilities\ConsoleLogger.cs" />
+    <Compile Include="HALUtilities\CtrlTypes.cs" />
+    <Compile Include="HALUtilities\ControlCallback.cs" />
+    <Compile Include="HALUtilities\ConsoleTool.cs" />
+    <Compile Include="HALUtilities\CounterHelper.cs" />
+    <Compile Include="HALUtilities\DefaultConsole.cs" />
+    <Compile Include="HALUtilities\DeviceConfiguration.cs" />
+    <Compile Include="HALUtilities\StuckType.cs" />
+    <Compile Include="HALUtilities\LocStat.cs" />
+    <Compile Include="HALUtilities\TypeStat.cs" />
+    <Compile Include="HALUtilities\LookupFailStat.cs" />
+    <Compile Include="HALUtilities\EmptyStuckAnalyzer.cs" />
+    <Compile Include="HALUtilities\SurveyModes.cs" />
+    <Compile Include="HALUtilities\HardwareSurvey.cs" />
+    <Compile Include="HALUtilities\IConsole.cs" />
+    <Compile Include="HALUtilities\InventoryChecker.cs" />
+    <Compile Include="HALUtilities\SyncOptions.cs" />
+    <Compile Include="HALUtilities\SyncType.cs" />
+    <Compile Include="HALUtilities\InventoryHelper.cs" />
+    <Compile Include="HALUtilities\IpcClientTester.cs" />
+    <Compile Include="HALUtilities\OutputModes.cs" />
+    <Compile Include="HALUtilities\KioskFunctionCheckHelper.cs" />
+    <Compile Include="HALUtilities\KioskTestRunner.cs" />
+    <Compile Include="HALUtilities\CustomerReturn.cs" />
+    <Compile Include="HALUtilities\LoopyExecutor.cs" />
+    <Compile Include="HALUtilities\PipeMessageServer.cs" />
+    <Compile Include="HALUtilities\PowerhouseOperations.cs" />
+    <Compile Include="HALUtilities\PowerhouseUtilities.cs" />
+    <Compile Include="HALUtilities\PrepositionTest.cs" />
+    <Compile Include="HALUtilities\Program.cs" />
+    <Compile Include="HALUtilities\RegistryStore.cs" />
+    <Compile Include="HALUtilities\ScriptMode.cs" />
+    <Compile Include="HALUtilities\ServiceConfigurationHelper.cs" />
+    <Compile Include="HALUtilities\ServiceHostRunner.cs" />
+    <Compile Include="HALUtilities\DumpHardwareStatisticsExecutor.cs" />
+    <Compile Include="HALUtilities\ResetHardwareStatisticsExecutor.cs" />
+    <Compile Include="HALUtilities\SyncCheck.cs" />
+    <Compile Include="HALUtilities\RandomInventorySelector.cs" />
+    <Compile Include="HALUtilities\VendTest.cs" />
+    <Compile Include="HALUtilities\Properties\Settings.cs" />
+    <Compile Include="HALUtilities\KioskTest\AbstractKioskTest.cs" />
+    <Compile Include="HALUtilities\KioskTest\KioskTestExecutor.cs" />
+    <Compile Include="HALUtilities\KioskTest\KioskTestLogger.cs" />
+    <Compile Include="HALUtilities\KioskTest\KioskTest_R717.cs" />
+    <Compile Include="HALUtilities\KioskTest\QlmKioskTestExecutor.cs" />
+    <Compile Include="HALUtilities\KioskTest\TestLocation.cs" />
+    <Compile Include="HALUtilities\KioskTest\QlmKioskTest.cs" />
     <Compile Include="Redbox\HAL\Client\ClientHelper.cs" />
     <Compile Include="Redbox\HAL\Client\NullSink.cs" />
     <Compile Include="Redbox\HAL\Client\HardwareJobStatus.cs" />
@@ -146,28 +204,37 @@
     <Compile Include="Redbox\HAL\Client\Executors\UpdateQREEPROMJob.cs" />
     <Compile Include="Redbox\HAL\Client\Executors\VendDiskInPickerJob.cs" />
     <Compile Include="Redbox\HAL\Client\Executors\VerticalSync.cs" />
+    <Compile Include="LzmaAlone\Properties\Settings.cs" />
     <Compile Include="AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Redbox\Redbox.Compression\Redbox.Compression.csproj">
-      <Project>{e5b206dd-b03c-4c85-af8e-f4849384cca5}</Project>
-      <Name>Redbox.Compression</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Redbox.HAL.Component.Model\Redbox.HAL.Component.Model.csproj">
+    <ProjectReference Include="..\..\Redbox.HAL\Redbox.HAL.Component.Model\Redbox.HAL.Component.Model.csproj">
       <Project>{86986977-3d6f-4f59-bc0c-d181e7c4d334}</Project>
       <Name>Redbox.HAL.Component.Model</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Redbox.HAL.Core\Redbox.HAL.Core.csproj">
+    <ProjectReference Include="..\..\Redbox.HAL\Redbox.HAL.Core\Redbox.HAL.Core.csproj">
       <Project>{3b256763-2065-4304-b9b8-299a882a16b4}</Project>
       <Name>Redbox.HAL.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Redbox.HAL.IPC.Framework\Redbox.HAL.IPC.Framework.csproj">
+    <ProjectReference Include="..\..\Redbox.HAL\Redbox.HAL.IPC.Framework\Redbox.HAL.IPC.Framework.csproj">
       <Project>{28c6831d-cc34-4324-9f51-8a637d28b809}</Project>
       <Name>Redbox.HAL.IPC.Framework</Name>
     </ProjectReference>
   </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>set BUILD_DIR=$(SolutionDir)build\$(ConfigurationName)\
+if not exist %25BUILD_DIR%25 mkdir %25BUILD_DIR%25
+$(ILMergeConsolePath) $(TargetPath) /out:%25BUILD_DIR%25$(ProjectName).exe $(TargetDir)ICSharpCode.SharpZipLib.dll $(TargetDir)SevenZip.dll $(TargetDir)Newtonsoft.Json.dll $(TargetDir)Redbox.HAL.Component.Model.dll $(TargetDir)Redbox.HAL.Core.dll $(TargetDir)Redbox.HAL.IPC.Framework.dll</PostBuildEvent>
+  </PropertyGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\ILMerge.3.0.41\build\ILMerge.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\ILMerge.3.0.41\build\ILMerge.props'))" />
+  </Target>
 </Project>
