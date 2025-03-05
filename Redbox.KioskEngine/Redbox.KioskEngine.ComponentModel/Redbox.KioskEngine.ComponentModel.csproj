@@ -1,0 +1,313 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EB32034A-3C1F-40CC-96A0-4995D652FCAC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>Redbox.KioskEngine.ComponentModel</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <ApplicationVersion>1.88.0.80</ApplicationVersion>
+    <FileAlignment>512</FileAlignment>
+    <RootNamespace>Redbox.KioskEngine.ComponentModel</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="ReachFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AnalyticsSessionType.cs" />
+    <Compile Include="ApiServiceBaseResponse`1.cs" />
+    <Compile Include="ResponseError.cs" />
+    <Compile Include="DictionaryExtensions.cs" />
+    <Compile Include="ExceptionExtensions.cs" />
+    <Compile Include="IApiService.cs" />
+    <Compile Include="KioskAlertPayload.cs" />
+    <Compile Include="Base87CardReadModelExtensions.cs" />
+    <Compile Include="ConfigurationClientItem.cs" />
+    <Compile Include="ConfigurationData.cs" />
+    <Compile Include="KaseyaMethods.cs" />
+    <Compile Include="KioskEngineConstants.cs" />
+    <Compile Include="EnumExtensions.cs" />
+    <Compile Include="Error.cs" />
+    <Compile Include="ErrorList.cs" />
+    <Compile Include="ErrorListExtensions.cs" />
+    <Compile Include="HitTestFlags.cs" />
+    <Compile Include="RenderOptionFlags.cs" />
+    <Compile Include="RenderStateFlags.cs" />
+    <Compile Include="MeasureTextResult.cs" />
+    <Compile Include="WPFHitHandler.cs" />
+    <Compile Include="WPFKeyEvent.cs" />
+    <Compile Include="IActor.cs" />
+    <Compile Include="IBaseViewFrame.cs" />
+    <Compile Include="IBitmapCacheService.cs" />
+    <Compile Include="IBuildSetting.cs" />
+    <Compile Include="IBundleRef.cs" />
+    <Compile Include="ICallbackEntry.cs" />
+    <Compile Include="ICallbackService.cs" />
+    <Compile Include="ICallbackServiceStatistics.cs" />
+    <Compile Include="ItemSourceType.cs" />
+    <Compile Include="AuditEventPayload.cs" />
+    <Compile Include="KioskEventType.cs" />
+    <Compile Include="KioskEventSubType.cs" />
+    <Compile Include="KioskFunctionCheckPayload.cs" />
+    <Compile Include="AWSKioskFunctionCheckPayload.cs" />
+    <Compile Include="LineItemStatus.cs" />
+    <Compile Include="LogExtensions.cs" />
+    <Compile Include="NumberExtensionMethods.cs" />
+    <Compile Include="ObjectExtensions.cs" />
+    <Compile Include="ProductNames.cs" />
+    <Compile Include="SecureStringExtensions.cs" />
+    <Compile Include="IConfigurationService.cs" />
+    <Compile Include="DataCacheType.cs" />
+    <Compile Include="IDataCacheService.cs" />
+    <Compile Include="IDataFileStoreService.cs" />
+    <Compile Include="IDataStoreService.cs" />
+    <Compile Include="IDebugService.cs" />
+    <Compile Include="IDeviceServiceClientHelper.cs" />
+    <Compile Include="EnvironmentNotificationType.cs" />
+    <Compile Include="TouchScreenState.cs" />
+    <Compile Include="CorruptDbCallback.cs" />
+    <Compile Include="TamperedCardReaderCallback.cs" />
+    <Compile Include="HardwareChangeCallback.cs" />
+    <Compile Include="NavigateUrlCallback.cs" />
+    <Compile Include="ConfigurationCallback.cs" />
+    <Compile Include="IEnvironmentNotificationService.cs" />
+    <Compile Include="IFileCacheService.cs" />
+    <Compile Include="IFontCacheService.cs" />
+    <Compile Include="IHardwareState.cs" />
+    <Compile Include="MerchandizeTypes.cs" />
+    <Compile Include="IIdeService.cs" />
+    <Compile Include="IIdleTimer.cs" />
+    <Compile Include="IIdleTimerService.cs" />
+    <Compile Include="IdleEventHandler.cs" />
+    <Compile Include="ActivatedEventHandler.cs" />
+    <Compile Include="KeyPressHandler.cs" />
+    <Compile Include="MouseClickHandler.cs" />
+    <Compile Include="IInputService.cs" />
+    <Compile Include="IKernelFunctionRegistryService.cs" />
+    <Compile Include="WaitingForDebuggerAction.cs" />
+    <Compile Include="DebuggerStopping.cs" />
+    <Compile Include="IKernelService.cs" />
+    <Compile Include="IKioskFunctionCheckData.cs" />
+    <Compile Include="IMachineSettingsStore.cs" />
+    <Compile Include="IKernelExtension.cs" />
+    <Compile Include="IKernelExtensionHost.cs" />
+    <Compile Include="IKernelExtensionService.cs" />
+    <Compile Include="IMacroService.cs" />
+    <Compile Include="IEngineApplication.cs" />
+    <Compile Include="INeededMacro.cs" />
+    <Compile Include="IQueueMessageProcessorService.cs" />
+    <Compile Include="IQueueServiceData.cs" />
+    <Compile Include="IViewAnalyticsName.cs" />
+    <Compile Include="IViewDefinition.cs" />
+    <Compile Include="IViewFrameInstance.cs" />
+    <Compile Include="IWPFViewFrame.cs" />
+    <Compile Include="ListExtensions.cs" />
+    <Compile Include="StringExtensionMethods.cs" />
+    <Compile Include="ThemeChanged.cs" />
+    <Compile Include="IThemeService.cs" />
+    <Compile Include="IObjectCacheService.cs" />
+    <Compile Include="PreferencePageTarget.cs" />
+    <Compile Include="IPreferencePage.cs" />
+    <Compile Include="IPreferencePageHost.cs" />
+    <Compile Include="IPreferenceService.cs" />
+    <Compile Include="IProductLookupCatalogService.cs" />
+    <Compile Include="ProductLookupCatalogModel.cs" />
+    <Compile Include="Inventory.cs" />
+    <Compile Include="MerchOrderBarcode.cs" />
+    <Compile Include="InventoryStatusCode.cs" />
+    <Compile Include="IProject.cs" />
+    <Compile Include="IRentalHealthService.cs" />
+    <Compile Include="ISchedulerEntry.cs" />
+    <Compile Include="ISchedulerService.cs" />
+    <Compile Include="IServerEngineService.cs" />
+    <Compile Include="ServiceType.cs" />
+    <Compile Include="IMessage.cs" />
+    <Compile Include="ProcessMessageDelegate.cs" />
+    <Compile Include="MessageProcessedSuccessfullyDelegate.cs" />
+    <Compile Include="BeforeMessageProcessingDelegate.cs" />
+    <Compile Include="AfterMessageProcessedDelegate.cs" />
+    <Compile Include="QueueServicePriorityType.cs" />
+    <Compile Include="IQueueServicePriority.cs" />
+    <Compile Include="QueueServiceConstants.cs" />
+    <Compile Include="IQueueService.cs" />
+    <Compile Include="IRenderingService.cs" />
+    <Compile Include="IResourceBundleService.cs" />
+    <Compile Include="IScene.cs" />
+    <Compile Include="IScreenSaverService.cs" />
+    <Compile Include="ISecurityService.cs" />
+    <Compile Include="ShoppingCartType.cs" />
+    <Compile Include="CreditElection.cs" />
+    <Compile Include="OptInConfirmationStatus.cs" />
+    <Compile Include="IShoppingCart.cs" />
+    <Compile Include="ShoppingSessionStatus.cs" />
+    <Compile Include="IShoppingSession.cs" />
+    <Compile Include="IShoppingSessionError.cs" />
+    <Compile Include="ShoppingSessionEventType.cs" />
+    <Compile Include="IShoppingSessionEvent.cs" />
+    <Compile Include="IShoppingSessionService.cs" />
+    <Compile Include="ISoundService.cs" />
+    <Compile Include="IStyleSheet.cs" />
+    <Compile Include="IStyleSheetService.cs" />
+    <Compile Include="IStyleSheetState.cs" />
+    <Compile Include="IStyleSheetStateTransition.cs" />
+    <Compile Include="IStyleSheetStyle.cs" />
+    <Compile Include="AudioDeviceConnectionChanged.cs" />
+    <Compile Include="TextToSpeechConstants.cs" />
+    <Compile Include="ITextToSpeechService.cs" />
+    <Compile Include="ITheme.cs" />
+    <Compile Include="ITimer.cs" />
+    <Compile Include="ITimerService.cs" />
+    <Compile Include="TweenType.cs" />
+    <Compile Include="TweenChange.cs" />
+    <Compile Include="TweenEnd.cs" />
+    <Compile Include="ITweenService.cs" />
+    <Compile Include="IUserSettingsStore.cs" />
+    <Compile Include="RenderType.cs" />
+    <Compile Include="IViewFrame.cs" />
+    <Compile Include="IViewService.cs" />
+    <Compile Include="IWPFActor.cs" />
+    <Compile Include="KernelFunctionAttribute.cs" />
+    <Compile Include="KernelFunctionInfo.cs" />
+    <Compile Include="KioskEvent.cs" />
+    <Compile Include="ThemedControlAttribute.cs" />
+    <Compile Include="ViewDefinitionAttribute.cs" />
+    <Compile Include="ViewStateChangedArgs.cs" />
+    <Compile Include="ViewStateChangedType.cs" />
+    <Compile Include="TextToSpeech\IMapKeyPressToAction.cs" />
+    <Compile Include="TextToSpeech\IMapKeyPressToActorHit.cs" />
+    <Compile Include="TextToSpeech\ISpeechControl.cs" />
+    <Compile Include="TextToSpeech\ISpeechPart.cs" />
+    <Compile Include="TextToSpeech\ITextToSpeechControl.cs" />
+    <Compile Include="TextToSpeech\IRegularExpression.cs" />
+    <Compile Include="TextToSpeech\ISpeechPartEvent.cs" />
+    <Compile Include="TextToSpeech\ITextPart.cs" />
+    <Compile Include="TrackData\CardReadAttemptStatus.cs" />
+    <Compile Include="TrackData\CancelReason.cs" />
+    <Compile Include="TrackData\ICardReadAttempt.cs" />
+    <Compile Include="TrackData\ICardReadAttemptCollection.cs" />
+    <Compile Include="TrackData\IClassicTrackDataService.cs" />
+    <Compile Include="TrackData\IDeviceServiceTrackDataService.cs" />
+    <Compile Include="TrackData\IEMVTrackData.cs" />
+    <Compile Include="TrackData\IEncryptedTrackData.cs" />
+    <Compile Include="TrackData\ITechnicalFallbackTracking.cs" />
+    <Compile Include="TrackData\ITrackData.cs" />
+    <Compile Include="TrackData\ITrackDataEncryptionService.cs" />
+    <Compile Include="TrackData\ITrackDataExtension.cs" />
+    <Compile Include="TrackData\CardReadCompleteDetails.cs" />
+    <Compile Include="TrackData\CardReadRequestInfo.cs" />
+    <Compile Include="TrackData\ITrackDataService.cs" />
+    <Compile Include="TrackData\IUnencryptedTrackData.cs" />
+    <Compile Include="TrackData\TrackDataConstants.cs" />
+    <Compile Include="KioskServices\IExpireReservationResult.cs" />
+    <Compile Include="KioskServices\ICancelReservationResult.cs" />
+    <Compile Include="KioskServices\IPickupValidationResult.cs" />
+    <Compile Include="KioskServices\ITransactionEntity.cs" />
+    <Compile Include="KioskServices\IGetCustomerOffersResult.cs" />
+    <Compile Include="KioskServices\GetCustomerOffersResult.cs" />
+    <Compile Include="KioskServices\CustomerOfferResult.cs" />
+    <Compile Include="KioskServices\OfferProductResult.cs" />
+    <Compile Include="KioskServices\IKioskClientServiceResult.cs" />
+    <Compile Include="KioskServices\IReconcileResult.cs" />
+    <Compile Include="KioskServices\ISnapshotResult.cs" />
+    <Compile Include="KioskServices\KioskEventsPayload.cs" />
+    <Compile Include="KioskServices\AuthorizeResultConstants.cs" />
+    <Compile Include="KioskServices\GCAuthorizeResultConstants.cs" />
+    <Compile Include="KioskServices\PreauthorizeResultConstants.cs" />
+    <Compile Include="KioskServices\PickupValidationConstants.cs" />
+    <Compile Include="KioskServices\GiftCardStatus.cs" />
+    <Compile Include="KioskServices\IReturnResult.cs" />
+    <Compile Include="KioskServices\AuthorizeType.cs" />
+    <Compile Include="KioskServices\IAuthorizeResult.cs" />
+    <Compile Include="KioskServices\IPreauthorizeResult.cs" />
+    <Compile Include="KioskServices\RemoteServiceCallbackEntry.cs" />
+    <Compile Include="KioskServices\RemoteServiceProviderInstruction.cs" />
+    <Compile Include="KioskServices\StorefrontEventType.cs" />
+    <Compile Include="KioskServices\IOptInItem.cs" />
+    <Compile Include="KioskServices\PromotionValidationResponse.cs" />
+    <Compile Include="KioskServices\PromotionIntentCode.cs" />
+    <Compile Include="KioskServices\PromotionRentFormat.cs" />
+    <Compile Include="KioskServices\PromotionGetFormat.cs" />
+    <Compile Include="KioskServices\KioskOptIntItemType.cs" />
+    <Compile Include="KioskServices\KioskOptInItemId.cs" />
+    <Compile Include="KioskServices\OptInMethodType.cs" />
+    <Compile Include="KioskServices\PromotionActionCode.cs" />
+    <Compile Include="KioskServices\InstructionType.cs" />
+    <Compile Include="KioskServices\IRemoteServiceProviderInstruction.cs" />
+    <Compile Include="KioskServices\RemoteServiceCallback.cs" />
+    <Compile Include="KioskServices\IRemoteServiceResult.cs" />
+    <Compile Include="KioskServices\MarketingAdImpressionMessage.cs" />
+    <Compile Include="KioskServices\AdCampaign.cs" />
+    <Compile Include="KioskServices\AdImpression.cs" />
+    <Compile Include="KioskServices\MarketingAdImpressionData.cs" />
+    <Compile Include="KioskServices\ResponseCodeAttribute.cs" />
+    <Compile Include="FraudServices\BarcodeServices.cs" />
+    <Compile Include="FraudServices\CameraGeneration.cs" />
+    <Compile Include="FraudServices\IBarcodeTrackingInfo.cs" />
+    <Compile Include="HardwareServices\AirExchangerStatus.cs" />
+    <Compile Include="ApiService\EngineCore\EngineCoreKioskEngineVersionResponse.cs" />
+    <Compile Include="ApiService\EngineCore\KioskEngineVersions.cs" />
+    <Compile Include="ApiService\EngineCore\AssemblyInfo.cs" />
+    <Compile Include="ApiService\EngineCore\BundleInfo.cs" />
+    <Compile Include="ApiService\EngineCore\ApplicationStateValueResponse.cs" />
+    <Compile Include="ApiService\EngineCore\MachineSettingValueResponse.cs" />
+    <Compile Include="ApiService\EngineCore\GetPreferenceValueResponse.cs" />
+    <Compile Include="ApiService\EngineCore\GetStoreInfoResponse.cs" />
+    <Compile Include="ApiService\EngineCore\StoreInfo.cs" />
+    <Compile Include="ApiService\EngineCore\MarketInfo.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\DeviceService\DeviceService.ComponentModel\DeviceService.ComponentModel.csproj">
+      <Project>{626bf22f-7d57-a017-e5d6-1b31f16f3895}</Project>
+      <Name>DeviceService.ComponentModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Redbox\Redbox.Core\Redbox.Core.csproj">
+      <Project>{af6cd734-bf15-4031-ae7a-4167e368475d}</Project>
+      <Name>Redbox.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Redbox\Redbox.JSONPrettyPrinter\Redbox.JSONPrettyPrinter.csproj">
+      <Project>{afee27ae-6377-4d11-872c-0a8cc800e059}</Project>
+      <Name>Redbox.JSONPrettyPrinter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Redbox\Redbox.REDS.Framework\Redbox.REDS.Framework.csproj">
+      <Project>{152499bb-21cf-427f-93ac-d1efd0c77ba8}</Project>
+      <Name>Redbox.REDS.Framework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
