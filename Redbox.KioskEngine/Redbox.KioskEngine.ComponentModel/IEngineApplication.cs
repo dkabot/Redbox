@@ -2,22 +2,21 @@ using System.Windows.Forms;
 
 namespace Redbox.KioskEngine.ComponentModel
 {
-  public interface IEngineApplication
-  {
-    void ThreadSafeHostUpdate(MethodInvoker invoker);
+    public interface IEngineApplication
+    {
+        bool AppStarting { get; set; }
 
-    bool CanRestart();
+        string DataPath { get; }
 
-    bool CanShutDown();
+        string RunningPath { get; }
+        void ThreadSafeHostUpdate(MethodInvoker invoker);
 
-    void FlagForSafeShutdown();
+        bool CanRestart();
 
-    void ShutDown();
+        bool CanShutDown();
 
-    bool AppStarting { get; set; }
+        void FlagForSafeShutdown();
 
-    string DataPath { get; }
-
-    string RunningPath { get; }
-  }
+        void ShutDown();
+    }
 }

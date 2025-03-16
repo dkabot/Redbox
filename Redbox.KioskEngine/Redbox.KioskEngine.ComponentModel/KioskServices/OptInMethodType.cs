@@ -1,8 +1,8 @@
 namespace Redbox.KioskEngine.ComponentModel.KioskServices
 {
-  public enum OptInMethodType
-  {
-    EmailAddress = 1,
-    PhoneNumber = 2,
-  }
+    public enum OptInMethodType
+    {
+        EmailAddress = 1,
+        PhoneNumber = 2
+    }
 }

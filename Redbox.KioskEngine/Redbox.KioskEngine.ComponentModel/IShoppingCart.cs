@@ -3,54 +3,53 @@ using System.Collections.Generic;
 
 namespace Redbox.KioskEngine.ComponentModel
 {
-  public interface IShoppingCart
-  {
-    void SetType(ShoppingCartType type);
+    public interface IShoppingCart
+    {
+        string Email { get; }
 
-    void SetEmail(string email);
+        string PostalCode { get; }
 
-    void SetPostalCode(string postalCode);
+        DateTime CreatedOn { get; }
 
-    void SetReferenceNumber(long referenceNumber);
+        long? ReferenceNumber { get; }
 
-    void SetVariableAuthValues(
-      bool authAcceptFlag,
-      int authRuleId,
-      Decimal authAmount,
-      bool skipAuthRule);
+        CreditElection UseCredits { get; }
 
-    void SetPlayPassPromptAccepted(bool playPassPromptAccepted, int playPassPointsEarned);
+        ShoppingCartType Type { get; }
 
-    string Email { get; }
+        bool AuthAcceptFlag { get; }
 
-    string PostalCode { get; }
+        int AuthRuleId { get; }
 
-    DateTime CreatedOn { get; }
+        decimal AuthAmount { get; }
 
-    long? ReferenceNumber { get; }
+        bool SkipAuthRule { get; }
 
-    CreditElection UseCredits { get; }
+        bool PlayPassPromptAccepted { get; }
 
-    ShoppingCartType Type { get; }
+        int PlayPassPointsEarned { get; }
 
-    bool AuthAcceptFlag { get; }
+        IDictionary<string, string> PropertyBag { get; }
+        void SetType(ShoppingCartType type);
 
-    int AuthRuleId { get; }
+        void SetEmail(string email);
 
-    Decimal AuthAmount { get; }
+        void SetPostalCode(string postalCode);
 
-    bool SkipAuthRule { get; }
+        void SetReferenceNumber(long referenceNumber);
 
-    bool PlayPassPromptAccepted { get; }
+        void SetVariableAuthValues(
+            bool authAcceptFlag,
+            int authRuleId,
+            decimal authAmount,
+            bool skipAuthRule);
 
-    int PlayPassPointsEarned { get; }
+        void SetPlayPassPromptAccepted(bool playPassPromptAccepted, int playPassPointsEarned);
 
-    string GetPropertyBagEntry(string key);
+        string GetPropertyBagEntry(string key);
 
-    void SetPropertyBagEntry(string key, string value);
+        void SetPropertyBagEntry(string key, string value);
 
-    void RemovePropertyBagEntry(string key);
-
-    IDictionary<string, string> PropertyBag { get; }
-  }
+        void RemovePropertyBagEntry(string key);
+    }
 }

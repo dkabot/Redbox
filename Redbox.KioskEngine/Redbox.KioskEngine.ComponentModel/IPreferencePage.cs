@@ -2,32 +2,31 @@ using System;
 
 namespace Redbox.KioskEngine.ComponentModel
 {
-  public interface IPreferencePage
-  {
-    T GetValue<T>(string settingName);
+    public interface IPreferencePage
+    {
+        string Name { get; }
 
-    T GetValue<T>(string settingName, T defaultValue);
+        string SettingPath { get; }
 
-    void SetValue(string settingName, object value);
+        string DisplayPath { get; }
 
-    void RaiseActivate();
+        IPreferencePageHost Host { get; }
 
-    void RaiseDeactivate();
+        Func<IPreferencePageHost> GetPreferencePageHost { get; }
 
-    string Name { get; }
+        PreferencePageTarget Target { get; }
+        T GetValue<T>(string settingName);
 
-    string SettingPath { get; }
+        T GetValue<T>(string settingName, T defaultValue);
 
-    string DisplayPath { get; }
+        void SetValue(string settingName, object value);
 
-    IPreferencePageHost Host { get; }
+        void RaiseActivate();
 
-    Func<IPreferencePageHost> GetPreferencePageHost { get; }
+        void RaiseDeactivate();
 
-    PreferencePageTarget Target { get; }
+        event EventHandler Activate;
 
-    event EventHandler Activate;
-
-    event EventHandler Deactivate;
-  }
+        event EventHandler Deactivate;
+    }
 }

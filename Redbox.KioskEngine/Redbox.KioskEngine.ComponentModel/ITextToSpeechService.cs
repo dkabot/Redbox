@@ -1,23 +1,22 @@
 namespace Redbox.KioskEngine.ComponentModel
 {
-  public interface ITextToSpeechService
-  {
-    void Reset();
+    public interface ITextToSpeechService
+    {
+        bool TTSEnabled { get; }
 
-    void RunSpeechWorkflow(string viewName);
+        bool AudioDeviceConnected { get; set; }
+        void Reset();
 
-    void TTSRepeatSequence();
+        void RunSpeechWorkflow(string viewName);
 
-    bool TTSEnabled { get; }
+        void TTSRepeatSequence();
 
-    bool AudioDeviceConnected { get; set; }
+        void ClearAudioDeviceConnected();
 
-    void ClearAudioDeviceConnected();
+        int GetTimeout(string timeoutType, int defaultTimeout);
 
-    int GetTimeout(string timeoutType, int defaultTimeout);
+        event AudioDeviceConnectionChanged OnAudioDeviceConnectionChanged;
 
-    event AudioDeviceConnectionChanged OnAudioDeviceConnectionChanged;
-
-    void ClearOnAudioDeviceConnectionChanged();
-  }
+        void ClearOnAudioDeviceConnectionChanged();
+    }
 }

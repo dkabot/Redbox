@@ -4,116 +4,115 @@ using System.Windows;
 
 namespace Redbox.KioskEngine.ComponentModel
 {
-  public interface IActor : IDisposable
-  {
-    void ClearHit();
+    public interface IActor : IDisposable
+    {
+        bool HitExists { get; }
 
-    bool HitExists { get; }
+        int X { get; set; }
 
-    void RaiseHit();
+        int Y { get; set; }
 
-    void MarkDirty();
+        Font Font { get; set; }
 
-    MeasureTextResult MeasureText();
+        int Width { get; set; }
 
-    void CenterVertically();
+        int Height { get; set; }
 
-    void CenterHorizontally();
+        object Tag { get; set; }
 
-    void Render(Graphics context);
+        string Name { get; set; }
 
-    int X { get; set; }
+        string Text { get; set; }
 
-    int Y { get; set; }
+        string Html { get; set; }
 
-    Font Font { get; set; }
+        Image Image { get; set; }
 
-    int Width { get; set; }
+        bool Visible { get; set; }
 
-    int Height { get; set; }
+        bool? Locked { get; set; }
 
-    object Tag { get; set; }
+        bool Enabled { get; set; }
 
-    string Name { get; set; }
+        IScene Scene { get; set; }
 
-    string Text { get; set; }
+        bool IsDirty { get; }
 
-    string Html { get; set; }
+        int? TabOrder { get; set; }
 
-    Image Image { get; set; }
+        float Opacity { get; set; }
 
-    bool Visible { get; set; }
+        int FrameCount { get; }
 
-    bool? Locked { get; set; }
+        int FrameNumber { get; set; }
 
-    bool Enabled { get; set; }
+        Rectangle Bounds { get; }
 
-    IScene Scene { get; set; }
+        string StyleName { get; set; }
 
-    bool IsDirty { get; }
+        string ErrorText { get; set; }
 
-    int? TabOrder { get; set; }
+        float[] TabStops { get; set; }
 
-    float Opacity { get; set; }
+        Size? CornerSize { get; set; }
 
-    int FrameCount { get; }
+        float StrokeWeight { get; set; }
 
-    int FrameNumber { get; set; }
+        Rectangle? HotSpot { get; set; }
 
-    Rectangle Bounds { get; }
+        Color? BorderColor { get; set; }
 
-    string StyleName { get; set; }
+        float? GradientAngle { get; set; }
 
-    string ErrorText { get; set; }
+        Rectangle? TextRegion { get; set; }
 
-    float[] TabStops { get; set; }
+        HitTestFlags HitFlags { get; set; }
 
-    Size? CornerSize { get; set; }
+        Color ForegroundColor { get; set; }
 
-    float StrokeWeight { get; set; }
+        Color BackgroundColor { get; set; }
 
-    Rectangle? HotSpot { get; set; }
+        float? CornerSweepAngle { get; set; }
 
-    Color? BorderColor { get; set; }
+        float? TextRotationAngle { get; set; }
 
-    float? GradientAngle { get; set; }
+        Color? GradientTargetColor { get; set; }
 
-    Rectangle? TextRegion { get; set; }
+        string RelativeToActorName { get; set; }
 
-    HitTestFlags HitFlags { get; set; }
+        Point? TextTranslationPoint { get; set; }
 
-    Color ForegroundColor { get; set; }
+        RenderStateFlags StateFlags { get; set; }
 
-    Color BackgroundColor { get; set; }
+        RenderOptionFlags OptionFlags { get; set; }
 
-    float? CornerSweepAngle { get; set; }
+        StringAlignment VerticalAlignment { get; set; }
 
-    float? TextRotationAngle { get; set; }
+        StringAlignment HorizontalAlignment { get; set; }
 
-    Color? GradientTargetColor { get; set; }
+        IStyleSheetStyle Style { get; set; }
 
-    string RelativeToActorName { get; set; }
+        FrameworkElement WPFFrameworkElement { get; set; }
 
-    Point? TextTranslationPoint { get; set; }
+        string WPFControlName { get; set; }
 
-    RenderStateFlags StateFlags { get; set; }
+        string WPFControlAssemblyName { get; set; }
+        void ClearHit();
 
-    RenderOptionFlags OptionFlags { get; set; }
+        void RaiseHit();
 
-    StringAlignment VerticalAlignment { get; set; }
+        void MarkDirty();
 
-    StringAlignment HorizontalAlignment { get; set; }
+        MeasureTextResult MeasureText();
 
-    IStyleSheetStyle Style { get; set; }
+        void CenterVertically();
 
-    FrameworkElement WPFFrameworkElement { get; set; }
+        void CenterHorizontally();
 
-    event EventHandler Hit;
+        void Render(Graphics context);
 
-    event WPFHitHandler OnWPFHit;
+        event EventHandler Hit;
 
-    string WPFControlName { get; set; }
-
-    string WPFControlAssemblyName { get; set; }
-  }
+        event WPFHitHandler OnWPFHit;
+    }
 }

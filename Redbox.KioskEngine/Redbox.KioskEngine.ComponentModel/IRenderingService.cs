@@ -3,23 +3,23 @@ using System.Windows.Forms.Integration;
 
 namespace Redbox.KioskEngine.ComponentModel
 {
-  public interface IRenderingService
-  {
-    IScene CreateScene(
-      string name,
-      int width,
-      int height,
-      Color backgroundColor,
-      ElementHost elementHost);
+    public interface IRenderingService
+    {
+        IScene ActiveScene { get; set; }
 
-    IScene GetScene(string name);
+        Color BackgroundColor { get; set; }
 
-    void RemoveScene(string name);
+        IScene CreateScene(
+            string name,
+            int width,
+            int height,
+            Color backgroundColor,
+            ElementHost elementHost);
 
-    bool IsBitmapReferenced(Image image);
+        IScene GetScene(string name);
 
-    IScene ActiveScene { get; set; }
+        void RemoveScene(string name);
 
-    Color BackgroundColor { get; set; }
-  }
+        bool IsBitmapReferenced(Image image);
+    }
 }

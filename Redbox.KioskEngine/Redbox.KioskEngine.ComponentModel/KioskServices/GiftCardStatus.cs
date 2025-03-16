@@ -1,9 +1,9 @@
 namespace Redbox.KioskEngine.ComponentModel.KioskServices
 {
-  public enum GiftCardStatus
-  {
-    None,
-    Unregistered,
-    Registered,
-  }
+    public enum GiftCardStatus
+    {
+        None,
+        Unregistered,
+        Registered
+    }
 }

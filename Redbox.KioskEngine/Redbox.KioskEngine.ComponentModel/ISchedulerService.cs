@@ -3,33 +3,33 @@ using System.Collections.Generic;
 
 namespace Redbox.KioskEngine.ComponentModel
 {
-  public interface ISchedulerService
-  {
-    void Start();
+    public interface ISchedulerService
+    {
+        void Start();
 
-    void Clear();
+        void Clear();
 
-    void Reset();
+        void Reset();
 
-    void Shutdown();
+        void Shutdown();
 
-    ErrorList Initialize();
+        ErrorList Initialize();
 
-    void AddScheduleEntry(
-      string jobname,
-      string label,
-      DateTime startTime,
-      DateTime? endTime,
-      string cronExpression,
-      string functionName,
-      string programName,
-      string misfireInstruction,
-      object[] parms);
+        void AddScheduleEntry(
+            string jobname,
+            string label,
+            DateTime startTime,
+            DateTime? endTime,
+            string cronExpression,
+            string functionName,
+            string programName,
+            string misfireInstruction,
+            object[] parms);
 
-    bool RemoveScheduleEntry(string name);
+        bool RemoveScheduleEntry(string name);
 
-    ISchedulerEntry GetScheduleEntry(string jobname);
+        ISchedulerEntry GetScheduleEntry(string jobname);
 
-    List<ISchedulerEntry> GetScheduleEntries();
-  }
+        List<ISchedulerEntry> GetScheduleEntries();
+    }
 }

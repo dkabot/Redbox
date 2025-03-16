@@ -1,9 +1,8 @@
 namespace Redbox.KioskEngine.ComponentModel
 {
-  public interface IWPFActor
-  {
-    event WPFHitHandler OnWPFHit;
-
-    IActor Actor { get; set; }
-  }
+    public interface IWPFActor
+    {
+        IActor Actor { get; set; }
+        event WPFHitHandler OnWPFHit;
+    }
 }

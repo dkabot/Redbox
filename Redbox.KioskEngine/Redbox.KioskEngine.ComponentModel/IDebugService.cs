@@ -1,19 +1,18 @@
 namespace Redbox.KioskEngine.ComponentModel
 {
-  public interface IDebugService
-  {
-    void SetDebuggerInstance(object instance);
+    public interface IDebugService
+    {
+        bool IsApplicationRunning { get; set; }
 
-    void ActivateDebugger();
+        object DebuggerInstance { get; }
 
-    void ActivateDebugger(string resourceName);
+        bool IsEnabled { get; set; }
+        void SetDebuggerInstance(object instance);
 
-    void ActivateDebugger(string resourceName, int lineNumber, string error);
+        void ActivateDebugger();
 
-    bool IsApplicationRunning { get; set; }
+        void ActivateDebugger(string resourceName);
 
-    object DebuggerInstance { get; }
-
-    bool IsEnabled { get; set; }
-  }
+        void ActivateDebugger(string resourceName, int lineNumber, string error);
+    }
 }

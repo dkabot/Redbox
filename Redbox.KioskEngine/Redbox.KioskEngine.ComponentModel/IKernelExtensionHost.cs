@@ -2,24 +2,23 @@ using System;
 
 namespace Redbox.KioskEngine.ComponentModel
 {
-  public interface IKernelExtensionHost : IDisposable
-  {
-    ErrorList PreLoad();
+    public interface IKernelExtensionHost : IDisposable
+    {
+        IKernelExtension Extension { get; set; }
+        ErrorList PreLoad();
 
-    ErrorList Load();
+        ErrorList Load();
 
-    ErrorList Reset();
+        ErrorList Reset();
 
-    ErrorList Activate();
+        ErrorList Activate();
 
-    ErrorList Deactivate();
+        ErrorList Deactivate();
 
-    void HandleHostCrash(Exception e);
+        void HandleHostCrash(Exception e);
 
-    bool CanSwitch(out ErrorList errors);
+        bool CanSwitch(out ErrorList errors);
 
-    IKernelExtension Extension { get; set; }
-
-    void RegisterCommunicationActivity(Action<object, EventArgs> action);
-  }
+        void RegisterCommunicationActivity(Action<object, EventArgs> action);
+    }
 }

@@ -1,58 +1,57 @@
+using System;
 using DeviceService.ComponentModel;
 using DeviceService.ComponentModel.Commands;
 using DeviceService.ComponentModel.Requests;
 using DeviceService.ComponentModel.Responses;
-using System;
 
 namespace Redbox.KioskEngine.ComponentModel
 {
-  public interface IDeviceServiceClientHelper
-  {
-    bool ConnectToDeviceService();
+    public interface IDeviceServiceClientHelper
+    {
+        bool IsConnectedToDeviceService { get; }
 
-    bool IsConnectedToDeviceService { get; }
+        bool IsCardReaderConnected { get; }
 
-    bool IsCardReaderConnected { get; }
+        bool IsCardReaderTampered { get; set; }
 
-    bool IsCardReaderTampered { get; set; }
+        Version DeviceServiceClientVersion { get; }
 
-    ValidateVersionModel ValidateVersion();
+        Version DeviceServiceVersion { get; }
 
-    Version DeviceServiceClientVersion { get; }
+        IDeviceServiceShutDownInfo DeviceServiceShutDownInfo { get; }
 
-    IReadCardJob StartCardRead(
-      DeviceInputType deviceInputType,
-      Action<BaseResponseEvent> readCardResponseHandler,
-      Action<BaseResponseEvent> readCardEventHandler,
-      int timeout,
-      VasMode vasMode);
+        bool SupportsEMV { get; }
 
-    void CancelCommand(Guid id);
+        bool SupportsVas { get; }
+        bool ConnectToDeviceService();
 
-    void ReportAuthorizeResult(bool authorizeSuccessful);
+        ValidateVersionModel ValidateVersion();
 
-    void PollForCardReaderConnectionAndValidVersion();
+        IReadCardJob StartCardRead(
+            DeviceInputType deviceInputType,
+            Action<BaseResponseEvent> readCardResponseHandler,
+            Action<BaseResponseEvent> readCardEventHandler,
+            int timeout,
+            VasMode vasMode);
 
-    void CheckDeviceActivation();
+        void CancelCommand(Guid id);
 
-    Version DeviceServiceVersion { get; }
+        void ReportAuthorizeResult(bool authorizeSuccessful);
 
-    void GetCardInsertedStatus(
-      Action<GetCardInsertedStatusResponseEvent> completeCallback);
+        void PollForCardReaderConnectionAndValidVersion();
 
-    void RegisterOnDeviceServiceCanShutDownHandler(
-      OnDeviceServiceCanShutDown onDeviceServiceCanShutDown);
+        void CheckDeviceActivation();
 
-    IDeviceServiceShutDownInfo DeviceServiceShutDownInfo { get; }
+        void GetCardInsertedStatus(
+            Action<GetCardInsertedStatusResponseEvent> completeCallback);
 
-    bool ShutDownDeviceService(bool forceShutdown, ShutDownReason shutDownReason);
+        void RegisterOnDeviceServiceCanShutDownHandler(
+            OnDeviceServiceCanShutDown onDeviceServiceCanShutDown);
 
-    void CheckDeviceStatus();
+        bool ShutDownDeviceService(bool forceShutdown, ShutDownReason shutDownReason);
 
-    bool SupportsEMV { get; }
+        void CheckDeviceStatus();
 
-    bool SupportsVas { get; }
-
-    void SendTamperedCardReaderKioskAlertMessage();
-  }
+        void SendTamperedCardReaderKioskAlertMessage();
+    }
 }

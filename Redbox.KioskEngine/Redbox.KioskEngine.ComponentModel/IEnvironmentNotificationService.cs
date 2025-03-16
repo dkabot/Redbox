@@ -1,78 +1,77 @@
-using Redbox.KioskEngine.ComponentModel.TrackData;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using Redbox.KioskEngine.ComponentModel.TrackData;
 
 namespace Redbox.KioskEngine.ComponentModel
 {
-  public interface IEnvironmentNotificationService
-  {
-    void Reset();
+    public interface IEnvironmentNotificationService
+    {
+        bool HasValidCardReader { get; }
 
-    void Register(IntPtr handle);
+        bool CheckCardReader { get; set; }
 
-    void Unregister(IntPtr handle);
+        int NullKioskId { get; set; }
 
-    void ToggleTouchScreen();
+        bool IsClassicTrackDataServiceRegistered { get; }
 
-    string TouchScreenDriver();
+        bool IsDeviceServiceTrackDataServiceRegistered { get; }
 
-    TouchScreenState TouchScreenStatus();
+        bool IsTrackDataServiceRegistered { get; }
 
-    void RaiseValidClassicCardReader();
+        bool PreviousTrackDataServiceWasDeviceServiceTrackDataService { get; }
 
-    void RaiseInvalidClassicCardReader();
+        bool PreviousTrackDataServiceWasClassicTrackDataService { get; }
+        void Reset();
 
-    void RaiseValidDeviceServiceCardReader();
+        void Register(IntPtr handle);
 
-    void RaiseInvalidDeviceServiceCardReader();
+        void Unregister(IntPtr handle);
 
-    void LaunchSecureBrowser(
-      IDictionary<string, string> approvedUrls,
-      NavigateUrlCallback navigateUrlCallback);
+        void ToggleTouchScreen();
 
-    void NotifyConfigurationCallbacks(
-      string store,
-      string action,
-      string path,
-      string key,
-      string newValue);
+        string TouchScreenDriver();
 
-    void RegisterConfigurationCallback(string name, ConfigurationCallback callback);
+        TouchScreenState TouchScreenStatus();
 
-    void UnregisterConfigurationCallback(string name);
+        void RaiseValidClassicCardReader();
 
-    void RegisterCorruptDbCallback(CorruptDbCallback callback);
+        void RaiseInvalidClassicCardReader();
 
-    void RaiseCorruptDb();
+        void RaiseValidDeviceServiceCardReader();
 
-    void RegisterTamperedCardReaderCallback(TamperedCardReaderCallback callback);
+        void RaiseInvalidDeviceServiceCardReader();
 
-    void RaiseTamperedCardReader();
+        void LaunchSecureBrowser(
+            IDictionary<string, string> approvedUrls,
+            NavigateUrlCallback navigateUrlCallback);
 
-    void RegisterCardReaderConnectedCallback(Action cardReaderConnectedCallback);
+        void NotifyConfigurationCallbacks(
+            string store,
+            string action,
+            string path,
+            string key,
+            string newValue);
 
-    void RegisterCardReaderDisconnectedCallback(
-      Action<ITrackDataService> cardReaderDisconnectedCallback);
+        void RegisterConfigurationCallback(string name, ConfigurationCallback callback);
 
-    EnvironmentNotificationType ProcessClassicCardReaderNotification(ref Message msg);
+        void UnregisterConfigurationCallback(string name);
 
-    bool HasValidCardReader { get; }
+        void RegisterCorruptDbCallback(CorruptDbCallback callback);
 
-    bool CheckCardReader { get; set; }
+        void RaiseCorruptDb();
 
-    int NullKioskId { get; set; }
+        void RegisterTamperedCardReaderCallback(TamperedCardReaderCallback callback);
 
-    void DetectCardReaderAndRegisterTrackDataService();
+        void RaiseTamperedCardReader();
 
-    bool IsClassicTrackDataServiceRegistered { get; }
+        void RegisterCardReaderConnectedCallback(Action cardReaderConnectedCallback);
 
-    bool IsDeviceServiceTrackDataServiceRegistered { get; }
+        void RegisterCardReaderDisconnectedCallback(
+            Action<ITrackDataService> cardReaderDisconnectedCallback);
 
-    bool IsTrackDataServiceRegistered { get; }
+        EnvironmentNotificationType ProcessClassicCardReaderNotification(ref Message msg);
 
-    bool PreviousTrackDataServiceWasDeviceServiceTrackDataService { get; }
-
-    bool PreviousTrackDataServiceWasClassicTrackDataService { get; }
-  }
+        void DetectCardReaderAndRegisterTrackDataService();
+    }
 }

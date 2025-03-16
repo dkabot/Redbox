@@ -3,45 +3,45 @@ using System.Collections.Generic;
 
 namespace Redbox.KioskEngine.ComponentModel.TextToSpeech
 {
-  public interface ISpeechPart
-  {
-    ISpeechControl SpeechControl { get; set; }
+    public interface ISpeechPart
+    {
+        ISpeechControl SpeechControl { get; set; }
 
-    int KeySequenceDelay { get; set; }
+        int KeySequenceDelay { get; set; }
 
-    int Sequence { get; set; }
+        int Sequence { get; set; }
 
-    string Name { get; set; }
+        string Name { get; set; }
 
-    string Language { get; set; }
+        string Language { get; set; }
 
-    bool Loop { get; set; }
+        bool Loop { get; set; }
 
-    int StartPause { get; set; }
+        int StartPause { get; set; }
 
-    int EndPause { get; set; }
+        int EndPause { get; set; }
 
-    void ValidateMacros(IMacroService macroService, Dictionary<string, string> macrosFound);
+        IRegularExpression RegularExpression { get; set; }
 
-    ISpeechPart EvaluateRegularExpression(Dictionary<string, string> macrosFound);
+        List<ISpeechPartEvent> Events { get; }
 
-    void EnqueueText(
-      Queue<string> queue,
-      Dictionary<string, string> macrosFound,
-      IViewService viewService);
+        List<ITextPart> Texts { get; }
 
-    IRegularExpression RegularExpression { get; set; }
+        List<INeededMacro> NeededMacros { get; }
 
-    List<ISpeechPartEvent> Events { get; }
+        Action Refresh { get; set; }
 
-    List<ITextPart> Texts { get; }
+        bool AutoRun { get; set; }
 
-    List<INeededMacro> NeededMacros { get; }
+        void ValidateMacros(IMacroService macroService, Dictionary<string, string> macrosFound);
 
-    Action Refresh { get; set; }
+        ISpeechPart EvaluateRegularExpression(Dictionary<string, string> macrosFound);
 
-    void Clear();
+        void EnqueueText(
+            Queue<string> queue,
+            Dictionary<string, string> macrosFound,
+            IViewService viewService);
 
-    bool AutoRun { get; set; }
-  }
+        void Clear();
+    }
 }

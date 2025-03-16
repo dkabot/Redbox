@@ -2,18 +2,18 @@ using System;
 
 namespace Redbox.KioskEngine.ComponentModel
 {
-  public interface IMessage
-  {
-    int ID { get; }
+    public interface IMessage
+    {
+        int ID { get; }
 
-    string GUID { get; }
+        string GUID { get; }
 
-    byte[] Data { get; set; }
+        byte[] Data { get; set; }
 
-    string Type { get; }
+        string Type { get; }
 
-    byte Priority { get; }
+        byte Priority { get; }
 
-    DateTime CreatedOn { get; }
-  }
+        DateTime CreatedOn { get; }
+    }
 }

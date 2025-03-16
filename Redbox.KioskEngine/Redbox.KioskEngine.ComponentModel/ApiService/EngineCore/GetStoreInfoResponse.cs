@@ -2,13 +2,13 @@ using System.Net;
 
 namespace Redbox.KioskEngine.ComponentModel.ApiService.EngineCore
 {
-  public class GetStoreInfoResponse : ApiServiceBaseResponse<StoreInfo>
-  {
-    public GetStoreInfoResponse()
+    public class GetStoreInfoResponse : ApiServiceBaseResponse<StoreInfo>
     {
-      this.StatusCode = HttpStatusCode.OK;
-      this.Success = true;
-      this.Content = new StoreInfo();
+        public GetStoreInfoResponse()
+        {
+            StatusCode = HttpStatusCode.OK;
+            Success = true;
+            Content = new StoreInfo();
+        }
     }
-  }
 }

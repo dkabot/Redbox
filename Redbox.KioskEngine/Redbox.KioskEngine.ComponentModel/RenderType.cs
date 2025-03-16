@@ -1,8 +1,8 @@
 namespace Redbox.KioskEngine.ComponentModel
 {
-  public enum RenderType
-  {
-    GDI,
-    WPF,
-  }
+    public enum RenderType
+    {
+        GDI,
+        WPF
+    }
 }

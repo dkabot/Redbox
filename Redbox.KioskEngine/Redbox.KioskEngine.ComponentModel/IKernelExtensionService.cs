@@ -4,28 +4,27 @@ using System.Collections.ObjectModel;
 
 namespace Redbox.KioskEngine.ComponentModel
 {
-  public interface IKernelExtensionService
-  {
-    ErrorList Initialize(List<Type> kernelExtensionHostTypes);
+    public interface IKernelExtensionService
+    {
+        ReadOnlyCollection<IKernelExtension> Extensions { get; }
 
-    IKernelExtension GetExtension(Guid id);
+        string[] SearchPath { get; set; }
+        ErrorList Initialize(List<Type> kernelExtensionHostTypes);
 
-    ErrorList LoadExtension(Type extensionHostType);
+        IKernelExtension GetExtension(Guid id);
 
-    ErrorList LoadAllExtensions();
+        ErrorList LoadExtension(Type extensionHostType);
 
-    ErrorList ResetAllExtensions();
+        ErrorList LoadAllExtensions();
 
-    ErrorList ActivateAllExtensions();
+        ErrorList ResetAllExtensions();
 
-    ErrorList DeactivateAllExtensions();
+        ErrorList ActivateAllExtensions();
 
-    bool CanSwitch(out ErrorList errors);
+        ErrorList DeactivateAllExtensions();
 
-    void NotifyOfHostCrash(Exception e);
+        bool CanSwitch(out ErrorList errors);
 
-    ReadOnlyCollection<IKernelExtension> Extensions { get; }
-
-    string[] SearchPath { get; set; }
-  }
+        void NotifyOfHostCrash(Exception e);
+    }
 }

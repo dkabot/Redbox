@@ -1,8 +1,8 @@
 namespace Redbox.KioskEngine.ComponentModel
 {
-  public enum ServiceType
-  {
-    KioskServices,
-    KisokDataServices,
-  }
+    public enum ServiceType
+    {
+        KioskServices,
+        KisokDataServices
+    }
 }

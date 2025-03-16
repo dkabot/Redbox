@@ -1,9 +1,9 @@
 namespace Redbox.KioskEngine.ComponentModel
 {
-  public interface IDataCacheService
-  {
-    void Shutdown();
+    public interface IDataCacheService
+    {
+        void Shutdown();
 
-    byte[] GetContent(DataCacheType type, string name);
-  }
+        byte[] GetContent(DataCacheType type, string name);
+    }
 }

@@ -1,9 +1,9 @@
 namespace Redbox.KioskEngine.ComponentModel
 {
-  public interface IServerEngineService
-  {
-    string Url { get; set; }
+    public interface IServerEngineService
+    {
+        string Url { get; set; }
 
-    int Timeout { get; set; }
-  }
+        int Timeout { get; set; }
+    }
 }

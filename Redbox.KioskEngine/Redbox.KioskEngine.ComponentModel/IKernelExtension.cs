@@ -4,34 +4,34 @@ using System.Drawing;
 
 namespace Redbox.KioskEngine.ComponentModel
 {
-  public interface IKernelExtension : IDisposable
-  {
-    Guid ID { get; }
+    public interface IKernelExtension : IDisposable
+    {
+        Guid ID { get; }
 
-    string Path { get; }
+        string Path { get; }
 
-    string Name { get; set; }
+        string Name { get; set; }
 
-    Bitmap Icon { get; set; }
+        Bitmap Icon { get; set; }
 
-    string Title { get; set; }
+        string Title { get; set; }
 
-    string Author { get; }
+        string Author { get; }
 
-    string Version { get; }
+        string Version { get; }
 
-    string Category { get; }
+        string Category { get; }
 
-    string Copyright { get; }
+        string Copyright { get; }
 
-    string Trademark { get; }
+        string Trademark { get; }
 
-    string Description { get; }
+        string Description { get; }
 
-    bool IsUnloadSupported { get; }
+        bool IsUnloadSupported { get; }
 
-    IKernelExtensionHost Host { get; set; }
+        IKernelExtensionHost Host { get; set; }
 
-    ReadOnlyCollection<Guid> Dependencies { get; }
-  }
+        ReadOnlyCollection<Guid> Dependencies { get; }
+    }
 }

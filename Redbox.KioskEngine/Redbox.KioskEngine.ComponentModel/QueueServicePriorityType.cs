@@ -1,9 +1,9 @@
 namespace Redbox.KioskEngine.ComponentModel
 {
-  public enum QueueServicePriorityType
-  {
-    overNight,
-    offPeak,
-    Peak,
-  }
+    public enum QueueServicePriorityType
+    {
+        overNight,
+        offPeak,
+        Peak
+    }
 }

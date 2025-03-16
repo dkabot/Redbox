@@ -3,16 +3,15 @@ using System.Collections.Generic;
 
 namespace Redbox.KioskEngine.ComponentModel
 {
-  public interface IMacroService
-  {
-    void Clear(ICollection<string> exclusions);
+    public interface IMacroService
+    {
+        string this[string name] { get; set; }
 
-    string ExpandProperties(string input);
+        ICollection Keys { get; }
 
-    string this[string name] { get; set; }
+        ICollection Values { get; }
+        void Clear(ICollection<string> exclusions);
 
-    ICollection Keys { get; }
-
-    ICollection Values { get; }
-  }
+        string ExpandProperties(string input);
+    }
 }

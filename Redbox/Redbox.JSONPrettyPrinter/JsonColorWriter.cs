@@ -11,8 +11,8 @@ namespace Redbox.JSONPrettyPrinter
 
         public JsonColorWriter(JsonWriter inner, JsonPalette palette)
         {
-            this.InnerWriter = inner;
-            this.Palette = palette ?? JsonPalette.Auto();
+            InnerWriter = inner;
+            Palette = palette ?? JsonPalette.Auto();
         }
 
         public JsonWriter InnerWriter { get; }

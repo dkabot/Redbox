@@ -47,7 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AnalyticsSessionType.cs" />
-    <Compile Include="ApiServiceBaseResponse`1.cs" />
+    <Compile Include="ApiServiceBaseResponseT.cs" />
     <Compile Include="ResponseError.cs" />
     <Compile Include="DictionaryExtensions.cs" />
     <Compile Include="ExceptionExtensions.cs" />

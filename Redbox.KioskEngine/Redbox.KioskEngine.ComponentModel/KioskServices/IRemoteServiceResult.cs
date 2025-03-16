@@ -4,20 +4,20 @@ using System.Collections.ObjectModel;
 
 namespace Redbox.KioskEngine.ComponentModel.KioskServices
 {
-  public interface IRemoteServiceResult
-  {
-    bool Success { get; }
+    public interface IRemoteServiceResult
+    {
+        bool Success { get; }
 
-    ErrorList Errors { get; }
+        ErrorList Errors { get; }
 
-    TimeSpan ExecutionTime { get; }
+        TimeSpan ExecutionTime { get; }
 
-    IDictionary<string, object> Properties { get; }
+        IDictionary<string, object> Properties { get; }
 
-    ReadOnlyCollection<IRemoteServiceProviderInstruction> Instructions { get; }
+        ReadOnlyCollection<IRemoteServiceProviderInstruction> Instructions { get; }
 
-    T GetProperty<T>(string keyName);
+        T GetProperty<T>(string keyName);
 
-    string ToObfuscatedString();
-  }
+        string ToObfuscatedString();
+    }
 }

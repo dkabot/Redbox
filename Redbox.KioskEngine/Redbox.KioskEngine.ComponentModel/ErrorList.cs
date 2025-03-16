@@ -1,46 +1,50 @@
-using Redbox.Core;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Redbox.Core;
 
 namespace Redbox.KioskEngine.ComponentModel
 {
-  public class ErrorList : List<Error>, ICloneable
-  {
-    public bool ContainsCode(string code)
+    public class ErrorList : List<Error>, ICloneable
     {
-      return this.Find((Predicate<Error>) (each => each.Code == code)) != null;
+        public int ErrorCount => FindAll(each => !each.IsWarning).Count;
+
+        public int WarningCount => FindAll(each => each.IsWarning).Count;
+
+        public object Clone()
+        {
+            var errorList = new ErrorList();
+            errorList.AddRange(this);
+            return errorList;
+        }
+
+        public bool ContainsCode(string code)
+        {
+            return Find(each => each.Code == code) != null;
+        }
+
+        public bool ContainsError()
+        {
+            return Find(each => !each.IsWarning) != null;
+        }
+
+        public int RemoveCode(string code)
+        {
+            return RemoveAll(each => each.Code == code);
+        }
+
+        public void ToLogHelper()
+        {
+            if (Count <= 0)
+                return;
+            var stringBuilder = new StringBuilder();
+            foreach (var error in this)
+            {
+                stringBuilder.AppendLine(error.ToString());
+                stringBuilder.AppendLine(error.Details);
+            }
+
+            LogHelper.Instance.Log(stringBuilder.ToString());
+        }
     }
-
-    public bool ContainsError() => this.Find((Predicate<Error>) (each => !each.IsWarning)) != null;
-
-    public int RemoveCode(string code)
-    {
-      return this.RemoveAll((Predicate<Error>) (each => each.Code == code));
-    }
-
-    public object Clone()
-    {
-      ErrorList errorList = new ErrorList();
-      errorList.AddRange((IEnumerable<Error>) this);
-      return (object) errorList;
-    }
-
-    public int ErrorCount => this.FindAll((Predicate<Error>) (each => !each.IsWarning)).Count;
-
-    public int WarningCount => this.FindAll((Predicate<Error>) (each => each.IsWarning)).Count;
-
-    public void ToLogHelper()
-    {
-      if (this.Count <= 0)
-        return;
-      StringBuilder stringBuilder = new StringBuilder();
-      foreach (Error error in (List<Error>) this)
-      {
-        stringBuilder.AppendLine(error.ToString());
-        stringBuilder.AppendLine(error.Details);
-      }
-      LogHelper.Instance.Log(stringBuilder.ToString());
-    }
-  }
 }

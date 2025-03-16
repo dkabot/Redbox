@@ -3,18 +3,18 @@ using System.Windows;
 
 namespace Redbox.KioskEngine.ComponentModel
 {
-  public interface IThemeService
-  {
-    List<ITheme> Themes { get; set; }
+    public interface IThemeService
+    {
+        List<ITheme> Themes { get; set; }
 
-    ITheme CurrentTheme { get; set; }
+        ITheme CurrentTheme { get; set; }
 
-    ITheme DefaultTheme { get; }
+        ITheme DefaultTheme { get; }
 
-    event ThemeChanged OnCurrentThemeChanged;
+        event ThemeChanged OnCurrentThemeChanged;
 
-    void RegisterThemedControls(string assemblyName);
+        void RegisterThemedControls(string assemblyName);
 
-    FrameworkElement GetNewThemedControlInstance(string controlName);
-  }
+        FrameworkElement GetNewThemedControlInstance(string controlName);
+    }
 }

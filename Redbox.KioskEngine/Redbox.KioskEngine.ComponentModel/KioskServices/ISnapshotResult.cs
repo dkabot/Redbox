@@ -1,11 +1,11 @@
 namespace Redbox.KioskEngine.ComponentModel.KioskServices
 {
-  public interface ISnapshotResult
-  {
-    bool Success { get; }
+    public interface ISnapshotResult
+    {
+        bool Success { get; }
 
-    int StatusCode { get; }
+        int StatusCode { get; }
 
-    Error Error { get; }
-  }
+        Error Error { get; }
+    }
 }

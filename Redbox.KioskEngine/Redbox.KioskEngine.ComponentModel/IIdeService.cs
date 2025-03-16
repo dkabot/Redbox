@@ -3,28 +3,27 @@ using System.Windows.Forms;
 
 namespace Redbox.KioskEngine.ComponentModel
 {
-  public interface IIdeService
-  {
-    ErrorList OpenProject(string path);
+    public interface IIdeService
+    {
+        Form MainForm { get; }
 
-    ErrorList CloseProject();
+        IProject CurrentProject { get; }
 
-    ErrorList Build();
+        ReadOnlyCollection<string> RecentProjects { get; }
+        ErrorList OpenProject(string path);
 
-    ErrorList Build(string path);
+        ErrorList CloseProject();
 
-    Form MainForm { get; }
+        ErrorList Build();
 
-    void Show();
+        ErrorList Build(string path);
 
-    void Close();
+        void Show();
 
-    IProject CurrentProject { get; }
+        void Close();
 
-    ReadOnlyCollection<string> RecentProjects { get; }
+        void ActivateDebugger(string resourceName, int lineNumber, string error);
 
-    void ActivateDebugger(string resourceName, int lineNumber, string error);
-
-    void SetDebuggerInstance(object instance);
-  }
+        void SetDebuggerInstance(object instance);
+    }
 }

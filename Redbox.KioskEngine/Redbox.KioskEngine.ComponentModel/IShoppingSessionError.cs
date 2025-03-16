@@ -2,16 +2,16 @@ using System;
 
 namespace Redbox.KioskEngine.ComponentModel
 {
-  public interface IShoppingSessionError
-  {
-    string Code { get; }
+    public interface IShoppingSessionError
+    {
+        string Code { get; }
 
-    string Details { get; }
+        string Details { get; }
 
-    bool IsWarning { get; }
+        bool IsWarning { get; }
 
-    string Description { get; }
+        string Description { get; }
 
-    DateTime TimeStamp { get; }
-  }
+        DateTime TimeStamp { get; }
+    }
 }

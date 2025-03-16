@@ -60,7 +60,7 @@ namespace Redbox.Lua
         public static void LogLuaFunctions()
         {
             LogHelper.Instance.Log(string.Format("Logging the stack for {0} LuaFunction objects", _trackLuaCall.Count));
-            _trackLuaCall.Values.ForEach(x =>
+                _trackLuaCall.Values.ForEach(x =>
             {
                 x.Elapsed = (long)(DateTime.Now - x.EnteredCall).TotalMilliseconds;
                 LogHelper.Instance.Log(x.ToJson());

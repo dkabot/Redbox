@@ -3,33 +3,33 @@ using System.Collections.Generic;
 
 namespace Redbox.KioskEngine.ComponentModel
 {
-  public interface IDataFileStoreService
-  {
-    void Initialize(
-      string dataStoreName,
-      string path,
-      string extension,
-      string corruptFileExtension,
-      bool useEncryption);
+    public interface IDataFileStoreService
+    {
+        string Root { get; }
 
-    void Reset();
+        void Initialize(
+            string dataStoreName,
+            string path,
+            string extension,
+            string corruptFileExtension,
+            bool useEncryption);
 
-    bool Set(string fileName, object o);
+        void Reset();
 
-    bool SetRaw(Guid guidFileName, string o);
+        bool Set(string fileName, object o);
 
-    bool SetRaw(string fileName, string o);
+        bool SetRaw(Guid guidFileName, string o);
 
-    bool Get<T>(string fileName, out T deserializeObject);
+        bool SetRaw(string fileName, string o);
 
-    List<T> GetAll<T>();
+        bool Get<T>(string fileName, out T deserializeObject);
 
-    string GetRaw(Guid fileName);
+        List<T> GetAll<T>();
 
-    string GetRaw(string fileName);
+        string GetRaw(Guid fileName);
 
-    void Delete(string fileName);
+        string GetRaw(string fileName);
 
-    string Root { get; }
-  }
+        void Delete(string fileName);
+    }
 }

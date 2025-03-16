@@ -138,8 +138,7 @@ namespace Redbox.REDS.Framework
                 return false;
             var flag = name.Substring(0, 2) == "!=";
             return this[name] is List<object> objectList
-                ?
-                !flag ? objectList.Contains(value) : !objectList.Contains(value)
+                ? !flag ? objectList.Contains(value) : !objectList.Contains(value)
                 : this[name] is string strA && value is string
                     ? !flag
                         ? string.Compare(strA, (string)value, true) == 0

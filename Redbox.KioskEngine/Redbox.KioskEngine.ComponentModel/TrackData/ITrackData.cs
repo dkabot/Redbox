@@ -1,61 +1,61 @@
 using DeviceService.ComponentModel;
+using CardType = Redbox.Core.CardType;
 
 namespace Redbox.KioskEngine.ComponentModel.TrackData
 {
-  public interface ITrackData
-  {
-    bool HasValidData();
+    public interface ITrackData
+    {
+        ErrorList Errors { get; set; }
 
-    ErrorList Errors { get; set; }
+        string FirstSix { get; set; }
 
-    string FirstSix { get; set; }
+        string LastFour { get; set; }
 
-    string LastFour { get; set; }
+        string FirstName { get; set; }
 
-    string FirstName { get; set; }
+        string LastName { get; set; }
 
-    string LastName { get; set; }
+        CardType? CardType { get; set; }
 
-    Redbox.Core.CardType? CardType { get; set; }
+        string ExpiryYear { get; set; }
 
-    string ExpiryYear { get; set; }
+        string ExpiryMonth { get; set; }
 
-    string ExpiryMonth { get; set; }
+        string CardHashId { get; }
 
-    string CardHashId { get; }
+        string ReservationHashId { get; }
 
-    string ReservationHashId { get; }
+        CardSourceType CardSourceType { get; set; }
 
-    void LockData();
+        WalletType WalletType { get; set; }
 
-    CardSourceType CardSourceType { get; set; }
+        FallbackStatusAction FallbackStatusAction { get; set; }
 
-    WalletType WalletType { get; set; }
+        FallbackType? FallbackReason { get; set; }
 
-    FallbackStatusAction FallbackStatusAction { get; set; }
+        FallbackType? LastFallbackReason { get; set; }
 
-    FallbackType? FallbackReason { get; set; }
+        ResponseStatus? ReadStatus { get; set; }
 
-    FallbackType? LastFallbackReason { get; set; }
+        bool IsInTechnicalFallback { get; set; }
 
-    ResponseStatus? ReadStatus { get; set; }
+        bool NextCardReadIsInTechnicalFallback { get; set; }
 
-    bool IsInTechnicalFallback { get; set; }
+        bool CardHasChip { get; set; }
 
-    bool NextCardReadIsInTechnicalFallback { get; set; }
+        bool ChipEnabledAndSupportsEmv { get; }
 
-    bool CardHasChip { get; set; }
+        bool ContactlessEnabledAndSupportsEmv { get; }
 
-    bool ChipEnabledAndSupportsEmv { get; }
+        bool EmvEnabled { get; }
 
-    bool ContactlessEnabledAndSupportsEmv { get; }
+        string VasIdentifier { get; set; }
 
-    bool EmvEnabled { get; }
+        bool HasVas { get; }
 
-    string VasIdentifier { get; set; }
+        bool HasPay { get; }
+        bool HasValidData();
 
-    bool HasVas { get; }
-
-    bool HasPay { get; }
-  }
+        void LockData();
+    }
 }

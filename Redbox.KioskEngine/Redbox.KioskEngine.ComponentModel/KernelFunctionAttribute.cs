@@ -7,56 +7,57 @@ using System.Text;
 
 namespace Redbox.KioskEngine.ComponentModel
 {
-  [AttributeUsage(AttributeTargets.Method, AllowMultiple = true)]
-  public class KernelFunctionAttribute : Attribute
-  {
-    public static ReadOnlyCollection<KernelFunctionInfo> GetKernelFunctionInfos(
-      Assembly assembly,
-      string extension)
+    [AttributeUsage(AttributeTargets.Method, AllowMultiple = true)]
+    public class KernelFunctionAttribute : Attribute
     {
-      List<KernelFunctionInfo> kernelFunctionInfoList = new List<KernelFunctionInfo>();
-      foreach (Type type in assembly.GetTypes())
-      {
-        foreach (MethodInfo method in type.GetMethods(BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic))
+        public string Name { get; set; }
+
+        public string ExtensionName { get; set; }
+
+        public static ReadOnlyCollection<KernelFunctionInfo> GetKernelFunctionInfos(
+            Assembly assembly,
+            string extension)
         {
-          DescriptionAttribute customAttribute1 = (DescriptionAttribute) Attribute.GetCustomAttribute((MemberInfo) method, typeof (DescriptionAttribute));
-          ObsoleteAttribute customAttribute2 = (ObsoleteAttribute) Attribute.GetCustomAttribute((MemberInfo) method, typeof (ObsoleteAttribute));
-          KernelFunctionAttribute[] customAttributes = (KernelFunctionAttribute[]) Attribute.GetCustomAttributes((MemberInfo) method, typeof (KernelFunctionAttribute));
-          if (customAttributes != null && customAttributes.Length != 0)
-          {
-            KernelFunctionInfo kernelFunctionInfo = new KernelFunctionInfo()
+            var kernelFunctionInfoList = new List<KernelFunctionInfo>();
+            foreach (var type in assembly.GetTypes())
+            foreach (var method in type.GetMethods(BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic))
             {
-              Method = method,
-              Extension = extension,
-              Description = customAttribute1?.Description,
-              DeprecationWarning = customAttribute2?.Message
-            };
-            kernelFunctionInfo.InnerAttributes.AddRange((IEnumerable<KernelFunctionAttribute>) customAttributes);
-            kernelFunctionInfoList.Add(kernelFunctionInfo);
-          }
-        }
-      }
-      return kernelFunctionInfoList.AsReadOnly();
-    }
+                var customAttribute1 = (DescriptionAttribute)GetCustomAttribute(method, typeof(DescriptionAttribute));
+                var customAttribute2 = (ObsoleteAttribute)GetCustomAttribute(method, typeof(ObsoleteAttribute));
+                var customAttributes =
+                    (KernelFunctionAttribute[])GetCustomAttributes(method, typeof(KernelFunctionAttribute));
+                if (customAttributes != null && customAttributes.Length != 0)
+                {
+                    var kernelFunctionInfo = new KernelFunctionInfo
+                    {
+                        Method = method,
+                        Extension = extension,
+                        Description = customAttribute1?.Description,
+                        DeprecationWarning = customAttribute2?.Message
+                    };
+                    kernelFunctionInfo.InnerAttributes.AddRange(customAttributes);
+                    kernelFunctionInfoList.Add(kernelFunctionInfo);
+                }
+            }
 
-    public string GetNamespace()
-    {
-      StringBuilder stringBuilder = new StringBuilder();
-      if (!string.IsNullOrEmpty(this.Name))
-      {
-        string[] strArray = this.Name.Split(".".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
-        for (int index = 0; index < strArray.Length - 1; ++index)
+            return kernelFunctionInfoList.AsReadOnly();
+        }
+
+        public string GetNamespace()
         {
-          if (index > 0)
-            stringBuilder.Append(".");
-          stringBuilder.Append(strArray[index]);
+            var stringBuilder = new StringBuilder();
+            if (!string.IsNullOrEmpty(Name))
+            {
+                var strArray = Name.Split(".".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
+                for (var index = 0; index < strArray.Length - 1; ++index)
+                {
+                    if (index > 0)
+                        stringBuilder.Append(".");
+                    stringBuilder.Append(strArray[index]);
+                }
+            }
+
+            return stringBuilder.ToString();
         }
-      }
-      return stringBuilder.ToString();
     }
-
-    public string Name { get; set; }
-
-    public string ExtensionName { get; set; }
-  }
 }

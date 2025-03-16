@@ -4,45 +4,44 @@ using System.Collections.ObjectModel;
 
 namespace Redbox.KioskEngine.ComponentModel
 {
-  public interface IKernelService : IDisposable
-  {
-    void Reset();
+    public interface IKernelService : IDisposable
+    {
+        bool IsApplicationRunning { get; }
 
-    string FormatLuaValue(object value);
+        bool IsTestPlanExecuting { get; }
+        void Reset();
 
-    ReadOnlyCollection<object> ExecuteFunction(string functionName, params object[] parms);
+        string FormatLuaValue(object value);
 
-    ReadOnlyCollection<object> ExecuteChunk(string chunk);
+        ReadOnlyCollection<object> ExecuteFunction(string functionName, params object[] parms);
 
-    ReadOnlyCollection<object> ExecuteScript(string resourceName);
+        ReadOnlyCollection<object> ExecuteChunk(string chunk);
 
-    object ToLuaTable<T>(IEnumerable<T> enumerator);
+        ReadOnlyCollection<object> ExecuteScript(string resourceName);
 
-    bool RaiseDebuggerOrError(Exception e, string resourceName);
+        object ToLuaTable<T>(IEnumerable<T> enumerator);
 
-    void ExecuteApplication();
+        bool RaiseDebuggerOrError(Exception e, string resourceName);
 
-    void ExecuteTestPlan(string resourceName);
+        void ExecuteApplication();
 
-    void SetDebuggingState(bool enabled);
+        void ExecuteTestPlan(string resourceName);
 
-    void SetDebuggingFullTrace(bool enabled);
+        void SetDebuggingState(bool enabled);
 
-    bool LoadStartupScript(string resourceName);
+        void SetDebuggingFullTrace(bool enabled);
 
-    object NewTable();
+        bool LoadStartupScript(string resourceName);
 
-    void RegisterFunctions(
-      ReadOnlyCollection<KernelFunctionInfo> functionInfos);
+        object NewTable();
 
-    bool IsApplicationRunning { get; }
+        void RegisterFunctions(
+            ReadOnlyCollection<KernelFunctionInfo> functionInfos);
 
-    bool IsTestPlanExecuting { get; }
+        event WaitingForDebuggerAction WaitingForDebuggerAction;
 
-    event Redbox.KioskEngine.ComponentModel.WaitingForDebuggerAction WaitingForDebuggerAction;
+        event DebuggerStopping DebuggerStopping;
 
-    event Redbox.KioskEngine.ComponentModel.DebuggerStopping DebuggerStopping;
-
-    void LogLuaFunctions();
-  }
+        void LogLuaFunctions();
+    }
 }

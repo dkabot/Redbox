@@ -1,22 +1,22 @@
-using DeviceService.ComponentModel.Commands;
 using System;
+using DeviceService.ComponentModel.Commands;
 
 namespace Redbox.KioskEngine.ComponentModel.TrackData
 {
-  public interface ITrackDataService
-  {
-    void StartCardRead(
-      CardReadRequestInfo request,
-      Action<IReadCardJob> OnReadJobStart,
-      Action<Guid> OnCardProcessing,
-      Action<CardReadRequestInfo, CardReadCompleteDetails> onComplete);
+    public interface ITrackDataService
+    {
+        bool IsOlderReader { get; }
 
-    void StopCardRead(CancelReason cancelReason);
+        bool IsNewReader { get; }
 
-    void StopAllSessionCardReads(Guid sessionId, CancelReason cancelReason);
+        void StartCardRead(
+            CardReadRequestInfo request,
+            Action<IReadCardJob> OnReadJobStart,
+            Action<Guid> OnCardProcessing,
+            Action<CardReadRequestInfo, CardReadCompleteDetails> onComplete);
 
-    bool IsOlderReader { get; }
+        void StopCardRead(CancelReason cancelReason);
 
-    bool IsNewReader { get; }
-  }
+        void StopAllSessionCardReads(Guid sessionId, CancelReason cancelReason);
+    }
 }

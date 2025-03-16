@@ -1,9 +1,9 @@
 namespace Redbox.KioskEngine.ComponentModel.HardwareServices
 {
-  public enum AirExchangerStatus
-  {
-    NotConfigured,
-    Ok,
-    Error,
-  }
+    public enum AirExchangerStatus
+    {
+        NotConfigured,
+        Ok,
+        Error
+    }
 }

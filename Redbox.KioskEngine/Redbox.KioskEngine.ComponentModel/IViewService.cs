@@ -4,80 +4,79 @@ using System.Threading.Tasks;
 
 namespace Redbox.KioskEngine.ComponentModel
 {
-  public interface IViewService
-  {
-    void Reset();
+    public interface IViewService
+    {
+        int ViewStackCount { get; }
 
-    void ShowFrameInDebug();
+        ReadOnlyCollection<IViewFrameInstance> Stack { get; }
 
-    void Show();
+        string LastHitActorName { get; set; }
 
-    void SetAnalyticsEventProperty(string name, object value);
+        object LastHitActorTag { get; set; }
 
-    string Pop();
+        TaskScheduler UITaskScheduler { get; set; }
+        void Reset();
 
-    string Peek();
+        void ShowFrameInDebug();
 
-    string Peek(int index);
+        void Show();
 
-    IViewFrameInstance PeekViewFrame(int index);
+        void SetAnalyticsEventProperty(string name, object value);
 
-    IViewFrameInstance PeekViewFrameByName(string viewName, out int index);
+        string Pop();
 
-    int ViewStackCount { get; }
+        string Peek();
 
-    void ClearCache(bool clearResourceViewsOnly);
+        string Peek(int index);
 
-    string PopDiscard();
+        IViewFrameInstance PeekViewFrame(int index);
 
-    void EnterTopOfStock();
+        IViewFrameInstance PeekViewFrameByName(string viewName, out int index);
 
-    string GetCurrentViewAnalyticsName();
+        void ClearCache(bool clearResourceViewsOnly);
 
-    string GetLastShownView();
+        string PopDiscard();
 
-    DateTime? GetViewShownTime();
+        void EnterTopOfStock();
 
-    void ResetViewShownTime();
+        string GetCurrentViewAnalyticsName();
 
-    int GetActiveHitHandlerCount();
+        string GetLastShownView();
 
-    void Push(string viewName, object parameter, bool isCriticalErrorView = false);
+        DateTime? GetViewShownTime();
 
-    void Push(string viewName);
+        void ResetViewShownTime();
 
-    void PushCriticalErrorView(string viewName, object parameter);
+        int GetActiveHitHandlerCount();
 
-    IViewFrameInstance PeekViewFrame();
+        void Push(string viewName, object parameter, bool isCriticalErrorView = false);
 
-    IBaseViewFrame GetViewFrame(string viewName);
+        void Push(string viewName);
 
-    ReadOnlyCollection<IViewFrameInstance> Stack { get; }
+        void PushCriticalErrorView(string viewName, object parameter);
 
-    string LastHitActorName { get; set; }
+        IViewFrameInstance PeekViewFrame();
 
-    object LastHitActorTag { get; set; }
+        IBaseViewFrame GetViewFrame(string viewName);
 
-    event EventHandler<ViewStateChangedArgs> ViewStateChanged;
+        event EventHandler<ViewStateChangedArgs> ViewStateChanged;
 
-    bool IsMaintenanceViewShowing();
+        bool IsMaintenanceViewShowing();
 
-    bool IsSafeToChangeView();
+        bool IsSafeToChangeView();
 
-    string GetStartOverViewName();
+        string GetStartOverViewName();
 
-    string GetMaintenanceViewName();
+        string GetMaintenanceViewName();
 
-    void GoBack(object context, bool popOnly);
+        void GoBack(object context, bool popOnly);
 
-    void GoBackSafe(object context, bool popOnly);
+        void GoBackSafe(object context, bool popOnly);
 
-    void UnwindTo(string viewName, bool discard, object context);
+        void UnwindTo(string viewName, bool discard, object context);
 
-    void UnwindToSafe(string unwindToViewName, bool discard, object context);
+        void UnwindToSafe(string unwindToViewName, bool discard, object context);
 
-    void CacheViewFrame(IBaseViewFrame baseViewFrame);
-
-    TaskScheduler UITaskScheduler { get; set; }
-  }
+        void CacheViewFrame(IBaseViewFrame baseViewFrame);
+    }
 }

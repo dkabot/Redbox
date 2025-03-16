@@ -2,12 +2,12 @@ using System;
 
 namespace Redbox.KioskEngine.ComponentModel
 {
-  public interface IShoppingSessionEvent
-  {
-    DateTime TimeStamp { get; }
+    public interface IShoppingSessionEvent
+    {
+        DateTime TimeStamp { get; }
 
-    string Description { get; }
+        string Description { get; }
 
-    ShoppingSessionEventType Type { get; }
-  }
+        ShoppingSessionEventType Type { get; }
+    }
 }

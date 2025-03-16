@@ -1,4 +1,4 @@
 namespace Redbox.KioskEngine.ComponentModel
 {
-  public delegate void IdleEventHandler();
+    public delegate void IdleEventHandler();
 }

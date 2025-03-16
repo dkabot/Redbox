@@ -1,17 +1,17 @@
 namespace Redbox.KioskEngine.ComponentModel
 {
-  public interface IScreenSaverService
-  {
-    void EnableScreenSaver();
+    public interface IScreenSaverService
+    {
+        void EnableScreenSaver();
 
-    void DisableScreenSaver();
+        void DisableScreenSaver();
 
-    bool IsScreenSaverActive();
+        bool IsScreenSaverActive();
 
-    bool IsScreenSaverRunning();
+        bool IsScreenSaverRunning();
 
-    int GetScreenSaverTimeout();
+        int GetScreenSaverTimeout();
 
-    void SetScreenSaverTimeout(int timeout);
-  }
+        void SetScreenSaverTimeout(int timeout);
+    }
 }

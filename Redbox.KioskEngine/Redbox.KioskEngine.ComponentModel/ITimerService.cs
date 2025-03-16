@@ -3,22 +3,21 @@ using System.Threading;
 
 namespace Redbox.KioskEngine.ComponentModel
 {
-  public interface ITimerService
-  {
-    void Reset();
+    public interface ITimerService
+    {
+        ReadOnlyCollection<ITimer> Timers { get; }
+        void Reset();
 
-    void StopAll();
+        void StopAll();
 
-    void StartAll();
+        void StartAll();
 
-    ITimer CreateTimer(string name, int? dueTime, int? period, TimerCallback callback);
+        ITimer CreateTimer(string name, int? dueTime, int? period, TimerCallback callback);
 
-    void RemoveTimer(string name);
+        void RemoveTimer(string name);
 
-    ITimer GetTimer(string name);
+        ITimer GetTimer(string name);
 
-    void Wait(int milliseconds);
-
-    ReadOnlyCollection<ITimer> Timers { get; }
-  }
+        void Wait(int milliseconds);
+    }
 }

@@ -1,41 +1,41 @@
-using Redbox.KioskEngine.ComponentModel.HardwareServices;
 using System;
 using System.Collections.Generic;
+using Redbox.KioskEngine.ComponentModel.HardwareServices;
 
 namespace Redbox.KioskEngine.ComponentModel
 {
-  public interface IHardwareState
-  {
-    int CurrentCameraGeneration { get; }
+    public interface IHardwareState
+    {
+        int CurrentCameraGeneration { get; }
 
-    int BarcodeDecoder { get; }
+        int BarcodeDecoder { get; }
 
-    int MaxDeck { get; }
+        int MaxDeck { get; }
 
-    int MaxSlot { get; }
+        int MaxSlot { get; }
 
-    AirExchangerStatus ExchangerStatus { get; }
+        AirExchangerStatus ExchangerStatus { get; }
 
-    string AirExchangerFanStatus { get; }
+        string AirExchangerFanStatus { get; }
 
-    IEnumerable<Tuple<int, int>> ExcludedLocations { get; }
+        IEnumerable<Tuple<int, int>> ExcludedLocations { get; }
 
-    bool VMZConfigured { get; }
+        bool VMZConfigured { get; }
 
-    bool IsDenseMachine { get; }
+        bool IsDenseMachine { get; }
 
-    int BufferSlot { get; }
+        int BufferSlot { get; }
 
-    int? QlmDeckAsNumber { get; }
+        int? QlmDeckAsNumber { get; }
 
-    string QlmDeckAsString { get; }
+        string QlmDeckAsString { get; }
 
-    string MerchandizeType { get; }
+        string MerchandizeType { get; }
 
-    bool IsInitialized { get; }
+        bool IsInitialized { get; }
 
-    void Initialize();
+        void Initialize();
 
-    void Refresh();
-  }
+        void Refresh();
+    }
 }

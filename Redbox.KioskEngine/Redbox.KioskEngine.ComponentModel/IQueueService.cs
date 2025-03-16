@@ -2,50 +2,49 @@ using System;
 
 namespace Redbox.KioskEngine.ComponentModel
 {
-  public interface IQueueService : IDisposable
-  {
-    ErrorList Clear();
+    public interface IQueueService : IDisposable
+    {
+        int QueueReadPeriod { get; }
+        ErrorList Clear();
 
-    ErrorList GetDepth(out int count);
+        ErrorList GetDepth(out int count);
 
-    ErrorList Enqueue(byte priority, string type, object message);
+        ErrorList Enqueue(byte priority, string type, object message);
 
-    ErrorList EnqueueKioskEvent(object message);
+        ErrorList EnqueueKioskEvent(object message);
 
-    ErrorList EnqueueOnlyOne(byte priority, string type, object message, out int newMessageId);
+        ErrorList EnqueueOnlyOne(byte priority, string type, object message, out int newMessageId);
 
-    ErrorList Update(int id, string message);
+        ErrorList Update(int id, string message);
 
-    ErrorList ExportToXml(string fileName);
+        ErrorList ExportToXml(string fileName);
 
-    ErrorList Initialize(string path, IQueueServiceData queueServiceData);
+        ErrorList Initialize(string path, IQueueServiceData queueServiceData);
 
-    ErrorList ForEach(Action<IMessage> action);
+        ErrorList ForEach(Action<IMessage> action);
 
-    ErrorList ForEach(Action<IMessage> action, string type);
+        ErrorList ForEach(Action<IMessage> action, string type);
 
-    bool IsWorkerStarted();
+        bool IsWorkerStarted();
 
-    void StopQueueWorker();
+        void StopQueueWorker();
 
-    void StartQueueWorker();
+        void StartQueueWorker();
 
-    ErrorList DeleteMessage(int id);
+        ErrorList DeleteMessage(int id);
 
-    ErrorList DeleteMessageByType(string type);
+        ErrorList DeleteMessageByType(string type);
 
-    ErrorList Dequeue(Predicate<IMessage> predicate);
+        ErrorList Dequeue(Predicate<IMessage> predicate);
 
-    int QueueReadPeriod { get; }
+        T GetObjectFromMessageData<T>(IMessage message);
 
-    T GetObjectFromMessageData<T>(IMessage message);
+        void ForEachPriority(Action<IQueueServicePriority> action);
 
-    void ForEachPriority(Action<IQueueServicePriority> action);
+        bool RegisterMessageProcessorService(
+            IQueueMessageProcessorService queueMessageProcessorService);
 
-    bool RegisterMessageProcessorService(
-      IQueueMessageProcessorService queueMessageProcessorService);
-
-    bool UnRegisterMessageProcessorService(
-      IQueueMessageProcessorService queueMessageProcessorService);
-  }
+        bool UnRegisterMessageProcessorService(
+            IQueueMessageProcessorService queueMessageProcessorService);
+    }
 }

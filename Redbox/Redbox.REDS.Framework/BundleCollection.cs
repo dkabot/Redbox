@@ -57,7 +57,7 @@ namespace Redbox.REDS.Framework
 
         public void RemoveAllVersions(string productName)
         {
-            this.m_bundles.Remove(productName);
+            m_bundles.Remove(productName);
         }
 
         public ErrorList GetBundle(
@@ -115,7 +115,7 @@ namespace Redbox.REDS.Framework
 
         public IEnumerable<string> GetBundles()
         {
-            return this.m_bundles.Keys;
+            return m_bundles.Keys;
         }
 
         public IEnumerable<IBundleSpecifier> GetAllBundleVersions()

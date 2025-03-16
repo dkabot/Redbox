@@ -3,12 +3,12 @@ using System.Reflection;
 
 namespace Redbox.KioskEngine.ComponentModel
 {
-  public interface IKernelFunctionRegistryService
-  {
-    ErrorList Reset();
+    public interface IKernelFunctionRegistryService
+    {
+        ErrorList Reset();
 
-    void RegisterKernelFunctions(Assembly assembly, string extension);
+        void RegisterKernelFunctions(Assembly assembly, string extension);
 
-    ReadOnlyCollection<KernelFunctionInfo> GetKernelFunctions();
-  }
+        ReadOnlyCollection<KernelFunctionInfo> GetKernelFunctions();
+    }
 }

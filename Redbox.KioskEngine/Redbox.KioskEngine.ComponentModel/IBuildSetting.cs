@@ -3,14 +3,14 @@ using System.Collections.Generic;
 
 namespace Redbox.KioskEngine.ComponentModel
 {
-  public interface IBuildSetting
-  {
-    bool IsActive { get; set; }
+    public interface IBuildSetting
+    {
+        bool IsActive { get; set; }
 
-    DateTime? BuiltOn { get; }
+        DateTime? BuiltOn { get; }
 
-    string OutputName { get; set; }
+        string OutputName { get; set; }
 
-    IDictionary<string, string> Properties { get; set; }
-  }
+        IDictionary<string, string> Properties { get; set; }
+    }
 }

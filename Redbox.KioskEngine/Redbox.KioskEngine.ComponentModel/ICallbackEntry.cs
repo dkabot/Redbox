@@ -1,9 +1,8 @@
 namespace Redbox.KioskEngine.ComponentModel
 {
-  public interface ICallbackEntry
-  {
-    void Invoke();
-
-    string Name { get; }
-  }
+    public interface ICallbackEntry
+    {
+        string Name { get; }
+        void Invoke();
+    }
 }

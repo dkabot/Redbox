@@ -1,19 +1,19 @@
 namespace Redbox.KioskEngine.ComponentModel
 {
-  public interface IFileCacheService
-  {
-    void Remove(string pattern);
+    public interface IFileCacheService
+    {
+        void Remove(string pattern);
 
-    void FlushCache();
+        void FlushCache();
 
-    string GetCachePath();
+        string GetCachePath();
 
-    void SetFileContent(string fileName, byte[] data, bool overwrite);
+        void SetFileContent(string fileName, byte[] data, bool overwrite);
 
-    void SetFileContent(string fileName, string data, bool overwrite);
+        void SetFileContent(string fileName, string data, bool overwrite);
 
-    byte[] GetFileContent(string fileName);
+        byte[] GetFileContent(string fileName);
 
-    string GetFileContentAsString(string fileName);
-  }
+        string GetFileContentAsString(string fileName);
+    }
 }

@@ -1,17 +1,17 @@
 namespace Redbox.KioskEngine.ComponentModel.TextToSpeech
 {
-  public interface ITextToSpeechControl
-  {
-    void ExecuteCommand(string command, string parameter);
+    public interface ITextToSpeechControl
+    {
+        void ExecuteCommand(string command, string parameter);
 
-    bool IsControlVisible(string controlName);
+        bool IsControlVisible(string controlName);
 
-    bool IsControlEnabled(string controlName);
+        bool IsControlEnabled(string controlName);
 
-    string ControlText(string controlName);
+        string ControlText(string controlName);
 
-    void HandleWPFHit();
+        void HandleWPFHit();
 
-    ISpeechControl GetSpeechControl();
-  }
+        ISpeechControl GetSpeechControl();
+    }
 }

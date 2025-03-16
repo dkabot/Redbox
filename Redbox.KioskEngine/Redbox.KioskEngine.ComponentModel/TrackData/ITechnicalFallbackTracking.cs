@@ -1,9 +1,9 @@
 namespace Redbox.KioskEngine.ComponentModel.TrackData
 {
-  public interface ITechnicalFallbackTracking
-  {
-    bool SupportsTechnicalFallbackTracking { get; }
+    public interface ITechnicalFallbackTracking
+    {
+        bool SupportsTechnicalFallbackTracking { get; }
 
-    bool IsInTrackableTechnicalFallback { get; }
-  }
+        bool IsInTrackableTechnicalFallback { get; }
+    }
 }

@@ -1,31 +1,30 @@
-using Redbox.REDS.Framework;
 using System;
 using System.Collections.ObjectModel;
+using Redbox.REDS.Framework;
 
 namespace Redbox.KioskEngine.ComponentModel
 {
-  public interface IProject
-  {
-    ErrorList Save();
+    public interface IProject
+    {
+        Guid Id { get; }
 
-    ErrorList Build();
+        string Version { get; }
 
-    ErrorList AddBundleRef(string name, string path);
+        DateTime? CreatedOn { get; }
 
-    ErrorList AddBundleRef(string name, IResourceBundle bundle);
+        DateTime? ModifiedOn { get; }
 
-    ErrorList RemoveBundleRef(string name);
+        ReadOnlyCollection<IBundleRef> Bundles { get; }
+        ErrorList Save();
 
-    ErrorList RemoveBundleRef(IBundleRef bundleRef);
+        ErrorList Build();
 
-    Guid Id { get; }
+        ErrorList AddBundleRef(string name, string path);
 
-    string Version { get; }
+        ErrorList AddBundleRef(string name, IResourceBundle bundle);
 
-    DateTime? CreatedOn { get; }
+        ErrorList RemoveBundleRef(string name);
 
-    DateTime? ModifiedOn { get; }
-
-    ReadOnlyCollection<IBundleRef> Bundles { get; }
-  }
+        ErrorList RemoveBundleRef(IBundleRef bundleRef);
+    }
 }

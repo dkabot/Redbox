@@ -13,7 +13,7 @@ namespace Redbox.JSONPrettyPrinter
         public ConsoleBrush(ConsoleColor color, ConsoleColor background)
         {
             Foreground = color;
-            this.Background = background;
+            Background = background;
         }
 
         public ConsoleColor Foreground { get; }

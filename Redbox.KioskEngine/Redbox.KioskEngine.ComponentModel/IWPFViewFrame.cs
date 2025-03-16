@@ -1,6 +1,6 @@
 namespace Redbox.KioskEngine.ComponentModel
 {
-  public interface IWPFViewFrame : IBaseViewFrame
-  {
-  }
+    public interface IWPFViewFrame : IBaseViewFrame
+    {
+    }
 }

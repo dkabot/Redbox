@@ -2,30 +2,29 @@ using System;
 
 namespace Redbox.KioskEngine.ComponentModel
 {
-  public interface ICallbackService
-  {
-    void Reset();
+    public interface ICallbackService
+    {
+        int QueueCount { get; }
+        void Reset();
 
-    void Flush();
+        void Flush();
 
-    void Resume();
+        void Resume();
 
-    void Suspend();
+        void Suspend();
 
-    bool InvokeNextCallback();
+        bool InvokeNextCallback();
 
-    void EnqueueCallback(ICallbackEntry callbackEntry);
+        void EnqueueCallback(ICallbackEntry callbackEntry);
 
-    int QueueCount { get; }
+        DateTime? GetEnqueuedDateTimeFromNextCallbackEntry();
 
-    DateTime? GetEnqueuedDateTimeFromNextCallbackEntry();
+        ICallbackServiceStatistics GetStatics();
 
-    ICallbackServiceStatistics GetStatics();
+        void ResetStatistics();
 
-    void ResetStatistics();
+        void LogStatistics();
 
-    void LogStatistics();
-
-    void LogCallbackTracking();
-  }
+        void LogCallbackTracking();
+    }
 }

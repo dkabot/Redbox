@@ -2,12 +2,10 @@ using System.Collections.Generic;
 
 namespace Redbox.KioskEngine.ComponentModel.KioskServices
 {
-  public class RemoteServiceProviderInstruction : IRemoteServiceProviderInstruction
-  {
-    private readonly IDictionary<string, object> m_parameters = (IDictionary<string, object>) new Dictionary<string, object>();
+    public class RemoteServiceProviderInstruction : IRemoteServiceProviderInstruction
+    {
+        public InstructionType Type { get; set; }
 
-    public InstructionType Type { get; set; }
-
-    public IDictionary<string, object> Parameters => this.m_parameters;
-  }
+        public IDictionary<string, object> Parameters { get; } = new Dictionary<string, object>();
+    }
 }

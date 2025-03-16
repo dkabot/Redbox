@@ -2,14 +2,13 @@ using System.Collections.ObjectModel;
 
 namespace Redbox.KioskEngine.ComponentModel
 {
-  public interface IStyleSheetService
-  {
-    void Reset();
+    public interface IStyleSheetService
+    {
+        ReadOnlyCollection<IStyleSheet> StyleSheets { get; }
+        void Reset();
 
-    IStyleSheet New(string name);
+        IStyleSheet New(string name);
 
-    IStyleSheet GetStyleSheet(string name);
-
-    ReadOnlyCollection<IStyleSheet> StyleSheets { get; }
-  }
+        IStyleSheet GetStyleSheet(string name);
+    }
 }

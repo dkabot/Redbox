@@ -3,71 +3,71 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Windows;
 using System.Windows.Controls;
+using Image = System.Drawing.Image;
 
 namespace Redbox.KioskEngine.ComponentModel
 {
-  public interface IScene : IDisposable
-  {
-    IActor CreateActor();
+    public interface IScene : IDisposable
+    {
+        RenderType SceneRenderType { get; set; }
 
-    IActor HitTest(int x, int y);
+        int ActiveHitHandlers { get; }
 
-    void Clear();
+        int Width { get; }
 
-    void ResumeDrawing();
+        int Height { get; }
 
-    void SuspendDrawing();
+        string Name { get; }
 
-    void Remove(IActor actor);
+        Color BackgroundColor { get; set; }
 
-    void AddLast(IActor actor);
+        Image BackgroundImage { get; set; }
 
-    void AddFirst(IActor actor);
+        LinkedList<IActor> Actors { get; }
 
-    IActor Remove(string name);
+        Grid WPFGrid { get; }
+        IActor CreateActor();
 
-    IActor GetActor(string name);
+        IActor HitTest(int x, int y);
 
-    IActor GetActorByNameAndTag(string name, string tag);
+        void Clear();
 
-    List<IActor> GetActorByTag(string tag);
+        void ResumeDrawing();
 
-    IActor GetActorByTabOrder(int tabOrder);
+        void SuspendDrawing();
 
-    void Render(Graphics context, out bool changed);
+        void Remove(IActor actor);
 
-    RenderType SceneRenderType { get; set; }
+        void AddLast(IActor actor);
 
-    void MakeDirty(Rectangle[] rectangles);
+        void AddFirst(IActor actor);
 
-    int ActiveHitHandlers { get; }
+        IActor Remove(string name);
 
-    int Width { get; }
+        IActor GetActor(string name);
 
-    int Height { get; }
+        IActor GetActorByNameAndTag(string name, string tag);
 
-    string Name { get; }
+        List<IActor> GetActorByTag(string tag);
 
-    Color BackgroundColor { get; set; }
+        IActor GetActorByTabOrder(int tabOrder);
 
-    System.Drawing.Image BackgroundImage { get; set; }
+        void Render(Graphics context, out bool changed);
 
-    LinkedList<IActor> Actors { get; }
+        void MakeDirty(Rectangle[] rectangles);
 
-    Grid WPFGrid { get; }
+        event WPFHitHandler OnWPFHit;
 
-    event WPFHitHandler OnWPFHit;
+        event WPFKeyEvent OnWPFKeyDown;
 
-    event WPFKeyEvent OnWPFKeyDown;
+        event WPFKeyEvent OnWPFKeyUp;
 
-    event WPFKeyEvent OnWPFKeyUp;
+        void PrcoessWPFHit();
 
-    void PrcoessWPFHit();
+        void AddWPFGridChild(FrameworkElement frameworkElement);
 
-    void AddWPFGridChild(FrameworkElement frameworkElement);
+        void RemoveWPFGridChild(FrameworkElement frameworkElement);
 
-    void RemoveWPFGridChild(FrameworkElement frameworkElement);
-
-    FrameworkElement GetWPFGridChild(object tag);
-  }
+        FrameworkElement GetWPFGridChild(object tag);
+    }
 }

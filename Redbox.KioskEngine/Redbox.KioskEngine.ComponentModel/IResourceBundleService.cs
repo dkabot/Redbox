@@ -1,4 +1,3 @@
-using Redbox.REDS.Framework;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Drawing;
@@ -6,79 +5,80 @@ using System.Reflection;
 using System.Windows.Media.Imaging;
 using System.Windows.Xps.Packaging;
 using System.Xml;
+using Redbox.REDS.Framework;
 
 namespace Redbox.KioskEngine.ComponentModel
 {
-  public interface IResourceBundleService
-  {
-    bool IsRentalRunning { get; }
+    public interface IResourceBundleService
+    {
+        bool IsRentalRunning { get; }
 
-    bool SetSwitchToBundle(IResourceBundle bundle);
+        IResourceBundleSet ActiveBundleSet { get; }
 
-    bool IsPendingBundleSwitch();
+        IResourceBundle ActiveBundle { get; }
 
-    ErrorList Switch(out IResourceBundle previousBundle);
+        IEnumerable<IBundleSpecifier> Bundles { get; }
 
-    ErrorList LoadBundles();
+        IResourceBundleFilter Filter { get; }
 
-    ErrorList Activate(string productName, string productVersion);
+        string SwitchStatusMessage { get; set; }
 
-    ErrorList ActivateDefaultBundle();
+        string CurrentBundleName { get; set; }
 
-    ErrorList Deactivate();
+        string DefaultBundleName { get; set; }
 
-    void Restart();
+        string[] SearchPath { get; set; }
 
-    Font GetFont(string resourceName, out bool resourceFound);
+        bool ShowDebugger { get; set; }
 
-    bool HasActiveBundle();
+        bool SetSwitchToBundle(IResourceBundle bundle);
 
-    IResourceBundle GetBundle(IBundleSpecifier bundleSpecifier);
+        bool IsPendingBundleSwitch();
 
-    IResource GetResource(string resourceName);
+        ErrorList Switch(out IResourceBundle previousBundle);
 
-    IResourceBundleSet ActiveBundleSet { get; }
+        ErrorList LoadBundles();
 
-    IResourceBundle ActiveBundle { get; }
+        ErrorList Activate(string productName, string productVersion);
 
-    IResource GetManifest(out IManifestInfo manifestInfo);
+        ErrorList ActivateDefaultBundle();
 
-    ReadOnlyCollection<IResource> GetResources(string typeName);
+        ErrorList Deactivate();
 
-    ReadOnlyCollection<IResource> GetResourcesUnfiltered(string typeName);
+        void Restart();
 
-    IDictionary<string, IResourceType> GetResourceTypes();
+        Font GetFont(string resourceName, out bool resourceFound);
 
-    XmlNode GetXml(string resourceName);
+        bool HasActiveBundle();
 
-    byte[] GetSound(string resourceName);
+        IResourceBundle GetBundle(IBundleSpecifier bundleSpecifier);
 
-    XpsDocument GetXpsDocument(string resourceName);
+        IResource GetResource(string resourceName);
 
-    string GetJsonFile(string resourceName);
+        IResource GetManifest(out IManifestInfo manifestInfo);
 
-    string GetScript(string resourceName);
+        ReadOnlyCollection<IResource> GetResources(string typeName);
 
-    Image GetBitmap(string resourceName);
+        ReadOnlyCollection<IResource> GetResourcesUnfiltered(string typeName);
 
-    BitmapImage GetBitmapImage(string resourceName);
+        IDictionary<string, IResourceType> GetResourceTypes();
 
-    ReadOnlyCollection<object> ExecuteScript(string resourceName);
+        XmlNode GetXml(string resourceName);
 
-    IEnumerable<IBundleSpecifier> Bundles { get; }
+        byte[] GetSound(string resourceName);
 
-    IResourceBundleFilter Filter { get; }
+        XpsDocument GetXpsDocument(string resourceName);
 
-    string SwitchStatusMessage { get; set; }
+        string GetJsonFile(string resourceName);
 
-    string CurrentBundleName { get; set; }
+        string GetScript(string resourceName);
 
-    string DefaultBundleName { get; set; }
+        Image GetBitmap(string resourceName);
 
-    string[] SearchPath { get; set; }
+        BitmapImage GetBitmapImage(string resourceName);
 
-    bool ShowDebugger { get; set; }
+        ReadOnlyCollection<object> ExecuteScript(string resourceName);
 
-    void RegisterAssemblyFunctions(string name, Assembly assembly);
-  }
+        void RegisterAssemblyFunctions(string name, Assembly assembly);
+    }
 }

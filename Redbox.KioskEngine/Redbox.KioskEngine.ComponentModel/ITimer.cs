@@ -2,26 +2,25 @@ using System.Threading;
 
 namespace Redbox.KioskEngine.ComponentModel
 {
-  public interface ITimer
-  {
-    void Stop();
+    public interface ITimer
+    {
+        object Tag { get; set; }
 
-    void Start();
+        int? Period { get; set; }
 
-    void ClearFire();
+        string Name { get; set; }
 
-    void RaiseFire();
+        int? DueTime { get; set; }
 
-    object Tag { get; set; }
+        bool Enabled { get; set; }
+        void Stop();
 
-    int? Period { get; set; }
+        void Start();
 
-    string Name { get; set; }
+        void ClearFire();
 
-    int? DueTime { get; set; }
+        void RaiseFire();
 
-    bool Enabled { get; set; }
-
-    event TimerCallback Fire;
-  }
+        event TimerCallback Fire;
+    }
 }

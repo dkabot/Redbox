@@ -1,25 +1,25 @@
 namespace Redbox.KioskEngine.ComponentModel
 {
-  public interface IBaseViewFrame
-  {
-    string ViewName { get; }
+    public interface IBaseViewFrame
+    {
+        string ViewName { get; }
 
-    void UpdateScene(IViewFrameInstance viewFrameInstance);
+        IScene Scene { get; }
 
-    IScene Scene { get; }
+        string ActiveFlag { get; }
 
-    bool RaiseOnEnter(IViewFrameInstance viewFrameInstance);
+        ErrorList Errors { get; }
 
-    void RaiseOnLeave(IViewFrameInstance viewFrameInstance);
+        bool Clear { get; }
 
-    string ActiveFlag { get; }
+        bool IsMaintenanceModeView { get; set; }
 
-    ErrorList Errors { get; }
+        bool IsStartOverView { get; set; }
 
-    bool Clear { get; }
+        void UpdateScene(IViewFrameInstance viewFrameInstance);
 
-    bool IsMaintenanceModeView { get; set; }
+        bool RaiseOnEnter(IViewFrameInstance viewFrameInstance);
 
-    bool IsStartOverView { get; set; }
-  }
+        void RaiseOnLeave(IViewFrameInstance viewFrameInstance);
+    }
 }

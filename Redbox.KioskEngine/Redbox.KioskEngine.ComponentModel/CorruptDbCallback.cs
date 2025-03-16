@@ -1,4 +1,4 @@
 namespace Redbox.KioskEngine.ComponentModel
 {
-  public delegate void CorruptDbCallback();
+    public delegate void CorruptDbCallback();
 }

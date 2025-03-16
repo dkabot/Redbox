@@ -2,30 +2,29 @@ using System;
 
 namespace Redbox.KioskEngine.ComponentModel
 {
-  public interface IShoppingSession
-  {
-    void End();
+    public interface IShoppingSession
+    {
+        Guid Id { get; }
 
-    void AddEvent(ShoppingSessionEventType type, string description);
+        DateTime? EndedOn { get; }
 
-    void Commit(string reason);
+        DateTime StartedOn { get; }
 
-    void Abandon(string reason);
+        string StoreNumber { get; }
 
-    Guid Id { get; }
+        int ViewsShown { get; set; }
 
-    DateTime? EndedOn { get; }
+        IShoppingCart ShoppingCart { get; }
 
-    DateTime StartedOn { get; }
+        ShoppingSessionStatus Status { get; }
+        void End();
 
-    string StoreNumber { get; }
+        void AddEvent(ShoppingSessionEventType type, string description);
 
-    int ViewsShown { get; set; }
+        void Commit(string reason);
 
-    IShoppingCart ShoppingCart { get; }
+        void Abandon(string reason);
 
-    ShoppingSessionStatus Status { get; }
-
-    bool StartUserInteraction();
-  }
+        bool StartUserInteraction();
+    }
 }

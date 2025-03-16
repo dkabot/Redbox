@@ -1,12 +1,10 @@
-using System;
-
 namespace Redbox.KioskEngine.ComponentModel
 {
-  public static class NumberExtensionMethods
-  {
-    public static string ToCurrencyString(this Decimal amount, bool useCentSign = false)
+    public static class NumberExtensionMethods
     {
-      return useCentSign && amount < 1M ? ((int) (amount * 100M)).ToString() + "¢" : string.Format("{0:C2}", (object) amount);
+        public static string ToCurrencyString(this decimal amount, bool useCentSign = false)
+        {
+            return useCentSign && amount < 1M ? (int)(amount * 100M) + "¢" : string.Format("{0:C2}", amount);
+        }
     }
-  }
 }

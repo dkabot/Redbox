@@ -2,20 +2,19 @@ using System;
 
 namespace Redbox.KioskEngine.ComponentModel
 {
-  public interface IIdleTimer
-  {
-    void Initialize(int timeout, Action action);
+    public interface IIdleTimer
+    {
+        int? Timeout { get; set; }
+        void Initialize(int timeout, Action action);
 
-    void Start();
+        void Start();
 
-    void Stop();
+        void Stop();
 
-    void Reset();
+        void Reset();
 
-    void Suspend();
+        void Suspend();
 
-    void Resume();
-
-    int? Timeout { get; set; }
-  }
+        void Resume();
+    }
 }

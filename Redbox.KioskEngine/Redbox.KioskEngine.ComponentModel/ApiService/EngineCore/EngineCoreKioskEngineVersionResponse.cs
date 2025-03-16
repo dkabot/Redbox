@@ -2,13 +2,13 @@ using System.Net;
 
 namespace Redbox.KioskEngine.ComponentModel.ApiService.EngineCore
 {
-  public class EngineCoreKioskEngineVersionResponse : ApiServiceBaseResponse<KioskEngineVersions>
-  {
-    public EngineCoreKioskEngineVersionResponse()
+    public class EngineCoreKioskEngineVersionResponse : ApiServiceBaseResponse<KioskEngineVersions>
     {
-      this.StatusCode = HttpStatusCode.OK;
-      this.Success = true;
-      this.Content = new KioskEngineVersions();
+        public EngineCoreKioskEngineVersionResponse()
+        {
+            StatusCode = HttpStatusCode.OK;
+            Success = true;
+            Content = new KioskEngineVersions();
+        }
     }
-  }
 }
