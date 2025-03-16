@@ -28,6 +28,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Redbox.Services.KioskBroker
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Redbox.ProductLookupCatalog", "Redbox.ProductLookupCatalog\Redbox.ProductLookupCatalog.csproj", "{DE2E9549-3113-4B03-95F9-F034BE9E9C23}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Redbox.USB", "Redbox.USB\Redbox.USB.csproj", "{0AD17B83-82F0-4290-AC4F-203FF9091D4E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -86,6 +88,10 @@ Global
 		{DE2E9549-3113-4B03-95F9-F034BE9E9C23}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DE2E9549-3113-4B03-95F9-F034BE9E9C23}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DE2E9549-3113-4B03-95F9-F034BE9E9C23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AD17B83-82F0-4290-AC4F-203FF9091D4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AD17B83-82F0-4290-AC4F-203FF9091D4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AD17B83-82F0-4290-AC4F-203FF9091D4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AD17B83-82F0-4290-AC4F-203FF9091D4E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
