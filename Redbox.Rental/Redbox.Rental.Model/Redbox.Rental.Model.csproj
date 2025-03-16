@@ -1,0 +1,588 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--Project was exported from assembly: U:\2024_11_07_kiosk2_fresh\Program Files\Redbox\REDS\Kiosk Engine\bin\Redbox.Rental.Model.dll-->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9687A8D2-10F8-418D-B665-688BE17E22EE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>Redbox.Rental.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <ApplicationVersion>1.88.0.80</ApplicationVersion>
+    <FileAlignment>512</FileAlignment>
+    <RootNamespace>Redbox.Rental.Model</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="GenuineChannels, Version=2.5.9.9, Culture=neutral, PublicKeyToken=65fda4a3fde44959, processorArchitecture=MSIL">
+      <HintPath>..\packages\GenuineChannels.2.5.9.11\lib\net46\GenuineChannels.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="Zyan.SafeDeserializationHelpers, Version=0.1.0.0, Culture=neutral, PublicKeyToken=91d1de3df99ea180, processorArchitecture=MSIL">
+      <HintPath>..\packages\Zyan.SafeDeserializationHelpers.0.5.0\lib\net35\Zyan.SafeDeserializationHelpers.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseResponse.cs" />
+    <Compile Include="CommonHeaders.cs" />
+    <Compile Include="Error.cs" />
+    <Compile Include="IBaseResponse.cs" />
+    <Compile Include="IError.cs" />
+    <Compile Include="InventoryItemStatus.cs" />
+    <Compile Include="IInventoryItem.cs" />
+    <Compile Include="IMessageBase.cs" />
+    <Compile Include="InventoryItem.cs" />
+    <Compile Include="CollectionMethod.cs" />
+    <Compile Include="IState.cs" />
+    <Compile Include="IBanner.cs" />
+    <Compile Include="IStore.cs" />
+    <Compile Include="IStoreServices.cs" />
+    <Compile Include="ComingSoonTitle.cs" />
+    <Compile Include="ConfigFile.cs" />
+    <Compile Include="ConfigCategory.cs" />
+    <Compile Include="ConfigSetting.cs" />
+    <Compile Include="KioskEngineSettings.cs" />
+    <Compile Include="MachineSettings.cs" />
+    <Compile Include="IApplicationState.cs" />
+    <Compile Include="IComingSoonTitle.cs" />
+    <Compile Include="IConfiguration.cs" />
+    <Compile Include="IControlPanelService.cs" />
+    <Compile Include="IFieldMaintenanceService.cs" />
+    <Compile Include="IFraudService.cs" />
+    <Compile Include="IInventoryData.cs" />
+    <Compile Include="ReturnType.cs" />
+    <Compile Include="IInventoryService.cs" />
+    <Compile Include="InventoryActionFile.cs" />
+    <Compile Include="RebalancesIn.cs" />
+    <Compile Include="InventoryDataJsonFile.cs" />
+    <Compile Include="RebalancesInModel.cs" />
+    <Compile Include="IKernelHelperService.cs" />
+    <Compile Include="IMaintenanceModeReason.cs" />
+    <Compile Include="IObfuscationService.cs" />
+    <Compile Include="IPromotion.cs" />
+    <Compile Include="ICampaignTitles.cs" />
+    <Compile Include="IPromotionItem.cs" />
+    <Compile Include="IDefaultPromo.cs" />
+    <Compile Include="IPromotionService.cs" />
+    <Compile Include="InCartOfferMessageText.cs" />
+    <Compile Include="InCartOfferTemplate.cs" />
+    <Compile Include="IPromotionRule.cs" />
+    <Compile Include="IRedboxRental.cs" />
+    <Compile Include="MaintenanceModeCodes.cs" />
+    <Compile Include="MaintenanceModeSource.cs" />
+    <Compile Include="RemoteServiceResultExtensions.cs" />
+    <Compile Include="ResultCallbackEntry.cs" />
+    <Compile Include="IStoreManager.cs" />
+    <Compile Include="LuaExtensions.cs" />
+    <Compile Include="ParseLuaValue.cs" />
+    <Compile Include="StartViewBannerType.cs" />
+    <Compile Include="UpdateClientService\IUpdateClientService.cs" />
+    <Compile Include="UpdateClientService\Reservation\IRegisterWithBrokerServiceRequest.cs" />
+    <Compile Include="UpdateClientService\Reservation\IRegisterWithBrokerServiceResponse.cs" />
+    <Compile Include="UpdateClientService\Reservation\IUnregisterFromBrokerServiceRequest.cs" />
+    <Compile Include="UpdateClientService\Reservation\IUnregisterFromBrokerServiceResponse.cs" />
+    <Compile Include="UpdateClientService\Reservation\IUpdateClientServiceReservation.cs" />
+    <Compile Include="UpdateClientService\Reservation\RegisterWithBrokerServiceResponse.cs" />
+    <Compile Include="UpdateClientService\Reservation\RegistrationFeatures.cs" />
+    <Compile Include="UpdateClientService\Reservation\UnregisterFromBrokerServiceResponse.cs" />
+    <Compile Include="UpdateClientService\KioskHealth\IPingResponse.cs" />
+    <Compile Include="UpdateClientService\KioskHealth\IUpdateClientServiceKioskHealth.cs" />
+    <Compile Include="UpdateClientService\KioskHealth\IPingRequest.cs" />
+    <Compile Include="UpdateClientService\KioskHealth\PingResponse.cs" />
+    <Compile Include="UpdateClientService\KioskHealth\PingServiceInfo.cs" />
+    <Compile Include="UpdateClientService\Configuration\GetConfigurationChangesResponse.cs" />
+    <Compile Include="UpdateClientService\Configuration\IGetConfigurationChangesResponse.cs" />
+    <Compile Include="UpdateClientService\Configuration\IUpdateClientServiceConfiguration.cs" />
+    <Compile Include="Transaction\AuthorizeResponse.cs" />
+    <Compile Include="Transaction\GCAuthorizeResponse.cs" />
+    <Compile Include="Transaction\ITransactionData.cs" />
+    <Compile Include="Transaction\ITransactionEntity.cs" />
+    <Compile Include="Transaction\ReturnMessage.cs" />
+    <Compile Include="Transaction\TransactionConstants.cs" />
+    <Compile Include="Transaction\TransactionData.cs" />
+    <Compile Include="Transaction\TransactionEntity.cs" />
+    <Compile Include="ShoppingCart\IBaseRentalShoppingCartItem.cs" />
+    <Compile Include="ShoppingCart\IRentalShoppingCartItemDiscount.cs" />
+    <Compile Include="ShoppingCart\IRentalShoppingCartSubscriptionItem.cs" />
+    <Compile Include="ShoppingCart\IUpsellInfo.cs" />
+    <Compile Include="ShoppingCart\UpsellItemOfferResponse.cs" />
+    <Compile Include="ShoppingCart\UpsellItemType.cs" />
+    <Compile Include="ShoppingCart\IUpsellItem.cs" />
+    <Compile Include="ShoppingCart\IComingSoonOptinInfo.cs" />
+    <Compile Include="ShoppingCart\RentalShoppingCartChanged.cs" />
+    <Compile Include="ShoppingCart\IRentalShoppingCart.cs" />
+    <Compile Include="ShoppingCart\IRentalShoppingCartFilterCriteria.cs" />
+    <Compile Include="ShoppingCart\RentalShoppingCartItemAction.cs" />
+    <Compile Include="ShoppingCart\RentalShoppingCartItemSequence.cs" />
+    <Compile Include="ShoppingCart\IRentalShoppingCartTitleItem.cs" />
+    <Compile Include="ShoppingCart\RentalShoppingCartAdded.cs" />
+    <Compile Include="ShoppingCart\IRentalShoppingCartService.cs" />
+    <Compile Include="ShoppingCart\IServiceFee.cs" />
+    <Compile Include="ShoppingCart\ISubTotalGroup.cs" />
+    <Compile Include="ShoppingCart\ITotals.cs" />
+    <Compile Include="KioskData\IKioskDataInstance.cs" />
+    <Compile Include="Session\HelpDocuments.cs" />
+    <Compile Include="Session\IBrowseStateSet.cs" />
+    <Compile Include="Session\IHelpState.cs" />
+    <Compile Include="Session\IBrowseState.cs" />
+    <Compile Include="Session\BrowseSelectedSort.cs" />
+    <Compile Include="Session\IPromoOfferState.cs" />
+    <Compile Include="Session\IDiscOfferCode.cs" />
+    <Compile Include="Session\ISession.cs" />
+    <Compile Include="Session\SessionStartTriggerActionConstants.cs" />
+    <Compile Include="Session\ISessionStartTriggerAction.cs" />
+    <Compile Include="Session\ISessionStartTriggerActionList.cs" />
+    <Compile Include="Session\ISignupFlowState.cs" />
+    <Compile Include="Session\IUserInfo.cs" />
+    <Compile Include="Session\IRentalSessionService.cs" />
+    <Compile Include="Pricing\IBundleBasedPricingService.cs" />
+    <Compile Include="Pricing\IKioskPricingService.cs" />
+    <Compile Include="Pricing\IPricingRecord.cs" />
+    <Compile Include="Pricing\PricingSetChange.cs" />
+    <Compile Include="Pricing\IPricingService.cs" />
+    <Compile Include="Pricing\IPricingSet.cs" />
+    <Compile Include="Pricing\PricingRecord.cs" />
+    <Compile Include="Pricing\PricingSet.cs" />
+    <Compile Include="Reservation\CancelReservationResponse.cs" />
+    <Compile Include="Reservation\CreateReservationResponse.cs" />
+    <Compile Include="Reservation\GetReservableTitlesResponse.cs" />
+    <Compile Include="Reservation\ReservableTitle.cs" />
+    <Compile Include="Reservation\GetReservationServiceStatusResponse.cs" />
+    <Compile Include="Reservation\GetReservationsResponse.cs" />
+    <Compile Include="Reservation\IReservationData.cs" />
+    <Compile Include="Reservation\IReservationDataInstance.cs" />
+    <Compile Include="Reservation\IReservationRequest.cs" />
+    <Compile Include="Reservation\IReservationRequestResult.cs" />
+    <Compile Include="Reservation\IReservationRequestResultItem.cs" />
+    <Compile Include="Reservation\IReservationService.cs" />
+    <Compile Include="Reservation\UnRegisterFromBrokerServiceReason.cs" />
+    <Compile Include="Reservation\ReservationDataInstance.cs" />
+    <Compile Include="Reservation\IReservationDetails.cs" />
+    <Compile Include="Reservation\IReservation.cs" />
+    <Compile Include="Reservation\IReservedTitle.cs" />
+    <Compile Include="Reservation\ReservationDetails.cs" />
+    <Compile Include="Reservation\Reservation.cs" />
+    <Compile Include="Reservation\ReservationDiscountType.cs" />
+    <Compile Include="Reservation\ReservationRequest.cs" />
+    <Compile Include="Reservation\ReservationRequestCardHash.cs" />
+    <Compile Include="Reservation\ReservationRequestResult.cs" />
+    <Compile Include="Reservation\ReservationRequestResultItem.cs" />
+    <Compile Include="Reservation\ReservationRequestStatus.cs" />
+    <Compile Include="Reservation\ReservationRequestTitle.cs" />
+    <Compile Include="Reservation\ReservationServiceStatus.cs" />
+    <Compile Include="Reservation\ReservationTitleType.cs" />
+    <Compile Include="Reservation\ReservedTitle.cs" />
+    <Compile Include="Reservation\DataFile\ReservationDataFile_V002.cs" />
+    <Compile Include="Reservation\DataFile\IReservationDataFile.cs" />
+    <Compile Include="Reservation\DataFile\ReservationDataFile_V001.cs" />
+    <Compile Include="Reservation\DataFile\ReservationDataInfo_V001.cs" />
+    <Compile Include="Reservation\DataFile\ReservationType_V001.cs" />
+    <Compile Include="Reservation\DataFile\ReservationTitle_V001.cs" />
+    <Compile Include="Reservation\DataFile\ReservationPricingSet_V001.cs" />
+    <Compile Include="Reservation\DataFile\ReservationPricingRecord_V001.cs" />
+    <Compile Include="Promotion\CustomerOffer.cs" />
+    <Compile Include="Promotion\OfferProduct.cs" />
+    <Compile Include="Promotion\OfferDiscountType.cs" />
+    <Compile Include="Promotion\OfferScopeType.cs" />
+    <Compile Include="Promotion\CustomerSegmentType.cs" />
+    <Compile Include="Promotion\ActionCode.cs" />
+    <Compile Include="Promotion\LegalTextType.cs" />
+    <Compile Include="Promotion\IPromoCodeValidationInfo.cs" />
+    <Compile Include="Promotion\IPromoCodeValidationResult.cs" />
+    <Compile Include="Profile\GetKioskProductIdsResponse.cs" />
+    <Compile Include="Profile\Market.cs" />
+    <Compile Include="Profile\Title.cs" />
+    <Compile Include="Profile\ProductFamily.cs" />
+    <Compile Include="Profile\ProductGroupType.cs" />
+    <Compile Include="Profile\ProductGroup.cs" />
+    <Compile Include="Profile\ProductGroupXREF.cs" />
+    <Compile Include="Profile\ProductType.cs" />
+    <Compile Include="Profile\Store.cs" />
+    <Compile Include="Profile\SubPlatform.cs" />
+    <Compile Include="Profile\ProfileDataVersion.cs" />
+    <Compile Include="Profile\IProfileData.cs" />
+    <Compile Include="Profile\IProfileDataInstance.cs" />
+    <Compile Include="Planogram\Planogram.cs" />
+    <Compile Include="Planogram\FileType.cs" />
+    <Compile Include="Personalization\ConfirmationStatus.cs" />
+    <Compile Include="Personalization\IEmailConfirmResult.cs" />
+    <Compile Include="Personalization\SendEmailConfirmCallback.cs" />
+    <Compile Include="Personalization\IMarketingServices.cs" />
+    <Compile Include="Personalization\IRedboxPlusPlanInfo.cs" />
+    <Compile Include="Personalization\RedboxPlusConstants.cs" />
+    <Compile Include="Personalization\IRedboxPlusSession.cs" />
+    <Compile Include="Personalization\SignupResult.cs" />
+    <Compile Include="Personalization\ISignupFlowResult.cs" />
+    <Compile Include="Personalization\KioskLoginResponseErrors.cs" />
+    <Compile Include="Personalization\LoginType.cs" />
+    <Compile Include="Personalization\SignUpFlowContext.cs" />
+    <Compile Include="Personalization\ILoginEmailProvider.cs" />
+    <Compile Include="Personalization\IUpdateAccountResult.cs" />
+    <Compile Include="Personalization\ILoginResult.cs" />
+    <Compile Include="Personalization\ILoyaltySession.cs" />
+    <Compile Include="Personalization\IPersonalizationSession.cs" />
+    <Compile Include="Personalization\IRecommendedTitles.cs" />
+    <Compile Include="Personalization\IRecommendedTitleId.cs" />
+    <Compile Include="Personalization\RecommendedTitlesIdType.cs" />
+    <Compile Include="Personalization\IStoredPromoCode.cs" />
+    <Compile Include="Personalization\StoredPromoCode.cs" />
+    <Compile Include="Personalization\StoredPromoCodeCollection.cs" />
+    <Compile Include="Personalization\IAcceptedOffer.cs" />
+    <Compile Include="Personalization\AcceptedOffer.cs" />
+    <Compile Include="Personalization\OfferStatus.cs" />
+    <Compile Include="Personalization\ISubscriptionData.cs" />
+    <Compile Include="Personalization\IExistingSubscription.cs" />
+    <Compile Include="Personalization\BenefitUsageList.cs" />
+    <Compile Include="Personalization\IBenefitUsage.cs" />
+    <Compile Include="Personalization\ExistingSubscription.cs" />
+    <Compile Include="Personalization\BenefitUsage.cs" />
+    <Compile Include="Personalization\SubscriptionPlanStatus.cs" />
+    <Compile Include="Personalization\SubscriptionData.cs" />
+    <Compile Include="Personalization\IPersonalizationService.cs" />
+    <Compile Include="Personalization\UpdateAccountResponseErrors.cs" />
+    <Compile Include="Personalization\AccountSourceType.cs" />
+    <Compile Include="Personalization\PersonalizationServiceConstants.cs" />
+    <Compile Include="Personalization\LoyaltyTiers.cs" />
+    <Compile Include="Personalization\RecommendedTitles.cs" />
+    <Compile Include="Personalization\RecommendedTitleId.cs" />
+    <Compile Include="Personalization\TagConstants.cs" />
+    <Compile Include="Loyalty\EstimateAccrualErrors.cs" />
+    <Compile Include="Loyalty\EstimateRedemptionErrors.cs" />
+    <Compile Include="Loyalty\GetLoyaltyTestShoppingCartItemsResponse.cs" />
+    <Compile Include="Loyalty\LoyaltyTestShoppingCartItem.cs" />
+    <Compile Include="Loyalty\IEstimatePointsAccruedResult.cs" />
+    <Compile Include="Loyalty\IEstimateRedemptionPointsResult.cs" />
+    <Compile Include="Loyalty\ILoyaltyPointsRecord.cs" />
+    <Compile Include="Loyalty\ILoyaltyService.cs" />
+    <Compile Include="Loyalty\IProductEstimatedPointsAccrued.cs" />
+    <Compile Include="Loyalty\IProductEstimatedRedemptionPoints.cs" />
+    <Compile Include="Local\IBadCard.cs" />
+    <Compile Include="Local\ILocalData.cs" />
+    <Compile Include="Local\ILocalDataInstance.cs" />
+    <Compile Include="Local\RemovedQueueItem.cs" />
+    <Compile Include="Local\RemovedQueueItemExtensions.cs" />
+    <Compile Include="KioskProduct\IBarcodeForProductResult.cs" />
+    <Compile Include="KioskProduct\ISearchBarcodeForProduct.cs" />
+    <Compile Include="KioskProduct\SearchBarcodeForProduct.cs" />
+    <Compile Include="KioskProduct\TitleFamily.cs" />
+    <Compile Include="KioskProduct\TitleType.cs" />
+    <Compile Include="KioskProduct\TitleTypeProperty.cs" />
+    <Compile Include="KioskProduct\TitleTypeProperties.cs" />
+    <Compile Include="KioskProduct\Ratings.cs" />
+    <Compile Include="KioskProduct\RatingsProperty.cs" />
+    <Compile Include="KioskProduct\RatingsProperties.cs" />
+    <Compile Include="KioskProduct\InventoryConstants.cs" />
+    <Compile Include="KioskProduct\Genres.cs" />
+    <Compile Include="KioskProduct\GenresProperty.cs" />
+    <Compile Include="KioskProduct\GenresProperties.cs" />
+    <Compile Include="KioskProduct\BrowseViewFilter.cs" />
+    <Compile Include="KioskProduct\BrowseSort.cs" />
+    <Compile Include="KioskProduct\TitleProductTypes.cs" />
+    <Compile Include="KioskProduct\KioskProductType.cs" />
+    <Compile Include="KioskProduct\DiscountRestriction.cs" />
+    <Compile Include="KioskProduct\IKioskProduct.cs" />
+    <Compile Include="KioskProduct\ITitleProduct.cs" />
+    <Compile Include="KioskProduct\ITitleRollupProduct.cs" />
+    <Compile Include="KioskProduct\SubscriptionType.cs" />
+    <Compile Include="KioskProduct\ISubscriptionProduct.cs" />
+    <Compile Include="KioskProduct\IRedboxPlusSubscriptionProduct.cs" />
+    <Compile Include="KioskProduct\IRedboxPlusOfferPeriod.cs" />
+    <Compile Include="KioskProduct\IRedboxPlusBenefit.cs" />
+    <Compile Include="KioskProduct\RedboxPlusBenefitPeriod.cs" />
+    <Compile Include="KioskProduct\RedboxPlusBillingPeriod.cs" />
+    <Compile Include="KioskProduct\RedboxPlusBenefitType.cs" />
+    <Compile Include="KioskProduct\RedboxPlusPeriodUnit.cs" />
+    <Compile Include="KioskProduct\TitleFamilyAttribute.cs" />
+    <Compile Include="KioskProduct\TitleFamilyEnumExtensions.cs" />
+    <Compile Include="KioskHealth\IArcusHealth.cs" />
+    <Compile Include="KioskHealth\IEMVReaderHealth.cs" />
+    <Compile Include="KioskHealth\ICCReaderHealth.cs" />
+    <Compile Include="KioskHealth\IKioskHealthItem.cs" />
+    <Compile Include="KioskHealth\IKioskHealthService.cs" />
+    <Compile Include="KioskHealth\IPingService.cs" />
+    <Compile Include="KioskHealth\IRouterHealth.cs" />
+    <Compile Include="KioskHealth\ITouchScreenHealth.cs" />
+    <Compile Include="KioskHealth\IViewHealth.cs" />
+    <Compile Include="KioskEvents\IKioskEventService.cs" />
+    <Compile Include="EmailOptInCampaign\EmailOptInCampaign.cs" />
+    <Compile Include="EmailOptInCampaign\IEmailOptInCampaign.cs" />
+    <Compile Include="DataService\IDataServiceInstance.cs" />
+    <Compile Include="DataService\IDataService.cs" />
+    <Compile Include="Cache\ICacheData.cs" />
+    <Compile Include="Cache\TitleCache.cs" />
+    <Compile Include="Cache\BarcodeProduct.cs" />
+    <Compile Include="Cache\ICacheDataInstance.cs" />
+    <Compile Include="Browse\BannerType.cs" />
+    <Compile Include="Browse\BannerSize.cs" />
+    <Compile Include="Browse\Banner.cs" />
+    <Compile Include="Browse\BannerCollection.cs" />
+    <Compile Include="Browse\BrowseFilter.cs" />
+    <Compile Include="Browse\BrowsePriceRangeParameter.cs" />
+    <Compile Include="Browse\BrowseFilterType.cs" />
+    <Compile Include="Browse\BrowseGenreMenuButton.cs" />
+    <Compile Include="Browse\BrowseMenuButton.cs" />
+    <Compile Include="Browse\ArrowDirection.cs" />
+    <Compile Include="Browse\BrowseProductFamilyMenuButton.cs" />
+    <Compile Include="Browse\IBrowseItemModel.cs" />
+    <Compile Include="Browse\ProductFlags.cs" />
+    <Compile Include="Browse\ProductFlag.cs" />
+    <Compile Include="Browse\ProductFlagCollection.cs" />
+    <Compile Include="Browse\SignOutMenuButton.cs" />
+    <Compile Include="Browse\SizeAndPosition.cs" />
+    <Compile Include="KioskClientService\Constants.cs" />
+    <Compile Include="KioskClientService\IKioskClientService.cs" />
+    <Compile Include="KioskClientService\Utilities\IGetQRCodeResponse.cs" />
+    <Compile Include="KioskClientService\Utilities\IKioskClientServiceQRCodeUtilities.cs" />
+    <Compile Include="KioskClientService\Transactions\IKioskClientServiceTransaction.cs" />
+    <Compile Include="KioskClientService\Transactions\KioskClientServiceTransactionConstants.cs" />
+    <Compile Include="KioskClientService\Transactions\ShoppingCartMessageHelper.cs" />
+    <Compile Include="KioskClientService\Transactions\ReturnPromoType.cs" />
+    <Compile Include="KioskClientService\Transactions\ReturnVisitPromotionInfo.cs" />
+    <Compile Include="KioskClientService\Transactions\ReturnVisitPromo.cs" />
+    <Compile Include="KioskClientService\Transactions\TransactionStatus.cs" />
+    <Compile Include="KioskClientService\Transactions\VendStatus.cs" />
+    <Compile Include="KioskClientService\Transactions\DiscountType.cs" />
+    <Compile Include="KioskClientService\Transactions\LineItemGroupType.cs" />
+    <Compile Include="KioskClientService\Transactions\BlurayUpsell.cs" />
+    <Compile Include="KioskClientService\Transactions\Pricing.cs" />
+    <Compile Include="KioskClientService\Transactions\Totals.cs" />
+    <Compile Include="KioskClientService\Transactions\Discount.cs" />
+    <Compile Include="KioskClientService\Transactions\LineItem.cs" />
+    <Compile Include="KioskClientService\Transactions\LineItemGroup.cs" />
+    <Compile Include="KioskClientService\Transactions\ServiceFee.cs" />
+    <Compile Include="KioskClientService\Transactions\MessageShoppingCart.cs" />
+    <Compile Include="KioskClientService\Transactions\IMessage.cs" />
+    <Compile Include="KioskClientService\Transactions\MessageBase.cs" />
+    <Compile Include="KioskClientService\Transactions\CartMessage.cs" />
+    <Compile Include="KioskClientService\TestData\IKioskClientServiceTestData.cs" />
+    <Compile Include="KioskClientService\TestData\IReadTestDataValueResult.cs" />
+    <Compile Include="KioskClientService\TestData\IWriteTestDataValueResult.cs" />
+    <Compile Include="KioskClientService\TestData\IIsTestDataEnabledResult.cs" />
+    <Compile Include="KioskClientService\Subscriptions\IRedboxPlusPromoCampaign.cs" />
+    <Compile Include="KioskClientService\Subscriptions\ISubscriptionPlans.cs" />
+    <Compile Include="KioskClientService\Subscriptions\IKioskClientServiceSubscriptions.cs" />
+    <Compile Include="KioskClientService\Subscriptions\KioskClientServiceSubscriptionConstants.cs" />
+    <Compile Include="KioskClientService\Subscriptions\RedboxPlusSubscriptionTier.cs" />
+    <Compile Include="KioskClientService\Session\IKioskClientServiceSession.cs" />
+    <Compile Include="KioskClientService\Session\SessionType.cs" />
+    <Compile Include="KioskClientService\Promotion\IKioskClientServicePromotion.cs" />
+    <Compile Include="KioskClientService\Promotion\KioskClientServicePromotionServiceConstants.cs" />
+    <Compile Include="KioskClientService\Promotion\DiscountValidationCampaignTitlesResult.cs" />
+    <Compile Include="KioskClientService\Promotion\PromotionCodeValidationResponse.cs" />
+    <Compile Include="KioskClientService\Promotion\DefaultPromo.cs" />
+    <Compile Include="KioskClientService\Product\IKioskClientServiceProduct.cs" />
+    <Compile Include="KioskClientService\Product\ProductGroup.cs" />
+    <Compile Include="KioskClientService\Product\Product.cs" />
+    <Compile Include="KioskClientService\Product\IProductByTitleIdsResponse.cs" />
+    <Compile Include="KioskClientService\Product\IProductByTitleIdsRequest.cs" />
+    <Compile Include="KioskClientService\Products\IKioskClientServiceProductGroups.cs" />
+    <Compile Include="KioskClientService\Products\ProductGroupSortOrder.cs" />
+    <Compile Include="KioskClientService\Products\SortOrder.cs" />
+    <Compile Include="KioskClientService\Planogram\IKioskClientServicePlanogram.cs" />
+    <Compile Include="KioskClientService\Personalization\IPlanSubscriptionInfo.cs" />
+    <Compile Include="KioskClientService\Personalization\SubscriptionStatus.cs" />
+    <Compile Include="KioskClientService\Personalization\BenefitPeriod.cs" />
+    <Compile Include="KioskClientService\Personalization\IKioskClientServicePersonalization.cs" />
+    <Compile Include="KioskClientService\Personalization\ILoginResponse.cs" />
+    <Compile Include="KioskClientService\Personalization\RecommendedTitlesIdType.cs" />
+    <Compile Include="KioskClientService\Personalization\KioskClientServicePersonalizationServiceConstants.cs" />
+    <Compile Include="KioskClientService\Personalization\LoginResponse.cs" />
+    <Compile Include="KioskClientService\Personalization\LoyaltyTiers.cs" />
+    <Compile Include="KioskClientService\Personalization\RecommendedTitles.cs" />
+    <Compile Include="KioskClientService\Personalization\TitleInfo.cs" />
+    <Compile Include="KioskClientService\Personalization\StoredPromoCode.cs" />
+    <Compile Include="KioskClientService\Personalization\AcceptedOffer.cs" />
+    <Compile Include="KioskClientService\Personalization\OfferStatus.cs" />
+    <Compile Include="KioskClientService\Marketing\IKioskClientServiceMarketing.cs" />
+    <Compile Include="KioskClientService\Marketing\KioskClientServiceMarketingServiceConstants.cs" />
+    <Compile Include="KioskClientService\Loyalty\IKioskClientServiceLoyalty.cs" />
+    <Compile Include="KioskClientService\Loyalty\KioskClientServiceLoyaltyServiceConstants.cs" />
+    <Compile Include="KioskClientService\Kiosk\IKioskClientServiceKiosk.cs" />
+    <Compile Include="KioskClientService\Kiosk\LocationType.cs" />
+    <Compile Include="KioskClientService\Kiosk\NearbyKiosk.cs" />
+    <Compile Include="KioskClientService\Kiosk\IKioskClientServiceNearbyKiosksResponse.cs" />
+    <Compile Include="KioskClientService\Inventory\IGetMerchandizingOrdersResponse.cs" />
+    <Compile Include="KioskClientService\Inventory\IKioskClientServiceInventory.cs" />
+    <Compile Include="KioskClientService\Inventory\_KioskTitlesCount.cs" />
+    <Compile Include="KioskClientService\Inventory\IKioskTitlesCountResponse.cs" />
+    <Compile Include="KioskClientService\Inventory\IUpdateMerchandizingStatusResponse.cs" />
+    <Compile Include="KioskClientService\Inventory\MerchandizingOrder.cs" />
+    <Compile Include="KioskClientService\Inventory\MerchandizingOrderType.cs" />
+    <Compile Include="KioskClientService\Inventory\MerchStatusUpdate.cs" />
+    <Compile Include="KioskClientService\Installer\Banner.cs" />
+    <Compile Include="KioskClientService\Installer\PendingKiosk.cs" />
+    <Compile Include="KioskClientService\Installer\State.cs" />
+    <Compile Include="KioskClientService\Installer\OpsMarketResponse.cs" />
+    <Compile Include="KioskClientService\Installer\PendingBannersResponse.cs" />
+    <Compile Include="KioskClientService\Installer\PendingKiosksResponse.cs" />
+    <Compile Include="KioskClientService\Installer\PendingStatesResponse.cs" />
+    <Compile Include="KioskClientService\Installer\IKioskClientServiceInstaller.cs" />
+    <Compile Include="KioskClientService\Installer\KioskClientServiceStoreServicesConstants.cs" />
+    <Compile Include="KioskClientService\Dual\IRefreshResponse.cs" />
+    <Compile Include="KioskClientService\Dual\IUpdateTitlesResponse.cs" />
+    <Compile Include="KioskClientService\Dual\IInStockInOtherResponse.cs" />
+    <Compile Include="KioskClientService\Dual\IKioskClientServiceDual.cs" />
+    <Compile Include="KioskClientService\Data\IKioskClientServiceData.cs" />
+    <Compile Include="KioskClientService\CustomerProfile\ICustomerProfileKioskLoginResponse.cs" />
+    <Compile Include="KioskClientService\CustomerProfile\ICustomerProfileLoginRequest.cs" />
+    <Compile Include="KioskClientService\CustomerProfile\IKioskClientServiceCustomerProfile.cs" />
+    <Compile Include="KioskClientService\CustomerProfile\KioskClientServiceProxyCustomerProfileConstants.cs" />
+    <Compile Include="KioskClientService\CustomerProfile\KioskLoginResponse.cs" />
+    <Compile Include="KioskClientService\CustomerProfile\KioskCustomer.cs" />
+    <Compile Include="KioskClientService\CustomerProfile\KioskLoyalty.cs" />
+    <Compile Include="KioskClientService\CustomerProfile\KioskRecommendedTitles.cs" />
+    <Compile Include="KioskClientService\CustomerProfile\KioskTitleInfo.cs" />
+    <Compile Include="KioskClientService\CustomerProfile\KioskStoredPromoCode.cs" />
+    <Compile Include="KioskClientService\CustomerProfile\KioskAcceptedOffer.cs" />
+    <Compile Include="KioskClientService\CustomerProfile\KioskSegment.cs" />
+    <Compile Include="KioskClientService\CustomerProfile\KioskSubscriptions.cs" />
+    <Compile Include="KioskClientService\CustomerProfile\KioskSubscription.cs" />
+    <Compile Include="KioskClientService\CustomerProfile\CustomerSubscriptionPlanStatus.cs" />
+    <Compile Include="KioskClientService\CustomerProfile\KioskBenefitUsageList.cs" />
+    <Compile Include="KioskClientService\CustomerProfile\KioskBenefitUsage.cs" />
+    <Compile Include="KioskClientService\Configuration\BaseConfiguration.cs" />
+    <Compile Include="KioskClientService\Configuration\BaseCategorySetting.cs" />
+    <Compile Include="KioskClientService\Configuration\ConfigLogParameters.cs" />
+    <Compile Include="KioskClientService\Configuration\CategoryAttribute.cs" />
+    <Compile Include="KioskClientService\Configuration\SettingAttribute.cs" />
+    <Compile Include="KioskClientService\Configuration\MaskLogValue.cs" />
+    <Compile Include="KioskClientService\Configuration\IKioskClientServiceConfiguration.cs" />
+    <Compile Include="KioskClientService\Configuration\KioskConfiguration.cs" />
+    <Compile Include="KioskClientService\Configuration\DeviceServiceConfiguration.cs" />
+    <Compile Include="KioskClientService\Configuration\BrowseConfiguration.cs" />
+    <Compile Include="KioskClientService\Configuration\CMSConfiguration.cs" />
+    <Compile Include="KioskClientService\Configuration\DualConfiguration.cs" />
+    <Compile Include="KioskClientService\Configuration\_KioskConfiguration.cs" />
+    <Compile Include="KioskClientService\Configuration\InventoryConfiguration.cs" />
+    <Compile Include="KioskClientService\Configuration\MarketingGeneralConfiguration.cs" />
+    <Compile Include="KioskClientService\Configuration\MarketingAdConfiguration.cs" />
+    <Compile Include="KioskClientService\Configuration\MarketingReturnConfiguration.cs" />
+    <Compile Include="KioskClientService\Configuration\ABTestingConfiguration.cs" />
+    <Compile Include="KioskClientService\Configuration\KioskHealthConfiguration.cs" />
+    <Compile Include="KioskClientService\Campaign\InCartType.cs" />
+    <Compile Include="KioskClientService\Campaign\ControlType.cs" />
+    <Compile Include="KioskClientService\Campaign\AssetTarget.cs" />
+    <Compile Include="KioskClientService\Campaign\BrowseFilter.cs" />
+    <Compile Include="KioskClientService\Campaign\IControl.cs" />
+    <Compile Include="KioskClientService\Campaign\IStartAssetControl.cs" />
+    <Compile Include="KioskClientService\Campaign\ICarouselControl.cs" />
+    <Compile Include="KioskClientService\Campaign\Asset.cs" />
+    <Compile Include="KioskClientService\Campaign\StartScreenPromotionCodeValidationResponse.cs" />
+    <Compile Include="KioskClientService\Campaign\Control.cs" />
+    <Compile Include="KioskClientService\Campaign\StartAssetControl.cs" />
+    <Compile Include="KioskClientService\Campaign\CarouselControl.cs" />
+    <Compile Include="KioskClientService\Campaign\JTokenExtensions.cs" />
+    <Compile Include="KioskClientService\Campaign\ControlListConverter.cs" />
+    <Compile Include="KioskClientService\Campaign\ControlList.cs" />
+    <Compile Include="KioskClientService\Campaign\KioskInCartDetails.cs" />
+    <Compile Include="KioskClientService\Campaign\KioskStartScreenDetails.cs" />
+    <Compile Include="KioskClientService\Campaign\IKioskClientServiceCampaign.cs" />
+    <Compile Include="KioskClientService\Application\IKioskClientServiceApplication.cs" />
+    <Compile Include="KioskClientService\Ads\IGetAdResponse.cs" />
+    <Compile Include="KioskClientService\Ads\IKioskClientServiceAds.cs" />
+    <Compile Include="KioskClientService\Authentication\AuthenticationResponse.cs" />
+    <Compile Include="KioskClientService\Authentication\AuthenticateRequest.cs" />
+    <Compile Include="KioskClientService\Authentication\AuthenticateResponse.cs" />
+    <Compile Include="KioskClientService\Authentication\IKioskClientServiceAuthentication.cs" />
+    <Compile Include="KioskClientService\Authentication\KioskClientServiceAuthenticaionConstants.cs" />
+    <Compile Include="Health\AlertTypes.cs" />
+    <Compile Include="Health\HealthAlertResponse.cs" />
+    <Compile Include="Health\IHealthServices.cs" />
+    <Compile Include="Health\HealthPingResponse.cs" />
+    <Compile Include="Health\StatisticNames.cs" />
+    <Compile Include="EngineApplication\IEngineApplicationService.cs" />
+    <Compile Include="EngineApplication\PerformShutdownResponse.cs" />
+    <Compile Include="Authentication\IAuthenticationServices.cs" />
+    <Compile Include="Analytics\AnalyticsConstants.cs" />
+    <Compile Include="Analytics\AnalyticsData.cs" />
+    <Compile Include="Analytics\AnalyticsEvent.cs" />
+    <Compile Include="Analytics\ButtonPressEvent.cs" />
+    <Compile Include="Analytics\CardReadEvent.cs" />
+    <Compile Include="Analytics\CheckBoxEvent.cs" />
+    <Compile Include="Analytics\AuthorizationData.cs" />
+    <Compile Include="Analytics\DiscountRestrictionEvent.cs" />
+    <Compile Include="Analytics\LoginEvent.cs" />
+    <Compile Include="Analytics\ROPRecommendedProducts.cs" />
+    <Compile Include="Analytics\IAnalyticsData.cs" />
+    <Compile Include="Analytics\IAnalyticsEvent.cs" />
+    <Compile Include="Analytics\IAnalyticsService.cs" />
+    <Compile Include="Analytics\IAnalyticsSession.cs" />
+    <Compile Include="Analytics\ABTest.cs" />
+    <Compile Include="Analytics\AnalyticsShoppingCart.cs" />
+    <Compile Include="Analytics\AnalyticsDiscount.cs" />
+    <Compile Include="Analytics\DiscountType.cs" />
+    <Compile Include="Analytics\AnalyticsShoppingCartItem.cs" />
+    <Compile Include="Analytics\AnalyticsShoppingCartSubscriptionItem.cs" />
+    <Compile Include="Analytics\PricingData.cs" />
+    <Compile Include="Analytics\RentalPricingData.cs" />
+    <Compile Include="Analytics\PurchasePricingData.cs" />
+    <Compile Include="Analytics\ProductData.cs" />
+    <Compile Include="Analytics\ViewEventData.cs" />
+    <Compile Include="Analytics\ViewShownEvent.cs" />
+    <Compile Include="Analytics\MultiNightPopupData.cs" />
+    <Compile Include="Analytics\NameValueData.cs" />
+    <Compile Include="Analytics\OfferData.cs" />
+    <Compile Include="Analytics\SwipeViewData.cs" />
+    <Compile Include="Analytics\TimeoutEvent.cs" />
+    <Compile Include="Ads\AdLocation.cs" />
+    <Compile Include="Ads\GetAdTimeoutEvent.cs" />
+    <Compile Include="Ads\IAd.cs" />
+    <Compile Include="Ads\IAdImpression.cs" />
+    <Compile Include="Ads\IAdService.cs" />
+    <Compile Include="Ads\IVistarAd.cs" />
+    <Compile Include="Ads\IVistarAdService.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\DeviceService\DeviceService.ComponentModel\DeviceService.ComponentModel.csproj">
+      <Project>{626bf22f-7d57-a017-e5d6-1b31f16f3895}</Project>
+      <Name>DeviceService.ComponentModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Redbox.BrokerServices\Redbox.BrokerServices.Proxy.ComponentModel\Redbox.BrokerServices.Proxy.ComponentModel.csproj">
+      <Project>{489b032c-ce36-4dcc-9d82-127f8dda6034}</Project>
+      <Name>Redbox.BrokerServices.Proxy.ComponentModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Redbox.KioskEngine\Redbox.KioskEngine.ComponentModel\Redbox.KioskEngine.ComponentModel.csproj">
+      <Project>{eb32034a-3c1f-40cc-96a0-4995d652fcac}</Project>
+      <Name>Redbox.KioskEngine.ComponentModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Redbox\Redbox.Core\Redbox.Core.csproj">
+      <Project>{af6cd734-bf15-4031-ae7a-4167e368475d}</Project>
+      <Name>Redbox.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Redbox\Redbox.Lua\Redbox.Lua.csproj">
+      <Project>{c6b8e189-1250-4f0d-8745-c4d3ce1a18db}</Project>
+      <Name>Redbox.Lua</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
