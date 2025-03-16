@@ -14,6 +14,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Redbox.REDS.Framework", "..
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Redbox.KioskEngine.ComponentModel", "Redbox.KioskEngine.ComponentModel\Redbox.KioskEngine.ComponentModel.csproj", "{EB32034A-3C1F-40CC-96A0-4995D652FCAC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Redbox.KioskEngine.IDE", "Redbox.KioskEngine.IDE\Redbox.KioskEngine.IDE.csproj", "{36FC5937-6A7C-4188-8FD4-82E27D321FFC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Redbox.Lua", "..\Redbox\Redbox.Lua\Redbox.Lua.csproj", "{C6B8E189-1250-4F0D-8745-C4D3CE1A18DB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -40,6 +44,14 @@ Global
 		{EB32034A-3C1F-40CC-96A0-4995D652FCAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB32034A-3C1F-40CC-96A0-4995D652FCAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB32034A-3C1F-40CC-96A0-4995D652FCAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36FC5937-6A7C-4188-8FD4-82E27D321FFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36FC5937-6A7C-4188-8FD4-82E27D321FFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36FC5937-6A7C-4188-8FD4-82E27D321FFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36FC5937-6A7C-4188-8FD4-82E27D321FFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6B8E189-1250-4F0D-8745-C4D3CE1A18DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6B8E189-1250-4F0D-8745-C4D3CE1A18DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6B8E189-1250-4F0D-8745-C4D3CE1A18DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6B8E189-1250-4F0D-8745-C4D3CE1A18DB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -49,6 +61,7 @@ Global
 		{AF6CD734-BF15-4031-AE7A-4167E368475D} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{AFEE27AE-6377-4D11-872C-0A8CC800E059} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{152499BB-21CF-427F-93AC-D1EFD0C77BA8} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{C6B8E189-1250-4F0D-8745-C4D3CE1A18DB} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BE8358FC-0BD2-48F7-AA31-B908BD62B06B}

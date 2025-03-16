@@ -1,0 +1,261 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{36FC5937-6A7C-4188-8FD4-82E27D321FFC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>Redbox.KioskEngine.IDE</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <ApplicationVersion>1.88.0.80</ApplicationVersion>
+    <FileAlignment>512</FileAlignment>
+    <RootNamespace>Redbox.KioskEngine.IDE</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Puzzle.SyntaxBox.NET3.5">
+      <HintPath>lib\Puzzle.SyntaxBox.NET3.5.dll</HintPath>
+    </Reference>
+    <Reference Include="Skybound.VisualTips">
+      <HintPath>lib\Skybound.VisualTips.dll</HintPath>
+    </Reference>
+    <Reference Include="SmartPropertyGrid">
+      <HintPath>lib\SmartPropertyGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WeifenLuo.WinFormsUI.Docking">
+      <HintPath>lib\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseTreeView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BundleDependencyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BundleFilterToolWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CallStackToolWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EventCommandEntered.cs" />
+    <Compile Include="CommandEnteredEventArgs.cs" />
+    <Compile Include="CommandHistory.cs" />
+    <Compile Include="DataStorePreferencePage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DebuggerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DebuggerVariableForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DynamicPropertyGrid.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="EditSearchPathForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ErrorListToolWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KeyValueSearchType.cs" />
+    <Compile Include="FindKeyValueForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAspects.cs" />
+    <Compile Include="GeneralPreferencePage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="IdePreferencePage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ImmediateToolWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IdeMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewKeyValueForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewProjectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewResourceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OutputToolWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PictureBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PreferencesManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProjectExplorerToolWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PropertiesToolWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QueuePreferencePage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="QueuePrioritiesPreferencePage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ResourceEditorWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResourcePreferencePage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ResourceTypeTreeView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ServerEnginePreferencePage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ShellControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ShellTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SymbolsToolWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TableEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TextEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TimersToolWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewStackToolWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SecureBrowser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectBundleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SwitchStatusForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TaskManagerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TaskRunnerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnlockForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="BaseTreeView.resx" />
+    <EmbeddedResource Include="BundleDependencyForm.resx" />
+    <EmbeddedResource Include="BundleFilterToolWindow.resx" />
+    <EmbeddedResource Include="CallStackToolWindow.resx" />
+    <EmbeddedResource Include="DataStorePreferencePage.resx" />
+    <EmbeddedResource Include="DebuggerForm.resx" />
+    <EmbeddedResource Include="DebuggerVariableForm.resx" />
+    <EmbeddedResource Include="EditSearchPathForm.resx" />
+    <EmbeddedResource Include="ErrorListToolWindow.resx" />
+    <EmbeddedResource Include="FindKeyValueForm.resx" />
+    <EmbeddedResource Include="GeneralPreferencePage.resx" />
+    <EmbeddedResource Include="HALScript.syn" />
+    <EmbeddedResource Include="IdeMainForm.resx" />
+    <EmbeddedResource Include="IdePreferencePage.resx" />
+    <EmbeddedResource Include="ImmediateToolWindow.resx" />
+    <EmbeddedResource Include="JavaScript.syn" />
+    <EmbeddedResource Include="Lua.syn" />
+    <EmbeddedResource Include="NewKeyValueForm.resx" />
+    <EmbeddedResource Include="NewProjectForm.resx" />
+    <EmbeddedResource Include="NewResourceForm.resx" />
+    <EmbeddedResource Include="OutputToolWindow.resx" />
+    <EmbeddedResource Include="PictureBox.resx" />
+    <EmbeddedResource Include="PreferencesManager.resx" />
+    <EmbeddedResource Include="ProjectExplorerToolWindow.resx" />
+    <EmbeddedResource Include="Properties\Resources.resx" />
+    <EmbeddedResource Include="PropertiesToolWindow.resx" />
+    <EmbeddedResource Include="QueuePreferencePage.resx" />
+    <EmbeddedResource Include="QueuePrioritiesPreferencePage.resx" />
+    <EmbeddedResource Include="ResourceEditorWindow.resx" />
+    <EmbeddedResource Include="ResourcePreferencePage.resx" />
+    <EmbeddedResource Include="ResourceTypeTreeView.resx" />
+    <EmbeddedResource Include="SecureBrowser.resx" />
+    <EmbeddedResource Include="SelectBundleForm.resx" />
+    <EmbeddedResource Include="ServerEnginePreferencePage.resx" />
+    <EmbeddedResource Include="ShellControl.resx" />
+    <EmbeddedResource Include="SQLServer2K_SQL.syn" />
+    <EmbeddedResource Include="SwitchStatusForm.resx" />
+    <EmbeddedResource Include="SymbolsToolWindow.resx" />
+    <EmbeddedResource Include="TableEditor.resx" />
+    <EmbeddedResource Include="TaskManagerForm.resx" />
+    <EmbeddedResource Include="TaskRunnerForm.resx" />
+    <EmbeddedResource Include="TextEditor.resx" />
+    <EmbeddedResource Include="TimersToolWindow.resx" />
+    <EmbeddedResource Include="UnlockForm.resx" />
+    <EmbeddedResource Include="ViewStackToolWindow.resx" />
+    <EmbeddedResource Include="XML.syn" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Redbox\Redbox.Core\Redbox.Core.csproj">
+      <Project>{af6cd734-bf15-4031-ae7a-4167e368475d}</Project>
+      <Name>Redbox.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Redbox\Redbox.Lua\Redbox.Lua.csproj">
+      <Project>{c6b8e189-1250-4f0d-8745-c4d3ce1a18db}</Project>
+      <Name>Redbox.Lua</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Redbox\Redbox.REDS.Framework\Redbox.REDS.Framework.csproj">
+      <Project>{152499bb-21cf-427f-93ac-d1efd0c77ba8}</Project>
+      <Name>Redbox.REDS.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Redbox.KioskEngine.ComponentModel\Redbox.KioskEngine.ComponentModel.csproj">
+      <Project>{eb32034a-3c1f-40cc-96a0-4995d652fcac}</Project>
+      <Name>Redbox.KioskEngine.ComponentModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
