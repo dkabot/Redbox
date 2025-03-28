@@ -1,0 +1,42 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35122.118
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dependencies", "Dependencies", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Redbox.KioskEngine.ComponentModel", "..\Redbox.KioskEngine\Redbox.KioskEngine.ComponentModel\Redbox.KioskEngine.ComponentModel.csproj", "{EB32034A-3C1F-40CC-96A0-4995D652FCAC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Redbox.HardwareServices.Proxy.ComponentModel", "Redbox.HardwareServices.Proxy.ComponentModel\Redbox.HardwareServices.Proxy.ComponentModel.csproj", "{3AB877A4-15A5-4EAD-AF03-177CEE191F9B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeviceService.ComponentModel", "..\DeviceService\DeviceService.ComponentModel\DeviceService.ComponentModel.csproj", "{626BF22F-7D57-A017-E5D6-1B31F16F3895}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EB32034A-3C1F-40CC-96A0-4995D652FCAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB32034A-3C1F-40CC-96A0-4995D652FCAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB32034A-3C1F-40CC-96A0-4995D652FCAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB32034A-3C1F-40CC-96A0-4995D652FCAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3AB877A4-15A5-4EAD-AF03-177CEE191F9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AB877A4-15A5-4EAD-AF03-177CEE191F9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AB877A4-15A5-4EAD-AF03-177CEE191F9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AB877A4-15A5-4EAD-AF03-177CEE191F9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{626BF22F-7D57-A017-E5D6-1B31F16F3895}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{626BF22F-7D57-A017-E5D6-1B31F16F3895}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{626BF22F-7D57-A017-E5D6-1B31F16F3895}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{626BF22F-7D57-A017-E5D6-1B31F16F3895}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{EB32034A-3C1F-40CC-96A0-4995D652FCAC} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{626BF22F-7D57-A017-E5D6-1B31F16F3895} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {96E585E6-0EC4-4D5F-838D-4B9599F6A80B}
+	EndGlobalSection
+EndGlobal
