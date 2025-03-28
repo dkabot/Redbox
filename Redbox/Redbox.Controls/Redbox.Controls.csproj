@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A9D2DD9C-F3C5-43BF-9AD9-A243519F9E25}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>Redbox.Controls</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <ApplicationVersion>1.88.0.80</ApplicationVersion>
+    <FileAlignment>512</FileAlignment>
+    <RootNamespace>Redbox.Controls</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BorderButton.cs" />
+    <Compile Include="SpinControl.cs" />
+    <Compile Include="Flag.cs" />
+    <Compile Include="GridExt.cs" />
+    <Compile Include="GroupButton.cs" />
+    <Compile Include="RoundedButton.cs" />
+    <Compile Include="SectionalBar.cs" />
+    <Compile Include="SimpleList.cs" />
+    <Compile Include="DocumentScaling.cs" />
+    <Compile Include="DocumentViewerHelper.cs" />
+    <Compile Include="RichTextBoxHelper.cs" />
+    <Compile Include="ReadOnlyConverter.cs" />
+    <Compile Include="BoolToVisibilityConverter.cs" />
+    <Compile Include="ReverseBoolToVisibilityConverter.cs" />
+    <Compile Include="TextToVisibilityConverter.cs" />
+    <Compile Include="NullToVisibilityConverter.cs" />
+    <Compile Include="IfElseConverter.cs" />
+    <Compile Include="GreaterOrEqualConverter.cs" />
+    <Compile Include="Utilities\Dependency`1.cs" />
+    <Compile Include="Utilities\DoubleUtil.cs" />
+    <Compile Include="Utilities\EmptyEnumerator.cs" />
+    <Compile Include="Utilities\SingleChildEnumerator.cs" />
+    <Compile Include="Utilities\VisualStates.cs" />
+    <Compile Include="Properties\Resources.cs" />
+    <Compile Include="Properties\Settings.cs" />
+    <Compile Include="Themes\IThemedControl.cs" />
+    <Compile Include="BaseControls\BaseContainer.cs" />
+    <Compile Include="BaseControls\BaseControl.cs" />
+    <Compile Include="BaseControls\SR.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="themes\generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Redbox.Core\Redbox.Core.csproj">
+      <Project>{af6cd734-bf15-4031-ae7a-4167e368475d}</Project>
+      <Name>Redbox.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

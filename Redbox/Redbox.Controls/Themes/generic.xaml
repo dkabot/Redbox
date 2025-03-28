@@ -1,0 +1,69 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Redbox.Controls">
+    <Style TargetType="{x:Type local:SectionalBar}">
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:SectionalBar}">
+                    <Border Background="{TemplateBinding Control.Background}"
+                            BorderBrush="{TemplateBinding Control.BorderBrush}"
+                            BorderThickness="{TemplateBinding Control.BorderThickness}" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="{x:Type local:GroupButton}">
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:GroupButton}">
+                    <Border Background="{TemplateBinding Control.Background}"
+                            BorderBrush="{TemplateBinding Control.BorderBrush}"
+                            BorderThickness="{TemplateBinding Control.BorderThickness}" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="{x:Type local:SimpleList}">
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:SimpleList}">
+                    <Border Background="{TemplateBinding Control.Background}"
+                            BorderBrush="{TemplateBinding Control.BorderBrush}"
+                            BorderThickness="{TemplateBinding Control.BorderThickness}" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="{x:Type local:RoundedButton}">
+        <Setter Property="Control.BorderThickness" Value="1" />
+        <Setter Property="Control.Background" Value="White" />
+        <Setter Property="Control.Foreground" Value="{StaticResource RubineRedBrush}" />
+        <Setter Property="Control.BorderBrush" Value="{StaticResource RubineRedBrush}" />
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:BorderButton}">
+                    <Border BorderThickness="0"
+                            Background="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Background}">
+                        <Border Background="Transparent"
+                                BorderBrush="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=BorderBrush}"
+                                CornerRadius="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=CornerRadius}"
+                                BorderThickness="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=BorderThickness}">
+                            <UIElement.Effect>
+                                <DropShadowEffect Direction="300" ShadowDepth="3" Opacity="1" RenderingBias="Quality"
+                                                  BlurRadius="6"
+                                                  Color="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=EffectColor}" />
+                            </UIElement.Effect>
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <UIElement.Clip>
+                            <RectangleGeometry
+                                Rect="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=BorderSize.Rect}"
+                                RadiusX="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=SingleRadius}"
+                                RadiusY="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=SingleRadius}" />
+                        </UIElement.Clip>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>
