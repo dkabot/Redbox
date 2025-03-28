@@ -94,7 +94,7 @@ namespace Redbox.USB
             return m_deviceInterfaceDetailData.DevicePath;
         }
 
-        protected internal int _HidD_GetAttributes(int hObject)
+        unsafe protected internal int _HidD_GetAttributes(int hObject)
         {
             m_hidAttributes = new HIDD_ATTRIBUTES()
             {

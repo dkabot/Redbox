@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{486D393F-4D58-479B-8E6C-EE8648512592}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>Redbox.KioskEngine.Environment</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <ApplicationVersion>1.88.0.80</ApplicationVersion>
+    <FileAlignment>512</FileAlignment>
+    <RootNamespace>Redbox.KioskEngine.Environment</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Common.Logging, Version=1.2.0.0, Culture=neutral, PublicKeyToken=af08829b84f0328e">
+      <HintPath>..\packages\Common.Logging.1.2.0\lib\1.0\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Quartz, Version=1.0.3.3, Culture=neutral, PublicKeyToken=f6b8c98a402cc8a4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Quartz.1.0.3\lib\3.5\Quartz.dll</HintPath>
+    </Reference>
+    <Reference Include="ReachFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.DirectoryServices.AccountManagement" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Speech" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="VistaDB.NET20, Version=3.4.3.73, Culture=neutral, PublicKeyToken=dfc935afe2125461, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\VistaDB.NET20.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CardSourceTypeExtensions.cs" />
+    <Compile Include="DataFileStoreService.cs" />
+    <Compile Include="BaseViewDefinition.cs" />
+    <Compile Include="BaseViewFrame.cs" />
+    <Compile Include="BitmapCacheService.cs" />
+    <Compile Include="BuildSetting.cs" />
+    <Compile Include="BundleRef.cs" />
+    <Compile Include="CallbackService.cs" />
+    <Compile Include="CertificateHelper.cs" />
+    <Compile Include="ConfigurationCallbackEntry.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="DataCacheService.cs" />
+    <Compile Include="DataStoreCache.cs" />
+    <Compile Include="DataStoreProvider.cs" />
+    <Compile Include="DataStoreService.cs" />
+    <Compile Include="DebugService.cs" />
+    <Compile Include="DeviceServiceClientHelper.cs" />
+    <Compile Include="DeviceServiceClientHelperFactory.cs" />
+    <Compile Include="EncryptionHelper.cs" />
+    <Compile Include="EnvironmentManager.cs" />
+    <Compile Include="ErrorListExtensions.cs" />
+    <Compile Include="FontCacheService.cs" />
+    <Compile Include="GenericTouchScreen.cs" />
+    <Compile Include="IdeService.cs" />
+    <Compile Include="IdleTimer.cs" />
+    <Compile Include="IdleTimerService.cs" />
+    <Compile Include="IndoorElo.cs" />
+    <Compile Include="LockHelper.cs" />
+    <Compile Include="LowLevelMouseHook.cs" />
+    <Compile Include="MachineSettingsStore.cs" />
+    <Compile Include="MacroService.cs" />
+    <Compile Include="ManageTimersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageViewsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ObfuscationHelper.cs" />
+    <Compile Include="QueueMessage.cs" />
+    <Compile Include="ObjectCacheService.cs" />
+    <Compile Include="OutdoorElo.cs" />
+    <Compile Include="KernelExtension.cs" />
+    <Compile Include="KernelExtensionService.cs" />
+    <Compile Include="PreferencePage.cs" />
+    <Compile Include="PreferenceService.cs" />
+    <Compile Include="ProductLookupCatalogService.cs" />
+    <Compile Include="ProductLookupDataStoreProvider.cs" />
+    <Compile Include="Project.cs" />
+    <Compile Include="QueueService.cs" />
+    <Compile Include="QueueServiceVistaDBData.cs" />
+    <Compile Include="RemoteServiceResult.cs" />
+    <Compile Include="RentalKioskFunctionCheckData.cs" />
+    <Compile Include="RentalHealthService.cs" />
+    <Compile Include="ResourceBundleService.cs" />
+    <Compile Include="SchedulerService.cs" />
+    <Compile Include="SchemaMigrator.cs" />
+    <Compile Include="ScreenSaverService.cs" />
+    <Compile Include="SecurityService.cs" />
+    <Compile Include="ServerEngineService.cs" />
+    <Compile Include="ShoppingCart.cs" />
+    <Compile Include="ShoppingSession.cs" />
+    <Compile Include="ShoppingSessionError.cs" />
+    <Compile Include="ShoppingSessionEvent.cs" />
+    <Compile Include="ShoppingSessionService.cs" />
+    <Compile Include="DeviceServiceClientHelperSimulator.cs" />
+    <Compile Include="ReadCardJob.cs" />
+    <Compile Include="DeviceServiceShutDownInfo.cs" />
+    <Compile Include="DeviceServiceHelperSimulatorModel.cs" />
+    <Compile Include="CardData.cs" />
+    <Compile Include="SoftTimer.cs" />
+    <Compile Include="SoundService.cs" />
+    <Compile Include="StyleSheet.cs" />
+    <Compile Include="StyleSheetService.cs" />
+    <Compile Include="StyleSheetState.cs" />
+    <Compile Include="StyleSheetStateTransition.cs" />
+    <Compile Include="StyleSheetStyle.cs" />
+    <Compile Include="TextToSpeechService.cs" />
+    <Compile Include="Theme.cs" />
+    <Compile Include="ThemeService.cs" />
+    <Compile Include="TimerService.cs" />
+    <Compile Include="TouchScreenFactory.cs" />
+    <Compile Include="Tween.cs" />
+    <Compile Include="TweenFunctionAttribute.cs" />
+    <Compile Include="TweenFunctor.cs" />
+    <Compile Include="TweenFunctions.cs" />
+    <Compile Include="TweenService.cs" />
+    <Compile Include="UserSettingsStore.cs" />
+    <Compile Include="ActorPropertyTagAttribute.cs" />
+    <Compile Include="ViewFrame.cs" />
+    <Compile Include="ViewFrameInstance.cs" />
+    <Compile Include="ViewService.cs" />
+    <Compile Include="ViewStack.cs" />
+    <Compile Include="VistaDbDataStoreProvider.cs" />
+    <Compile Include="MessagingConstants.cs" />
+    <Compile Include="WindowsAPI.cs" />
+    <Compile Include="WindowsAPIObjects.cs" />
+    <Compile Include="Windows10TouchScreen.cs" />
+    <Compile Include="WindowsHook.cs" />
+    <Compile Include="HookType.cs" />
+    <Compile Include="WPFViewFrame.cs" />
+    <Compile Include="TextToSpeech\MapKeyPress.cs" />
+    <Compile Include="TextToSpeech\MapKeyPressToAction.cs" />
+    <Compile Include="TextToSpeech\MapKeyPressToActorHit.cs" />
+    <Compile Include="TextToSpeech\NeededMacro.cs" />
+    <Compile Include="TextToSpeech\RegularExpression.cs" />
+    <Compile Include="TextToSpeech\SpeechControl.cs" />
+    <Compile Include="TextToSpeech\SpeechPart.cs" />
+    <Compile Include="TextToSpeech\SpeechPartEvent.cs" />
+    <Compile Include="TextToSpeech\TextPart.cs" />
+    <Compile Include="Properties\Resources.cs" />
+    <Compile Include="KioskServices\AuthorizeResult.cs" />
+    <Compile Include="KioskServices\PreauthorizeResult.cs" />
+    <Compile Include="FraudServices\BarcodeTrackingInfo.cs" />
+    <Compile Include="CardDataReader\CardReadAttempt.cs" />
+    <Compile Include="CardDataReader\CardReadAttemptCollection.cs" />
+    <Compile Include="CardDataReader\ClassicTrackDataService.cs" />
+    <Compile Include="CardDataReader\DeviceServiceTrackDataService.cs" />
+    <Compile Include="CardDataReader\EMVTrackData.cs" />
+    <Compile Include="CardDataReader\EncryptedTrackData.cs" />
+    <Compile Include="CardDataReader\TrackDataEncryptionService.cs" />
+    <Compile Include="CardDataReader\UnencryptedTrackData.cs" />
+    <Compile Include="CardDataReader\CardHelper.cs" />
+    <Compile Include="CardDataReader\CardReaderDetector.cs" />
+    <Compile Include="CardDataReader\TrackData.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ManageTimersForm.resx" />
+    <EmbeddedResource Include="ManageViewsForm.resx" />
+    <EmbeddedResource Include="Migrations\message\data\0000001.sql" />
+    <EmbeddedResource Include="Migrations\session\data\0000001.sql" />
+    <EmbeddedResource Include="Migrations\session\data\0000002.sql" />
+    <EmbeddedResource Include="Migrations\session\data\0000003.sql" />
+    <EmbeddedResource Include="Migrations\session\data\0000004.sql" />
+    <EmbeddedResource Include="Migrations\session\data\0000005.sql" />
+    <EmbeddedResource Include="Migrations\session\data\0000006.sql" />
+    <EmbeddedResource Include="Properties\Resources.resx" />
+    <EmbeddedResource Include="XMLSchema\KioskAnalyticsSchema.xsd" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\DeviceService\DeviceService.Client\DeviceService.Client.csproj">
+      <Project>{c86901e1-892e-44a6-a0be-69b5e9364000}</Project>
+      <Name>DeviceService.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DeviceService\DeviceService.ComponentModel\DeviceService.ComponentModel.csproj">
+      <Project>{626bf22f-7d57-a017-e5d6-1b31f16f3895}</Project>
+      <Name>DeviceService.ComponentModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Redbox.HardwareServices\Redbox.HardwareServices.Proxy.ComponentModel\Redbox.HardwareServices.Proxy.ComponentModel.csproj">
+      <Project>{3ab877a4-15a5-4ead-af03-177cee191f9b}</Project>
+      <Name>Redbox.HardwareServices.Proxy.ComponentModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Redbox.Rental\Redbox.Rental.Model\Redbox.Rental.Model.csproj">
+      <Project>{9687a8d2-10f8-418d-b665-688be17e22ee}</Project>
+      <Name>Redbox.Rental.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Redbox\Redbox.Controls\Redbox.Controls.csproj">
+      <Project>{a9d2dd9c-f3c5-43bf-9ad9-a243519f9e25}</Project>
+      <Name>Redbox.Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Redbox\Redbox.Core\Redbox.Core.csproj">
+      <Project>{af6cd734-bf15-4031-ae7a-4167e368475d}</Project>
+      <Name>Redbox.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Redbox\Redbox.Lua\Redbox.Lua.csproj">
+      <Project>{c6b8e189-1250-4f0d-8745-c4d3ce1a18db}</Project>
+      <Name>Redbox.Lua</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Redbox\Redbox.Macros\Redbox.Macros.csproj">
+      <Project>{8f8dfb5f-7e7d-4dfc-817e-80cd2af6cb68}</Project>
+      <Name>Redbox.Macros</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Redbox\Redbox.ProductLookupCatalog\Redbox.ProductLookupCatalog.csproj">
+      <Project>{de2e9549-3113-4b03-95f9-f034be9e9c23}</Project>
+      <Name>Redbox.ProductLookupCatalog</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Redbox\Redbox.REDS.Framework\Redbox.REDS.Framework.csproj">
+      <Project>{152499bb-21cf-427f-93ac-d1efd0c77ba8}</Project>
+      <Name>Redbox.REDS.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Redbox\Redbox.USB\Redbox.USB.csproj">
+      <Project>{0ad17b83-82f0-4290-ac4f-203ff9091d4e}</Project>
+      <Name>Redbox.USB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Redbox.KioskEngine.ComponentModel\Redbox.KioskEngine.ComponentModel.csproj">
+      <Project>{eb32034a-3c1f-40cc-96a0-4995d652fcac}</Project>
+      <Name>Redbox.KioskEngine.ComponentModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Redbox.KioskEngine.IDE\Redbox.KioskEngine.IDE.csproj">
+      <Project>{36fc5937-6a7c-4188-8fd4-82e27d321ffc}</Project>
+      <Name>Redbox.KioskEngine.IDE</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
