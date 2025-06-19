@@ -1,0 +1,52 @@
+<UserControl
+    x:Class="Redbox.Rental.UI.Controls.PerksIconBanner"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid>
+        <Border
+            x:Name="PerksIcons"
+            Background="#FFFFFFFF"
+            Opacity="{Binding Path=BackgroundOpacity, FallbackValue=.2, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}" />
+        <UniformGrid
+            Columns="3"
+            Rows="2"
+            Margin="{Binding Path=GridMargin, FallbackValue='145,0,145,0', RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}">
+            <Image
+                Source="pack://Application:,,,/Redbox.Rental.UI;component/Assets/Images/icon-free-dvd-rental-wht.png"
+                Margin="0,20,0,0"
+                VerticalAlignment="Center"
+                Width="{Binding Path=FreeRentalIconWidth, FallbackValue=75, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}" />
+            <Image
+                Source="pack://Application:,,,/Redbox.Rental.UI;component/Assets/Images/icon-additional-perks-wht.png"
+                Margin="0,20,0,0"
+                VerticalAlignment="Center"
+                Width="{Binding Path=SpecialDealsIconWidth, FallbackValue=97, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}" />
+            <Image
+                Source="pack://Application:,,,/Redbox.Rental.UI;component/Assets/Images/icon-gifts-wht.png"
+                Margin="0,20,0,0"
+                VerticalAlignment="Center"
+                Width="{Binding Path=BDayIconWidth, FallbackValue=64, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}" />
+            <TextBlock
+                Foreground="#FFFFFFFF"
+                TextWrapping="Wrap"
+                TextAlignment="Center"
+                Margin="0,20,0,0"
+                Text="{Binding Path=PerksFreeRentalText, FallbackValue='Earn FREE rentals', RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"
+                Style="{Binding Path=TextStyle, FallbackValue='{StaticResource font_montserrat_semibold_22}', RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}" />
+            <TextBlock
+                Foreground="#FFFFFFFF"
+                TextWrapping="Wrap"
+                TextAlignment="Center"
+                Margin="0,20,0,0"
+                Text="{Binding Path=PerksDealsText, FallbackValue='Special deals just for you', RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"
+                Style="{Binding Path=TextStyle, FallbackValue='{StaticResource font_montserrat_semibold_22}', RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}" />
+            <TextBlock
+                Foreground="#FFFFFFFF"
+                TextWrapping="Wrap"
+                TextAlignment="Center"
+                Margin="0,20,0,0"
+                Text="{Binding PerksBdayGiftText, FallbackValue='B-day gift', RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"
+                Style="{Binding Path=TextStyle, FallbackValue='{StaticResource font_montserrat_semibold_22}', RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}" />
+        </UniformGrid>
+    </Grid>
+</UserControl>

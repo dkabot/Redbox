@@ -1,0 +1,10 @@
+<controls:TextToSpeechUserControl
+    x:Class="Redbox.Rental.UI.Views.RemoveCardViewUserControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="clr-namespace:Redbox.Rental.UI.Controls"
+    DataContextChanged="TextToSpeechUserControl_DataContextChanged">
+    <Grid>
+        <controls:RemoveQuickChipCardUserControl />
+    </Grid>
+</controls:TextToSpeechUserControl>

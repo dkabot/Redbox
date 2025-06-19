@@ -1,0 +1,54 @@
+<UserControl
+    x:Class="Redbox.Rental.UI.Controls.Animations.EMVInsertCardAndTapPhoneUserControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid>
+        <Image
+            x:Name="BottomOfEMVReader"
+            Source="pack://Application:,,,/Redbox.Rental.UI;component/Assets/Images/EMV_Insert_Illustration_Bottom_Layer_Purple.png"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Width="178"
+            Height="231" />
+        <Image
+            x:Name="InsertChip"
+            Source="pack://Application:,,,/Redbox.Rental.UI;component/Assets/Images/EMV_Insert_Illustration_Middle_Layer_Purple.png"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Width="180"
+            Height="192"
+            Margin="120,230,0,0" />
+        <Image
+            x:Name="SideOfEMVReader"
+            Source="pack://Application:,,,/Redbox.Rental.UI;component/Assets/Images/EMV_Insert_Illustration_Side_Layer_Purple.png"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Width="58"
+            Height="197"
+            Margin="130,0,0,0" />
+        <Image
+            x:Name="TopOfEMVReader"
+            Source="pack://Application:,,,/Redbox.Rental.UI;component/Assets/Images/EMV_Insert_Illustration_Top_Layer_Purple.png"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Width="145"
+            Height="218"
+            Margin="36,4,0,0" />
+        <Image
+            x:Name="TapPhone"
+            Source="pack://Application:,,,/Redbox.Rental.UI;component/Assets/Images/EMV_Tap_White_Illustration_Purple.png"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Width="175"
+            Height="268"
+            Margin="-162,180,0,0" />
+        <Image
+            x:Name="TapPhoneCheckmark"
+            Source="pack://Application:,,,/Redbox.Rental.UI;component/Assets/Images/EMV_Tap_Illustration_Checkmark_Purple.png"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Width="173"
+            Height="266"
+            Margin="-162,180,0,0" />
+    </Grid>
+</UserControl>

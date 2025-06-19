@@ -1,0 +1,59 @@
+<UserControl
+    x:Class="Redbox.Rental.UI.Controls.BrowseGroupSelectionUserControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:localbase="clr-namespace:Redbox.Rental.UI"
+    DataContextChanged="UserControl_DataContextChanged">
+    <UIElement.CommandBindings>
+        <CommandBinding
+            Command="{x:Static localbase:Commands.BrowseGroupSelectedCommand}"
+            Executed="BrowseGroupSelectedCommandBinding_Executed" />
+    </UIElement.CommandBindings>
+    <Grid>
+        <Border
+            BorderBrush="#FFFFFFFF"
+            BorderThickness="2"
+            CornerRadius="10">
+            <UIElement.Effect>
+                <DropShadowEffect
+                    Color="#ACACAC"
+                    ShadowDepth="3"
+                    BlurRadius="1" />
+            </UIElement.Effect>
+            <Border.Background>
+                <LinearGradientBrush
+                    StartPoint="0.5,0"
+                    EndPoint="0.5,1">
+                    <GradientStop
+                        Color="#7C7D7C"
+                        Offset="0" />
+                    <GradientStop
+                        Color="#4A534A"
+                        Offset="1" />
+                </LinearGradientBrush>
+            </Border.Background>
+            <Grid
+                x:Name="GroupSelectionContainer">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition
+                        Width="10" />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition
+                        Width="10" />
+                </Grid.ColumnDefinitions>
+                <UserControl
+                    Style="{StaticResource group_selection_item}"
+                    Grid.Column="1" />
+                <UserControl
+                    Style="{StaticResource group_selection_item}"
+                    Grid.Column="4" />
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

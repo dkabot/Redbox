@@ -16,6 +16,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Redbox.Lua", "..\Redbox\Red
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Redbox.KioskEngine.ComponentModel", "..\Redbox.KioskEngine\Redbox.KioskEngine.ComponentModel\Redbox.KioskEngine.ComponentModel.csproj", "{EB32034A-3C1F-40CC-96A0-4995D652FCAC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Redbox.Controls", "..\Redbox\Redbox.Controls\Redbox.Controls.csproj", "{A9D2DD9C-F3C5-43BF-9AD9-A243519F9E25}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Redbox.REDS.Framework", "..\Redbox\Redbox.REDS.Framework\Redbox.REDS.Framework.csproj", "{152499BB-21CF-427F-93AC-D1EFD0C77BA8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Redbox.KioskEngine.Environment", "..\Redbox.KioskEngine\Redbox.KioskEngine.Environment\Redbox.KioskEngine.Environment.csproj", "{486D393F-4D58-479B-8E6C-EE8648512592}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Redbox.Rental.UI", "Redbox.Rental.UI\Redbox.Rental.UI.csproj", "{72B3CCA6-474E-43AF-B8BF-E99D4E97DCC1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -46,6 +54,22 @@ Global
 		{EB32034A-3C1F-40CC-96A0-4995D652FCAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB32034A-3C1F-40CC-96A0-4995D652FCAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB32034A-3C1F-40CC-96A0-4995D652FCAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9D2DD9C-F3C5-43BF-9AD9-A243519F9E25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9D2DD9C-F3C5-43BF-9AD9-A243519F9E25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9D2DD9C-F3C5-43BF-9AD9-A243519F9E25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9D2DD9C-F3C5-43BF-9AD9-A243519F9E25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{152499BB-21CF-427F-93AC-D1EFD0C77BA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{152499BB-21CF-427F-93AC-D1EFD0C77BA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{152499BB-21CF-427F-93AC-D1EFD0C77BA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{152499BB-21CF-427F-93AC-D1EFD0C77BA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{486D393F-4D58-479B-8E6C-EE8648512592}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{486D393F-4D58-479B-8E6C-EE8648512592}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{486D393F-4D58-479B-8E6C-EE8648512592}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{486D393F-4D58-479B-8E6C-EE8648512592}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72B3CCA6-474E-43AF-B8BF-E99D4E97DCC1}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{72B3CCA6-474E-43AF-B8BF-E99D4E97DCC1}.Debug|Any CPU.Build.0 = Debug|x86
+		{72B3CCA6-474E-43AF-B8BF-E99D4E97DCC1}.Release|Any CPU.ActiveCfg = Release|x86
+		{72B3CCA6-474E-43AF-B8BF-E99D4E97DCC1}.Release|Any CPU.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -56,6 +80,9 @@ Global
 		{AF6CD734-BF15-4031-AE7A-4167E368475D} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{C6B8E189-1250-4F0D-8745-C4D3CE1A18DB} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{EB32034A-3C1F-40CC-96A0-4995D652FCAC} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{A9D2DD9C-F3C5-43BF-9AD9-A243519F9E25} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{152499BB-21CF-427F-93AC-D1EFD0C77BA8} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{486D393F-4D58-479B-8E6C-EE8648512592} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A19C2B86-6FE9-4E52-964D-FD8860F2A04D}

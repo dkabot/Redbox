@@ -1,0 +1,114 @@
+<controls:TextToSpeechUserControl
+    x:Class="Redbox.Rental.UI.Views.OptionSelectionDialogUserControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="clr-namespace:Redbox.Rental.UI.Controls"
+    xmlns:Redbox="clr-namespace:Redbox.Controls;assembly=Redbox.Controls">
+    <FrameworkElement.Resources>
+        <ResourceDictionary>
+            <Style
+                x:Key="DescriptionTextStyle"
+                TargetType="{x:Type TextBlock}"
+                BasedOn="{StaticResource font_montserrat_medium_20}">
+                <Style.Triggers>
+                    <DataTrigger
+                        Binding="{Binding DescriptionText}"
+                        Value="{x:Null}">
+                        <Setter
+                            Property="Visibility"
+                            Value="Collapsed" />
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+        </ResourceDictionary>
+    </FrameworkElement.Resources>
+    <Grid>
+        <Grid
+            x:Name="BackgroundGrid"
+            Background="#FF000000"
+            Opacity="0.6" />
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition
+                    Height="*" />
+                <RowDefinition
+                    Height="Auto" />
+                <RowDefinition
+                    Height="*" />
+            </Grid.RowDefinitions>
+            <Border
+                Grid.Row="1"
+                Background="#FFFFFFFF"
+                CornerRadius="28"
+                Width="{Binding Path=DialogWidth, FallbackValue=720}">
+                <StackPanel
+                    Margin="0,76,0,0">
+                    <TextBlock
+                        x:Name="HeaderText"
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Left"
+                        Margin="76,0,76,0"
+                        Foreground="{StaticResource CarlosPurple1Brush}"
+                        Style="{StaticResource font_montserrat_bold_28}"
+                        TextWrapping="Wrap"
+                        Text="{Binding Path=HeaderText, FallbackValue='Pick an option'}" />
+                    <TextBlock
+                        x:Name="DescriptionText"
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Left"
+                        Margin="76,24,76,0"
+                        Foreground="{StaticResource CarlosPurple1Brush}"
+                        Style="{StaticResource DescriptionTextStyle}"
+                        TextWrapping="Wrap"
+                        Text="{Binding Path=DescriptionText, FallbackValue='More option text'}" />
+                    <ItemsControl
+                        x:Name="ButtonsItemsControl"
+                        ItemsSource="{Binding ButtonData}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel
+                                    HorizontalAlignment="Center" />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Redbox:RoundedButton
+                                    Width="250"
+                                    VerticalAlignment="Center"
+                                    HorizontalAlignment="Center"
+                                    Margin="12,24,12,0"
+                                    Style="{StaticResource button_light_large_primary_style}"
+                                    Visibility="Visible"
+                                    Command="{Binding Command}"
+                                    CommandParameter="{Binding Tag}"
+                                    Tag="{Binding Tag}"
+                                    IsEnabled="{Binding IsEnabled}">
+                                    <StackPanel
+                                        Orientation="Vertical">
+                                        <TextBlock
+                                            Style="{StaticResource button_text_large_style}"
+                                            Text="{Binding Text}" />
+                                    </StackPanel>
+                                </Redbox:RoundedButton>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                    <Separator
+                        Style="{StaticResource modal_separator_style}" />
+                    <Redbox:RoundedButton
+                        x:Name="CancelButton"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Top"
+                        Margin="0,0,0,24"
+                        Style="{StaticResource modal_one_button_button1_style}"
+                        Command="{Binding CancelCommand}">
+                        <TextBlock
+                            x:Name="CancelButtonText"
+                            Style="{StaticResource button_text_large_style}"
+                            Text="{Binding Path=CancelButtonText, FallbackValue=CANCEL}" />
+                    </Redbox:RoundedButton>
+                </StackPanel>
+            </Border>
+        </Grid>
+    </Grid>
+</controls:TextToSpeechUserControl>

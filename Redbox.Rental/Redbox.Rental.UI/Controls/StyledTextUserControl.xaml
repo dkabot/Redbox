@@ -1,0 +1,14 @@
+<UserControl
+    x:Class="Redbox.Rental.UI.Controls.StyledTextUserControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <TextBlock
+        Style="{Binding Style}">
+        <Run
+            Text="{Binding Text}" />
+        <Run
+            BaselineAlignment="Top"
+            Text="{Binding Asterisk}"
+            Style="{Binding AsteriskStyle}" />
+    </TextBlock>
+</UserControl>

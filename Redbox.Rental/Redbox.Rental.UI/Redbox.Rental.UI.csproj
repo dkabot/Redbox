@@ -1,0 +1,1599 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{72B3CCA6-474E-43AF-B8BF-E99D4E97DCC1}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Redbox.Rental.UI</RootNamespace>
+    <AssemblyName>Redbox.Rental.UI</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60DC8134-EBA5-43B8-BCC9-BB4BC16C2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="ReachFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="mscorlib" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Commands.cs" />
+    <Compile Include="ControllersLogic\BaseLogic.cs" />
+    <Compile Include="ControllersLogic\CartRoutedEventArgs.cs" />
+    <Compile Include="ControllersLogic\KeyboardLogic.cs" />
+    <Compile Include="ControllersLogic\MemberPerksLogic.cs" />
+    <Compile Include="ControllersLogic\MemberPointsLogic.cs" />
+    <Compile Include="ControllersLogic\PromoListLogic.cs" />
+    <Compile Include="ControllersLogic\Promotion.cs" />
+    <Compile Include="ControllersLogic\Promotions.cs" />
+    <Compile Include="ControllersLogic\Snapshot.cs" />
+    <Compile Include="ControllersLogic\Snapshots.cs" />
+    <Compile Include="ControllersLogic\TierType.cs" />
+    <Compile Include="Controls\AdaButtonInfo.cs" />
+    <Compile Include="Controls\Animations\EMVInsertAndTapCardUserControl.xaml.cs">
+      <DependentUpon>EMVInsertAndTapCardUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Animations\EMVInsertAndTapHideMobilePickupUserControl.xaml.cs">
+      <DependentUpon>EMVInsertAndTapHideMobilePickupUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Animations\EMVInsertAndTapHideMobileRegularCheckoutUserControl.xaml.cs">
+      <DependentUpon>EMVInsertAndTapHideMobileRegularCheckoutUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Animations\EMVInsertAndTapRegularCheckoutUserControl.xaml.cs">
+      <DependentUpon>EMVInsertAndTapRegularCheckoutUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Animations\EmvInsertAndTapUserControl.xaml.cs">
+      <DependentUpon>EmvInsertAndTapUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Animations\EMVInsertCardAndTapPhoneUserControl.xaml.cs">
+      <DependentUpon>EMVInsertCardAndTapPhoneUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Animations\EMVInsertRegularCheckoutUserControl.xaml.cs">
+      <DependentUpon>EMVInsertRegularCheckoutUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Animations\EMVSwipeCardUserControl.xaml.cs">
+      <DependentUpon>EMVSwipeCardUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Animations\EMVTapPhoneUserControl.xaml.cs">
+      <DependentUpon>EMVTapPhoneUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Animations\EMVTapRegularCheckoutUserControl.xaml.cs">
+      <DependentUpon>EMVTapRegularCheckoutUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Animations\EMVTapSignInUserControl.xaml.cs">
+      <DependentUpon>EMVTapSignInUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Animations\EMVTapSignInUserControlCommands.cs" />
+    <Compile Include="Controls\Animations\EncryptedSwipeHandAndCardUserControl.xaml.cs">
+      <DependentUpon>EncryptedSwipeHandAndCardUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Animations\EncryptedSwipeRegularCheckoutUserControl.xaml.cs">
+      <DependentUpon>EncryptedSwipeRegularCheckoutUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Animations\EncryptedSwipeReservationPickupUserControl.xaml.cs">
+      <DependentUpon>EncryptedSwipeReservationPickupUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Animations\InsertDiscAnimationUserControl.xaml.cs">
+      <DependentUpon>InsertDiscAnimationUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Animations\ISwipeAnimationControl.cs" />
+    <Compile Include="Controls\Animations\IVendDiscAnimationControl.cs" />
+    <Compile Include="Controls\Animations\RedboxDiscUserControl.xaml.cs">
+      <DependentUpon>RedboxDiscUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Animations\RedChevronUserControl.xaml.cs">
+      <DependentUpon>RedChevronUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Animations\SpinnerUserControl.xaml.cs">
+      <DependentUpon>SpinnerUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Animations\SwipeHandAndCardUserControl.xaml.cs">
+      <DependentUpon>SwipeHandAndCardUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Animations\SwipeRegularCheckOutUserControl.xaml.cs">
+      <DependentUpon>SwipeRegularCheckOutUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Animations\VendDiscAnimationUserControl.xaml.cs">
+      <DependentUpon>VendDiscAnimationUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AspectRatioLayoutDecorator.cs" />
+    <Compile Include="Controls\BaseUserControl.cs" />
+    <Compile Include="Controls\BoxArtDisplayUserControl.xaml.cs">
+      <DependentUpon>BoxArtDisplayUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\BrowseCheckOutBarUserControl.xaml.cs">
+      <DependentUpon>BrowseCheckOutBarUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\BrowseFilterBarUserControl.xaml.cs">
+      <DependentUpon>BrowseFilterBarUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\BrowseGroupSelectionUserControl.xaml.cs">
+      <DependentUpon>BrowseGroupSelectionUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\BrowseMessagePopupUserControl.xaml.cs">
+      <DependentUpon>BrowseMessagePopupUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\BrowsePageNumberChangedEvent.cs" />
+    <Compile Include="Controls\BrowseRedboxPlusTooltipUserControl.xaml.cs">
+      <DependentUpon>BrowseRedboxPlusTooltipUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\BrowseTopMenuUserControl.xaml.cs">
+      <DependentUpon>BrowseTopMenuUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\BrowseTopMenuUserControlCommands.cs" />
+    <Compile Include="Controls\BrowseUserControl.xaml.cs">
+      <DependentUpon>BrowseUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CheckMarkButtonUserControl.xaml.cs">
+      <DependentUpon>CheckMarkButtonUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ChevronUserControl.xaml.cs">
+      <DependentUpon>ChevronUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ComingSoonVendUserControl.xaml.cs">
+      <DependentUpon>ComingSoonVendUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CrossfadeImageRotatorUserControl.xaml.cs">
+      <DependentUpon>CrossfadeImageRotatorUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DigitalCodePopupUserControl.xaml.cs">
+      <DependentUpon>DigitalCodePopupUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DisplayProductAToZUserControl.xaml.cs">
+      <DependentUpon>DisplayProductAToZUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DisplayProductBrowseUserControl.xaml.cs">
+      <DependentUpon>DisplayProductBrowseUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DisplayProductCarouselUserControl.xaml.cs">
+      <DependentUpon>DisplayProductCarouselUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DisplayProductCheckoutSpecialOfferActionUserControl.xaml.cs">
+      <DependentUpon>DisplayProductCheckoutSpecialOfferActionUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DisplayProductCheckoutUserControl.xaml.cs">
+      <DependentUpon>DisplayProductCheckoutUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DisplayProductMoreLikeThisUserControl.xaml.cs">
+      <DependentUpon>DisplayProductMoreLikeThisUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DisplayProductUpsellUserControl.xaml.cs">
+      <DependentUpon>DisplayProductUpsellUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DisplayProductUserControl.xaml.cs">
+      <DependentUpon>DisplayProductUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DisplayProductWithCommandsUserControl.xaml.cs">
+      <DependentUpon>DisplayProductWithCommandsUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DisplayProductWithPriceBrowseUserControl.xaml.cs">
+      <DependentUpon>DisplayProductWithPriceBrowseUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DisplayProductWithSpecialActionADA.xaml.cs">
+      <DependentUpon>DisplayProductWithSpecialActionADA.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DisplayProductWithTextFooterUserControl.xaml.cs">
+      <DependentUpon>DisplayProductWithTextFooterUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\EllipsesInfo.cs" />
+    <Compile Include="Controls\HelpDocViewUserControl.xaml.cs">
+      <DependentUpon>HelpDocViewUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ItemInfo.cs" />
+    <Compile Include="Controls\JoinedUserControl.xaml.cs">
+      <DependentUpon>JoinedUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\JoinedUserControl1.cs" />
+    <Compile Include="Controls\JoinedUserControl2.cs" />
+    <Compile Include="Controls\KeyboardMode.cs" />
+    <Compile Include="Controls\KeyboardUserControl.xaml.cs">
+      <DependentUpon>KeyboardUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\KeypadUserControl.xaml.cs">
+      <DependentUpon>KeypadUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\KeypadUserControlCommands.cs" />
+    <Compile Include="Controls\KeyState.cs" />
+    <Compile Include="Controls\OfferInfoUserControl.xaml.cs">
+      <DependentUpon>OfferInfoUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PageButtonInfo.cs" />
+    <Compile Include="Controls\PageButtonPressedArgs.cs" />
+    <Compile Include="Controls\PageButtonType.cs" />
+    <Compile Include="Controls\PagingButtonsControl.xaml.cs">
+      <DependentUpon>PagingButtonsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PagingButtonsControlCommands.cs" />
+    <Compile Include="Controls\PerksIconBanner.xaml.cs">
+      <DependentUpon>PerksIconBanner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PerksOfferActiveListItem.xaml.cs">
+      <DependentUpon>PerksOfferActiveListItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PerksOfferCompletedListItem.xaml.cs">
+      <DependentUpon>PerksOfferCompletedListItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PerksOfferListDataTemplateSelector.cs" />
+    <Compile Include="Controls\PhoneNumberTextBlockUserControl.xaml.cs">
+      <DependentUpon>PhoneNumberTextBlockUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PricingUserControl.xaml.cs">
+      <DependentUpon>PricingUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\QRCodeDisplayUserControl.xaml.cs">
+      <DependentUpon>QRCodeDisplayUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\RedboxClassicProductCarouselUserControl.xaml.cs">
+      <DependentUpon>RedboxClassicProductCarouselUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\RedboxProductCarouselUserControl.xaml.cs">
+      <DependentUpon>RedboxProductCarouselUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\RemoveQuickChipCardUserControl.xaml.cs">
+      <DependentUpon>RemoveQuickChipCardUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\RentalUserControl.cs" />
+    <Compile Include="Controls\StoredPromoCodeListControl.xaml.cs">
+      <DependentUpon>StoredPromoCodeListControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\StoredPromoCodeListItem.xaml.cs">
+      <DependentUpon>StoredPromoCodeListItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\StyledTextUserControl.xaml.cs">
+      <DependentUpon>StyledTextUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TextToSpeechUserControl.cs" />
+    <Compile Include="Controls\TitleDetailDisplayProductWithMoreLikeThisUserControl.xaml.cs">
+      <DependentUpon>TitleDetailDisplayProductWithMoreLikeThisUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TitleDetailsDevLabelValueUserControl.xaml.cs">
+      <DependentUpon>TitleDetailsDevLabelValueUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TitleRollupOverlayUserControl.xaml.cs">
+      <DependentUpon>TitleRollupOverlayUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicRoutedCommand.cs" />
+    <Compile Include="DynamicRouting.cs" />
+    <Compile Include="Models\AbstractViewModel.cs" />
+    <Compile Include="Models\AnimatedDiscReturnViewModel.cs" />
+    <Compile Include="Models\ApplyPromoViewModel.cs" />
+    <Compile Include="Models\AvodLeadGenerationOfferViewModel.cs" />
+    <Compile Include="Models\BaseModel.cs" />
+    <Compile Include="Models\BrowseControlModel.cs" />
+    <Compile Include="Models\BrowseItemModel.cs" />
+    <Compile Include="Models\BrowseItemModelEvent.cs" />
+    <Compile Include="Models\BrowseItemsModelEvent.cs" />
+    <Compile Include="Models\BrowseLayoutDirection.cs" />
+    <Compile Include="Models\BrowseMessagePopupModel.cs" />
+    <Compile Include="Models\BrowseRedboxPlusTooltipModel.cs" />
+    <Compile Include="Models\BrowseViewModel.cs" />
+    <Compile Include="Models\BulletListPopupViewModel.cs" />
+    <Compile Include="Models\ButtonData.cs" />
+    <Compile Include="Models\CarouselModel.cs" />
+    <Compile Include="Models\CarouselTestModel.cs" />
+    <Compile Include="Models\CheckMarkButtonModel.cs" />
+    <Compile Include="Models\ClickableImageModel.cs" />
+    <Compile Include="Models\ConfirmEmailModel.cs" />
+    <Compile Include="Models\DesignTime\DesignHelpViewModel.cs" />
+    <Compile Include="Models\DesignTime\DesignOptionSelectionDialogViewModel.cs" />
+    <Compile Include="Models\DesignTime\DesignStoredPromoCodeListModel.cs" />
+    <Compile Include="Models\DisplayCheckoutProductModel.cs" />
+    <Compile Include="Models\DisplayGroupModel.cs" />
+    <Compile Include="Models\DisplayGroupSelectionItemModel.cs" />
+    <Compile Include="Models\DisplayGroupSelectionModel.cs" />
+    <Compile Include="Models\DisplayProductCheckoutSpecialOfferActionModel.cs" />
+    <Compile Include="Models\DisplayProductModel.cs" />
+    <Compile Include="Models\DisplayProductModelConstants.cs" />
+    <Compile Include="Models\DisplayProductMoreLikeThisModel.cs" />
+    <Compile Include="Models\DisplayProductWithPriceModel.cs" />
+    <Compile Include="Models\DisplayProductWithTextFooterModel.cs" />
+    <Compile Include="Models\DisplayUpsellProductModel.cs" />
+    <Compile Include="Models\EmailOptInViewModel.cs" />
+    <Compile Include="Models\FilterBarModel.cs" />
+    <Compile Include="Models\FormatButtonData.cs" />
+    <Compile Include="Models\FormatSelectionPopupViewModel.cs" />
+    <Compile Include="Models\GeneralMessageViewModel.cs" />
+    <Compile Include="Models\GenreButtonModel.cs" />
+    <Compile Include="Models\GenreSelectionPopupViewModel.cs" />
+    <Compile Include="Models\HelpButtonData.cs" />
+    <Compile Include="Models\HelpViewModel.cs" />
+    <Compile Include="Models\IBaseModel.cs" />
+    <Compile Include="Models\IdleTimeoutMessageViewModel.cs" />
+    <Compile Include="Models\IPerksOfferListItem.cs" />
+    <Compile Include="Models\IProcessTextToSpeech.cs" />
+    <Compile Include="Models\IPromoListModel.cs" />
+    <Compile Include="Models\ITitleRollupFormatButtonTextValues.cs" />
+    <Compile Include="Models\KeyboardModel.cs" />
+    <Compile Include="Models\KeypadModel.cs" />
+    <Compile Include="Models\LeadGenerationOfferConfirmationViewModel.cs" />
+    <Compile Include="Models\LoginModel.cs" />
+    <Compile Include="Models\MaintenanceViewModel.cs" />
+    <Compile Include="Models\MarketingScreenSaverModel.cs" />
+    <Compile Include="Models\MemberPerksModel.cs" />
+    <Compile Include="Models\MemberPerksPopupViewModel.cs" />
+    <Compile Include="Models\MemberPointsModel.cs" />
+    <Compile Include="Models\MessagePopupViewModel.cs" />
+    <Compile Include="Models\MultiDiscVendViewModel.cs" />
+    <Compile Include="Models\MultiNightPricingPopupViewModel.cs" />
+    <Compile Include="Models\NewCartConfirmADAActionUpdateViewModel.cs" />
+    <Compile Include="Models\NewCartConfirmViewModel.cs" />
+    <Compile Include="Models\OfferAbandonConfirmModel.cs" />
+    <Compile Include="Models\OfferInfoModel.cs" />
+    <Compile Include="Models\OptionSelectionDialogViewModel.cs" />
+    <Compile Include="Models\PageChangedEvent.cs" />
+    <Compile Include="Models\PageChangeSource.cs" />
+    <Compile Include="Models\PerksConfirmViewModel.cs" />
+    <Compile Include="Models\PerksOfferDetailsViewModel.cs" />
+    <Compile Include="Models\PerksOfferListItemModel.cs" />
+    <Compile Include="Models\PerksSignUpInfoPopupViewModel.cs" />
+    <Compile Include="Models\PerksThanksViewModel.cs" />
+    <Compile Include="Models\PhoneAndPinViewModel.cs" />
+    <Compile Include="Models\PleaseWaitMessageViewModel.cs" />
+    <Compile Include="Models\PleaseWaitViewModel.cs" />
+    <Compile Include="Models\PresentOffersViewModel.cs" />
+    <Compile Include="Models\PricingModel.cs" />
+    <Compile Include="Models\PromoConfirmationViewModel.cs" />
+    <Compile Include="Models\PromoOfferBrowseViewModel.cs" />
+    <Compile Include="Models\RatingButtonModel.cs" />
+    <Compile Include="Models\RatingSelectionPopupViewModel.cs" />
+    <Compile Include="Models\RecommendationOnPickupViewModel.cs" />
+    <Compile Include="Models\RecommendedTitlesPopupViewModel.cs" />
+    <Compile Include="Models\RedboxPlusInfoPopupViewModel.cs" />
+    <Compile Include="Models\RedboxPlusLeadGenerationOfferViewModel.cs" />
+    <Compile Include="Models\RedboxPlusOfferDetailViewModel.cs" />
+    <Compile Include="Models\RedboxPlusOfferSelectionViewModel.cs" />
+    <Compile Include="Models\RedboxPlusTermsAcceptanceViewModel.cs" />
+    <Compile Include="Models\RemoveCardViewModel.cs" />
+    <Compile Include="Models\ReservationDetailsViewModel.cs" />
+    <Compile Include="Models\ReturnViewModel.cs" />
+    <Compile Include="Models\ReturnVisitPromoOfferViewModel.cs" />
+    <Compile Include="Models\ShoppingCartUpdateADAViewModel.cs" />
+    <Compile Include="Models\ShoppingCartViewModel.cs" />
+    <Compile Include="Models\SignInThanksViewModel.cs" />
+    <Compile Include="Models\SignInViewModel.cs" />
+    <Compile Include="Models\SimpleModel.cs" />
+    <Compile Include="Models\SortButtonModel.cs" />
+    <Compile Include="Models\SortSelectionPopupViewModel.cs" />
+    <Compile Include="Models\StartViewModel.cs" />
+    <Compile Include="Models\StoredPromoCodeModel.cs" />
+    <Compile Include="Models\StyledTextModel.cs" />
+    <Compile Include="Models\SubscriptionSignUpConfirmationViewModel.cs" />
+    <Compile Include="Models\TilteDetailRentalFormatButtonData.cs" />
+    <Compile Include="Models\TitleDetailDevModel.cs" />
+    <Compile Include="Models\TitleDetailModel.cs" />
+    <Compile Include="Models\TitleDetailsFullDetailsPopupViewModel.cs" />
+    <Compile Include="Models\TitleDetailsWatchOptionsPopupViewModel.cs" />
+    <Compile Include="Models\TitleProductDetailDevModel.cs" />
+    <Compile Include="Models\TitleRollupOverlayButtonTextValues.cs" />
+    <Compile Include="Models\TitleRollupOverlayModel.cs" />
+    <Compile Include="Models\TopMenuModel.cs" />
+    <Compile Include="Models\TYPES.cs" />
+    <Compile Include="Models\UpsellViewModel.cs" />
+    <Compile Include="Models\UserData.cs" />
+    <Compile Include="Models\VendViewModel.cs" />
+    <Compile Include="Models\VisibilityChanged.cs" />
+    <Compile Include="Models\VsmViewModel.cs" />
+    <Compile Include="Models\WelcomeViewModel.cs" />
+    <Compile Include="Models\ZipCodeViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <DependentUpon>Settings.settings</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Views\AnalyticsTypes.cs" />
+    <Compile Include="Views\AnimatedDiscReturnCommands.cs" />
+    <Compile Include="Views\AnimatedDiscReturnViewParameter.cs" />
+    <Compile Include="Views\AnimatedDiscReturnViewUserControl.xaml.cs">
+      <DependentUpon>AnimatedDiscReturnViewUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ApplicationLoadViewUserControl.xaml.cs">
+      <DependentUpon>ApplicationLoadViewUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ApplyPromoInfo.cs" />
+    <Compile Include="Views\ApplyPromoViewUserControl.xaml.cs">
+      <DependentUpon>ApplyPromoViewUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AvodLeadGenerationOfferViewParameters.cs" />
+    <Compile Include="Views\AvodLeadGenerationOfferViewUserControl.xaml.cs">
+      <DependentUpon>AvodLeadGenerationOfferViewUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AvodLeadGenerationOfferViewUserControlCommands.cs" />
+    <Compile Include="Views\BrowseViewParameters.cs" />
+    <Compile Include="Views\BrowseViewUserControl.xaml.cs">
+      <DependentUpon>BrowseViewUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BulletListPopupViewUserControl.xaml.cs">
+      <DependentUpon>BulletListPopupViewUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ComingSoonViewUserControl.xaml.cs">
+      <DependentUpon>ComingSoonViewUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Commands.cs" />
+    <Compile Include="Views\Constants.cs" />
+    <Compile Include="Views\DisplayTypeToSelectedConverter.cs" />
+    <Compile Include="Views\EmailOptInViewUserControl.xaml.cs">
+      <DependentUpon>EmailOptInViewUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EmailReceiptInfo.cs" />
+    <Compile Include="Views\EmailReceiptViewControl.xaml.cs">
+      <DependentUpon>EmailReceiptViewControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FormatSelectionPopupUserControl.xaml.cs">
+      <DependentUpon>FormatSelectionPopupUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FormatSelectionPopupViewUserControlCommands.cs" />
+    <Compile Include="Views\GeneralMessageViewUserControl.xaml.cs">
+      <DependentUpon>GeneralMessageViewUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GenreSelectionPopupViewUserControl.xaml.cs">
+      <DependentUpon>GenreSelectionPopupViewUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GenreSelectionPopupViewUserControlCommands.cs" />
+    <Compile Include="Views\HelpViewCommands.cs" />
+    <Compile Include="Views\HelpViewUserControl.xaml.cs">
+      <DependentUpon>HelpViewUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\IdleTimeoutMessageViewUserControl.xaml.cs">
+      <DependentUpon>IdleTimeoutMessageViewUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\JoinedTextClubViewControl.xaml.cs">
+      <DependentUpon>JoinedTextClubViewControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\KeyboardComingSoonUserControl.xaml.cs">
+      <DependentUpon>KeyboardComingSoonUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\KeyboardControl.cs" />
+    <Compile Include="Views\KeyboardEmailChangedViewControl.xaml.cs">
+      <DependentUpon>KeyboardEmailChangedViewControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\KeyboardEmailReceiptViewControl.xaml.cs">
+      <DependentUpon>KeyboardEmailReceiptViewControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\KeyboardInfo.cs" />
+    <Compile Include="Views\KeyboardLeadGenerationSignupViewUserControl.xaml.cs">
+      <DependentUpon>KeyboardLeadGenerationSignupViewUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\KeyboardPerksSignupViewControl.xaml.cs">
+      <DependentUpon>KeyboardPerksSignupViewControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\KeyboardPromoCodeViewControl.xaml.cs">
+      <DependentUpon>KeyboardPromoCodeViewControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\KeyboardRedboxPlusSignupViewUserControl.xaml.cs">
+      <DependentUpon>KeyboardRedboxPlusSignupViewUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\KeyboardSignInViewControl.xaml.cs">
+      <DependentUpon>KeyboardSignInViewControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LeadGenerationOfferConfirmationViewParameters.cs" />
+    <Compile Include="Views\LeadGenerationOfferConfirmationViewUserControl.xaml.cs">
+      <DependentUpon>LeadGenerationOfferConfirmationViewUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LeadGenerationOfferConfirmationViewUserControlCommands.cs" />
+    <Compile Include="Views\LoginInfo.cs" />
+    <Compile Include="Views\MaintenanceViewParameters.cs" />
+    <Compile Include="Views\MaintenanceViewUserControl.xaml.cs">
+      <DependentUpon>MaintenanceViewUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MarketingScreenSaverUserControl.xaml.cs">
+      <DependentUpon>MarketingScreenSaverUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MemberPerksPopupView.xaml.cs">
+      <DependentUpon>MemberPerksPopupView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MemberPerksViewControl.xaml.cs">
+      <DependentUpon>MemberPerksViewControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MemberPointsViewControl.xaml.cs">
+      <DependentUpon>MemberPointsViewControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MessagePopupViewCommands.cs" />
+    <Compile Include="Views\MessagePopupViewUserControl.xaml.cs">
+      <DependentUpon>MessagePopupViewUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MultiDiscVendViewUserControl.xaml.cs">
+      <DependentUpon>MultiDiscVendViewUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MultiNightPricingPopupInfo.cs" />
+    <Compile Include="Views\MultiNightPricingPopupViewUserControl.xaml.cs">
+      <DependentUpon>MultiNightPricingPopupViewUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MultiNightPricingPopupViewUserControlCommands.cs" />
+    <Compile Include="Views\NewCartConfirmADAActionUpdate.xaml.cs">
+      <DependentUpon>NewCartConfirmADAActionUpdate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NewCartConfirmviewParameters.cs" />
+    <Compile Include="Views\NewCartConfirmViewUserControl.xaml.cs">
+      <DependentUpon>NewCartConfirmViewUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OfferAbandonConfirmInfo.cs" />
+    <Compile Include="Views\OfferAbandonConfirmViewUserControl.xaml.cs">
+      <DependentUpon>OfferAbandonConfirmViewUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OptionSelectionDialogInfo.cs" />
+    <Compile Include="Views\OptionSelectionDialogUserControl.xaml.cs">
+      <DependentUpon>OptionSelectionDialogUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PerksConfirmViewUserControl.xaml.cs">
+      <DependentUpon>PerksConfirmViewUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PerksMemberInfo.cs" />
+    <Compile Include="Views\PerksOfferDetailsViewUserControl.xaml.cs">
+      <DependentUpon>PerksOfferDetailsViewUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PerksOfferDetailsViewUserControlCommands.cs" />
+    <Compile Include="Views\PerksPopupInfo.cs" />
+    <Compile Include="Views\PerksSignupAlreadyMemberOptInViewInfo.cs" />
+    <Compile Include="Views\PerksSignUpAlreadyMemberOptInViewUserControl.xaml.cs">
+      <DependentUpon>PerksSignUpAlreadyMemberOptInViewUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PerksSignUpAlreadyMemberViewUserControl.xaml.cs">
+      <DependentUpon>PerksSignUpAlreadyMemberViewUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PerksSignUpInfoPopupViewUserControl.xaml.cs">
+      <DependentUpon>PerksSignUpInfoPopupViewUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PerksThanksInfo.cs" />
+    <Compile Include="Views\PerksThanksViewUserControl.xaml.cs">
+      <DependentUpon>PerksThanksViewUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PhoneAndPinInfo.cs" />
+    <Compile Include="Views\PhoneAndPinViewUserControl.xaml.cs">
+      <DependentUpon>PhoneAndPinViewUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PhoneAndPinViewUserControlCommands.cs" />
+    <Compile Include="Views\PleaseWaitMessageViewUserControl.xaml.cs">
+      <DependentUpon>PleaseWaitMessageViewUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PleaseWaitParameters.cs" />
+    <Compile Include="Views\PleaseWaitViewControl.xaml.cs">
+      <DependentUpon>PleaseWaitViewControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PointsMemberInfo.cs" />
+    <Compile Include="Views\PresentOffersViewInfo.cs" />
+    <Compile Include="Views\PresentOffersViewUserControl.xaml.cs">
+      <DependentUpon>PresentOffersViewUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PromoConfirmationInfo.cs" />
+    <Compile Include="Views\PromoConfirmationViewUserControl.xaml.cs">
+      <DependentUpon>PromoConfirmationViewUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PromoOfferBrowseInfo.cs" />
+    <Compile Include="Views\PromoOfferBrowseViewUserControl.xaml.cs">
+      <DependentUpon>PromoOfferBrowseViewUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RatingSelectionPopupViewUserControl.xaml.cs">
+      <DependentUpon>RatingSelectionPopupViewUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RatingSelectionPopupViewUserControlCommands.cs" />
+    <Compile Include="Views\RecommendationOnPickupViewUserControl.xaml.cs">
+      <DependentUpon>RecommendationOnPickupViewUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RecommendedTitlesPopupInfo.cs" />
+    <Compile Include="Views\RecommendedTitlesPopupViewUserControl.xaml.cs">
+      <DependentUpon>RecommendedTitlesPopupViewUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RecommendedTitlesPopupViewUserControlCommands.cs" />
+    <Compile Include="Views\RedboxPlusInfoPopupViewUserControl.xaml.cs">
+      <DependentUpon>RedboxPlusInfoPopupViewUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RedboxPlusInfoPopupViewUserControlCommands.cs" />
+    <Compile Include="Views\RedboxPlusLeadGenerationOfferViewParameters.cs" />
+    <Compile Include="Views\RedboxPlusLeadGenerationOfferViewUserControl.xaml.cs">
+      <DependentUpon>RedboxPlusLeadGenerationOfferViewUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RedboxPlusLeadGenerationOfferViewUserControlCommands.cs" />
+    <Compile Include="Views\RedboxPlusOfferDetailViewUserControl.xaml.cs">
+      <DependentUpon>RedboxPlusOfferDetailViewUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RedboxPlusOfferSelectionUserControl.xaml.cs">
+      <DependentUpon>RedboxPlusOfferSelectionUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RedboxPlusTermsAcceptanceViewUserControl.xaml.cs">
+      <DependentUpon>RedboxPlusTermsAcceptanceViewUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RemoveCardViewParameters.cs" />
+    <Compile Include="Views\RemoveCardViewUserControl.xaml.cs">
+      <DependentUpon>RemoveCardViewUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ReservationDetailsViewUserControl.xaml.cs">
+      <DependentUpon>ReservationDetailsViewUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ReturnViewCommands.cs" />
+    <Compile Include="Views\ReturnViewUserControl.xaml.cs">
+      <DependentUpon>ReturnViewUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ReturnVisitPromoOfferViewParameters.cs" />
+    <Compile Include="Views\ReturnVisitPromoOfferViewUserControl.xaml.cs">
+      <DependentUpon>ReturnVisitPromoOfferViewUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ReturnVisitPromoOfferViewUserControlCommands.cs" />
+    <Compile Include="Views\ShoppingCartUpdateADAViewUserControl.xaml.cs">
+      <DependentUpon>ShoppingCartUpdateADAViewUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ShoppingCartViewUserControl.xaml.cs">
+      <DependentUpon>ShoppingCartViewUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SignInCancelButtonTypes.cs" />
+    <Compile Include="Views\SignInThanksViewParameters.cs" />
+    <Compile Include="Views\SignInThanksViewUserControl.xaml.cs">
+      <DependentUpon>SignInThanksViewUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SignInViewUserControl.xaml.cs">
+      <DependentUpon>SignInViewUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SimpleInfo.cs" />
+    <Compile Include="Views\SimpleInfoWithSignUpFlow.cs" />
+    <Compile Include="Views\SonySweepstakesConfirmationViewInfo.cs" />
+    <Compile Include="Views\SonySweepstakesConfirmationViewUserControl.xaml.cs">
+      <DependentUpon>SonySweepstakesConfirmationViewUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SortSelectionPopupViewUserControl.xaml.cs">
+      <DependentUpon>SortSelectionPopupViewUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SortSelectionPopupViewUserControlCommands.cs" />
+    <Compile Include="Views\StartViewContainerUserControl.xaml.cs">
+      <DependentUpon>StartViewContainerUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\StartViewPrototypeUserControl.xaml.cs">
+      <DependentUpon>StartViewPrototypeUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\StartViewRentAndBuyTestUserControl.xaml.cs">
+      <DependentUpon>StartViewRentAndBuyTestUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\StartViewScreenSaverUserControl.xaml.cs">
+      <DependentUpon>StartViewScreenSaverUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\StartViewTestUserControl.xaml.cs">
+      <DependentUpon>StartViewTestUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\StartViewUserControl.xaml.cs">
+      <DependentUpon>StartViewUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SubscriptionSignUpConfirmationViewUserControl.xaml.cs">
+      <DependentUpon>SubscriptionSignUpConfirmationViewUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SwipeViewCommands.cs" />
+    <Compile Include="Views\SwipeViewModel.cs" />
+    <Compile Include="Views\SwipeViewType.cs" />
+    <Compile Include="Views\SwipeViewTypeExtensions.cs" />
+    <Compile Include="Views\SwipeViewUserControl.xaml.cs">
+      <DependentUpon>SwipeViewUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SymbolMode.cs" />
+    <Compile Include="Views\TitleDetailsDevViewUserControl.xaml.cs">
+      <DependentUpon>TitleDetailsDevViewUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TitleDetailsFullDetailsPopupViewInfo.cs" />
+    <Compile Include="Views\TitleDetailsFullDetailsPopupViewUserControl.xaml.cs">
+      <DependentUpon>TitleDetailsFullDetailsPopupViewUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TitleDetailsFullDetailsPopupViewUserControlCommands.cs" />
+    <Compile Include="Views\TitleDetailsUserControl.xaml.cs">
+      <DependentUpon>TitleDetailsUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TitleDetailsWatchOptionsPopupViewParameter.cs" />
+    <Compile Include="Views\TitleDetailsWatchOptionsPopupViewUserControl.xaml.cs">
+      <DependentUpon>TitleDetailsWatchOptionsPopupViewUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TitleDetailsWatchOptionsPopupViewUserControlCommands.cs" />
+    <Compile Include="Views\UpsellViewUserControl.xaml.cs">
+      <DependentUpon>UpsellViewUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VendingInfo.cs" />
+    <Compile Include="Views\VendViewType.cs" />
+    <Compile Include="Views\VendViewUserControl.xaml.cs">
+      <DependentUpon>VendViewUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ViewUserControl.cs" />
+    <Compile Include="Views\VsmViewUserControl.xaml.cs">
+      <DependentUpon>VsmViewUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WelcomeViewUserControl.xaml.cs">
+      <DependentUpon>WelcomeViewUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ZipCodeViewUserControl.xaml.cs">
+      <DependentUpon>ZipCodeViewUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ZipCodeViewUserControlCommands.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resources" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="assets\styledictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Animations\EMVInsertAndTapCardUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Animations\EMVInsertAndTapHideMobilePickupUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Animations\EMVInsertAndTapHideMobileRegularCheckoutUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Animations\EMVInsertAndTapRegularCheckoutUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Animations\EmvInsertAndTapUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Animations\EMVInsertCardAndTapPhoneUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Animations\EMVInsertRegularCheckoutUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Animations\EMVSwipeCardUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Animations\EMVTapPhoneUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Animations\EMVTapRegularCheckoutUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Animations\EMVTapSignInUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Animations\EncryptedSwipeHandAndCardUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Animations\EncryptedSwipeRegularCheckoutUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Animations\EncryptedSwipeReservationPickupUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Animations\InsertDiscAnimationUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Animations\RedboxDiscUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Animations\RedChevronUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Animations\SpinnerUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Animations\SwipeHandAndCardUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Animations\SwipeRegularCheckOutUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Animations\VendDiscAnimationUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\BoxArtDisplayUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\BrowseCheckOutBarUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\BrowseFilterBarUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\BrowseGroupSelectionUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\BrowseMessagePopupUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\BrowseRedboxPlusTooltipUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\BrowseTopMenuUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\BrowseUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\CheckMarkButtonUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ChevronUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ComingSoonVendUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\CrossfadeImageRotatorUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\DigitalCodePopupUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\DisplayProductAToZUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\DisplayProductBrowseUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\DisplayProductCarouselUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\DisplayProductCheckoutSpecialOfferActionUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\DisplayProductCheckoutUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\DisplayProductMoreLikeThisUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\DisplayProductUpsellUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\DisplayProductUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\DisplayProductWithCommandsUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\DisplayProductWithPriceBrowseUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\DisplayProductWithSpecialActionADA.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\DisplayProductWithTextFooterUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\HelpDocViewUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\JoinedUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\KeyboardUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\KeypadUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\OfferInfoUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\PagingButtonsControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\PerksIconBanner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\PerksOfferActiveListItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\PerksOfferCompletedListItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\PhoneNumberTextBlockUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\PricingUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\QRCodeDisplayUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\RedboxClassicProductCarouselUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\RedboxProductCarouselUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\RemoveQuickChipCardUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\StoredPromoCodeListControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\StoredPromoCodeListItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\StyledTextUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\TitleDetailDisplayProductWithMoreLikeThisUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\TitleDetailsDevLabelValueUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\TitleRollupOverlayUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\welcomeusercontrol1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\welcomeusercontrol2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AnimatedDiscReturnViewUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ApplicationLoadViewUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ApplyPromoViewUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AvodLeadGenerationOfferViewUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\BrowseViewUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\BulletListPopupViewUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ComingSoonViewUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EmailOptInViewUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EmailReceiptViewControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\FormatSelectionPopupUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\GeneralMessageViewUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\GenreSelectionPopupViewUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\HelpViewUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\IdleTimeoutMessageViewUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\JoinedTextClubViewControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\KeyboardComingSoonUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\KeyboardEmailChangedViewControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\KeyboardEmailReceiptViewControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\KeyboardLeadGenerationSignupViewUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\KeyboardPerksSignupViewControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\KeyboardPromoCodeViewControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\KeyboardRedboxPlusSignupViewUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\KeyboardSignInViewControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LeadGenerationOfferConfirmationViewUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MaintenanceViewUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MarketingScreenSaverUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MemberPerksPopupView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MemberPerksViewControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MemberPointsViewControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MessagePopupViewUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MultiDiscVendViewUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MultiNightPricingPopupViewUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\NewCartConfirmADAActionUpdate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\NewCartConfirmViewUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\OfferAbandonConfirmViewUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\OptionSelectionDialogUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PerksConfirmViewUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PerksOfferDetailsViewUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PerksSignUpAlreadyMemberOptInViewUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PerksSignUpAlreadyMemberViewUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PerksSignUpInfoPopupViewUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PerksThanksViewUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PhoneAndPinViewUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PleaseWaitMessageViewUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PleaseWaitViewControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PresentOffersViewUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PromoConfirmationViewUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PromoOfferBrowseViewUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RatingSelectionPopupViewUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RecommendationOnPickupViewUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RecommendedTitlesPopupViewUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RedboxPlusInfoPopupViewUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RedboxPlusLeadGenerationOfferViewUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RedboxPlusOfferDetailViewUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RedboxPlusOfferSelectionUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RedboxPlusTermsAcceptanceViewUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RemoveCardViewUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ReservationDetailsViewUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ReturnViewUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ReturnVisitPromoOfferViewUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ShoppingCartUpdateADAViewUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ShoppingCartViewUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SignInThanksViewUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SignInViewUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SonySweepstakesConfirmationViewUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SortSelectionPopupViewUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\StartViewContainerUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\StartViewPrototypeUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\StartViewRentAndBuyTestUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\StartViewScreenSaverUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\StartViewTestUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\StartViewUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SubscriptionSignUpConfirmationViewUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SwipeViewUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TitleDetailsDevViewUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TitleDetailsFullDetailsPopupViewUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TitleDetailsUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TitleDetailsWatchOptionsPopupViewUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UpsellViewUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\VendViewUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\VsmViewUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WelcomeViewUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ZipCodeViewUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="assets\fonts\akzidenzgroteskbe-bold.ttf" />
+    <Resource Include="assets\fonts\akzidenzgroteskbe-regular.ttf" />
+    <Resource Include="assets\fonts\bryant-boldcondensed.ttf" />
+    <Resource Include="assets\fonts\bryant-lightcondensed.ttf" />
+    <Resource Include="assets\fonts\bryant-mediumcondensed.ttf" />
+    <Resource Include="assets\fonts\bryant-regularcondensed.ttf" />
+    <Resource Include="assets\fonts\coopertl-black.ttf" />
+    <Resource Include="assets\fonts\exljbris - museoslab-100.otf" />
+    <Resource Include="assets\fonts\exljbris - museoslab-1000.otf" />
+    <Resource Include="assets\fonts\exljbris - museoslab-1000italic.otf" />
+    <Resource Include="assets\fonts\exljbris - museoslab-100italic.otf" />
+    <Resource Include="assets\fonts\exljbris - museoslab-300.otf" />
+    <Resource Include="assets\fonts\exljbris - museoslab-300italic.otf" />
+    <Resource Include="assets\fonts\exljbris - museoslab-500.otf" />
+    <Resource Include="assets\fonts\exljbris - museoslab-500italic.otf" />
+    <Resource Include="assets\fonts\exljbris - museoslab-700.otf" />
+    <Resource Include="assets\fonts\exljbris - museoslab-700italic.otf" />
+    <Resource Include="assets\fonts\exljbris - museoslab-900.otf" />
+    <Resource Include="assets\fonts\exljbris - museoslab-900italic.otf" />
+    <Resource Include="assets\fonts\montserrat-black.ttf" />
+    <Resource Include="assets\fonts\montserrat-bold.ttf" />
+    <Resource Include="assets\fonts\montserrat-bolditalic.ttf" />
+    <Resource Include="assets\fonts\montserrat-extrabold.ttf" />
+    <Resource Include="assets\fonts\montserrat-extrabolditalic.ttf" />
+    <Resource Include="assets\fonts\montserrat-extralight.ttf" />
+    <Resource Include="assets\fonts\montserrat-extralightitalic.ttf" />
+    <Resource Include="assets\fonts\montserrat-light.ttf" />
+    <Resource Include="assets\fonts\montserrat-lightitalic.ttf" />
+    <Resource Include="assets\fonts\montserrat-medium.ttf" />
+    <Resource Include="assets\fonts\montserrat-mediumitalic.ttf" />
+    <Resource Include="assets\fonts\montserrat-regular.ttf" />
+    <Resource Include="assets\fonts\montserrat-semibold.ttf" />
+    <Resource Include="assets\fonts\montserrat-semibolditalic.ttf" />
+    <Resource Include="assets\fonts\montserrat-thin.ttf" />
+    <Resource Include="assets\fonts\montserrat-thinitalic.ttf" />
+    <Resource Include="assets\fonts\tahoma.ttf" />
+    <Resource Include="assets\fonts\tahomabd.ttf" />
+    <Resource Include="assets\fonts\target-regular.ttf" />
+    <Resource Include="assets\fonts\vag-rounded-std.ttf" />
+    <Resource Include="assets\fonts\vag-rounded-stdlight.ttf" />
+    <Resource Include="assets\images\abc-key-up-arrow.png" />
+    <Resource Include="assets\images\additional-promo-stars.png" />
+    <Resource Include="assets\images\apple_pay_payment_mark_80x51.png" />
+    <Resource Include="assets\images\avod-lead-generation-offer-background-with-box-art.png" />
+    <Resource Include="assets\images\avod-lead-generation-offer-background-without-box-art.png" />
+    <Resource Include="assets\images\az-exit-icon.png" />
+    <Resource Include="assets\images\az-icon.png" />
+    <Resource Include="assets\images\back-black-arrow-gray-background.png" />
+    <Resource Include="assets\images\back-icon.png" />
+    <Resource Include="assets\images\back-rubine-arrow.png" />
+    <Resource Include="assets\images\back-white-arrow.png" />
+    <Resource Include="assets\images\background-curved.png" />
+    <Resource Include="assets\images\backgroundtexture.png" />
+    <Resource Include="assets\images\black_hand.png" />
+    <Resource Include="assets\images\cart_bg.png" />
+    <Resource Include="assets\images\case_closed_back_flipped.png" />
+    <Resource Include="assets\images\case_closed_front_flipped.png" />
+    <Resource Include="assets\images\case_closed_side-view.png" />
+    <Resource Include="assets\images\case_open_left_half.png" />
+    <Resource Include="assets\images\case_open_right_half.png" />
+    <Resource Include="assets\images\check-icon.png" />
+    <Resource Include="assets\images\checkmark.png" />
+    <Resource Include="assets\images\chevron.png" />
+    <Resource Include="assets\images\chevron_right_dark@2x.png" />
+    <Resource Include="assets\images\circle-checkmark.png" />
+    <Resource Include="assets\images\circle-empty.png" />
+    <Resource Include="assets\images\circle-star.png" />
+    <Resource Include="assets\images\clear-icon.png" />
+    <Resource Include="assets\images\close-icon.png" />
+    <Resource Include="assets\images\contactless-icon.png" />
+    <Resource Include="assets\images\credit swipe background.png" />
+    <Resource Include="assets\images\dark-purple-star-icon.png" />
+    <Resource Include="assets\images\darkpurple-lightpurple-close-icon.png" />
+    <Resource Include="assets\images\delete-key-back-arrow.png" />
+    <Resource Include="assets\images\disc.png" />
+    <Resource Include="assets\images\done-icon.png" />
+    <Resource Include="assets\images\dots-dark.png" />
+    <Resource Include="assets\images\dots.png" />
+    <Resource Include="assets\images\dots2up.png" />
+    <Resource Include="assets\images\down-arrow.png" />
+    <Resource Include="assets\images\earn-free-dvd-rental-icon.png" />
+    <Resource Include="assets\images\email_opt-in_kioskscreen_r4_full__1_.jpg" />
+    <Resource Include="assets\images\email_opt-in_kioskscreen_r4_spanish_full.jpg" />
+    <Resource Include="assets\images\emv_insert_illustration_bottom_layer.png" />
+    <Resource Include="assets\images\emv_insert_illustration_bottom_layer_purple.png" />
+    <Resource Include="assets\images\emv_insert_illustration_middle_layer.png" />
+    <Resource Include="assets\images\emv_insert_illustration_middle_layer_purple.png" />
+    <Resource Include="assets\images\emv_insert_illustration_side_layer_purple.png" />
+    <Resource Include="assets\images\emv_insert_illustration_top_layer.png" />
+    <Resource Include="assets\images\emv_insert_illustration_top_layer_purple.png" />
+    <Resource Include="assets\images\emv_swipe_illustration_bottom-layer.png" />
+    <Resource Include="assets\images\emv_swipe_illustration_middle-layer.png" />
+    <Resource Include="assets\images\emv_swipe_illustration_middle_layer_purple.png" />
+    <Resource Include="assets\images\emv_swipe_illustration_top-layer.png" />
+    <Resource Include="assets\images\emv_tap_illustration.png" />
+    <Resource Include="assets\images\emv_tap_illustration_checkmark_purple.png" />
+    <Resource Include="assets\images\emv_tap_illustration_purple.png" />
+    <Resource Include="assets\images\emv_tap_white_illustration_purple.png" />
+    <Resource Include="assets\images\game-missing-image.png" />
+    <Resource Include="assets\images\gamecontrollericoncopy.png" />
+    <Resource Include="assets\images\games@2x.png" />
+    <Resource Include="assets\images\gift-icon.png" />
+    <Resource Include="assets\images\google_pay_payment_mark_80x51.png" />
+    <Resource Include="assets\images\graychevronbackground.png" />
+    <Resource Include="assets\images\green-diagonal-stripes.png" />
+    <Resource Include="assets\images\hand purple.png" />
+    <Resource Include="assets\images\hand white.png" />
+    <Resource Include="assets\images\hand.png" />
+    <Resource Include="assets\images\handicapped icon purple.png" />
+    <Resource Include="assets\images\handicapped icon white.png" />
+    <Resource Include="assets\images\handicappedicon.png" />
+    <Resource Include="assets\images\horizontalbackgroundgradient.png" />
+    <Resource Include="assets\images\icon-additional-perks-wht.png" />
+    <Resource Include="assets\images\icon-disc-drk.png" />
+    <Resource Include="assets\images\icon-free-dvd-rental-wht.png" />
+    <Resource Include="assets\images\icon-gifts-wht.png" />
+    <Resource Include="assets\images\icon-rewards.png" />
+    <Resource Include="assets\images\image_cap_lock_key_green.png" />
+    <Resource Include="assets\images\image_cap_lock_key_white.png" />
+    <Resource Include="assets\images\image_shift_key_orange.png" />
+    <Resource Include="assets\images\image_shift_key_purple.png" />
+    <Resource Include="assets\images\image_shift_key_white.png" />
+    <Resource Include="assets\images\information.png" />
+    <Resource Include="assets\images\insert-icon-swipeonly_45x37.png" />
+    <Resource Include="assets\images\insert_disc.png" />
+    <Resource Include="assets\images\it_pays_to_play.png" />
+    <Resource Include="assets\images\jewel-case-kiosk.png" />
+    <Resource Include="assets\images\kinect-compatible-xbox-one.png" />
+    <Resource Include="assets\images\kinect-compatible.png" />
+    <Resource Include="assets\images\kinect-required-xbox-one.png" />
+    <Resource Include="assets\images\kinect-required.png" />
+    <Resource Include="assets\images\kiosk-2-pickup-icon.png" />
+    <Resource Include="assets\images\kiosk-2-return-icon.png" />
+    <Resource Include="assets\images\kiosk-closing-vsm.png" />
+    <Resource Include="assets\images\kiosk_icon.png" />
+    <Resource Include="assets\images\kiosk_image_bottom.png" />
+    <Resource Include="assets\images\kiosk_image_top.png" />
+    <Resource Include="assets\images\left-navigation-arrow.png" />
+    <Resource Include="assets\images\loading-titles-image-alt-carousel.png" />
+    <Resource Include="assets\images\logo-group.png" />
+    <Resource Include="assets\images\logo-redbox-plus-white.png" />
+    <Resource Include="assets\images\logowhite2_icon.png" />
+    <Resource Include="assets\images\logowhite3_icon.png" />
+    <Resource Include="assets\images\magnifying-glass-icon.png" />
+    <Resource Include="assets\images\member-icon.png" />
+    <Resource Include="assets\images\move-compatible.png" />
+    <Resource Include="assets\images\move-required.png" />
+    <Resource Include="assets\images\movie icon purple.png" />
+    <Resource Include="assets\images\movie icon white.png" />
+    <Resource Include="assets\images\movie-missing-image.png" />
+    <Resource Include="assets\images\movieicon_purple.png" />
+    <Resource Include="assets\images\no-mobile-tap_icon.png" />
+    <Resource Include="assets\images\nunchuk.png" />
+    <Resource Include="assets\images\orange-diagonal-stripes.png" />
+    <Resource Include="assets\images\page-1.png" />
+    <Resource Include="assets\images\perks-legend-white-icon.png" />
+    <Resource Include="assets\images\perks-star-white-icon.png" />
+    <Resource Include="assets\images\perks-superstar-white-icon.png" />
+    <Resource Include="assets\images\perks-white-logo.png" />
+    <Resource Include="assets\images\perks_legend.png" />
+    <Resource Include="assets\images\perks_star.png" />
+    <Resource Include="assets\images\perks_superstar.png" />
+    <Resource Include="assets\images\phone-text-icon.png" />
+    <Resource Include="assets\images\pick-up_2.png" />
+    <Resource Include="assets\images\pick-up_2@2x.png" />
+    <Resource Include="assets\images\pickupicon.png" />
+    <Resource Include="assets\images\points-bubble-on-card.png" />
+    <Resource Include="assets\images\product-detail-starburst-background.png" />
+    <Resource Include="assets\images\ps4-camera-required.png" />
+    <Resource Include="assets\images\ps4-move-compatible.png" />
+    <Resource Include="assets\images\ps4-move-required.png" />
+    <Resource Include="assets\images\purple-white-checkmark-lg.png" />
+    <Resource Include="assets\images\purple-white-checkmark-sm.png" />
+    <Resource Include="assets\images\purple-white-new-sm.png" />
+    <Resource Include="assets\images\qr-code-default-redbox.png" />
+    <Resource Include="assets\images\red-diagonal-stripes.png" />
+    <Resource Include="assets\images\redbox-plus-box-art.png" />
+    <Resource Include="assets\images\redboxplus-white-red.png" />
+    <Resource Include="assets\images\redbox_and_starz_logos.png" />
+    <Resource Include="assets\images\remove-card_illustration_error-screen.png" />
+    <Resource Include="assets\images\remove-card_illustration_standard-screen.png" />
+    <Resource Include="assets\images\remove-card_illustration_standard-screen_purple.png" />
+    <Resource Include="assets\images\remove-x.png" />
+    <Resource Include="assets\images\rent_and_buy_games.png" />
+    <Resource Include="assets\images\rent_and_buy_movies.png" />
+    <Resource Include="assets\images\returnicon.png" />
+    <Resource Include="assets\images\returnvisitpromo_bkg.jpg" />
+    <Resource Include="assets\images\right-arrow.png" />
+    <Resource Include="assets\images\right-navigation-arrow.png" />
+    <Resource Include="assets\images\small_progress_indecator.png" />
+    <Resource Include="assets\images\start-over-arrow.png" />
+    <Resource Include="assets\images\startoverarrow.png" />
+    <Resource Include="assets\images\starz-logo.png" />
+    <Resource Include="assets\images\starz-offer-lockup.png" />
+    <Resource Include="assets\images\tap-icon-swipeonly_79x48.png" />
+    <Resource Include="assets\images\vsm_default.jpg" />
+    <Resource Include="assets\images\vsm_header_background.png" />
+    <Resource Include="assets\images\warningnotification.png" />
+    <Resource Include="assets\images\white-dark-purple-star-icon.png" />
+    <Resource Include="assets\images\wii-fit-compatible.png" />
+    <Resource Include="assets\images\wii-fit-required.png" />
+    <Resource Include="assets\images\wii-mote.png" />
+    <Resource Include="assets\images\wii-motion-plus-compatible.png" />
+    <Resource Include="assets\images\wii-motion-plus-required.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Redbox.KioskEngine\Redbox.KioskEngine.ComponentModel\Redbox.KioskEngine.ComponentModel.csproj">
+      <Project>{eb32034a-3c1f-40cc-96a0-4995d652fcac}</Project>
+      <Name>Redbox.KioskEngine.ComponentModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Redbox.KioskEngine\Redbox.KioskEngine.Environment\Redbox.KioskEngine.Environment.csproj">
+      <Project>{486d393f-4d58-479b-8e6c-ee8648512592}</Project>
+      <Name>Redbox.KioskEngine.Environment</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Redbox\Redbox.Controls\Redbox.Controls.csproj">
+      <Project>{a9d2dd9c-f3c5-43bf-9ad9-a243519f9e25}</Project>
+      <Name>Redbox.Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Redbox\Redbox.Core\Redbox.Core.csproj">
+      <Project>{af6cd734-bf15-4031-ae7a-4167e368475d}</Project>
+      <Name>Redbox.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Redbox\Redbox.REDS.Framework\Redbox.REDS.Framework.csproj">
+      <Project>{152499bb-21cf-427f-93ac-d1efd0c77ba8}</Project>
+      <Name>Redbox.REDS.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Redbox.Rental.Model\Redbox.Rental.Model.csproj">
+      <Project>{9687a8d2-10f8-418d-b665-688be17e22ee}</Project>
+      <Name>Redbox.Rental.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

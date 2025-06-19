@@ -1,0 +1,12 @@
+<UserControl
+    x:Class="Redbox.Rental.UI.Views.StartViewPrototypeUserControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid
+        Background="#FFFF4500">
+        <TextBlock
+            FontSize="33">
+            Prototype Start View
+        </TextBlock>
+    </Grid>
+</UserControl>

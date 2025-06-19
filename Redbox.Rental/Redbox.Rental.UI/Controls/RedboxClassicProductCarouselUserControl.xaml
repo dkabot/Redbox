@@ -1,0 +1,29 @@
+<UserControl
+    x:Class="Redbox.Rental.UI.Controls.RedboxClassicProductCarouselUserControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:Redbox.Rental.UI.Controls"
+    xmlns:localbase="clr-namespace:Redbox.Rental.UI"
+    DataContextChanged="UserControl_DataContextChanged">
+    <UIElement.CommandBindings>
+        <CommandBinding
+            Command="{x:Static localbase:Commands.BrowseItemSelectedCommand}"
+            Executed="DisplayProductSelectedCommandBinding_Executed"
+            CanExecute="DisplayProductSelectedCommandBinding_CanExecute" />
+        <CommandBinding
+            Command="{x:Static localbase:Commands.BrowseItemAddCommand}"
+            Executed="DisplayProductAddCommandBinding_Executed" />
+    </UIElement.CommandBindings>
+    <Grid>
+        <Grid
+            x:Name="CarouselContainer" />
+        <local:TitleRollupOverlayUserControl
+            x:Name="TitleRollupOverlay"
+            Width="262"
+            Height="370"
+            Margin="0,0,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            DataContext="{Binding Path=TitleRollupOverlayModel}" />
+    </Grid>
+</UserControl>
