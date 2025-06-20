@@ -5,8 +5,7 @@
     xmlns:local="clr-namespace:Redbox.Rental.UI.Controls"
     xmlns:controls="clr-namespace:Redbox.Controls;assembly=Redbox.Controls">
     <FrameworkElement.Resources>
-        <ResourceDictionary>
-        </ResourceDictionary>
+        <ResourceDictionary />
     </FrameworkElement.Resources>
     <Grid>
         <controls:RoundedButton

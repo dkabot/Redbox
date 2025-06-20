@@ -48,8 +48,7 @@
             Executed="ScanRedboxPlusQRCodeCommandBinding_Executed" />
     </UIElement.CommandBindings>
     <FrameworkElement.Resources>
-        <ResourceDictionary>
-        </ResourceDictionary>
+        <ResourceDictionary />
     </FrameworkElement.Resources>
     <Grid>
         <Grid

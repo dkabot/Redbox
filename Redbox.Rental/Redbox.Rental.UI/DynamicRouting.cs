@@ -1,7 +1,5 @@
 using System;
 
-// Puyodead1 - I aint fixing all this shit, if you want to, go for it
-
 namespace Redbox.Rental.UI
 {
     public class DynamicRouting
@@ -10,16 +8,7 @@ namespace Redbox.Rental.UI
             dynamic canExecute)
         {
             if (routeCommand == null) throw new NullReferenceException("The routeCommand can not be null");
-            //if (DynamicRouting.<>o__0.<>p__0 == null)
-            //{
-            //	DynamicRouting.<>o__0.<>p__0 = CallSite<Action<CallSite, DynamicRoutedCommand, object, object>>.Create(Binder.InvokeMember(CSharpBinderFlags.ResultDiscarded, "InitDynamicExecutes", null, typeof(DynamicRouting), new CSharpArgumentInfo[]
-            //	{
-            //		CSharpArgumentInfo.Create(CSharpArgumentInfoFlags.UseCompileTimeType, null),
-            //		CSharpArgumentInfo.Create(CSharpArgumentInfoFlags.None, null),
-            //		CSharpArgumentInfo.Create(CSharpArgumentInfoFlags.None, null)
-            //	}));
-            //}
-            //DynamicRouting.<>o__0.<>p__0.Target(DynamicRouting.<>o__0.<>p__0, routeCommand, execute, canExecute);
+            routeCommand.InitDynamicExecutes(execute, canExecute);
             return routeCommand;
         }
 

@@ -36,8 +36,7 @@
             ItemTemplateSelector="{StaticResource PerksOfferListTemplateSelector}"
             ItemsSource="{Binding CurrentPagePromos, ElementName=StoredPromoList}">
             <FrameworkElement.Resources>
-                <ResourceDictionary>
-                </ResourceDictionary>
+                <ResourceDictionary />
             </FrameworkElement.Resources>
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>

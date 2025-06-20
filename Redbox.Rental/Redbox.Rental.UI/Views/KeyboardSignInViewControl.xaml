@@ -6,8 +6,7 @@
     xmlns:localViews="clr-namespace:Redbox.Rental.UI.Views"
     xmlns:localControls="clr-namespace:Redbox.Rental.UI.Controls">
     <FrameworkElement.Resources>
-        <ResourceDictionary>
-        </ResourceDictionary>
+        <ResourceDictionary />
     </FrameworkElement.Resources>
     <Border
         x:Name="MainControl"

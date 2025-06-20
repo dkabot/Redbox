@@ -6,8 +6,7 @@
     xmlns:views="clr-namespace:Redbox.Rental.UI.Views"
     xmlns:controls="clr-namespace:Redbox.Rental.UI.Controls">
     <FrameworkElement.Resources>
-        <ResourceDictionary>
-        </ResourceDictionary>
+        <ResourceDictionary />
     </FrameworkElement.Resources>
     <UIElement.CommandBindings>
         <CommandBinding

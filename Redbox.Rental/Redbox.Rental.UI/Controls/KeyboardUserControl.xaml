@@ -5,8 +5,7 @@
     xmlns:Redbox="clr-namespace:Redbox.Controls;assembly=Redbox.Controls"
     xmlns:localControls="clr-namespace:Redbox.Rental.UI.Controls">
     <FrameworkElement.Resources>
-        <ResourceDictionary>
-        </ResourceDictionary>
+        <ResourceDictionary />
     </FrameworkElement.Resources>
     <Grid
         x:Name="MainGridElem"
