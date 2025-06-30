@@ -15,7 +15,7 @@
             Executed="NextCommandBinding_Executed" />
     </UIElement.CommandBindings>
     <Grid
-        Background="#FFFFFFFF">
+        Background="#FFFFFFFF" Loaded="Grid_Loaded">
         <TextBlock
             Height="60"
             Margin="0,56,0,0"

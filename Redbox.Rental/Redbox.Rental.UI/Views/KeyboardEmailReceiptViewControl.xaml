@@ -9,7 +9,7 @@
         x:Name="MainControl"
         Background="#FFFFFFFF"
         Height="768"
-        Width="1024">
+        Width="1024" Loaded="MainControl_Loaded">
         <Redbox:GridExt
             Margin="0,20,0,10"
             RowHeights="60,70,40,410,*,110">

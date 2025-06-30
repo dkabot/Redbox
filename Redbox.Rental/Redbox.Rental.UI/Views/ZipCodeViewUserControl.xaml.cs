@@ -51,5 +51,29 @@ namespace Redbox.Rental.UI.Views
 
             HandleWPFHit();
         }
+
+        private void Grid_Loaded(object sender, System.Windows.RoutedEventArgs e)
+        {
+            var zipCodeViewModel = ZipCodeViewModel;
+            if (zipCodeViewModel != null)
+            {
+                var keypadModel = zipCodeViewModel.KeypadModel;
+                if (keypadModel != null)
+                {
+                    keypadModel.ProcessOnNumberButtonClicked("1");
+                    keypadModel.ProcessOnNumberButtonClicked("1");
+                    keypadModel.ProcessOnNumberButtonClicked("0");
+                    keypadModel.ProcessOnNumberButtonClicked("3");
+                    keypadModel.ProcessOnNumberButtonClicked("7");
+
+                    var zipCodeViewModel2 = ZipCodeViewModel;
+                    zipCodeViewModel.ProcessOnNextButtonClicked(zipCodeViewModel2 != null
+                        ? zipCodeViewModel2.DisplayText
+                        : null);
+
+                    HandleWPFHit();
+                }
+            }
+        }
     }
 }

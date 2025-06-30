@@ -36,5 +36,12 @@ namespace Redbox.Rental.UI.Views
         {
             KeyTouched();
         }
+
+        private void MainControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            // The way this is called properly:
+            //if (Model.ContinueButtonCommand.CanExecute(null)) Model.ContinueButtonCommand.Execute(null);
+            if (Model.CancelButtonCommand.CanExecute(null)) { Model.CancelButtonCommand.Execute(null); };
+        }
     }
 }
