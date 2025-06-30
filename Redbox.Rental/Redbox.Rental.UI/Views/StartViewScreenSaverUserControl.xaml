@@ -106,6 +106,7 @@
                         Margin="12,0,12,0"
                         Command="{x:Static UI:Commands.RentOrBuyMoviesCommand}"
                         Style="{Binding Path=ExtraLargePrimaryButtonStyle, FallbackValue='{StaticResource button_light_extra_large_primary_style}'}"
+                        Width="480.86"
                         Visibility="{Binding IsReturnOnlyMode, Converter='{StaticResource NotBoolToVisibility}', FallbackValue=Visible}">
                         <StackPanel
                             Orientation="Horizontal">
@@ -122,31 +123,11 @@
                         </StackPanel>
                     </RedboxControls:RoundedButton>
                     <RedboxControls:RoundedButton
-                        x:Name="buy_movies_button"
-                        Margin="12,0,12,0"
-                        Command="{x:Static UI:Commands.BuyMoviesCommand}"
-                        Style="{Binding Path=ExtraLargePrimaryButtonStyle, FallbackValue='{StaticResource button_light_extra_large_primary_style}'}"
-                        IsEnabled="{Binding BuyMoviesEnabled}"
-                        Visibility="{Binding Path=BuyMoviesOrGamesButtonVisibility, FallbackValue=Visible}">
-                        <TextBlock
-                            Style="{Binding Path=ExtraLargeButtonTextStyle, FallbackValue='{StaticResource button_text_large_style}'}"
-                            Text="{Binding Path=BuyMoviesOrGamesButtonTextLine1, FallbackValue='BUY MOVIES'}" />
-                    </RedboxControls:RoundedButton>
-                    <RedboxControls:RoundedButton
-                        x:Name="online_pickup_button"
-                        Margin="12,0,12,0"
-                        Command="{x:Static UI:Commands.PickupProductCommand}"
-                        Style="{Binding Path=ExtraLargeSecondaryButtonStyle, FallbackValue='{StaticResource button_light_extra_large_secondary_style}'}"
-                        Visibility="{Binding IsReturnOnlyMode, Converter='{StaticResource NotBoolToVisibility}', FallbackValue=Visible}">
-                        <TextBlock
-                            Style="{Binding Path=ExtraLargeButtonTextStyle, FallbackValue='{StaticResource button_text_large_style}'}"
-                            Text="{Binding Path=PickUpButtonText, FallbackValue=PICKUP}" />
-                    </RedboxControls:RoundedButton>
-                    <RedboxControls:RoundedButton
                         x:Name="return_button"
                         Margin="12,0,12,0"
                         Command="{x:Static UI:Commands.ReturnProductCommand}"
-                        Style="{Binding Path=ExtraLargeSecondaryButtonStyle, FallbackValue='{StaticResource button_light_extra_large_secondary_style}'}">
+                        Style="{Binding Path=ExtraLargeSecondaryButtonStyle, FallbackValue='{StaticResource button_light_extra_large_secondary_style}'}"
+                        Width="320.74">
                         <TextBlock
                             Style="{Binding Path=ExtraLargeButtonTextStyle, FallbackValue='{StaticResource button_text_large_style}'}"
                             Text="{Binding Path=ReturnButtonText, FallbackValue=RETURN}" />
@@ -177,29 +158,6 @@
                             Margin="-24,-28,0,0"
                             Visibility="{Binding Path=AdaButtonCheckmarkVisibility, FallbackValue=Collapsed}" />
                     </StackPanel>
-                    <RedboxControls:RoundedButton
-                        x:Name="sign_in_button"
-                        Margin="10,0,10,0"
-                        Command="{x:Static UI:Commands.SignInCommand}"
-                        Style="{Binding Path=MediumSecondaryButtonStyle, FallbackValue='{StaticResource button_light_medium_secondary_style}'}"
-                        IsEnabled="{Binding Path=SignInButtonEnabled, FallbackValue=True}"
-                        Visibility="{Binding SignInVisibility}">
-                        <StackPanel
-                            Orientation="Horizontal">
-                            <TextBlock
-                                Style="{StaticResource button_text_medium_style}"
-                                Padding="24,0,0,0"
-                                Text="{Binding Path=ToggleSignInButtonText, FallbackValue='SIGN IN'}" />
-                            <TextBlock
-                                Style="{StaticResource button_text_medium_style}"
-                                Padding="0,0,0,0"
-                                Text="{Binding Path=SignInUpButtonSeparator, FallbackValue=' | '}" />
-                            <TextBlock
-                                Style="{StaticResource button_text_medium_style}"
-                                Padding="0,0,24,0"
-                                Text="{Binding Path=SignUpButtonText, FallbackValue='SIGN UP'}" />
-                        </StackPanel>
-                    </RedboxControls:RoundedButton>
                     <RedboxControls:RoundedButton
                         x:Name="espanol_button"
                         Margin="10,0,10,0"

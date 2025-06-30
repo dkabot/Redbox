@@ -33,11 +33,8 @@ namespace Redbox.Rental.UI.Views
             var service = ServiceLocator.Instance.GetService<IThemeService>();
             var theme = service != null ? service.CurrentTheme : null;
             if (theme != null) theme.SetStyle(all_movies_button);
-            if (theme != null) theme.SetStyle(buy_movies_button);
-            if (theme != null) theme.SetStyle(online_pickup_button);
             if (theme != null) theme.SetStyle(return_button);
             if (theme != null) theme.SetStyle(ada_button);
-            if (theme != null) theme.SetStyle(sign_in_button);
             if (theme != null) theme.SetStyle(espanol_button);
             if (theme == null) return;
             theme.SetStyle(help_button);
@@ -76,7 +73,8 @@ namespace Redbox.Rental.UI.Views
 
         private void BuyMoviesCommandBinding_CanExecute(object sender, CanExecuteRoutedEventArgs e)
         {
-            e.CanExecute = buy_movies_button.Visibility == Visibility.Visible;
+            //e.CanExecute = buy_movies_button.Visibility == Visibility.Visible;
+            e.CanExecute = false;
         }
 
         private void BuyMoviesCommandBinding_Executed(object sender, ExecutedRoutedEventArgs e)
