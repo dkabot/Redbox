@@ -107,6 +107,9 @@
     <Compile Include="Controls\Animations\EncryptedSwipeReservationPickupUserControl.xaml.cs">
       <DependentUpon>EncryptedSwipeReservationPickupUserControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Animations\HackRVA.xaml.cs">
+      <DependentUpon>HackRVA.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Animations\InsertDiscAnimationUserControl.xaml.cs">
       <DependentUpon>InsertDiscAnimationUserControl.xaml</DependentUpon>
     </Compile>
@@ -773,6 +776,10 @@
     <Page Include="Controls\Animations\EmvInsertAndTapUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Animations\HackRVA.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Controls\Animations\EMVInsertCardAndTapPhoneUserControl.xaml">
       <SubType>Designer</SubType>
@@ -1594,6 +1601,9 @@
       <Project>{9687a8d2-10f8-418d-b665-688be17e22ee}</Project>
       <Name>Redbox.Rental.Model</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="assets\images\hack_logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

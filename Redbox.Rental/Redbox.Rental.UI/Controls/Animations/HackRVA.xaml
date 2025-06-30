@@ -1,0 +1,14 @@
+<UserControl
+    x:Class="Redbox.Rental.UI.Controls.Animations.HackRVA"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid>
+        <Image
+            x:Name="BottomOfEMVReader"
+            Source="pack://Application:,,,/Redbox.Rental.UI;component/Assets/Images/hack_logo.png"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Width="178"
+            Height="231" />
+    </Grid>
+</UserControl>

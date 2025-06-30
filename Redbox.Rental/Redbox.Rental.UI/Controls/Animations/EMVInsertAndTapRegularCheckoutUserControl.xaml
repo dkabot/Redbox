@@ -27,10 +27,10 @@
 insert or tap
 payment'}" />
         </StackPanel>
-        <local:EMVInsertCardAndTapPhoneUserControl
+        <local:HackRVA
             x:Name="CardAndPhone"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Margin="698,84,0,0" />
+            Margin="698,175,0,0" />
     </Grid>
 </UserControl>
